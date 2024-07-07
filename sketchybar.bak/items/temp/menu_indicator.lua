@@ -1,0 +1,165 @@
+-- -------------------MENU INDICATOR ICON-----------------
+-- -------------------------------------------------------
+
+-- local menu_indicator =
+--     sbar.add(
+--         "item",
+--         {
+--             position = "left",
+--             align = "center",
+--             icon = {
+--                 padding_left = 5,
+--                 padding_right = 3,
+--                 color = colors.bar.foreground,
+--                 string = "􂀙",
+--                 font = {
+--                     size = 14,
+--                     style = settings.font.style_map.Bold
+--                 }
+--             },
+--             background = {
+--                 drawing = true,
+--                 color = colors.bar.bg,
+--                 corner_radius = 6,
+
+--             }
+--         }
+--     )
+
+-- menu_indicator:subscribe(
+--     "mouse.entered",
+--     function(env)
+--         sbar.trigger("swap_menus_and_spaces")
+--         local selected = env.SELECTED == "true"
+--         sbar.animate(
+--             "elastic",
+--             15,
+--             function()
+--                 menu_indicator:set(
+--                     {
+--                         background = {
+--                             drawing = true,
+
+--                         },
+
+--                     }
+--                 )
+--             end
+--         )
+--         -- Animate the menu items when they show up
+--         for i = 1, max_items do
+--             local menu_item = menu_items[i]
+--             if menu_item:query().geometry.drawing == "on" then
+--                 sbar.animate(
+--                     "elastic",
+--                     15,
+--                     function()
+--                         menu_item:set(
+--                             {
+--                                 width = "dynamic",
+--                                 background = {
+--                                     color = {
+--                                         alpha = 1
+--                                     }
+--                                 },
+--                                 label = {
+--                                     color = colors.bar.bg,
+--                                     font = {
+--                                         size = 12,
+--                                         style = settings.font.style_map.SemiBold
+--                                     }
+--                                 },
+--                                 icon = {
+--                                     color = icons.bar.bg,
+--                                     font = {
+--                                         size = 30
+--                                     }
+--                                 }
+--                             }
+--                         )
+--                     end
+--                 )
+--             end
+--         end
+--     end
+-- )
+-- menu_indicator:subscribe(
+--     "mouse.exited",
+--     function(env)
+--         local selected = env.SELECTED == "true"
+--         sbar.animate(
+--             "elastic",
+--             15,
+--             function()
+--                 menu_indicator:set(
+--                     {
+--                         background = {
+--                             color = {
+--                                 alpha = 1
+--                             }
+--                         },
+--                         label = {
+--                             color = colors.bar.foreground_alt,
+--                             font = {
+--                                 size = 12
+--                             }
+--                         },
+--                         icon = {
+--                             padding_left = 5,
+--                             padding_right = 3,
+--                             color = colors.bar.foreground_alt,
+--                             string = "􂀙",
+--                             font = {
+--                                 size = 14,
+--                                 style = settings.font.style_map.Bold
+--                             }
+--                         },
+--                     }
+--                 )
+--             end
+--         )
+--         -- Animate the menu items when they show up
+--         for i = 1, max_items do
+--             local menu_item = menu_items[i]
+--             if menu_item:query().geometry.drawing == "on" then
+--                 sbar.animate(
+--                     "elastic",
+--                     15,
+--                     function()
+--                         menu_item:set(
+--                             {
+--                                 background = {
+--                                     color = {
+--                                         alpha = 0
+--                                     }
+--                                 },
+--                                 label = {
+--                                     color = colors.bar.foreground,
+--                                     font = {
+--                                         size = 12,
+--                                         style = settings.font.style_map.SemiBold
+--                                     }
+--                                 }
+--                             }
+--                         )
+--                     end
+--                 )
+--             end
+--         end
+--     end
+-- )
+
+-- menu_indicator:subscribe(
+--     "mouse.clicked",
+--     function(env)
+--         local selected = env.SELECTED == "true"
+--         sbar.trigger("swap_menus_and_spaces")
+--         sbar.animate(
+--             "elastic",
+--             15,
+--             function()
+--                 menu_indicator:set({})
+--             end
+--         )
+--     end
+-- )
