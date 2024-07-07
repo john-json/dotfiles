@@ -1,4 +1,4 @@
-<span> • </span><span> • </span><span> • </span><p align="center"> maffai sketchybar config </p> <span> • </span><span> • </span><span> • </span>
+<p align="center"> <span> • • • </span> maffai sketchybar config <span> • • • </span></p> 
 
 
 
