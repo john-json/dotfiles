@@ -9,4 +9,4 @@ collection of my va dotfiles
 
   <h2>maffai Sketchybar Theme</h2>
   
-![Maffai](https://github.com/john-json/dotfiles/screenshots/sketchy-maffai.png?raw=true)
+![Maffai](https://github.com/john-json/dotfiles/main/screenshots/sketchy-maffai.png?raw=true)
