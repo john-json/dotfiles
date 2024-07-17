@@ -6,7 +6,7 @@
 
 ##### with images
 
-![withimg](screenshots/maffai.png)
+![withimg](maffai/screenshots/Maffai.png)
 
 -   **IMPORTANT:** Add the following to your `config-xpui.ini` file. Details as to why are explained [here](https://github.com/JulienMaille/spicetify-dynamic-theme#important). Run `spicetify apply` after adding these lines.
 
