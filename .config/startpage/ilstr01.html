@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ilstr01</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1" />
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/badge.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+	</head>
+	<body>
+		<section class="section cr-items">
+			<section class="section-1">
+				<picture>
+					<img class="img only-on-dark" srcset="assets/images/logo-dark.png" media="(prefers-color-scheme: dark)" />
+				</picture>
+				<picture>
+					<img class="img only-on-light" srcset="assets/images/logo-light.png" media="(prefers-color-scheme: light)" />
+				</picture>
+			</section>
+
+			
+			<section class="section column-section section-2 cr-items">
+				<div class="main-text main-text-medium">
+					<a class="footer-links link-twitter" href="https://x.com/home">TWITTER</a>
+					<a class="footer-links link-reddit" href="https://www.reddit.com/">REDDIT</a>
+					<a class="footer-links link-unix-porn" href="https://www.reddit.com/r/unixporn/">UNIXPORN</a>
+					<a class="footer-links link-youtube" href="https://www.youtube.com">YOUTUBE</a>
+					<a class="footer-links link-dribbble" href="https://github.com/john-json?tab=repositories">GITHUB</a>
+					<a class="footer-links link-behance" href="https://dribbble.com">DRIBBLE</a>
+					<a class="footer-links link-behance" href="https://de.pinterest.com/homefeed/">PINTEREST</a>
+					<div class="search-bar">
+						<form role="search" id="form" action="http://www.google.com/search" method="get">
+							<input class="search" type="search" id="query" name="q" placeholder="Search...">
+							<button type="submit" hidden > <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg></input>
+							   
+							</buttton>
+							</form>
+					</div>
+					<div class="clock">
+						<div id="realTimeClock" class="text-white"></div>
+						<div id="realTimeDate" class="text-white"></div>
+					</div>
+				</div>
+			</section>
+		</section>
+		<script src="script.js"></script>
+	</body>
+</html>

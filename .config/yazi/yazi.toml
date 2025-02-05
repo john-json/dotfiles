@@ -1,0 +1,12 @@
+# ~/.config/yazi/yazi.toml
+[manager]
+linemode = "none"
+show_hidden = true
+
+[plugin]
+prepend_preloaders = [
+    # HEIC preloader
+    { mime = "image/heic", run = "heic" },
+]
+
+[opener]

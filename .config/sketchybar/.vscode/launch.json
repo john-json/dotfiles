@@ -1,0 +1,32 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lua",
+      "request": "launch",
+      "name": "Debug",
+      "program": "${workspaceFolder}/items/spaces.lua"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:sketchybar}/dark-mode-notify",
+      "name": "Debug dark-mode-notify (dark-mode-notify)",
+      "program": "${workspaceFolder:sketchybar}/dark-mode-notify/.build/debug/dark-mode-notify",
+      "preLaunchTask": "swift: Build Debug dark-mode-notify (dark-mode-notify)"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:sketchybar}/dark-mode-notify",
+      "name": "Release dark-mode-notify (dark-mode-notify)",
+      "program": "${workspaceFolder:sketchybar}/dark-mode-notify/.build/release/dark-mode-notify",
+      "preLaunchTask": "swift: Build Release dark-mode-notify (dark-mode-notify)"
+    }
+  ]
+}

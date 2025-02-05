@@ -1,0 +1,21 @@
+{
+  "name": "ilstr01",
+  "displayName": "ilstr01-dark",
+  "description": "dark theme for ilstr01",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "ilstr01 Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ilstr01 Dark-color-theme.json"
+      }
+    ]
+  }
+}

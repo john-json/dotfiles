@@ -1,0 +1,8 @@
+[16:01:13 2024-07-23] FETCHING Version 2.36.15
+[16:01:13 2024-07-23] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.36.15/spicetify-2.36.15-darwin-arm64.tar.gz
+[16:01:14 2024-07-23] EXTRACTING /Users/j/.spicetify/spicetify.tar.gz
+[16:01:14 2024-07-23] SETTING EXECUTABLE PERMISSIONS TO /Users/j/.spicetify/spicetify
+[16:01:14 2024-07-23] REMOVING /Users/j/.spicetify/spicetify.tar.gz
+[16:01:14 2024-07-23] spicetify path already set in /Users/j/.zshrc, continuing...
+[16:01:14 2024-07-23] spicetify v2.36.15 was installed successfully to /Users/j/.spicetify
+[16:01:14 2024-07-23] Run 'spicetify --help' to get started

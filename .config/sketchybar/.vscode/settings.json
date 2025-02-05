@@ -1,0 +1,8 @@
+{
+  "Lua.diagnostics.globals": [
+    "add_calendar_item",
+    "add_month_navigation_arrows",
+    "sbar",
+    "id"
+  ]
+}
