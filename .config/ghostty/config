@@ -1,0 +1,43 @@
+auto-update = download
+
+font-family = "JetBrains Mono Nerd Font"
+
+background-blur-radius = 60
+
+macos-titlebar-style = hidden
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = left
+macos-window-shadow = true
+
+window-height = 40
+window-width = 120
+window-padding-x = 20
+window-padding-y = 20
+window-decoration = false
+window-save-state = always
+
+copy-on-select = true
+
+quit-after-last-window-closed = true
+
+background-opacity = 0.99
+background-blur-radius = 20
+
+quick-terminal-position = top
+quick-terminal-screen = mouse
+quick-terminal-animation-duration = 0.3
+
+shell-integration = zsh
+
+
+background = 282828
+foreground = dedede
+
+keybind = cmd+n=new_window
+keybind = global:cmd+shift+d=toggle_quick_terminal
+keybind = cmd+q=quit
+keybind = cmd+w=close_window
+keybind = cmd+r=clear_screen
+keybind = cmd+shift+r=reload_config
+
+theme = dark:ilstr01, light:ilstr01-light
