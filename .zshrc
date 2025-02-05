@@ -21,7 +21,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
  zstyle ':omz:update' frequency 13
 
  COMPLETION_WAITING_DOTS="true"
-
+ CASE_SENSITIVE="false"
 #------------------------------------------------------------------
 # Plugins
 #------------------------------------------------------------------
@@ -57,6 +57,10 @@ plugins=(git colorize fzf github macos )
  alias time="tty-clock"
  alias iam="macchina"
  alias lt="tree -L 1"
+ alias gcm="git commit -m"
+ alias gadd="git add"
+ alias gits="git status"
+ alias wetr="curl wttr.in/Nürnberg"
 
 export PATH=$PATH:/Users/johnjson/.spicetify
 
@@ -64,4 +68,7 @@ export PATH=$PATH:/Users/johnjson/.spicetify
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme 
-#source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(zoxide init zsh)"
+
+macchina

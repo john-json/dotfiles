@@ -2834,3 +2834,1991 @@
         Holdon:   0
         Waiting:  0
 ==============================================
+[02:32:47.145][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.286 MB
+        # 00 : 10.953 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[02:42:47.534][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.092 MB
+        # 00 : 10.759 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[02:52:47.586][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 10.895 MB
+        # 00 : 10.562 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[03:02:47.606][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 10.698 MB
+        # 00 : 10.365 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[03:12:47.646][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 10.504 MB
+        # 00 : 10.171 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[03:22:47.695][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.323 MB
+        # 00 : 10.990 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[03:32:47.749][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.128 MB
+        # 00 : 10.795 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[03:42:47.755][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 10.935 MB
+        # 00 : 10.602 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[03:52:48.675][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 10.741 MB
+        # 00 : 10.408 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[04:02:48.754][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 10.547 MB
+        # 00 : 10.214 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[04:12:48.814][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.366 MB
+        # 00 : 11.033 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[04:22:48.837][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.171 MB
+        # 00 : 10.838 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[04:23:33.706][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:23:33.707][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:23:33.707][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:23:33.707][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:23:33.707][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:32:48.894][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 10.997 MB
+        # 00 : 10.664 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[04:38:49.753][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/untitled%20folder
+[04:38:49.755][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/untitled%20folder
+[04:38:49.755][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/untitled%20folder
+[04:38:49.755][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/untitled%20folder
+[04:38:49.755][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/untitled%20folder
+[04:38:58.799][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:38:58.799][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.pbxproj
+[04:38:58.799][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor
+[04:38:58.800][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:58.800][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:58.800][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:58.800][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:58.800][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:58.800][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor
+[04:38:58.800][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:38:58.800][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:38:58.800][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:38:58.800][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:38:58.801][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.pbxproj
+[04:38:58.801][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.pbxproj
+[04:38:58.801][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.pbxproj
+[04:38:58.801][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.pbxproj
+[04:38:58.801][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor
+[04:38:58.801][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor
+[04:38:58.801][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor
+[04:38:58.801][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor
+[04:38:58.801][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor
+[04:38:58.801][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor
+[04:38:58.801][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor
+[04:38:58.801][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor
+[04:38:59.837][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads
+[04:38:59.837][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads
+[04:38:59.837][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads
+[04:38:59.837][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads
+[04:38:59.837][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads
+[04:38:59.838][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e
+[04:38:59.838][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e
+[04:38:59.838][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e
+[04:38:59.838][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e
+[04:38:59.838][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e
+[04:38:59.838][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/HEAD
+[04:38:59.838][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/HEAD
+[04:38:59.838][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/HEAD
+[04:38:59.838][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/HEAD
+[04:38:59.838][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/HEAD
+[04:38:59.838][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects
+[04:38:59.838][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects
+[04:38:59.838][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects
+[04:38:59.838][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects
+[04:38:59.838][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects
+[04:38:59.839][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91/9434a6254f0e9651f402737811be6634a03e9c
+[04:38:59.839][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91/9434a6254f0e9651f402737811be6634a03e9c
+[04:38:59.839][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91/9434a6254f0e9651f402737811be6634a03e9c
+[04:38:59.839][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91/9434a6254f0e9651f402737811be6634a03e9c
+[04:38:59.839][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91/9434a6254f0e9651f402737811be6634a03e9c
+[04:38:59.839][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads
+[04:38:59.839][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads
+[04:38:59.839][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads
+[04:38:59.839][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads
+[04:38:59.839][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads
+[04:38:59.839][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata
+[04:38:59.840][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63
+[04:38:59.840][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63
+[04:38:59.840][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63
+[04:38:59.840][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63
+[04:38:59.840][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63
+[04:38:59.840][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs
+[04:38:59.840][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs
+[04:38:59.840][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs
+[04:38:59.840][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs
+[04:38:59.840][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs
+[04:38:59.840][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks/README.sample
+[04:38:59.840][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks/README.sample
+[04:38:59.840][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks/README.sample
+[04:38:59.840][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks/README.sample
+[04:38:59.840][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks/README.sample
+[04:38:59.841][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/pack
+[04:38:59.841][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/pack
+[04:38:59.841][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/pack
+[04:38:59.841][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/pack
+[04:38:59.841][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/pack
+[04:38:59.841][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+[04:38:59.841][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+[04:38:59.841][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+[04:38:59.841][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+[04:38:59.841][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm
+[04:38:59.841][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/description
+[04:38:59.841][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/description
+[04:38:59.842][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/description
+[04:38:59.842][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/description
+[04:38:59.842][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/description
+[04:38:59.842][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata
+[04:38:59.842][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5
+[04:38:59.842][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5
+[04:38:59.842][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5
+[04:38:59.842][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5
+[04:38:59.842][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5
+[04:38:59.842][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59/2e97a0c1978bae16d43ed2a47bb4f605e3891f
+[04:38:59.842][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59/2e97a0c1978bae16d43ed2a47bb4f605e3891f
+[04:38:59.842][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59/2e97a0c1978bae16d43ed2a47bb4f605e3891f
+[04:38:59.842][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59/2e97a0c1978bae16d43ed2a47bb4f605e3891f
+[04:38:59.842][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59/2e97a0c1978bae16d43ed2a47bb4f605e3891f
+[04:38:59.843][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info/exclude
+[04:38:59.843][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info/exclude
+[04:38:59.843][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info/exclude
+[04:38:59.843][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info/exclude
+[04:38:59.843][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info/exclude
+[04:38:59.843][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37/ddb71986b4d9f44f7a1f86c0827b8787c4b3c6
+[04:38:59.844][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37/ddb71986b4d9f44f7a1f86c0827b8787c4b3c6
+[04:38:59.844][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37/ddb71986b4d9f44f7a1f86c0827b8787c4b3c6
+[04:38:59.844][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37/ddb71986b4d9f44f7a1f86c0827b8787c4b3c6
+[04:38:59.844][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37/ddb71986b4d9f44f7a1f86c0827b8787c4b3c6
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/COMMIT_EDITMSG
+[04:38:59.844][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/COMMIT_EDITMSG
+[04:38:59.844][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/COMMIT_EDITMSG
+[04:38:59.844][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/COMMIT_EDITMSG
+[04:38:59.844][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/COMMIT_EDITMSG
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes/xcschememanagement.plist
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes
+[04:38:59.844][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes
+[04:38:59.844][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes
+[04:38:59.844][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes
+[04:38:59.844][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91
+[04:38:59.844][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91
+[04:38:59.844][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91
+[04:38:59.844][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91
+[04:38:59.844][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/91
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68/1fbb4919c638b9151468ab153fb4a29d6887ea
+[04:38:59.844][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68/1fbb4919c638b9151468ab153fb4a29d6887ea
+[04:38:59.844][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68/1fbb4919c638b9151468ab153fb4a29d6887ea
+[04:38:59.844][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68/1fbb4919c638b9151468ab153fb4a29d6887ea
+[04:38:59.844][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68/1fbb4919c638b9151468ab153fb4a29d6887ea
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad
+[04:38:59.844][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad
+[04:38:59.844][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad
+[04:38:59.844][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad
+[04:38:59.844][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e/7f68cb21ec41bfba3f06fd04d97e0fd36b43c9
+[04:38:59.844][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e/7f68cb21ec41bfba3f06fd04d97e0fd36b43c9
+[04:38:59.844][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e/7f68cb21ec41bfba3f06fd04d97e0fd36b43c9
+[04:38:59.844][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e/7f68cb21ec41bfba3f06fd04d97e0fd36b43c9
+[04:38:59.844][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/0e/7f68cb21ec41bfba3f06fd04d97e0fd36b43c9
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/HEAD
+[04:38:59.844][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/HEAD
+[04:38:59.844][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/HEAD
+[04:38:59.844][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/HEAD
+[04:38:59.844][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/HEAD
+[04:38:59.844][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace
+[04:38:59.845][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5/163ca9a19537b7cb07f7e06183456d35015374
+[04:38:59.845][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5/163ca9a19537b7cb07f7e06183456d35015374
+[04:38:59.845][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5/163ca9a19537b7cb07f7e06183456d35015374
+[04:38:59.845][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5/163ca9a19537b7cb07f7e06183456d35015374
+[04:38:59.845][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d5/163ca9a19537b7cb07f7e06183456d35015374
+[04:38:59.845][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63/04c6716498571ed7d4785a720d288b5d03ceb5
+[04:38:59.845][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63/04c6716498571ed7d4785a720d288b5d03ceb5
+[04:38:59.845][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63/04c6716498571ed7d4785a720d288b5d03ceb5
+[04:38:59.845][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63/04c6716498571ed7d4785a720d288b5d03ceb5
+[04:38:59.845][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/63/04c6716498571ed7d4785a720d288b5d03ceb5
+[04:38:59.845][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/index
+[04:38:59.845][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/index
+[04:38:59.845][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/index
+[04:38:59.845][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/index
+[04:38:59.845][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/index
+[04:38:59.845][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs/heads/dotfiles
+[04:38:59.845][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68
+[04:38:59.845][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68
+[04:38:59.846][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68
+[04:38:59.846][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68
+[04:38:59.846][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/68
+[04:38:59.846][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:59.846][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:59.846][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:59.846][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:59.846][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj
+[04:38:59.846][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d/dd4637e850352d046c3c12356e4f7965f52e57
+[04:38:59.846][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d/dd4637e850352d046c3c12356e4f7965f52e57
+[04:38:59.846][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d/dd4637e850352d046c3c12356e4f7965f52e57
+[04:38:59.846][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d/dd4637e850352d046c3c12356e4f7965f52e57
+[04:38:59.846][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d/dd4637e850352d046c3c12356e4f7965f52e57
+[04:38:59.846][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77/e2f119bb4eaf957705c13375be2a024edb91a5
+[04:38:59.846][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77/e2f119bb4eaf957705c13375be2a024edb91a5
+[04:38:59.846][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77/e2f119bb4eaf957705c13375be2a024edb91a5
+[04:38:59.846][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77/e2f119bb4eaf957705c13375be2a024edb91a5
+[04:38:59.846][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77/e2f119bb4eaf957705c13375be2a024edb91a5
+[04:38:59.847][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata
+[04:38:59.847][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata
+[04:38:59.847][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata
+[04:38:59.847][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata
+[04:38:59.847][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata
+[04:38:59.847][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs
+[04:38:59.847][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs
+[04:38:59.847][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs
+[04:38:59.847][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs
+[04:38:59.847][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs
+[04:38:59.847][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77
+[04:38:59.847][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77
+[04:38:59.847][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77
+[04:38:59.847][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77
+[04:38:59.847][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/77
+[04:38:59.847][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git
+[04:38:59.847][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git
+[04:38:59.847][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git
+[04:38:59.847][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git
+[04:38:59.847][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git
+[04:38:59.847][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9/c19cc17a1d6452956495c8f392c3673f08a9eb
+[04:38:59.847][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9/c19cc17a1d6452956495c8f392c3673f08a9eb
+[04:38:59.847][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9/c19cc17a1d6452956495c8f392c3673f08a9eb
+[04:38:59.847][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9/c19cc17a1d6452956495c8f392c3673f08a9eb
+[04:38:59.847][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9/c19cc17a1d6452956495c8f392c3673f08a9eb
+[04:38:59.847][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22/929975fa25b9766be4c46f6894863ba960fb06
+[04:38:59.847][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22/929975fa25b9766be4c46f6894863ba960fb06
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22/929975fa25b9766be4c46f6894863ba960fb06
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22/929975fa25b9766be4c46f6894863ba960fb06
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22/929975fa25b9766be4c46f6894863ba960fb06
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/info
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/info
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/info
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/info
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/info
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/config
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/config
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/config
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/config
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/config
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/37
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/logs/refs
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/tags
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/tags
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/tags
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/tags
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/refs/tags
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/8d
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/info
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/59
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/configuration
+[04:38:59.848][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/configuration
+[04:38:59.848][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/configuration
+[04:38:59.848][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/configuration
+[04:38:59.848][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/configuration
+[04:38:59.848][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:38:59.849][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks
+[04:38:59.849][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks
+[04:38:59.849][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks
+[04:38:59.849][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks
+[04:38:59.849][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/hooks
+[04:38:59.849][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35
+[04:38:59.849][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35
+[04:38:59.849][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35
+[04:38:59.849][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35
+[04:38:59.849][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35
+[04:38:59.849][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35/c6d449577c9f621922de8d9a9fb826e3068cbb
+[04:38:59.849][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35/c6d449577c9f621922de8d9a9fb826e3068cbb
+[04:38:59.849][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35/c6d449577c9f621922de8d9a9fb826e3068cbb
+[04:38:59.849][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35/c6d449577c9f621922de8d9a9fb826e3068cbb
+[04:38:59.849][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/35/c6d449577c9f621922de8d9a9fb826e3068cbb
+[04:38:59.849][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9
+[04:38:59.849][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9
+[04:38:59.849][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9
+[04:38:59.849][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9
+[04:38:59.849][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/d9
+[04:38:59.849][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22
+[04:38:59.849][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22
+[04:38:59.849][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22
+[04:38:59.849][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22
+[04:38:59.849][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/objects/22
+[04:38:59.849][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata
+[04:38:59.849][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata
+[04:38:59.849][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes/xcschememanagement.plist
+[04:38:59.850][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes/xcschememanagement.plist
+[04:38:59.850][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes/xcschememanagement.plist
+[04:38:59.850][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/xcuserdata/johnjson.xcuserdatad/xcschemes/xcschememanagement.plist
+[04:38:59.850][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+[04:38:59.850][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:38:59.850][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:38:59.850][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:38:59.850][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:38:59.850][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace
+[04:38:59.850][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace
+[04:38:59.850][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace
+[04:38:59.850][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace
+[04:39:01.784][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:01.785][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:01.785][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:01.785][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:01.785][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:18.869][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:18.872][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:18.872][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:18.872][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:18.872][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:25.875][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:25.876][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:25.876][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:25.876][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:25.876][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:27.856][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:39:27.857][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:39:27.857][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:39:27.857][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:39:27.857][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:39:32.897][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:32.898][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:32.898][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:32.898][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:39:32.898][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:10.991][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:10.993][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:10.993][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:10.993][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:10.993][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:24.070][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:24.070][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:24.070][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:24.071][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:24.071][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:47.135][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:47.140][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:47.140][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:47.140][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:40:47.140][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:41:30.259][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/a
+[04:41:30.259][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/a
+[04:41:30.259][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/a
+[04:41:30.259][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/a
+[04:41:30.259][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/a
+[04:41:30.259][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae
+[04:41:30.259][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae
+[04:41:30.259][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae
+[04:41:30.259][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae
+[04:41:30.259][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae
+[04:41:30.259][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/b
+[04:41:30.259][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/b
+[04:41:30.259][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/b
+[04:41:30.260][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/b
+[04:41:30.260][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/.git/.gitstatus.t1weae/b
+[04:42:10.390][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:10.394][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:42:10.394][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:10.394][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:10.394][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:10.394][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:10.395][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:42:10.395][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:42:10.395][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:42:10.395][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor/main.swift
+[04:42:25.437][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:25.438][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:25.438][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:25.438][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:25.438][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:30.453][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:30.453][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:30.453][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:30.453][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:30.454][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:38.451][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:38.451][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:38.451][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:38.451][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:38.451][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/MenuExtractor/MenuExtractor.xcodeproj/project.xcworkspace/xcuserdata/johnjson.xcuserdatad/UserInterfaceState.xcuserstate
+[04:42:48.903][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.060 MB
+        # 00 : 10.727 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     74
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      74
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[04:46:23.159][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:46:23.160][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:46:23.160][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:46:23.160][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:46:23.160][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:47:49.417][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:47:49.417][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:47:49.417][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:47:49.417][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:47:49.417][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/fetch_menu.swift
+[04:52:48.971][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.417 MB
+        # 00 : 11.084 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     13
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      13
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[05:02:49.045][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.191 MB
+        # 00 : 10.858 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[05:12:49.119][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.010 MB
+        # 00 : 11.677 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[05:22:49.163][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.761 MB
+        # 00 : 11.428 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[05:32:49.230][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.514 MB
+        # 00 : 11.181 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[05:42:50.192][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.270 MB
+        # 00 : 10.937 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[05:52:50.208][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.089 MB
+        # 00 : 11.756 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[06:02:50.272][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.841 MB
+        # 00 : 11.508 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[06:12:50.303][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.592 MB
+        # 00 : 11.259 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[06:22:50.306][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.345 MB
+        # 00 : 11.011 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[06:32:50.337][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.097 MB
+        # 00 : 10.764 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[06:42:50.417][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.916 MB
+        # 00 : 11.583 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[06:52:50.448][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.664 MB
+        # 00 : 11.331 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[07:02:50.471][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.415 MB
+        # 00 : 11.082 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[07:12:50.518][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.167 MB
+        # 00 : 10.834 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[07:21:17.240][info] [#0:script/workspace/workspace.lua:284]: Scan files at:	file:///Users/johnjson/.config/sketchybar/items/scripts/.DS_Store
+[07:21:17.241][info] [#0:script/workspace/loading.lua:160]: Load files from disk:	file:///Users/johnjson/.config/sketchybar/items/scripts/.DS_Store
+[07:21:17.241][info] [#0:script/workspace/loading.lua:172]: Loaded files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/.DS_Store
+[07:21:17.241][info] [#0:script/workspace/loading.lua:181]: Compile files takes [0.000] sec: file:///Users/johnjson/.config/sketchybar/items/scripts/.DS_Store
+[07:21:17.241][info] [#0:script/workspace/loading.lua:182]: Loaded finish:	file:///Users/johnjson/.config/sketchybar/items/scripts/.DS_Store
+[07:22:50.591][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.000 MB
+        # 00 : 11.667 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     5
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      5
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[07:32:50.638][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.740 MB
+        # 00 : 11.407 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[07:42:50.706][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.023 MB
+        # 00 : 11.690 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[08:00:42.949][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.076 MB
+        # 00 : 10.743 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[08:10:43.032][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.893 MB
+        # 00 : 11.559 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[08:20:43.806][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.642 MB
+        # 00 : 11.309 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[08:40:07.941][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.990 MB
+        # 00 : 11.657 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[08:56:15.956][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.062 MB
+        # 00 : 11.729 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[09:13:40.953][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.069 MB
+        # 00 : 10.736 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[09:23:40.953][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.885 MB
+        # 00 : 11.552 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[09:33:40.974][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.631 MB
+        # 00 : 11.298 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[09:43:41.040][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.380 MB
+        # 00 : 11.047 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[09:53:41.756][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.130 MB
+        # 00 : 10.797 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[10:03:41.785][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.947 MB
+        # 00 : 11.613 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[10:13:41.786][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.693 MB
+        # 00 : 11.360 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[10:28:53.296][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.714 MB
+        # 00 : 11.381 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[10:50:51.804][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.018 MB
+        # 00 : 11.685 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[11:12:19.955][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.285 MB
+        # 00 : 10.952 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[11:28:25.950][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.390 MB
+        # 00 : 11.057 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[11:45:47.950][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.514 MB
+        # 00 : 11.180 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[11:55:48.572][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.264 MB
+        # 00 : 10.931 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[12:05:48.579][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.080 MB
+        # 00 : 11.747 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[12:15:48.588][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.825 MB
+        # 00 : 11.492 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[12:25:49.527][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.575 MB
+        # 00 : 11.242 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[12:35:49.534][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.322 MB
+        # 00 : 10.989 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[12:45:49.575][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.069 MB
+        # 00 : 10.736 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[13:02:28.953][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.136 MB
+        # 00 : 10.803 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[13:18:53.951][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.205 MB
+        # 00 : 10.872 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[13:30:28.642][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.277 MB
+        # 00 : 10.944 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[13:47:35.952][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.351 MB
+        # 00 : 11.018 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[14:03:44.955][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.450 MB
+        # 00 : 11.117 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[14:18:48.393][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.519 MB
+        # 00 : 11.186 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[14:28:48.446][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.266 MB
+        # 00 : 10.933 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[14:38:48.473][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.082 MB
+        # 00 : 11.749 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[14:49:08.751][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.386 MB
+        # 00 : 11.053 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[14:59:54.193][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.906 MB
+        # 00 : 11.573 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[15:19:51.948][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 12.040 MB
+        # 00 : 11.707 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[15:29:52.809][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.378 MB
+        # 00 : 11.045 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[15:39:53.328][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.126 MB
+        # 00 : 10.793 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[15:49:53.358][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.943 MB
+        # 00 : 11.610 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[15:59:54.316][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.692 MB
+        # 00 : 11.359 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[16:09:54.386][info] [#0:script/service/service.lua:145]: 
+========= Medical Examination Report =========
+    --------------- Memory ---------------
+        Total: 11.441 MB
+        # 00 : 11.108 MB
+        # 01 : 0.113 MB
+        # 02 : 0.053 MB
+        # 03 : 0.053 MB
+        # 04 : 0.114 MB
+    --------------- Coroutine ---------------
+        Total:     1
+        Running:   0
+        Suspended: 0
+        Normal:    0
+        Dead:      1
+    --------------- Cache ---------------
+        Total: 1
+        Dead:  0
+    ---------------  RPC  ---------------
+        Holdon:   0
+        Waiting:  0
+==============================================
+[16:18:16.870][warn] [#0:script/pub/report.lua:24]: Load proto error:	Disconnected!
