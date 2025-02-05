@@ -1,0 +1,59 @@
+{
+	"name": "vscode-icon-theme",
+	"displayName": "Studio Icons",
+	"description": "Featuring official icons from the Visual Studio Image Library. Optimized to work well for dark, light, and high contrast themes.",
+	"version": "1.6.6",
+	"publisher": "jtlowe",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "vscode-icon-theme",
+				"label": "Studio Icons",
+				"path": "fileicons/studio-icons.json"
+			}
+		]
+	},
+	"keywords": [
+		"icons",
+		"theme",
+		"icon-theme",
+		"customization"
+	],
+	"homepage": "https://github.com/jtlowe/studio-icons/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jtlowe/studio-icons.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jtlowe/studio-icons/issues"
+	},
+	"icon": "images/logo.png",
+	"galleryBanner": {
+		"color": "#e0e0e0",
+		"theme": "light"
+	},
+	"dependencies": {
+		"gulp": "^3.9.1"
+	},
+	"__metadata": {
+		"id": "0c39b1dc-26df-4737-bb73-a98913b3ddad",
+		"publisherId": "704ac395-3cd6-43d3-976b-37b4fba43e2d",
+		"publisherDisplayName": "Jordan Lowe",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206249759,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 1106537
+	}
+}

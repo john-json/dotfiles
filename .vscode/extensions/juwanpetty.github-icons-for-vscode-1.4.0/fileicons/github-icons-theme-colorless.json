@@ -1,0 +1,36 @@
+{
+  "fonts": [
+    {
+      "id": "github-icons",
+      "src": [
+        {
+          "path": "./icons/github-icons.woff",
+          "format": "woff"
+        }
+      ],
+      "weight": "normal",
+      "style": "normal",
+      "size": "100%"
+    }
+  ],
+  "file": "_file",
+  "folder": "_folder",
+  "folderExpanded": "_folder_open",
+  "iconDefinitions": {
+    "_file": {
+      "fontId": "github-icons",
+      "fontCharacter": "\\e902",
+      "fontSize": "122%"
+    },
+    "_folder": {
+      "fontId": "github-icons",
+      "fontCharacter": "\\e900",
+      "fontSize": "122%"
+    },
+    "_folder_open": {
+      "fontId": "github-icons",
+      "fontCharacter": "\\e901",
+      "fontSize": "122%"
+    }
+  }
+}

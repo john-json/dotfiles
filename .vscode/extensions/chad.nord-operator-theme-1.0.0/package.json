@@ -1,0 +1,40 @@
+{
+	"name": "nord-operator-theme",
+	"displayName": "Nord Operator Theme",
+	"description": "A customized Nord theme with Operator Mono support for Visual Studio Code.",
+	"version": "1.0.0",
+	"publisher": "Chad",
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chaddanna/nord-operator-theme"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Nord Operator Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Nord Operator Theme-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "49f2e54c-6e9e-4484-acd8-89dc97e1d370",
+		"publisherId": "9bff026e-6bf5-43e5-b956-c5956aa6f220",
+		"publisherDisplayName": "Chad",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206249122,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 40029
+	}
+}

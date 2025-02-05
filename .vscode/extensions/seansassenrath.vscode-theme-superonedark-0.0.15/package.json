@@ -1,0 +1,61 @@
+{
+	"name": "vscode-theme-superonedark",
+	"displayName": "Super One Dark Theme",
+	"description": "Atom One Dark Theme with darker background color",
+	"version": "0.0.15",
+	"publisher": "seansassenrath",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"icon": "icon.svg",
+	"keywords": [
+		"atom",
+		"theme",
+		"dark",
+		"one dark"
+	],
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Super One Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/SuperOneDark.tmTheme"
+			}
+		]
+	},
+	"badges": [
+		{
+			"url": "https://vsmarketplacebadge.apphb.com/version-short/seansassenrath.vscode-theme-superonedark.svg",
+			"href": "https://marketplace.visualstudio.com/items/seansassenrath.vscode-theme-superonedark",
+			"description": "Extension version"
+		},
+		{
+			"url": "https://vsmarketplacebadge.apphb.com/installs/seansassenrath.vscode-theme-superonedark.svg",
+			"href": "https://marketplace.visualstudio.com/items/seansassenrath.vscode-theme-superonedark",
+			"description": "Extension installs"
+		},
+		{
+			"url": "https://vsmarketplacebadge.apphb.com/rating/seansassenrath.vscode-theme-superonedark.svg",
+			"href": "https://marketplace.visualstudio.com/items/seansassenrath.vscode-theme-superonedark",
+			"description": "Extension Rating"
+		}
+	],
+	"__metadata": {
+		"id": "8911c2a6-cf78-4874-bf2e-de8377074174",
+		"publisherId": "ba2eeded-936c-4240-adcc-287c89a69510",
+		"publisherDisplayName": "Sean Sassenrath",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206246874,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 74858
+	}
+}

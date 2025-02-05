@@ -1,0 +1,100 @@
+{
+  "iconDefinitions": {
+    "_folder_dark": {
+      "iconPath": "./images/file-directory.svg"
+    },
+    "_file_dark": {
+      "iconPath": "./images/file.svg"
+    },
+    "_file_media_dark": {
+      "iconPath": "./images/file-media.svg"
+    },
+    "_file_doc_dark": {
+      "iconPath": "./images/book.svg"
+    },
+    "_file_pdf_dark": {
+      "iconPath": "./images/file-pdf.svg"
+    },
+    "_root_dark": {
+      "iconPath": "./images/root.svg"
+    },
+    "_file_zip_dark": {
+      "iconPath": "./images/file-zip.svg"
+    },
+    "_folder_light": {
+      "iconPath": "./images/file-directory-light.svg"
+    },
+    "_file_light": {
+      "iconPath": "./images/file-light.svg"
+    },
+    "_file_media_light": {
+      "iconPath": "./images/file-media-light.svg"
+    },
+    "_file_doc_light": {
+      "iconPath": "./images/book-light.svg"
+    },
+    "_file_pdf_light": {
+      "iconPath": "./images/file-pdf-light.svg"
+    },
+    "_root_light": {
+      "iconPath": "./images/root-light.svg"
+    },
+    "_file_zip_light": {
+      "iconPath": "./images/file-zip-light.svg",
+    }
+  },
+  "folder": "_folder_dark",
+  "file": "_file_dark",
+  "rootFolder": "_root_dark",
+  "fileExtensions": {
+    "gif": "_file_media_dark",
+    "jpeg": "_file_media_dark",
+    "jpg": "_file_media_dark",
+    "md": "_file_doc_dark",
+    "png": "_file_media_dark",
+    "pdf": "_file_pdf_dark",
+    "zip": "_file_zip_dark",
+    "tar": "_file_zip_dark",
+    "xz": "_file_zip_dark",
+    "zst": "_file_zip_dark",
+    "gz": "_file_zip_dark",
+    "7z": "_file_zip_dark",
+    "lz": "_file_zip_dark",
+    "lz4": "_file_zip_dark",
+    "lzma": "_file_zip_dark",
+    "lzo": "_file_zip_dark",
+    "bz2": "_file_zip_dark",
+    "cpio": "_file_zip_dark",
+    "crx": "_file_zip_dark",
+    "jar": "_file_zip_dark",
+    "war": "_file_zip_dark"
+  },
+  "light": {
+    "folder": "_folder_light",
+    "rootFolder": "_root_light",
+    "file": "_file_light",
+    "fileExtensions": {
+      "gif": "_file_media_light",
+      "jpeg": "_file_media_light",
+      "jpg": "_file_media_light",
+      "md": "_file_doc_light",
+      "png": "_file_media_light",
+      "pdf": "_file_pdf_light",
+      "zip": "_file_zip_light",
+      "tar": "_file_zip_light",
+      "xz": "_file_zip_light",
+      "zst": "_file_zip_light",
+      "gz": "_file_zip_light",
+      "7z": "_file_zip_light",
+      "lz": "_file_zip_light",
+      "lz4": "_file_zip_light",
+      "lzma": "_file_zip_light",
+      "lzo": "_file_zip_light",
+      "bz2": "_file_zip_light",
+      "cpio": "_file_zip_light",
+      "crx": "_file_zip_light",
+      "jar": "_file_zip_light",
+      "war": "_file_zip_light"
+    }
+  }
+}

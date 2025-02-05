@@ -1,0 +1,11 @@
+{
+	"messages": [
+		"Generate Copilot summary",
+		"AI-generated content may be incorrect."
+	],
+	"keys": [
+		"generate.copilot.description",
+		"copilot.disclaimer"
+	],
+	"filePath": "LanguageServer\\Providers\\CopilotHoverProvider"
+}

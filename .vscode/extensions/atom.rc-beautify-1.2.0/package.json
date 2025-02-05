@@ -1,0 +1,90 @@
+{
+	"name": "rc-beautify",
+	"displayName": "rc-beautify",
+	"description": "Beautify React JavaScript TypeScript",
+	"version": "1.2.0",
+	"publisher": "Atom",
+	"icon": "res/logo.png",
+	"engines": {
+		"vscode": "^0.10.5"
+	},
+	"keywords": [
+		"beautify",
+		"react",
+		"javascript",
+		"TypeScript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hatedMe/rc-beautify"
+	},
+	"bugs": {
+		"url": "https://github.com/hatedMe/rc-beautify/issues"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.sayHello"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.sayHello",
+				"title": "Beautify React Javascript TypeScript"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.sayHello",
+				"key": "ctrl+b",
+				"mac": "cmd+b"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "rc-beautify config",
+			"properties": {
+				"rc-beautify": {
+					"type": "object",
+					"default": {
+						"insize": 4,
+						"inchar": " ",
+						"bracepadding": false,
+						"wrap": 80
+					},
+					"description": "Beautify React JavaScript TypeScript Basic configuration =。="
+				}
+			}
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.6",
+		"eslint": "^4.11.0",
+		"@types/node": "^7.0.43",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"prettydiff": "^99.0.1"
+	},
+	"__metadata": {
+		"id": "cd8c82f6-66f2-44f7-9201-28570122ad66",
+		"publisherId": "7059b9d3-7f1c-47a7-933f-9c73c0dac468",
+		"publisherDisplayName": "Atom",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206250228,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 12310751
+	}
+}

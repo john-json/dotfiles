@@ -1,0 +1,53 @@
+{
+	"name": "theme-hybrid-operator",
+	"displayName": "Hybyid Operator",
+	"description": "Hybrid Operator theme for VS Code.",
+	"version": "2.1.0",
+	"publisher": "poga",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"repository": {
+		"url": "https://github.com/poga/vscode-hybrid-operator"
+	},
+	"bugs": {
+		"url": "poga/vscode-hybrid-operator/issues"
+	},
+	"author": {
+		"name": "Poga Po",
+		"email": "poga.po@gmail.com",
+		"url": "devpoga.org"
+	},
+	"license": "MIT",
+	"icon": "images/icon.svg",
+	"galleryBanner": {
+		"color": "#5f757f",
+		"theme": "dark"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Hybrid Operator",
+				"path": "./themes/hybrid-operator.tmTheme",
+				"uiTheme": "vs-dark"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "b033c2d8-e06e-4ab4-b6c3-bddc159659f7",
+		"publisherId": "f1f7997e-0e00-4ce0-9c2a-18935f40ac71",
+		"publisherDisplayName": "poga",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206249298,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 317087
+	}
+}

@@ -1,0 +1,72 @@
+{
+	"name": "file-and-folder-icons",
+	"displayName": "File & Folder Icons",
+	"description": "File- and folder-specific icons in VSCode for improved visual grepping, based on the `file-icons` extension.",
+	"version": "1.0.4",
+	"publisher": "nextbook",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/nextbook/vscode-file-icons"
+	},
+	"bugs": {
+		"url": "http://github.com/nextbook/vscode-file-icons/issues",
+		"email": "support@nextbook.io"
+	},
+	"preview": true,
+	"homepage": "https://github.com/file-icons/vscode",
+	"icon": "icon.png",
+	"categories": [
+		"Themes",
+		"Other"
+	],
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "file-icons",
+				"label": "File Icons",
+				"path": "./icons/file-icons-icon-theme.json"
+			},
+			{
+				"id": "file-icons-colourless",
+				"label": "File Icons (Colourless)",
+				"path": "./icons/file-icons-colourless-icon-theme.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./scripts/import.js",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test",
+		"import": "node ./scripts/import.js"
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^12.0.2",
+		"cson": "^4.0.0",
+		"genex": "^1.1.0",
+		"mocha": "^6.1.4",
+		"parameterize": "0.0.7",
+		"ret": "^0.1.13",
+		"typescript": "^3.4.5",
+		"vsce": "^1.61.0",
+		"vscode": "^1.0.0"
+	},
+	"license": "MIT",
+	"__metadata": {
+		"id": "733d4ea0-f370-41c9-aa68-66cb5a4d5f26",
+		"publisherId": "9a436d50-028c-4b4e-8a9c-da17719d4274",
+		"publisherDisplayName": "Nextbook",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206247909,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 1909294
+	}
+}

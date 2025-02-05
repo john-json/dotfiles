@@ -1,0 +1,244 @@
+{
+	"name": "vscode-colorize",
+	"displayName": "colorize",
+	"description": "A vscode extension to help visualize css colors in files.",
+	"version": "0.16.0",
+	"publisher": "kamikillerto",
+	"license": "Apache-2.0",
+	"icon": "assets/logo.png",
+	"engines": {
+		"vscode": "^1.82.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"color",
+		"css",
+		"hexa",
+		"hsl",
+		"rgb",
+		"preprocessor"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kamikillerto/vscode-colorize.git"
+	},
+	"bugs": {
+		"url": "https://github.com/kamikillerto/vscode-colorize/issues"
+	},
+	"homepage": "https://github.com/kamikillerto/vscode-colorize/blob/master/README.MD",
+	"galleryBanner": {
+		"theme": "light"
+	},
+	"activationEvents": [
+		"*"
+	],
+	"workspaces": [
+		"client",
+		"server"
+	],
+	"main": "./client/out/extension.js",
+	"contributes": {
+		"configuration": {
+			"title": "Colorize",
+			"properties": {
+				"colorize.languages": {
+					"default": [
+						"css",
+						"sass",
+						"scss",
+						"less",
+						"postcss",
+						"sss",
+						"stylus",
+						"xml",
+						"svg"
+					],
+					"title": "Colorize files with these languages",
+					"type": "array",
+					"markdownDescription": "Configure a list of languages that should be colorized. A list of languages can be find at https://code.visualstudio.com/docs/languages/identifiers. You can learn about languages at https://code.visualstudio.com/docs/languages/overview."
+				},
+				"colorize.include": {
+					"type": "array",
+					"markdownDescription": "Configure glob patterns for including files and folders. By default Colorize is enable for files matching one the languages defined in the `colorize.languages` config, with this config you can enable colorize for other files or folders. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).",
+					"default": [
+						"**/*.css",
+						"**/*.scss",
+						"**/*.sass",
+						"**/*.less",
+						"**/*.styl"
+					],
+					"scope": 3,
+					"additionalProperties": {
+						"anyOf": [
+							{
+								"type": "array",
+								"properties": {
+									"when": {
+										"type": "string",
+										"pattern": "\\w*\\$\\(basename\\)\\w*",
+										"default": "$(basename).ext",
+										"description": "Additional check on the siblings of a matching file. Use $(basename) as variable for the matching file name."
+									}
+								}
+							}
+						]
+					}
+				},
+				"colorize.exclude": {
+					"type": "array",
+					"markdownDescription": "Configure glob patterns for excluding files and folders. Colorize will not colorized colors in these files and folders and it'll also not search for variables inside. Read more about glob patterns [here](https://code.visualstudio.com/docs/editor/codebasics#_advanced-search-options).",
+					"default": [
+						"**/.git",
+						"**/.svn",
+						"**/.hg",
+						"**/CVS",
+						"**/.DS_Store",
+						"**/.git",
+						"**/node_modules",
+						"**/bower_components",
+						"**/tmp",
+						"**/dist",
+						"**/tests"
+					],
+					"scope": 3,
+					"additionalProperties": {
+						"anyOf": [
+							{
+								"type": "array",
+								"properties": {
+									"when": {
+										"type": "string",
+										"pattern": "\\w*\\$\\(basename\\)\\w*",
+										"default": "$(basename).ext",
+										"description": "Additional check on the siblings of a matching file. Use $(basename) as variable for the matching file name."
+									}
+								}
+							}
+						]
+					}
+				},
+				"colorize.hide_current_line_decorations": {
+					"title": "Hide current line decorations",
+					"default": true,
+					"type": "boolean",
+					"markdownDescription": "Hide colors for the current line. Set to `false` to turn it off"
+				},
+				"colorize.colorized_variables": {
+					"$schema": "http://json-schema.org/draft-07/schema#",
+					"default": [
+						"CSS"
+					],
+					"items": {
+						"enum": [
+							"CSS",
+							"SASS",
+							"LESS",
+							"STYLUS"
+						],
+						"description": "You should enter a valid extractor",
+						"uniqueItems": true
+					},
+					"title": "Extract these type of variables",
+					"type": "array",
+					"markdownDescription": "You can specified the type of variables that should be colorized by the extension."
+				},
+				"colorize.decoration_type": {
+					"title": "Type of decoration",
+					"type": "string",
+					"enum": [
+						"background",
+						"underline",
+						"outline",
+						"dot",
+						"square-dot"
+					],
+					"default": "background"
+				},
+				"colorize.colorized_colors": {
+					"$schema": "http://json-schema.org/draft-07/schema#",
+					"default": [
+						"BROWSERS_COLORS",
+						"HEXA",
+						"RGB",
+						"HSL",
+						"OKLAB",
+						"OKLCH"
+					],
+					"items": {
+						"enum": [
+							"BROWSERS_COLORS",
+							"HEXA",
+							"RGB",
+							"HSL",
+							"ARGB",
+							"OKLAB",
+							"OKLCH"
+						],
+						"description": "You should enter a valid extractor",
+						"uniqueItems": true
+					},
+					"title": "Colorize these type of color",
+					"type": "array",
+					"markdownDescription": "You can specified the type of color that should be colorized by the extension.\nAvailable colors are:\n* `HEXA`: for hexadecimal colors: `#RGB`, `#RGBA`, `#RRGGBB`, `#RRGGBBAA`, `0xRGB`, `0xRGBA`, `0xRRGGBB` or `0xRRGGBBAA`\n* `ARGB`: for argb colors: `#RGB`, `#ARGB`, `#RRGGBB` or `#AARRGGBB`\n* `RGB`: for rgb colors: `rgb(r,g,b)` or `rgba(r,g,b,a)`\n* `HSL`: for HSL colors: `hsl(h,s,l)` or `hsla(h,s,l,a)`\n* `BROWSERS_COLORS`: for native browser's colors like `white`, `red`, `blue`..."
+				},
+				"colorize.enable_search_variables": {
+					"title": "Enable the search for variables at opening time",
+					"default": true,
+					"type": "boolean",
+					"markdownDescription": "When vscode starts, Colorize fetch all files targeted by the settings `colorize.include` and `colorize.languages` but not the ones targeted by the setting `colorize.exclude`. When the fetch is done, colorize open and parse all files searching for variables. That way variables will be colorized in every files. _⚠️ this setting can slown down your editor a little at opening time, read this [issue](https://github.com/KamiKillertO/vscode-colorize/issues/174) to learn more about it._"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run clean; npm run package --workspaces --if-present",
+		"clean": "rimraf server/out client/out out",
+		"compile": "npm run compile --workspaces --if-present",
+		"watch": "npm-run-all -p watch:*",
+		"watch:esbuild": "npm run watch:esbuild --workspaces --if-present",
+		"watch:tsc": "npm run watch:tsc --workspaces --if-present",
+		"check-types": "npm run check-types --workspaces --if-present",
+		"package": "npm run package --workspaces --if-present",
+		"lint": "npm run lint --workspaces --if-present",
+		"test-e2e": "npm run compile-tests --workspaces --if-present && sh ./scripts/e2e.sh",
+		"test": "npm run test --workspaces --if-present && npm run test-e2e"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.15.0",
+		"@types/chai": "5.0.0",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^20.17.9",
+		"@types/vscode": "^1.82.0",
+		"@typescript-eslint/eslint-plugin": "^8.16.0",
+		"@typescript-eslint/parser": "^8.16.0",
+		"@vscode/test-electron": "^2.4.1",
+		"chai": "^4.5.0",
+		"esbuild": "^0.24.0",
+		"eslint": "^9.15.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.2.1",
+		"mocha": "^11.0.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^3.4.1",
+		"rimraf": "^6.0.1",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.2",
+		"typescript-eslint": "^8.16.0"
+	},
+	"__metadata": {
+		"id": "445ba381-f232-4150-9056-d790bd76d698",
+		"publisherId": "d4ae7698-aa41-4455-92f8-cbb52b3d5004",
+		"publisherDisplayName": "kamikillerto",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206250940,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 7331885
+	}
+}

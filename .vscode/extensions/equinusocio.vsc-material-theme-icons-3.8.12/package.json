@@ -1,0 +1,157 @@
+{
+	"name": "vsc-material-theme-icons",
+	"displayName": "Material Theme Icons — Free",
+	"description": "Material Theme Icons, the most epic icons theme for Visual Studio Code and Material Theme.",
+	"version": "3.8.12",
+	"publisher": "equinusocio",
+	"license": "Apache-2.0",
+	"author": "Mattia Astorino [@equinusocio]",
+	"icon": "logo.png",
+	"engines": {
+		"vscode": "^1.36.0"
+	},
+	"lint-staged": {
+		"*.ts": "eslint"
+	},
+	"scripts": {
+		"precompile": "run-s cleanup",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"cleanup": "rimraf out",
+		"build": "run-s cleanup build:icons obfs",
+		"build:icons": "tsc -p ./ && copyfiles src/defaults.json out && node out/builder/index.js --ignore-engines",
+		"obfs": "javascript-obfuscator ./out --output ./out --config ./obfuscator.config.json",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test:vs": "node ./node_modules/vscode/bin/test",
+		"release": "git pull && standard-version --release-as patch && git push --follow-tags",
+		"release:minor": "git pull && standard-version --release-as minor && git push --follow-tags",
+		"release:major": "git pull && standard-version --release-as major && git push --follow-tags",
+		"prepare": "husky"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/material-theme/vsc-material-theme-icons.git"
+	},
+	"galleryBanner": {
+		"color": "#11131C",
+		"theme": "dark"
+	},
+	"categories": [
+		"Themes",
+		"Other"
+	],
+	"keywords": [
+		"VSCode",
+		"Themes"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "eqMaterialThemeIcons.fixIcons",
+					"when": "config.materialTheme.accent == true"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "eqMaterialThemeIcons.fixIcons",
+				"title": "Fix icons accent",
+				"category": "Material Theme Icons"
+			}
+		],
+		"iconThemes": [
+			{
+				"id": "eq-material-theme-icons",
+				"label": "Material Theme Icons",
+				"path": "./out/variants/Material-Theme-Icons.json"
+			},
+			{
+				"id": "eq-material-theme-icons-darker",
+				"label": "Material Theme Icons Darker",
+				"path": "./out/variants/Material-Theme-Icons-Darker.json"
+			},
+			{
+				"id": "eq-material-theme-icons-palenight",
+				"label": "Material Theme Icons Palenight",
+				"path": "./out/variants/Material-Theme-Icons-Palenight.json"
+			},
+			{
+				"id": "eq-material-theme-icons-ocean",
+				"label": "Material Theme Icons Ocean",
+				"path": "./out/variants/Material-Theme-Icons-Ocean.json"
+			},
+			{
+				"id": "eq-material-theme-icons-light",
+				"label": "Material Theme Icons Light",
+				"path": "./out/variants/Material-Theme-Icons-Light.json"
+			},
+			{
+				"id": "eq-material-theme-icons-deepforest",
+				"label": "Material Theme Icons Deepforest",
+				"path": "./out/variants/Material-Theme-Icons-Deepforest.json"
+			}
+		]
+	},
+	"devDependencies": {
+		"@commitlint/cli": "19.4.1",
+		"@commitlint/config-conventional": "19.4.1",
+		"@lasalefamine/eslint-config-base": "3.1.0",
+		"@lasalefamine/tsconfig": "0.1.1",
+		"@types/fs-extra": "11.0.4",
+		"@types/node": "22.5.1",
+		"@types/rimraf": "3.0.2",
+		"@types/semver": "7.5.8",
+		"@typescript-eslint/eslint-plugin": "7.12.0",
+		"@typescript-eslint/parser": "7.12.0",
+		"copyfiles": "2.4.1",
+		"eslint": "8.57.0",
+		"eslint-plugin-import": "2.29.1",
+		"eslint-plugin-json": "4.0.1",
+		"eslint-plugin-simple-import-sort": "12.1.1",
+		"husky": "9.1.5",
+		"javascript-obfuscator": "4.1.1",
+		"json-minify": "1.0.0",
+		"lint-staged": "15.2.9",
+		"npm-run-all": "4.1.5",
+		"rimraf": "6.0.1",
+		"svgo": "3.3.2",
+		"typescript": "5.5.4",
+		"vscode": "1.1.37"
+	},
+	"badges": [
+		{
+			"url": "https://camo.githubusercontent.com/d3c6e53aa66426dead24cdedab0e83082103bea6/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6973737565732f657175696e75736f63696f2f7673632d6d6174657269616c2d7468656d652e7376673f7374796c653d666c61742d737175617265",
+			"href": "https://github.com/material-theme/vsc-material-theme-icons/issues",
+			"description": "Open issues"
+		}
+	],
+	"dependencies": {
+		"execa": "5.1.1",
+		"fs-extra": "11.2.0",
+		"semver": "7.6.3",
+		"standard-version": "9.5.0"
+	},
+	"__metadata": {
+		"id": "6959958f-be4d-42c4-8aa4-dc2c2f086b0a",
+		"publisherId": "3b9d55d2-da9e-415a-9bea-8d6bc07147d8",
+		"publisherDisplayName": "Equinusocio",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206251737,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 13682516
+	}
+}

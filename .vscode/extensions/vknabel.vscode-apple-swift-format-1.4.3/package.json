@@ -1,0 +1,135 @@
+{
+	"name": "vscode-apple-swift-format",
+	"displayName": "apple-swift-format",
+	"description": "Formatting Swift code with apple/swift-format.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vknabel/vscode-apple-swift-format"
+	},
+	"version": "1.4.3",
+	"license": "MIT",
+	"author": {
+		"name": "Valentin Knabel",
+		"email": "dev@vknabel.com",
+		"url": "https://github.com/vknabel"
+	},
+	"publisher": "vknabel",
+	"icon": "assets/icon.png",
+	"galleryBanner": {
+		"color": "#FC823F",
+		"theme": "light"
+	},
+	"engines": {
+		"vscode": "^1.26.0"
+	},
+	"categories": [
+		"Formatters",
+		"Programming Languages",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:swift"
+	],
+	"keywords": [
+		"swift",
+		"swiftformat",
+		"prettifier",
+		"formatter"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "swift",
+				"aliases": [
+					"Swift"
+				],
+				"extensions": [
+					"swift"
+				]
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "apple/swift-format Configuration",
+			"properties": {
+				"apple-swift-format.enable": {
+					"type": "boolean",
+					"default": true,
+					"description": "Whether apple/swift-format should actually start up on this project."
+				},
+				"apple-swift-format.onlyEnableOnSwiftPMProjects": {
+					"type": "boolean",
+					"default": false,
+					"description": "Only allows the extension to load up when apple/swift-format is available via Swift PM."
+				},
+				"apple-swift-format.onlyEnableWithConfig": {
+					"type": "boolean",
+					"default": false,
+					"description": "Only use apple/swift-format when a config exists."
+				},
+				"apple-swift-format.path": {
+					"description": "The location of your globally installed apple/swift-format.",
+					"scope": "machine",
+					"default": [
+						"/usr/bin/env",
+						"swift-format"
+					],
+					"oneOf": [
+						{
+							"type": "string",
+							"default": "/usr/local/bin/swift-format"
+						},
+						{
+							"type": "array",
+							"minItems": 1,
+							"default": [
+								"/usr/bin/env",
+								"swift-format"
+							],
+							"items": {
+								"type": "string"
+							}
+						}
+					]
+				},
+				"apple-swift-format.configSearchPaths": {
+					"type": "array",
+					"default": [
+						".swift-format"
+					],
+					"description": "Possible paths for a apple/swift-format config. See https://github.com/apple/swift-format#configuration",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"format": "prettier --write ./*.json ./**/*.ts"
+	},
+	"devDependencies": {
+		"@types/node": "^10.12.10",
+		"@types/vscode": "^1.26.0",
+		"prettier": "^2.4.1",
+		"typescript": "^4.0.0"
+	},
+	"dependencies": {},
+	"__metadata": {
+		"id": "ec46bca7-d97c-47fb-ba25-e961e8d53191",
+		"publisherId": "47e91703-1c94-49d7-a7ec-7c3734049a39",
+		"publisherDisplayName": "vknabel",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206246910,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 350559
+	}
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"uninstall.js","sourceRoot":"","sources":["../../../../src/addon_manager/commands/uninstall.ts"],"names":[],"mappings":";;;;;AACA,4FAAmE;AAEnE,kBAAe,KAAK,EAChB,OAAgC,EAChC,OAAmC,EACrC,EAAE;IACA,MAAM,KAAK,GAAG,8BAAmB,CAAC,MAAM,CAAC,GAAG,CAAC,OAAO,CAAC,IAAI,CAAC,IAAI,CAAC,CAAC;IAChE,KAAK,EAAE,SAAS,EAAE,CAAC;AACvB,CAAC,CAAC"}

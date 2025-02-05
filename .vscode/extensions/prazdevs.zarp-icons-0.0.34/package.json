@@ -1,0 +1,61 @@
+{
+	"name": "zarp-icons",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/prazdevs/zarp-icons"
+	},
+	"author": {
+		"name": "Sacha Bouillez",
+		"url": "https://praz.dev"
+	},
+	"version": "0.0.34",
+	"description": "A consistent icon theme.",
+	"type": "module",
+	"scripts": {
+		"build": "tsx scripts/build.ts",
+		"preview": "tsx scripts/preview.ts",
+		"package": "vsce package -o dist",
+		"format": "prettier --write ."
+	},
+	"devDependencies": {
+		"@types/fs-extra": "^9.0.13",
+		"@types/node": "^18.11.9",
+		"fs-extra": "^10.1.0",
+		"prettier": "^2.8.0",
+		"puppeteer": "^19.3.0",
+		"svgo": "^3.0.2",
+		"tsx": "^3.12.1"
+	},
+	"publisher": "prazdevs",
+	"displayName": "Zarp Icons",
+	"icon": "icon.png",
+	"engines": {
+		"vscode": "^1.67.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"iconThemes": [
+			{
+				"label": "Zarp Icons",
+				"id": "zarp-icons",
+				"path": "./theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "4365dba8-798e-45aa-96a1-b1ef4a6c7add",
+		"publisherId": "5f85960a-d762-43c6-9408-3c5a52a51a89",
+		"publisherDisplayName": "PraZ",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206247680,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 357242
+	}
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+    <g stroke-linecap="round" stroke-linejoin="round" paint-order="fill markers stroke">
+        <path fill="none" stroke="#dd4b39" stroke-width="5" d="M20 7.544 80 7.5c5.893-.004 12.5 6.607 12.5 12.5v60c0 5.794-6.706 12.076-12.5 12.076H20c-5.794 0-12.5-6.282-12.5-12.076V20c0-5.882 6.618-12.452 12.5-12.456Z"/>
+        <g fill="#dd4b39" stroke-width="4.844" aria-label="RE" font-family="Neutraface Text" font-size="50.377" font-weight="600" style="-inkscape-font-specification:&quot;MonoLisa Bold&quot;">
+            <path d="M52.598 68.91c4.483-1.966 6.851-5.593 6.851-10.882 0-7.859-5.29-12.796-14.76-12.796h-8.564v34.256h5.34v-8.816h3.224c.957 0 1.914-.1 2.871-.201l6.146 9.017h6.146zm-11.133-2.822v-16.17h3.022c6.7 0 9.521 2.971 9.521 8.11 0 5.088-2.72 8.06-9.52 8.06zM66.602 79.488H89.07v-4.685H71.942v-7.002h14.56v-4.584h-14.56v-13.3h16.423v-4.685H66.602Z" style="-inkscape-font-specification:&quot;Neutraface Text Semi-Bold&quot;" transform="scale(.95195 1.05047)"/>
+        </g>
+    </g>
+</svg>

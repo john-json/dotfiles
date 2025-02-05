@@ -1,0 +1,31 @@
+{
+	"messages": [
+		"The makefile file could not be opened.",
+		"The build log file could not be opened.",
+		"Would you like to configure C++ IntelliSense for this workspace using information from your Makefiles?",
+		"Yes",
+		"No",
+		"Always configure C++ IntelliSense using information from your Makefiles upon opening?",
+		"Configure C++ IntelliSense using information from your Makefiles upon opening?",
+		"Yes",
+		"No",
+		"Never",
+		"Not for this workspace",
+		"The extension {0} is de-activated."
+	],
+	"keys": [
+		"makefile.outline.makefileFileNotFound",
+		"makefile.outline.buildLogFileNotFound",
+		"extension.configureOnOpen",
+		"yes",
+		"no",
+		"always.configure.on.open",
+		"never.configure.on.open",
+		"yes.button",
+		"no.button",
+		"never.button",
+		"never.for.this.workspace.button",
+		"extension.deactivated"
+	],
+	"filePath": "src\\extension"
+}

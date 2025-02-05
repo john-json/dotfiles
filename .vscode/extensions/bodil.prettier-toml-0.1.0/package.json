@@ -1,0 +1,59 @@
+{
+	"name": "prettier-toml",
+	"displayName": "Prettier TOML",
+	"description": "Format TOML with Prettier",
+	"version": "0.1.0",
+	"license": "LGPL-3.0+",
+	"publisher": "bodil",
+	"author": {
+		"name": "Bodil Stokke",
+		"url": "https://bodil.lol/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bodil/vscode-prettier-toml"
+	},
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Formatters"
+	],
+	"activationEvents": [
+		"onLanguage:toml"
+	],
+	"main": "./out/extension.js",
+	"contributes": {},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"tslint": "^5.12.1",
+		"vscode-test": "^1.2.0"
+	},
+	"dependencies": {
+		"@types/vscode": "^1.41.0",
+		"@types/prettier": "^1.19.0",
+		"prettier": "^1.19.1",
+		"prettier-plugin-toml": "^0.3.1"
+	},
+	"__metadata": {
+		"id": "03b6bd69-3033-46f6-aa4c-a4cadd4aed74",
+		"publisherId": "e5c9456a-b78b-41ec-95c2-0cc218272ab9",
+		"publisherDisplayName": "Bodil Stokke",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206249965,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 11299363
+	}
+}

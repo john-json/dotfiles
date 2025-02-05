@@ -1,0 +1,170 @@
+{
+  "hidesExplorerArrows": true,
+  "iconDefinitions": {
+    "_folder-dark": {
+      "iconPath": "./icons/folder-dark.svg"
+    },
+    "_folder-open-dark": {
+      "iconPath": "./icons/folder-open-dark.svg"
+    },
+    "_layout-dark": {
+      "iconPath": "./icons/layout-dark.svg"
+    },
+    "_loading-dark": {
+      "iconPath": "./icons/loading-dark.svg"
+    },
+    "_page-dark": {
+      "iconPath": "./icons/page-dark.svg"
+    },
+    "_error-dark": {
+      "iconPath": "./icons/error-dark.svg"
+    },
+    "_git-dark": {
+      "iconPath": "./icons/git-dark.svg"
+    },
+    "_tailwind-dark": {
+      "iconPath": "./icons/tailwind-dark.svg"
+    },
+    "_gear-dark": {
+      "iconPath": "./icons/gear-dark.svg"
+    },
+    "_lock-dark": {
+      "iconPath": "./icons/lock-dark.svg"
+    },
+    "_terminal-dark": {
+      "iconPath": "./icons/terminal-dark.svg"
+    },
+    "_hash-dark": {
+      "iconPath": "./icons/hash-dark.svg"
+    },
+    "_braces-dark": {
+      "iconPath": "./icons/braces-dark.svg"
+    },
+    "_code-slash-dark": {
+      "iconPath": "./icons/code-slash-dark.svg"
+    },
+    "_bug-dark": {
+      "iconPath": "./icons/bug-dark.svg"
+    },
+    "_markdown-dark": {
+      "iconPath": "./icons/markdown-dark.svg"
+    },
+    "_folder-media-dark": {
+      "iconPath": "./icons/folder-media-dark.svg"
+    },
+    "_media-dark": {
+      "iconPath": "./icons/media-dark.svg"
+    },
+    "_database-dark": {
+      "iconPath": "./icons/database-dark.svg"
+    },
+    "_arrow-left-right-dark": {
+      "iconPath": "./icons/arrow-left-right-dark.svg"
+    },
+    "_shapes-dark": {
+      "iconPath": "./icons/shapes-dark.svg"
+    },
+    "_file-dark": {
+      "iconPath": "./icons/file-dark.svg"
+    },
+    "_route-dark": {
+      "iconPath": "./icons/route-dark.svg"
+    },
+    "_react-dark": {
+      "iconPath": "./icons/react-dark.svg"
+    }
+  },
+  "file": "_file-dark",
+  "folder": "_folder-dark",
+  "folderExpanded": "_folder-open-dark",
+  "folderNames": {
+    "public": "_folder-media-dark"
+  },
+  "languageIds": {
+    "css": "_hash-dark",
+    "scss": "_hash-dark",
+    "markdown": "_markdown-dark",
+    "javascriptreact": "_react-dark",
+    "javascript": "_braces-dark",
+    "typescript": "_braces-dark",
+    "typescriptreact": "_react-dark",
+    "xml": "_code-slash-dark",
+    "yaml": "_gear-dark",
+    "sql": "_database-dark"
+  },
+  "fileExtensions": {
+    "json": "_gear-dark",
+    "lock": "_lock-dark",
+    "lockb": "_lock-dark",
+    "log": "_bug-dark",
+    "css": "_hash-dark",
+    "js": "_braces-dark",
+    "xml": "_code-slash-dark",
+    "html": "_code-slash-dark",
+    "md": "_markdown-dark",
+    "svg": "_media-dark",
+    "jpg": "_media-dark",
+    "jpeg": "_media-dark",
+    "gif": "_media-dark",
+    "png": "_media-dark",
+    "ico": "_media-dark",
+    "db": "_database-dark",
+    "sqlite": "_database-dark",
+    "d.ts": "_shapes-dark"
+  },
+  "fileNames": {
+    "layout.tsx": "_layout-dark",
+    "layout.jsx": "_layout-dark",
+    "template.tsx": "_layout-dark",
+    "template.jsx": "_layout-dark",
+    "loading.tsx": "_loading-dark",
+    "loading.jsx": "_loading-dark",
+    "page.tsx": "_page-dark",
+    "page.jsx": "_page-dark",
+    "not-found.tsx": "_error-dark",
+    "not-found.jsx": "_error-dark",
+    "global-error.tsx": "_error-dark",
+    "global-error.jsx": "_error-dark",
+    "error.tsx": "_error-dark",
+    "error.jsx": "_error-dark",
+    "route.ts": "_route-dark",
+    "route.js": "_route-dark",
+    "middleware.ts": "_arrow-left-right-dark",
+    "middleware.js": "_arrow-left-right-dark",
+    "instrumentation.ts": "_bug-dark",
+    "instrumentation.js": "_bug-dark",
+    ".gitkeep": "_git-dark",
+    ".gitignore": "_git-dark",
+    ".gitattributes": "_git-dark",
+    "tailwind.config.ts": "_tailwind-dark",
+    "tailwind.config.js": "_tailwind-dark",
+    "postcss.config.ts": "_gear-dark",
+    "postcss.config.js": "_gear-dark",
+    "next.config.mjs": "_gear-dark",
+    "next.config.js": "_gear-dark",
+    ".prettierrc": "_gear-dark",
+    ".prettierrc.json": "_gear-dark",
+    ".prettierrc.yml": "_gear-dark",
+    ".prettierrc.yaml": "_gear-dark",
+    ".prettierrc.json5": "_gear-dark",
+    ".prettierrc.js": "_gear-dark",
+    "prettier.config.js": "_gear-dark",
+    ".prettierrc.mjs": "_gear-dark",
+    "prettier.config.mjs": "_gear-dark",
+    ".prettierrc.cjs": "_gear-dark",
+    "prettier.config.cjs": "_gear-dark",
+    ".prettierrc.toml": "_gear-dark",
+    ".eslintrc": "_gear-dark",
+    ".eslintrc.js": "_gear-dark",
+    ".eslintrc.cjs": "_gear-dark",
+    ".eslintrc.yaml": "_gear-dark",
+    ".eslintrc.yml": "_gear-dark",
+    ".eslintrc.json": "_gear-dark",
+    "editorconfig": "_gear-dark",
+    ".env": "_terminal-dark",
+    ".env.production": "_terminal-dark",
+    ".env.development": "_terminal-dark",
+    ".env.local": "_terminal-dark",
+    ".env.example": "_terminal-dark"
+  }
+}

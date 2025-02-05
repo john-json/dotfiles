@@ -1,0 +1,66 @@
+{
+	"name": "next-icons",
+	"displayName": "Next.js Icons",
+	"description": "A carefully crafted set of file icons tailored specifically for Next.js projects.",
+	"license": "MIT",
+	"version": "0.1.0",
+	"icon": "marketplace-icon.png",
+	"publisher": "marcbruederlin",
+	"author": {
+		"name": "Marc Brüderlin"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"icons",
+		"theme",
+		"icon-theme",
+		"file-icon-theme",
+		"file icons",
+		"next.js"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/marcbruederlin/vscode-next-icons.git"
+	},
+	"bugs": {
+		"url": "https://github.com/marcbruederlin/vscode-next-icons/issues"
+	},
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "next-icons",
+				"label": "Next Icons",
+				"path": "./fileicons/default.json"
+			},
+			{
+				"id": "next-icons-light",
+				"label": "Next Icons (Light)",
+				"path": "./fileicons/light.json"
+			},
+			{
+				"id": "next-icons-dark",
+				"label": "Next Icons (Dark)",
+				"path": "./fileicons/dark.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "47d35a3f-cb08-4127-9625-0a463ce7a65e",
+		"publisherId": "d9c21d51-fce0-495b-97a8-e5b5217a549c",
+		"publisherDisplayName": "Marc Brüderlin",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206249305,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 288344
+	}
+}

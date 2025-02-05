@@ -1,0 +1,41 @@
+{
+	"messages": [
+		"Failed to kill process {0}: {1}",
+		"Found children subprocesses: {0}.",
+		"Killing process PID = {0}",
+		"Terminating process PID=${0} ...",
+		"Spawning child process with:\n process name: {0}\n process args: {1}\n working directory: {2}\n shell type: {3}",
+		"Destination object already has property {0} set to {1}. Overwriting from source with {2}",
+		"You can see the detailed dry-run output at {0}",
+		"Make sure that the extension is invoking the same make command as in your development prompt environment.",
+		"You may need to define or tweak a custom makefile configuration in settings via 'makefile.configurations' like described here: [link]",
+		"Also make sure your code base does not have any known issues with the dry-run switches used by this extension (makefile.dryrunSwitches).",
+		"If you are not able to fix the dry-run, open a GitHub issue in Makefile Tools repo: https://github.com/microsoft/vscode-makefile-tools/issues",
+		"Exception while expanding string \"{0}.{1}\": \"{2}\"",
+		"Detected escaped variable expansion patterns in setting '{0}', within value '{1}'.",
+		"Exception while executing command \"{0}\": '{1}'",
+		"Unrecognized variable format: {0}",
+		"\"{0}\" resolves to \"{1}\" which requires another expansion. We will support multiple expansion passes in the future.",
+		"Expanding from '{0}' to '{1}' for setting '{2}'."
+	],
+	"keys": [
+		"failed.to.kill.process",
+		"found.children.subprocesses",
+		"killing.process",
+		"utils.terminate.process",
+		"utils.quoting",
+		"utils.overwriting.property",
+		"utils.dryrun.detailed.output",
+		"utils.dryrun.error.environment",
+		"utils.dryrun.error.makefile",
+		"utils.dryrun.error.knownissues",
+		"utils.dryrun.error.github",
+		"utils.exception.expanding",
+		"detected.escape.patterns",
+		"exception.executing",
+		"unrecognized.variable.format",
+		"multiple.expansion.passes",
+		"expanding.setting"
+	],
+	"filePath": "src\\util"
+}

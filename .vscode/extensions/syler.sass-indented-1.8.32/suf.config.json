@@ -1,0 +1,18 @@
+{
+  "badges": {
+    "name": "vscode-sass-indented",
+    "github": "TheRealSyler",
+    "repo": "vscode-sass-indented",
+    "out": "README.md",
+    "vscode": "syler.sass-indented",
+    "badges": [
+      "circleci circleci",
+      "badge=https://www.codefactor.io/repository/github/therealsyler/vscode-sass-indented/badge link=https://www.codefactor.io/repository/github/therealsyler/vscode-sass-indented",
+      "vscV vscode",
+      "vscD vscode",
+      "vscI vscode",
+      "githubLastCommit github",
+      "githubIssues github ?color=lightgrey"
+    ]
+  }
+}

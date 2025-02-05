@@ -1,0 +1,7 @@
+languages:
+  - scala
+  - stylus
+  - terraform
+  - mjml
+  - godot: gdscript
+  - lock: ssh_config

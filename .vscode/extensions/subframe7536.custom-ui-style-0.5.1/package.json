@@ -1,0 +1,239 @@
+{
+	"publisher": "subframe7536",
+	"name": "custom-ui-style",
+	"displayName": "Custom UI Style",
+	"version": "0.5.1",
+	"private": true,
+	"packageManager": "pnpm@9.15.0",
+	"description": "Custom ui css style in both editor and webview, unify global font family, setup background image",
+	"author": "subframe7536 <1667077010@qq.com>",
+	"license": "MIT",
+	"homepage": "https://github.com/subframe7536/vscode-custom-ui-style#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/subframe7536/vscode-custom-ui-style"
+	},
+	"bugs": {
+		"url": "https://github.com/subframe7536/vscode-custom-ui-style/issues"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./dist/index.js",
+	"icon": "res/icon.png",
+	"files": [
+		"LICENSE.md",
+		"dist/*",
+		"res/*"
+	],
+	"engines": {
+		"vscode": "^1.89.0"
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "custom-ui-style.reload",
+				"title": "Reload",
+				"category": "Custom UI Style"
+			},
+			{
+				"command": "custom-ui-style.rollback",
+				"title": "Rollback",
+				"category": "Custom UI Style"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Custom UI Style",
+			"properties": {
+				"custom-ui-style.preferRestart": {
+					"scope": "resource",
+					"type": "boolean",
+					"description": "Prefer to restart vscode after update instead of reload window only (ALWAYS true when VSCode version >= 1.95.0)",
+					"default": false
+				},
+				"custom-ui-style.reloadWithoutPrompting": {
+					"scope": "resource",
+					"type": "boolean",
+					"description": "Reload/restart immediately, instead of having to click 'Reload Window' in the notification",
+					"default": false
+				},
+				"custom-ui-style.watch": {
+					"scope": "resource",
+					"type": "boolean",
+					"description": "Watch configuration changes and reload window automatically (ignore imports)",
+					"default": true
+				},
+				"custom-ui-style.electron": {
+					"scope": "application",
+					"type": "object",
+					"description": "Electron BrowserWindow options"
+				},
+				"custom-ui-style.font.monospace": {
+					"scope": "application",
+					"type": "string",
+					"description": "Global monospace font family that apply in both editor and webview, fallback to editor's font family"
+				},
+				"custom-ui-style.font.sansSerif": {
+					"scope": "application",
+					"type": "string",
+					"description": "Global sans-serif font family that apply in both editor and webview"
+				},
+				"custom-ui-style.background.url": {
+					"scope": "machine",
+					"type": "string",
+					"description": "Full-screen background image url (will not sync), support protocol: 'https://', 'file://', 'data:'"
+				},
+				"custom-ui-style.background.syncURL": {
+					"scope": "application",
+					"type": "string",
+					"description": "Full-screen background image url (will sync), support variable: [${userHome}, ${env:your_env_name:optional_fallback_value}], has lower priority than 'Url', support protocol: 'https://', 'file://', 'data:'"
+				},
+				"custom-ui-style.background.opacity": {
+					"scope": "application",
+					"type": "number",
+					"description": "Background image opacity (0 ~ 1)",
+					"default": 0.9
+				},
+				"custom-ui-style.background.size": {
+					"scope": "application",
+					"type": "string",
+					"enum": [
+						"cover",
+						"contain"
+					],
+					"description": "Background image size",
+					"default": "cover"
+				},
+				"custom-ui-style.background.position": {
+					"scope": "application",
+					"type": "string",
+					"description": "Background image position",
+					"default": "center"
+				},
+				"custom-ui-style.external.loadStrategy": {
+					"scope": "application",
+					"type": "string",
+					"enum": [
+						"refetch",
+						"cache",
+						"disable"
+					],
+					"enumDescriptions": [
+						"Force refetch while reloading",
+						"Skip refetch if nothing changed and all resources are fetched",
+						"Remove all resources"
+					],
+					"description": "Load strategy for external CSS or JS resources",
+					"default": "refetch"
+				},
+				"custom-ui-style.external.imports": {
+					"scope": "application",
+					"type": "array",
+					"description": "External CSS or JS resources, support variable: [${userHome}, ${env:your_env_name:optional_fallback_value}], support protocol: 'https://', 'file://'",
+					"items": {
+						"oneOf": [
+							{
+								"type": "string",
+								"pattern": "^(file://|https://).+\\.(css|js)$",
+								"description": "Path to local CSS or JS file, must end with '.js' or '.css', support variable: [${userHome}, ${env:your_env_name:optional_fallback_value}]"
+							},
+							{
+								"type": "object",
+								"properties": {
+									"type": {
+										"type": "string",
+										"enum": [
+											"css",
+											"js",
+											"js-module"
+										]
+									},
+									"url": {
+										"type": "string",
+										"pattern": "^https:\\/\\/",
+										"description": "URL to CSS or JS script, only support 'https://' protocol"
+									}
+								}
+							}
+						]
+					}
+				},
+				"custom-ui-style.stylesheet": {
+					"scope": "application",
+					"type": "object",
+					"description": "Custom css for editor, support nest selectors"
+				},
+				"custom-ui-style.webview.monospaceSelector": {
+					"scope": "application",
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"description": "Custom monospace selector in webview"
+				},
+				"custom-ui-style.webview.sansSerifSelector": {
+					"scope": "application",
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"description": "Custom sans-serif selector in webview"
+				},
+				"custom-ui-style.webview.stylesheet": {
+					"scope": "application",
+					"type": "object",
+					"description": "Custom css for webview, support nest selectors"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"build": "pnpm run typecheck && tsup --minify --treeshake",
+		"dev": "tsup --watch",
+		"prepare": "pnpm run update",
+		"update": "vscode-ext-gen --output src/generated/meta.ts",
+		"format": "eslint . --fix",
+		"vscode:prepublish": "pnpm run build",
+		"publish": "vsce publish --no-dependencies",
+		"pack": "vsce package --no-dependencies",
+		"typecheck": "tsc --noEmit",
+		"release": "bumpp --all && pnpm run publish",
+		"vscode:uninstall": "node ./dist/uninstall.js"
+	},
+	"devDependencies": {
+		"@subframe7536/eslint-config": "^1.1.3",
+		"@subframe7536/type-utils": "^0.1.6",
+		"@types/node": "^20.17.10",
+		"@types/vscode": "1.89.0",
+		"@vscode/vsce": "^3.2.1",
+		"atomically": "^2.0.3",
+		"bumpp": "^9.9.1",
+		"eslint": "^9.17.0",
+		"reactive-vscode": "0.2.6",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.2",
+		"vscode-ext-gen": "^0.5.2"
+	},
+	"__metadata": {
+		"id": "5d260afc-8d75-4731-a881-66951c630816",
+		"publisherId": "6246dd8e-2adb-443f-96e3-7ad529ad069f",
+		"publisherDisplayName": "subframe7536",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206247890,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 97726
+	}
+}

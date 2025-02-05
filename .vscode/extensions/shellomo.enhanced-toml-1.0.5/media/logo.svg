@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Background -->
+  <rect width="128" height="128" rx="16" fill="#2C3E50"/>
+  
+  <!-- Main "T" letter -->
+  <path d="M30 30h68v12H70v56H58V42H30V30z" fill="#E74C3C"/>
+  
+  <!-- Bracket symbols -->
+  <path d="M90 45l12 19-12 19" stroke="#3498DB" stroke-width="6" fill="none"/>
+  <path d="M38 45l-12 19 12 19" stroke="#3498DB" stroke-width="6" fill="none"/>
+  
+  <!-- Dot for enhanced features -->
+  <circle cx="64" cy="90" r="8" fill="#2ECC71"/>
+</svg>

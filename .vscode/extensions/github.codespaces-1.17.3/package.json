@@ -1,0 +1,864 @@
+{
+	"name": "codespaces",
+	"displayName": "%extension.codespaces.displayName%",
+	"description": "%extension.codespaces.description%",
+	"version": "1.17.3",
+	"publisher": "GitHub",
+	"icon": "images/icon.png",
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"continueOn"
+	],
+	"iKeyDev": "fafdff80876546debee42619eb48fae8-5709444e-95b1-4c42-9385-135282cc50ac-7397",
+	"iKeyPpe": "4e150b9b608045699d14b0337e3fed0b-fd2bfd67-e79e-44a1-b669-f7ac30117e13-6952",
+	"iKeyProd": "f772ffaa012e4fc6bb0a245dd176fc6c-ca6358be-0b85-4e74-ade1-c7857dd7d8c9-7394",
+	"enabledApiProposals": [
+		"contribEditSessions",
+		"contribMenuBarHome",
+		"contribRemoteHelp",
+		"contribViewsRemote",
+		"resolvers",
+		"terminalDataWriteEvent",
+		"treeViewReveal",
+		"tunnels",
+		"notebookKernelSource"
+	],
+	"activationEvents": [
+		"onCommand:github.codespaces.getStartedLink",
+		"onCommand:github.codespaces.feedbackLink",
+		"onCommand:github.codespaces.documentationLink",
+		"onView:github.codespaces.explorer",
+		"onView:github.codespaces.performanceExplorer",
+		"onCommand:github.codespaces.connect",
+		"onCommand:github.codespaces.disconnectEnvironment",
+		"onCommand:github.codespaces.shutdownEnvironment",
+		"onCommand:github.codespaces.disconnectSuspend",
+		"onCommand:github.codespaces.deleteEnvironment",
+		"onCommand:github.codespaces.addEnvironment",
+		"onCommand:github.codespaces.exportLogs",
+		"onCommand:github.codespaces.signIn",
+		"onCommand:github.codespaces.openExtension",
+		"onCommand:github.codespaces.environmentsList",
+		"onCommand:github.codespaces.changeMachineType",
+		"onCommand:github.codespaces.rebuildEnvironment",
+		"onCommand:github.codespaces.export",
+		"onResolveRemoteAuthority:codespaces",
+		"onUri",
+		"onNotebook:jupyter-notebook"
+	],
+	"main": "./out/bundle/extension-node.js",
+	"browser": "./out/bundle/extension-web.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "jsonc",
+				"filenames": [
+					"devcontainer-feature.json"
+				]
+			}
+		],
+		"jsonValidation": [
+			{
+				"fileMatch": "devcontainer-feature.json",
+				"url": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainerFeature.schema.json"
+			}
+		],
+		"viewsWelcome": [
+			{
+				"view": "github.codespaces.explorer",
+				"contents": "%extension.codespaces.welcomeCreateCodespace%",
+				"when": "codespaces:views-welcome:no-codespaces == true"
+			},
+			{
+				"view": "github.codespaces.explorer",
+				"contents": "%extension.codespaces.welcomeSignIn%",
+				"when": "codespaces:views-welcome:not-signed-in == true"
+			},
+			{
+				"view": "github.codespaces.explorer",
+				"contents": "%extension.codespaces.welcomeUnsupportedVersion%",
+				"when": "codespaces:views-welcome:version-notification == Unsupported"
+			},
+			{
+				"view": "github.codespaces.warnExplorer",
+				"contents": "%extension.codespaces.welcomeWarnVersion%",
+				"when": "codespaces:views-welcome:version-notification == Deprecated"
+			}
+		],
+		"views": {
+			"remote": [
+				{
+					"id": "github.codespaces.explorer",
+					"name": "%extension.codespaces.remoteViewExplorer%",
+					"group": "targets@2",
+					"remoteName": "codespaces",
+					"when": "!isWeb || activeViewlet == workbench.view.remote"
+				},
+				{
+					"id": "github.codespaces.warnExplorer",
+					"name": "%extension.codespaces.warnExplorer%",
+					"when": "codespaces:views-welcome:version-notification == Deprecated",
+					"group": "details@1",
+					"remoteName": "codespaces"
+				},
+				{
+					"id": "github.codespaces.performanceExplorer",
+					"name": "%extension.codespaces.performanceExplorer%",
+					"when": "codespaces:performance-explorer-enabled && codespaces:views-welcome:version-notification != Unsupported",
+					"group": "details@2",
+					"remoteName": "codespaces"
+				}
+			]
+		},
+		"resourceLabelFormatters": [
+			{
+				"scheme": "vscode-remote",
+				"authority": "codespaces+*",
+				"formatting": {
+					"label": "${path}",
+					"separator": "/",
+					"tildify": true,
+					"workspaceSuffix": "Codespaces"
+				}
+			}
+		],
+		"configuration": {
+			"title": "GitHub Codespaces",
+			"type": "object",
+			"properties": {
+				"github.codespaces.defaultExtensions": {
+					"type": "array",
+					"description": "%extension.codespaces.defaultExtensions%",
+					"default": [
+						"GitHub.codespaces",
+						"GitHub.vscode-pull-request-github"
+					]
+				},
+				"github.codespaces.usePortForwardingServiceForHTTPS": {
+					"type": "boolean",
+					"markdownDescription": "%extension.codespaces.usePortForwardingServiceForHTTPS%",
+					"default": true
+				},
+				"github.codespaces.showPerformanceExplorer": {
+					"type": "boolean",
+					"description": "Display the Codespace Performance window in the Remote Explorer.",
+					"default": false,
+					"scope": "application"
+				},
+				"github.codespaces.createCodespaceInNewWindow": {
+					"type": "boolean",
+					"description": "%extension.codespaces.createCodespaceInNewWindow%",
+					"default": false,
+					"scope": "application"
+				},
+				"github.codespaces.devcontainerChangedNotificationStyle": {
+					"type": "string",
+					"default": "notification",
+					"description": "%extension.codespaces.devContainerChangedNotificationStyle%",
+					"enum": [
+						"none",
+						"notification",
+						"modal"
+					],
+					"enumDescriptions": [
+						"%extension.codespaces.devContainerChangedNotificationStyleNoneDescription%",
+						"%extension.codespaces.devContainerChangedNotificationStyleNotificationDescription%",
+						"%extension.codespaces.devContainerChangedNotificationStyleModalDescription%"
+					]
+				},
+				"github.codespaces.showDisplayNameInRemoteIndicator": {
+					"type": "boolean",
+					"description": "%extension.codespaces.showDisplayNameInRemoteIndicator%",
+					"default": true,
+					"scope": "application"
+				},
+				"github.codespaces.allowUnsafeConnections": {
+					"type": "boolean",
+					"markdownDescription": "%extension.codespaces.allowUnsafeConnections%",
+					"default": false,
+					"scope": "application"
+				},
+				"github.codespaces.supportProxies": {
+					"type": "boolean",
+					"markdownDescription": "%extension.codespaces.supportProxies%",
+					"default": false,
+					"scope": "application"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "github.codespaces.activate",
+				"title": "Activate",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.exportLogs",
+				"title": "%extension.codespaces.exportLogs%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.addEnvironment",
+				"title": "%extension.codespaces.addEnvironment%",
+				"category": "Codespaces",
+				"icon": {
+					"dark": "images/dark/add.svg",
+					"light": "images/light/add.svg"
+				},
+				"enablement": "!isWeb || remoteName != codespaces"
+			},
+			{
+				"command": "github.codespaces.continueEditSessionInCodespace",
+				"title": "%extension.codespaces.addEnvironment%",
+				"category": "Codespaces",
+				"icon": "$(github)"
+			},
+			{
+				"command": "github.codespaces.continueEditSessionInCodespaceWithJupyterServer",
+				"title": "%extension.codespaces.connect%",
+				"category": "Codespaces",
+				"icon": "$(github)"
+			},
+			{
+				"command": "github.codespaces.refresh",
+				"title": "%extension.codespaces.refresh%",
+				"category": "Codespaces",
+				"icon": {
+					"dark": "images/dark/refresh.svg",
+					"light": "images/light/refresh.svg"
+				}
+			},
+			{
+				"command": "github.codespaces.connect",
+				"title": "%extension.codespaces.connect%",
+				"category": "Codespaces",
+				"icon": "$(plug)",
+				"enablement": "!isWeb || remoteName != codespaces"
+			},
+			{
+				"command": "github.codespaces.disconnectEnvironment",
+				"title": "%extension.codespaces.disconnectEnvironment%",
+				"category": "Codespaces",
+				"icon": "$(debug-disconnect)",
+				"enablement": "remoteName == codespaces"
+			},
+			{
+				"command": "github.codespaces.reloadServer",
+				"title": "%extension.codespaces.reloadServer%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.shutdownEnvironment",
+				"title": "%extension.codespaces.shutdownEnvironment%",
+				"category": "Codespaces",
+				"icon": "$(primitive-square)"
+			},
+			{
+				"command": "github.codespaces.disconnectSuspend",
+				"title": "%extension.codespaces.disconnectSuspend%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.changeMachineType",
+				"title": "%extension.codespaces.changeMachineType%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.deleteEnvironment",
+				"title": "%extension.codespaces.deleteEnvironment%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.signIn",
+				"title": "%extension.codespaces.signIn%",
+				"category": "Codespaces",
+				"enablement": "codespaces:isSignedIn != true && remoteName != codespaces"
+			},
+			{
+				"command": "github.codespaces.openExtension",
+				"title": "%extension.codespaces.openExtension%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.openInNewWindow",
+				"title": "%extension.codespaces.openInNewWindow%",
+				"category": "Codespaces",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "github.codespaces.openInBrowser",
+				"title": "%extension.codespaces.openInBrowser%",
+				"category": "Codespaces",
+				"enablement": "!isWeb"
+			},
+			{
+				"command": "github.codespaces.openInStable",
+				"title": "%extension.codespaces.openInStable%",
+				"category": "Codespaces",
+				"enablement": "isWeb && remoteName == codespaces"
+			},
+			{
+				"command": "github.codespaces.openInInsiders",
+				"title": "%extension.codespaces.openInInsiders%",
+				"category": "Codespaces",
+				"enablement": "isWeb && remoteName == codespaces"
+			},
+			{
+				"command": "_codespaces.embedder.myCodespaces",
+				"title": "%extension.codespaces.embedder.myCodespaces%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.viewCreationLog",
+				"title": "%extension.codespaces.viewCreationLog%",
+				"category": "Codespaces",
+				"enablement": "remoteName == codespaces"
+			},
+			{
+				"command": "github.codespaces.removePath",
+				"title": "%extension.codespaces.removePath%",
+				"category": "Codespaces",
+				"icon": {
+					"dark": "images/dark/remove.svg",
+					"light": "images/light/remove.svg"
+				}
+			},
+			{
+				"command": "github.codespaces.configureDevContainerCommand",
+				"title": "%extension.codespaces.configureDevContainer%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.addExtensionToConfiguration",
+				"title": "%extension.codespaces.addExtensionToConfiguration%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.configureDevContainerSidebar",
+				"title": "%extension.codespaces.configureDevContainer%",
+				"category": "Codespaces",
+				"icon": {
+					"dark": "images/dark/gear.svg",
+					"light": "images/light/gear.svg"
+				}
+			},
+			{
+				"command": "github.codespaces.copyIdToClipboard",
+				"title": "%extension.codespaces.copyIdToClipboard%",
+				"category": "Codespaces",
+				"icon": {
+					"dark": "images/dark/copy.svg",
+					"light": "images/light/copy.svg"
+				}
+			},
+			{
+				"command": "github.codespaces.rebuildEnvironment",
+				"title": "%extension.codespaces.rebuildEnvironment%",
+				"category": "Codespaces",
+				"icon": "$(tools)"
+			},
+			{
+				"command": "github.codespaces.labelPortAndUpdateConfig",
+				"title": "%extension.codespaces.setLabelAndUpdateDevcontainer%",
+				"category": "Codespaces",
+				"enablement": "remoteName == codespaces"
+			},
+			{
+				"command": "github.codespaces.showDetails",
+				"title": "%extension.codespaces.showDetails%",
+				"category": "Codespaces",
+				"enablement": "remoteName == codespaces"
+			},
+			{
+				"command": "github.codespaces.sendFeedback",
+				"title": "%extension.codespaces.sendFeedback%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.reportIssue",
+				"title": "%extension.codespaces.reportIssue%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.export",
+				"title": "%extension.codespaces.export%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.manageUserSecrets",
+				"title": "%extension.codespaces.manageUserSecrets%",
+				"category": "Codespaces"
+			},
+			{
+				"command": "github.codespaces.switchUserAccount",
+				"title": "%extension.codespaces.switchUserAccount%",
+				"category": "Codespaces"
+			}
+		],
+		"menus": {
+			"ports/item/context": [
+				{
+					"command": "github.codespaces.labelPortAndUpdateConfig",
+					"group": "0_manage@4",
+					"when": "tunnelType == Forwarded && remoteName == codespaces"
+				}
+			],
+			"view/title": [
+				{
+					"command": "github.codespaces.addEnvironment",
+					"group": "navigation@1",
+					"when": "view == github.codespaces.explorer && codespaces:explorerState == Initialized && remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.refresh",
+					"group": "navigation@3",
+					"when": "view == github.codespaces.explorer && codespaces:explorerState == Initialized && remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.configureDevContainerSidebar",
+					"when": "view == github.codespaces.explorer && remoteName == codespaces",
+					"group": "navigation@1"
+				},
+				{
+					"command": "github.codespaces.rebuildEnvironment",
+					"when": "view == github.codespaces.explorer && remoteName == codespaces",
+					"group": "navigation@2"
+				},
+				{
+					"command": "github.codespaces.disconnectEnvironment",
+					"when": "view == github.codespaces.explorer && remoteName == codespaces",
+					"group": "navigation@3"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "github.codespaces.disconnectEnvironment",
+					"when": "view == github.codespaces.explorer && viewItem =~ /disconnectFromEnabled/",
+					"group": "inline"
+				},
+				{
+					"command": "github.codespaces.shutdownEnvironment",
+					"when": "view == github.codespaces.explorer && viewItem =~ /shutdownEnabled/",
+					"group": "inline"
+				},
+				{
+					"command": "github.codespaces.connect",
+					"when": "!isWeb && view == github.codespaces.explorer && viewItem =~ /connectToEnabled/ || remoteName != codespaces && view == github.codespaces.explorer && viewItem =~ /connectToEnabled/",
+					"group": "inline"
+				},
+				{
+					"command": "github.codespaces.removePath",
+					"when": "view == github.codespaces.explorer && viewItem =~ /removePathEnabled/",
+					"group": "inline"
+				},
+				{
+					"command": "github.codespaces.connect",
+					"when": "!isWeb && view == github.codespaces.explorer && viewItem =~ /connectToEnabled/ || remoteName != codespaces && view == github.codespaces.explorer && viewItem =~ /connectToEnabled/",
+					"group": "navigation@1"
+				},
+				{
+					"command": "github.codespaces.disconnectEnvironment",
+					"when": "view == github.codespaces.explorer && viewItem =~ /disconnectFromEnabled/",
+					"group": "navigation@2"
+				},
+				{
+					"command": "github.codespaces.openInNewWindow",
+					"when": "!isWeb && view == github.codespaces.explorer && viewItem =~ /openInNewWindowEnabled/",
+					"group": "navigation@6"
+				},
+				{
+					"command": "github.codespaces.openInBrowser",
+					"when": "!isWeb && view == github.codespaces.explorer && viewItem =~ /openInBrowserEnabled/",
+					"group": "navigation@7"
+				},
+				{
+					"command": "github.codespaces.viewCreationLog",
+					"when": "view == github.codespaces.explorer && viewItem =~ /viewCreationLogEnabled/",
+					"group": "navigation@8"
+				},
+				{
+					"command": "github.codespaces.shutdownEnvironment",
+					"when": "view == github.codespaces.explorer && viewItem =~ /shutdownEnabled/",
+					"group": "navigation@9"
+				},
+				{
+					"command": "github.codespaces.configureDevContainerCommand",
+					"when": "view == github.codespaces.explorer && viewItem =~ /configureDevContainerEnabled/",
+					"group": "11_modification@3"
+				},
+				{
+					"command": "github.codespaces.export",
+					"when": "view == github.codespaces.explorer && viewItem =~ /exportEnabled/",
+					"group": "13_destruction@1"
+				},
+				{
+					"command": "github.codespaces.deleteEnvironment",
+					"when": "view == github.codespaces.explorer && viewItem =~ /deleteEnabled/",
+					"group": "13_destruction@2"
+				},
+				{
+					"command": "github.codespaces.copyIdToClipboard",
+					"when": "view == github.codespaces.performanceExplorer && viewItem =~ /copyIdToClipboardEnabled/",
+					"group": "inline"
+				}
+			],
+			"statusBar/remoteIndicator": [
+				{
+					"command": "github.codespaces.connect",
+					"group": "remote_40_codespaces_1@1",
+					"when": "!isWeb || remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.addEnvironment",
+					"group": "remote_40_codespaces_1@3",
+					"when": "!isWeb || remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.viewCreationLog",
+					"group": "remote_40_codespaces_2@1",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.rebuildEnvironment",
+					"group": "remote_40_codespaces_2@2",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.configureDevContainerCommand",
+					"group": "remote_40_codespaces_2@3",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.disconnectSuspend",
+					"group": "remote_40_codespaces_2@4",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "_codespaces.embedder.myCodespaces",
+					"group": "remote_40_codespaces_3@2",
+					"when": "isWeb && remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.openInStable",
+					"group": "remote_40_codespaces_3@3",
+					"when": "isWeb && remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.openInInsiders",
+					"group": "remote_40_codespaces_3@4",
+					"when": "isWeb && remoteName == codespaces"
+				}
+			],
+			"menuBar/home": [
+				{
+					"command": "_codespaces.embedder.myCodespaces",
+					"group": "openin_actions@2",
+					"when": "isWeb && remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.openInStable",
+					"group": "openin_actions@3",
+					"when": "isWeb && remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.openInInsiders",
+					"group": "openin_actions@3",
+					"when": "isWeb && remoteName == codespaces"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "github.codespaces.activate",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.disconnectEnvironment",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.openExtension",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.reloadServer",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.disconnectSuspend",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.openInBrowser",
+					"when": "!isWeb"
+				},
+				{
+					"command": "github.codespaces.openInInsiders",
+					"when": "isWeb && remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.openInStable",
+					"when": "isWeb && remoteName == codespaces"
+				},
+				{
+					"command": "_codespaces.embedder.myCodespaces",
+					"when": "codespaces:command-enabled:myCodespaces == true"
+				},
+				{
+					"command": "github.codespaces.connect",
+					"when": "!isWeb || remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.addEnvironment",
+					"when": "!isWeb || remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.deleteEnvironment",
+					"when": "remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.refresh",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.signIn",
+					"when": "codespaces:isSignedIn != true && remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.shutdownEnvironment",
+					"when": "remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.openInNewWindow",
+					"when": "!isWeb"
+				},
+				{
+					"command": "github.codespaces.addExtensionToConfiguration",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.configureDevContainerSidebar",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.configureDevContainerCommand",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.copyIdToClipboard",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.viewCreationLog",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.rebuildEnvironment",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.removePath",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.labelPortAndUpdateConfig",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.export",
+					"when": "remoteName != codespaces"
+				},
+				{
+					"command": "github.codespaces.manageUserSecrets",
+					"when": "remoteName == codespaces"
+				},
+				{
+					"command": "github.codespaces.continueEditSessionInCodespace",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.continueEditSessionInCodespaceWithJupyterServer",
+					"when": "false"
+				},
+				{
+					"command": "github.codespaces.switchUserAccount",
+					"when": "remoteName != codespaces && config.github-enterprise.uri != '' && codespaces:isAccountSwitchingDisabled != true"
+				}
+			],
+			"extension/context": [
+				{
+					"command": "github.codespaces.addExtensionToConfiguration",
+					"group": "2_configure",
+					"when": "!isBuiltinExtension && remoteName =~ /codespaces*.*/"
+				}
+			]
+		},
+		"remoteHelp": {
+			"getStarted": "github.codespaces.getStartedLink",
+			"reportIssue": "github.codespaces.feedbackLink",
+			"documentation": "github.codespaces.documentationLink",
+			"issues": "github.codespaces.feedbackLink",
+			"remoteName": "codespaces"
+		},
+		"continueEditSession": [
+			{
+				"command": "github.codespaces.continueEditSessionInCodespace",
+				"when": "remoteName != codespaces && github.hasGitHubRepo || remoteName != codespaces && remoteHub:virtualFolderProviders =~ /\\bgithub\\b/",
+				"documentation": "github.codespaces.documentationLink",
+				"qualifiedName": "%extension.codespaces.continueEditSessionInCodespace.qualifiedName%",
+				"remoteGroup": "remote_40_codespaces_1@0"
+			},
+			{
+				"command": "github.codespaces.continueEditSessionInCodespaceWithJupyterServer",
+				"when": "false",
+				"documentation": "github.codespaces.documentationLink",
+				"qualifiedName": "%extension.codespaces.continueEditSessionInCodespace.qualifiedName%",
+				"remoteGroup": "remote_40_codespaces_1@1"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "gulp package",
+		"watch-dev": "gulp start-watcher",
+		"compile": "gulp compile-prod",
+		"compile-dev-watch": "gulp compile-dev-watch",
+		"compile-test": "tsc -p ./",
+		"compile-uitest": "yarn run compile && yarn run compile-test",
+		"analyze-node": "gulp analyze-node",
+		"analyze-browser": "gulp analyze-browser",
+		"watch": "tsc -watch -p ./",
+		"eslint": "../node_modules/.bin/eslint src --ext ts",
+		"eslint-fix": "../node_modules/.bin/eslint src --ext ts --fix",
+		"test": "yarn test:mocha && yarn test:jest && yarn test:vscode",
+		"test:ci": "gulp test",
+		"test:cc": "yarn run compile-test && nyc --reporter=cobertura --reporter=html mocha --file out/test/setup.js --require source-map-support/register out/test/ --recursive",
+		"test:jest": "../node_modules/.bin/jest",
+		"test:jest:watch": "jest --watch",
+		"test:mocha": "yarn run compile-test && mocha --file out/test/setup.js --require source-map-support/register out/test/ --recursive --node-option no-experimental-fetch",
+		"test:vscode": "yarn test:vscode:compile && yarn test:vscode:run",
+		"test:vscode:compile": "yarn playwright install && gulp compile-debug",
+		"test:vscode:run": "xvfb-run --auto-servernum --server-args='-screen 0, 1920x1080x24' node ./debug/extension-tests/runTests.js",
+		"update-devcontainer-wizard": "gulp update-devcontainer-wizard",
+		"package": "vsce package --no-dependencies --allow-missing-repository",
+		"serve": "yarn compile && serve --cors --no-clipboard",
+		"build:lint": "yarn eslint",
+		"update-proposed": "yarn vscode-dts dev && mv vscode.proposed.*.d.ts ./typings/",
+		"bump-version": "gulp bump-version"
+	},
+	"devDependencies": {
+		"@octokit/types": "^12.4.0",
+		"@testdeck/mocha": "0.3.3",
+		"@types/chai": "^4.3.11",
+		"@types/chai-as-promised": "^7.1.8",
+		"@types/glob": "^8.1.0",
+		"@types/libsodium-wrappers": "^0.7.13",
+		"@types/luxon": "^3.4.2",
+		"@types/mocha": "^10.0.6",
+		"@types/nock": "^11.1.0",
+		"@types/node": "^18.18.6",
+		"@types/node-fetch": "^2.6.4",
+		"@types/semver": "^7.5.6",
+		"@types/sinon": "17.0.3",
+		"@types/strip-json-comments": "3.0.0",
+		"@types/uuid": "^8.3.4",
+		"@types/vscode": "^1.68.0",
+		"@types/yazl": "^2.4.5",
+		"@vs/mocha-trx-reporter": "link:./uitest/reporter",
+		"@vscode/jupyter-extension": "^1.1.1",
+		"@vscode/test-electron": "^2.3.8",
+		"@vscode/vsce": "^2.22.0",
+		"chai": "^4.3.10",
+		"chai-as-promised": "^7.1.1",
+		"esbuild-loader": "^4.0.2",
+		"gulp": "^5.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-sourcemaps": "^3.0.0",
+		"gulp-typescript": "^5.0.1",
+		"mocha": "^10.2.0",
+		"mocha-multi-reporters": "^1.5.1",
+		"module-alias": "^2.2.3",
+		"nock": "^13.5.1",
+		"nyc": "^15.1.0",
+		"otplib": "^12.0.1",
+		"playwright": "^1.41.2",
+		"serve": "^14.2.1",
+		"sinon": "^17.0.1",
+		"systeminformation": "^5.21.24",
+		"typescript": "^4.9.5",
+		"vscode-dts": "^0.3.3",
+		"webpack": "^5.70.0",
+		"webpack-bundle-analyzer": "^4.10.1",
+		"webpack-merge": "^5.10.0",
+		"webpack-stream": "^7.0.0"
+	},
+	"dependencies": {
+		"@github/codespaces-internal": "link:../codespaces-internal",
+		"@microsoft/vscode-devcontainerjson-support": "0.349.0",
+		"@octokit/rest": "^20.0.2",
+		"@opentelemetry/api": "^1.7.0",
+		"@opentelemetry/core": "^1.20.0",
+		"@opentelemetry/tracing": "^0.24.0",
+		"@vs/grpc": "link:../grpc",
+		"@vs/port-forwarder": "link:../port-forwarder",
+		"@vs/vscode-command-framework": "link:../vscode-command-framework",
+		"@vs/vso-logging": "link:../logging/core",
+		"@vs/vso-node-utils": "link:../node/utils",
+		"@vs/vso-rpc": "link:../rpc/core",
+		"@vs/vso-telemetry": "link:../telemetry/core",
+		"@vs/vso-workspace-client-vscode": "link:../workspace/client-vscode",
+		"axios": "^1.7.4",
+		"axios-retry": "^4.0.0",
+		"buffer": "^6.0.3",
+		"get-port": "^5.0.0",
+		"https-browserify": "^1.0.0",
+		"libsodium-wrappers": "^0.7.13",
+		"luxon": "^3.4.4",
+		"moment": "2.29.4",
+		"node-fetch": "^2.7.0",
+		"node-rsa": "^1.1.1",
+		"os-browserify": "^0.3.0",
+		"path-browserify": "^1.0.1",
+		"process": "^0.11.10",
+		"semver": "^7.5.4",
+		"setimmediate": "^1.0.5",
+		"source-map-support": "^0.5.21",
+		"stream-browserify": "^3.0.0",
+		"stream-http": "^3.2.0",
+		"strip-json-comments": "^3.1.1",
+		"util": "^0.12.5",
+		"uuid": "^8.3.2",
+		"vscode-jsonrpc": "^4.0.0",
+		"yazl": "^2.5.1"
+	},
+	"_moduleAliases": {
+		"@vscode-abstractions": "../node_modules/@vs/vscode-command-framework/dist/src/abstractions/node",
+		"@abstractions": "./out/src/abstractions/node"
+	},
+	"__metadata": {
+		"id": "4023d3e5-c840-4cdd-8b54-51c77548aa3f",
+		"publisherId": "7c1c19cd-78eb-4dfb-8999-99caf7679002",
+		"publisherDisplayName": "GitHub",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206250357,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 21690443
+	}
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<g id="outline">
+	<rect style="opacity:0;fill:#252526;" width="16" height="16"/>
+	<path style="fill:#252526;" d="M16,0H0v5v2v7v1c0,0,0,1,1.1,1C2.2,16,2,16,2,16h5.9c0,0,0.1,0,1.1,0c1,0,1-1,1-1v-1h6V0z"/>
+</g>
+<g id="icon_x5F_bg">
+	<g>
+		<polygon style="fill:#C5C5C5;" points="1,1 1,5 2,5 2,4 14,4 14,12 10,12 10,13 15,13 15,1 		"/>
+		<path style="fill:#C5C5C5;" d="M1,7C1,7.8,1,14,1,14s-0.1,1,1,1c1.1,0,5.1,0,6,0s1-0.9,1-0.9V9L6,6H2C2,6,1,6.1,1,7z M8,14H2V7h4
+			v2h2V14z"/>
+		<rect x="3" y="8" style="fill:#C5C5C5;" width="2" height="1"/>
+		<rect x="3" y="10" style="fill:#C5C5C5;" width="4" height="1"/>
+		<rect x="3" y="12" style="fill:#C5C5C5;" width="4" height="1"/>
+	</g>
+</g>
+<g id="icon_x5F_fg">
+	<g>
+		<polygon style="fill:#252526;" points="2,4 2,5 6.4,5 10,8.6 10,12 14,12 14,4 		"/>
+		<path style="fill:#252526;" d="M6,7H2v7h6V9H6V7z M3,8h2v1H3V8z M7,13H3v-1h4V13z M7,10v1H3v-1H7z"/>
+	</g>
+</g>
+</svg>

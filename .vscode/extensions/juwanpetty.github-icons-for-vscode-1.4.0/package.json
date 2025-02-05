@@ -1,0 +1,66 @@
+{
+	"name": "github-icons-for-vscode",
+	"displayName": "GitHub Icons",
+	"description": "A GitHub file icon theme for Visual Studio Code",
+	"version": "1.4.0",
+	"publisher": "juwanpetty",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"bugs": {
+		"url": "https://github.com/juwanpetty/github-icons/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/juwanpetty/github-icons.git"
+	},
+	"homepage": "https://github.com/juwanpetty/github-icons/blob/master/README.md",
+	"categories": [
+		"Themes",
+		"Other"
+	],
+	"keywords": [
+		"github",
+		"icons",
+		"icon",
+		"file",
+		"folder"
+	],
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "github-icons-for-vscode",
+				"label": "GitHub Icons",
+				"path": "./fileicons/github-icons-theme.json"
+			},
+			{
+				"id": "github-icons-for-vscode-colorless",
+				"label": "GitHub Icons (Colorless)",
+				"path": "./fileicons/github-icons-theme-colorless.json"
+			}
+		]
+	},
+	"galleryBanner": {
+		"color": "#1A1F23",
+		"theme": "dark"
+	},
+	"icon": "images/icon.png",
+	"author": {
+		"name": "juwanpetty"
+	},
+	"__metadata": {
+		"id": "d6ebd82b-91ad-426a-9507-193f50d80c78",
+		"publisherId": "d9d90346-0c15-4658-9f92-84b5438c6880",
+		"publisherDisplayName": "Juwan Petty",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206250483,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 4043903
+	}
+}

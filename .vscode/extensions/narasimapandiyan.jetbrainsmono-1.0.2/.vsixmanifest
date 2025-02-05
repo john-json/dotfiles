@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+		<Metadata>
+			<Identity Language="en-US" Id="jetbrainsmono" Version="1.0.2" Publisher="NarasimaPandiyan" />
+			<DisplayName>JetBrains Mono. A typeface for developers​_</DisplayName>
+			<Description xml:space="preserve">JetBrains Mono font pack - OpenSource monospaced font with programming ligatures vscode extension</Description>
+			<Tags>font,JetBrains Mono font,Extension for JetBrains Mono font pack,Professional fonts for programming,Mono Font,JetBrains Mono,JetBrains Mono font pack,JetBrains Mono font pack vscode extension,JetBrains Mono font pack vscode</Tags>
+			<Categories>Extension Packs,Language Packs,Programming Languages,Formatters,Other</Categories>
+			<GalleryFlags>Public</GalleryFlags>
+			
+			<Properties>
+				<Property Id="Microsoft.VisualStudio.Code.Engine" Value="^1.72.0" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionDependencies" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionPack" Value="" />
+				<Property Id="Microsoft.VisualStudio.Code.ExtensionKind" Value="workspace" />
+				<Property Id="Microsoft.VisualStudio.Code.LocalizedLanguages" Value="" />
+				
+				
+				<Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/NarasimaPandiyan/JetbrainsMono-vscode-extension.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/NarasimaPandiyan/JetbrainsMono-vscode-extension.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.GitHub" Value="https://github.com/NarasimaPandiyan/JetbrainsMono-vscode-extension.git" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/NarasimaPandiyan/JetbrainsMono-vscode-extension/issues" />
+				<Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/NarasimaPandiyan/JetbrainsMono-vscode-extension" />
+				<Property Id="Microsoft.VisualStudio.Services.Branding.Color" Value="#E0F3C2" />
+				<Property Id="Microsoft.VisualStudio.Services.Branding.Theme" Value="dark" />
+				<Property Id="Microsoft.VisualStudio.Services.GitHubFlavoredMarkdown" Value="true" />
+				<Property Id="Microsoft.VisualStudio.Services.Content.Pricing" Value="Free"/>
+
+				
+				
+			</Properties>
+			<License>extension/LICENSE.txt</License>
+			<Icon>extension/images/JBM1.png</Icon>
+		</Metadata>
+		<Installation>
+			<InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+		</Installation>
+		<Dependencies/>
+		<Assets>
+			<Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+			<Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.Changelog" Path="extension/CHANGELOG.md" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Content.License" Path="extension/LICENSE.txt" Addressable="true" />
+<Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/images/JBM1.png" Addressable="true" />
+		</Assets>
+	</PackageManifest>

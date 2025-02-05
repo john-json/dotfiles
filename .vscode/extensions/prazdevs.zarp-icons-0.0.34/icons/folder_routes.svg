@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+    <g fill="none" stroke-linejoin="round">
+        <path stroke="#d9d9d9" stroke-linecap="round" stroke-width="5" d="M24.023 28.126H78.31s9.207.248 9.207 9.543V45M40 82.656H10.272S2.5 82.036 2.5 74.601V26.39s0-9.047 8.729-9.047h26.186s7.294 0 7.294 7.56v2.974" paint-order="fill markers stroke"/>
+        <g stroke="#43a047" stroke-width="4.322">
+            <path stroke-width="4.9994735" d="M44.852 53.054v13.88h37.016l6.94-6.94-6.94-6.94z"/>
+            <path stroke-linecap="round" stroke-width="4.9994735" d="M64.517 66.935v25.448m0-46.27v6.94m-5.784 39.33h11.568"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,58 @@
+{
+	"name": "nord-dark-contrast",
+	"displayName": "Nord Dark Contrast",
+	"description": "More contrast versions of the Nord Wave theme.",
+	"version": "0.3.1",
+	"author": "Simo Janhunen",
+	"publisher": "simojanhunen",
+	"repository": "https://github.com/simojanhunen/nord-dark-contrast",
+	"engines": {
+		"vscode": "^1.14.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"galleryBanner": {
+		"color": "#212121",
+		"theme": "dark"
+	},
+	"license": "(MIT OR Apache-2.0)",
+	"keywords": [
+		"nord",
+		"dark",
+		"contrast",
+		"minimal"
+	],
+	"icon": "assets/icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Nord Dark Contrast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/nord-dark-contrast-color-theme.json"
+			},
+			{
+				"label": "Nord Dark Contrast Lighter",
+				"uiTheme": "vs-dark",
+				"path": "./themes/nord-dark-contrast_lighter-color-theme.json"
+			}
+		]
+	},
+	"dependencies": {
+		"vsce": "^2.6.3"
+	},
+	"__metadata": {
+		"id": "4d60f4fd-1b92-42f9-81a1-8b973ee1f04b",
+		"publisherId": "2d695b51-996a-4215-8002-cb71cd6ad938",
+		"publisherDisplayName": "Simo Janhunen",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206250786,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 11705443
+	}
+}

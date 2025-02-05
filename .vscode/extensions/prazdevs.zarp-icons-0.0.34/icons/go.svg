@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100" height="100">
+    <g paint-order="stroke fill markers">
+        <circle cx="29.579" cy="42.847" r="12" fill="none" stroke="#29beb0" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+        <circle cx="70.579" cy="42.847" r="12" fill="none" stroke="#29beb0" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+        <path fill="none" stroke="#29beb0" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.972" d="M7.572 49.99a42.514 36.538 0 0 1 42.514-36.538A42.514 36.538 0 0 1 92.6 49.99"/>
+        <path fill="none" stroke="#29beb0" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M7.559 50.415v36.812M92.599 50.376V87.19M11.151 30.58a10 10 0 0 1-3.385-10.488 10 10 0 0 1 8.314-7.232 10 10 0 0 1 9.917 4.804M88.842 30.58a10 10 0 0 0 3.384-10.487 10 10 0 0 0-8.313-7.233 10 10 0 0 0-9.917 4.804"/>
+        <ellipse cx="50.079" cy="68.033" fill="none" stroke="#29beb0" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" rx="10.55" ry="5.097"/>
+        <path fill="none" stroke="#29beb0" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M47.5 73.5V78M52.5 73.5V78"/>
+        <circle cx="24" cy="43" r="5" fill="#29beb0"/>
+        <circle cx="65" cy="43" r="5" fill="#29beb0"/>
+    </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+    <path fill="none" stroke="#d9d9d9" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M24.023 28.126H78.31s9.207.248 9.207 9.543V45M40 82.656H10.272S2.5 82.036 2.5 74.601V26.39s0-9.047 8.729-9.047h26.186s7.294 0 7.294 7.56v2.974" paint-order="fill markers stroke"/>
+    <path fill="none" stroke="#90a4ae" stroke-width="5" d="m54.535 73.116 12.647-4.735c3.879-1.453 8.12.996 8.8 5.081l2.223 13.32c.716 4.287-3.88 7.476-7.647 5.302a3.674 3.674 0 0 1-1.23-1.159l-.652-.988a15.638 15.638 0 0 0-12.11-6.992l-1.183-.071a3.672 3.672 0 0 1-1.616-.485c-3.766-2.174-3.302-7.75.768-9.273z"/>
+    <ellipse cx="80.793" cy="22.942" fill="#90a4ae" paint-order="fill markers stroke" rx="5" ry="6" transform="rotate(30)"/>
+    <ellipse cx="91.553" cy="10.296" fill="#90a4ae" paint-order="fill markers stroke" rx="5" ry="6" transform="rotate(30)"/>
+    <ellipse cx="104.916" cy="9.014" fill="#90a4ae" paint-order="fill markers stroke" rx="5" ry="6" transform="rotate(30)"/>
+    <ellipse cx="114.779" cy="21.382" fill="#90a4ae" paint-order="fill markers stroke" rx="5" ry="6" transform="rotate(30)"/>
+</svg>

@@ -1,0 +1,128 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Mode;
+(function (Mode) {
+    Mode[Mode["Flat"] = 0] = "Flat";
+    Mode[Mode["Break"] = 1] = "Break";
+})(Mode || (Mode = {}));
+;
+function printDocToString(doc, options) {
+    const state = {
+        options,
+        indentation: 0,
+        currentLineLength: 0,
+        mode: Mode.Break,
+        lineSuffixes: [],
+        renderedText: ''
+    };
+    printDocToStringWithState(doc, state);
+    return state.renderedText;
+}
+exports.printDocToString = printDocToString;
+function canFitOnSingleLine(doc, state) {
+    function fits(text) {
+        if (state.currentLineLength + text.length <= state.options.lineWidth) {
+            state.currentLineLength += text.length;
+            return true;
+        }
+        return false;
+    }
+    if (typeof (doc) === 'string') {
+        return fits(doc);
+    }
+    switch (doc.type) {
+        case 'concat':
+            return doc.parts.every((part) => canFitOnSingleLine(part, state));
+        case 'indent':
+            state.indentation++;
+            if (canFitOnSingleLine(doc.content, state)) {
+                state.indentation--;
+                return true;
+            }
+            state.indentation--;
+            return false;
+        case 'group':
+            if (doc.willBreak) {
+                state.mode = Mode.Break;
+            }
+            return canFitOnSingleLine(doc.content, state);
+        case 'line':
+            if (state.mode === Mode.Flat) {
+                if (!doc.hard) {
+                    if (!doc.soft) {
+                        return fits(' ');
+                    }
+                    return true;
+                }
+            }
+            state.currentLineLength = state.indentation;
+            return true;
+        case 'lineSuffix':
+            return true;
+    }
+    return false;
+}
+function printDocToStringWithState(doc, state) {
+    if (typeof (doc) === 'string') {
+        state.renderedText += doc;
+        state.currentLineLength += doc.length;
+    }
+    else {
+        switch (doc.type) {
+            case 'concat':
+                for (const part of doc.parts) {
+                    printDocToStringWithState(part, state);
+                }
+                break;
+            case 'line':
+                if (state.mode === Mode.Flat) {
+                    if (!doc.hard) {
+                        if (!doc.soft) {
+                            state.renderedText += ' ';
+                            state.currentLineLength += 1;
+                        }
+                        break;
+                    }
+                }
+                if (state.lineSuffixes.length > 0) {
+                    const suffixes = [...state.lineSuffixes];
+                    state.lineSuffixes.length = 0;
+                    for (const suffix of suffixes) {
+                        printDocToStringWithState(suffix.content, state);
+                    }
+                }
+                if (state.renderedText.length > 0) {
+                    state.renderedText = state.renderedText.replace(/[^\S\n]*$/, '');
+                }
+                const renderedIndentation = state.options.useTabs
+                    ? '\t'.repeat(state.indentation)
+                    : ' '.repeat(state.indentation * state.options.indentCount);
+                state.renderedText += '\n' + renderedIndentation;
+                state.currentLineLength = renderedIndentation.length;
+                break;
+            case 'indent':
+                {
+                    state.indentation++;
+                    printDocToStringWithState(doc.content, state);
+                    state.indentation--;
+                    break;
+                }
+            case 'lineSuffix':
+                state.lineSuffixes.push(doc);
+                break;
+            case 'group':
+                const canFit = canFitOnSingleLine(doc, Object.assign({}, state, { mode: Mode.Flat }));
+                const oldMode = state.mode;
+                if (!doc.willBreak && canFit) {
+                    state.mode = Mode.Flat;
+                }
+                else {
+                    state.mode = Mode.Break;
+                }
+                printDocToStringWithState(doc.content, state);
+                state.mode = oldMode;
+                break;
+        }
+    }
+}
+//# sourceMappingURL=docPrinter.js.map

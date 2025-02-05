@@ -1,0 +1,132 @@
+{
+	"name": "swift-playgrounds",
+	"displayName": "Swift Playgrounds",
+	"description": "Allows opening and running of Swift playground bundles.",
+	"publisher": "pieterjongsma",
+	"version": "0.1.1",
+	"icon": "media/icon.png",
+	"preview": true,
+	"license": "GPL-3.0",
+	"repository": {
+		"type": "github",
+		"url": "https://github.com/pieterjongsma/swift-playgrounds-vscode"
+	},
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+		"Debuggers",
+		"Other"
+	],
+	"activationEvents": [
+		"workspaceContains:**/*.playground/Contents.swift",
+		"onCommand:swiftplayground.start"
+	],
+	"main": "./build/extension.js",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Swift Playground configuration",
+			"properties": {
+				"swift-playgrounds.truncationLength": {
+					"type": "number",
+					"default": 30,
+					"description": "Maximum length of logged variable values. Longer values will be summarized when possible, or truncated."
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "swiftplayground.start",
+				"title": "Swift Playground: Run",
+				"group": "navigation",
+				"icon": {
+					"light": "./media/toolbar_icon_light.svg",
+					"dark": "./media/toolbar_icon_dark.svg"
+				}
+			},
+			{
+				"command": "swiftplayground.copy.manifest",
+				"title": "Swift Playground: Add Package.swift manifest"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "resourceLangId == swift",
+					"command": "swiftplayground.start",
+					"group": "navigation"
+				}
+			]
+		},
+		"languages": [
+			{
+				"id": "swift-playground",
+				"extensions": [
+					".playground"
+				],
+				"aliases": [
+					"Swift Playground",
+					"playground"
+				]
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"webpack": "webpack --mode development",
+		"watch": "webpack --mode development --watch",
+		"test-compile": "tsc -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test_playgrounds": "npm run webpack && node ./build/test_playgrounds.js test src/test/playgrounds/examples/**/*.playground"
+	},
+	"devDependencies": {
+		"@types/chai": "4.1.7",
+		"@types/crypto-js": "^3.1.43",
+		"@types/glob": "7.1.1",
+		"@types/mathjs": "^5.0.1",
+		"@types/mocha": "2.2.48",
+		"@types/node": "^10.12.21",
+		"@types/rimraf": "2.0.2",
+		"@types/stream-buffers": "3.0.3",
+		"chai": "4.2.0",
+		"chalk": "2.4.2",
+		"copy-webpack-plugin": "5.0.3",
+		"file-loader": "^3.0.1",
+		"glob": "7.1.4",
+		"mocha": "6.1.4",
+		"mocha-webpack": "1.1.0",
+		"ts-loader": "^5.3.3",
+		"ts-node": "8.3.0",
+		"tsconfig-paths-webpack-plugin": "3.2.0",
+		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"webpack": "^4.30.0",
+		"webpack-cli": "^3.3.0"
+	},
+	"dependencies": {
+		"commander": "^2.20.0",
+		"crypto-js": "^3.1.9-1",
+		"mathjs": "^5.9.0",
+		"ndjson": "1.5.0",
+		"preact": "^8.4.2",
+		"preact-compat": "^3.18.5",
+		"rimraf": "2.6.3",
+		"stream-buffers": "3.0.2"
+	},
+	"__metadata": {
+		"id": "6ecabd6d-5769-4935-a294-97e2ff2dc7da",
+		"publisherId": "83f8eace-50bc-457e-90cb-863c9c621072",
+		"publisherDisplayName": "Pieter Jongsma",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206248108,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 1136348
+	}
+}

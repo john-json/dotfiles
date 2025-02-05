@@ -1,0 +1,93 @@
+{
+    "scopeName": "source.toml",
+    "patterns": [{
+        "include": "#expression"
+    }],
+    "repository": {
+        "expression": {
+            "patterns": [{
+                "include": "#comments"
+            }, {
+                "include": "#tables"
+            }, {
+                "include": "#key-value"
+            }]
+        },
+        "comments": {
+            "match": "#.*$",
+            "name": "comment.line.number-sign.toml"
+        },
+        "tables": {
+            "begin": "^\\s*\\[",
+            "end": "\\]",
+            "name": "entity.name.section.toml",
+            "patterns": [{
+                "match": "[^\\]]+",
+                "name": "entity.other.attribute-name.toml"
+            }]
+        },
+        "key-value": {
+            "begin": "([A-Za-z0-9_-]+)\\s*(=)\\s*",
+            "beginCaptures": {
+                "1": { "name": "variable.other.key.toml" },
+                "2": { "name": "keyword.operator.assignment.toml" }
+            },
+            "end": "$",
+            "patterns": [{
+                "include": "#value"
+            }]
+        },
+        "value": {
+            "patterns": [{
+                "include": "#string"
+            }, {
+                "include": "#number"
+            }, {
+                "include": "#array"
+            }, {
+                "include": "#boolean"
+            }, {
+                "include": "#datetime"
+            }]
+        },
+        "string": {
+            "patterns": [{
+                "name": "string.quoted.double.toml",
+                "begin": "\"",
+                "end": "\"",
+                "patterns": [{
+                    "name": "constant.character.escape.toml",
+                    "match": "\\\\[0tnr\"\\\\]"
+                }]
+            }, {
+                "name": "string.quoted.single.toml",
+                "begin": "'",
+                "end": "'",
+                "patterns": [{
+                    "name": "constant.character.escape.toml",
+                    "match": "\\\\[0tnr'\\\\]"
+                }]
+            }]
+        },
+        "number": {
+            "match": "-?\\d+(\\.\\d+)?([eE][+-]?\\d+)?",
+            "name": "constant.numeric.toml"
+        },
+        "array": {
+            "begin": "\\[",
+            "end": "\\]",
+            "name": "meta.structure.array.toml",
+            "patterns": [{
+                "include": "#value"
+            }]
+        },
+        "boolean": {
+            "match": "\\b(true|false)\\b",
+            "name": "constant.language.boolean.toml"
+        },
+        "datetime": {
+            "match": "\\d{4}-\\d{2}-\\d{2}(T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})?)?",
+            "name": "constant.other.datetime.toml"
+        }
+    }
+}

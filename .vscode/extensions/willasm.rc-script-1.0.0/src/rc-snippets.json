@@ -1,0 +1,54 @@
+{
+"#if #endif": {
+    "prefix": "if",
+    "body": [
+        "#if ${1:condition}",
+        "\t${2}",
+        "#endif",
+        "${0}"
+    ],
+    "description": "#if #endif"
+},
+
+"#if #else #endif": {
+    "prefix": "if-else",
+    "body": [
+        "#if ${1:condition}",
+        "\t${2}",
+        "#else",
+        "\t${3}",
+        "#endif",
+        "${0}"
+    ],
+    "description": "#if #else #endif"
+},
+
+"#if #elif #endif": {
+    "prefix": "if-elif",
+    "body": [
+        "#if ${1:condition1}",
+        "\t${2}",
+        "#elif ${3:condition2}",
+        "\t${4}",
+        "#endif",
+        "${0}"
+    ],
+    "description": "#if #else #endif"
+},
+
+"#if #elif #else #endif": {
+    "prefix": "if-elif-else",
+    "body": [
+        "#if ${1:condition1}",
+        "\t${2}",
+        "#elif ${3:condition2}",
+        "\t${4}",
+        "#else",
+        "\t${5}",
+        "#endif",
+        "${0}"
+    ],
+    "description": "#if #else #endif"
+}
+}
+

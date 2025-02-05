@@ -1,0 +1,49 @@
+{
+	"name": "lua-beautifier",
+	"displayName": "Lua Beautifier",
+	"description": "Best lua beautifier",
+	"publisher": "notnoobmaster",
+	"author": "notnoobmaster",
+	"icon": "icon.png",
+	"version": "1.1.8",
+	"engines": {
+		"vscode": "^1.53.0"
+	},
+	"keywords": [
+		"Lua",
+		"Formatter",
+		"Pretty-Printer"
+	],
+	"categories": [
+		"Formatters"
+	],
+	"activationEvents": [
+		"onLanguage:lua"
+	],
+	"main": "./extension.js",
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint"
+	},
+	"devDependencies": {
+		"eslint": "^7.19.0",
+		"vscode": "^1.1.37"
+	},
+	"repository": {
+		"url": "https://github.com/notnoobmaster/lua-beautifier"
+	},
+	"__metadata": {
+		"id": "f84c809c-07ab-487c-a4c5-bcd91a783fc7",
+		"publisherId": "d54ca6cf-3ac0-4fd2-b7e8-49ef5a590a6f",
+		"publisherDisplayName": "notnoobmaster",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206247710,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 2680965
+	}
+}

@@ -1,0 +1,62 @@
+{
+	"name": "atom-icons",
+	"displayName": "Atom Icons",
+	"description": "Atom file and folder icons for VS Code",
+	"version": "1.2.0",
+	"publisher": "emroussel",
+	"license": "MIT",
+	"engines": {
+		"vscode": "*"
+	},
+	"categories": [
+		"Themes",
+		"Other"
+	],
+	"keywords": [
+		"atom",
+		"icons",
+		"icon",
+		"one dark",
+		"file",
+		"folder"
+	],
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "atom-icons",
+				"label": "Atom Icons",
+				"path": "./fileicons/atom-icon-theme.json"
+			}
+		]
+	},
+	"galleryBanner": {
+		"color": "#282C34",
+		"theme": "dark"
+	},
+	"icon": "images/icon.png",
+	"author": {
+		"name": "emroussel"
+	},
+	"bugs": {
+		"url": "https://github.com/emroussel/atom-icons/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/emroussel/atom-icons.git"
+	},
+	"homepage": "https://github.com/emroussel/atom-icons/blob/master/README.md",
+	"__metadata": {
+		"id": "739edfb5-155b-4641-8d1a-e7e8eb96dd09",
+		"publisherId": "ef208bcb-6f04-4154-9969-7fdfdf7c525f",
+		"publisherDisplayName": "Emmanuel Roussel",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206246823,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 156357
+	}
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+    <defs>
+        <path id="a" d="M25.146 52.639h25.761v16.396H25.146z"/>
+        <path id="b" d="M25.146 52.639h25.761v16.396H25.146z"/>
+    </defs>
+    <g stroke-linecap="round" stroke-linejoin="round" paint-order="fill markers stroke">
+        <path fill="none" stroke="#35cbf1" stroke-width="5" d="M20 7.544 80 7.5c5.893-.004 12.5 6.607 12.5 12.5v60c0 5.794-6.706 12.076-12.5 12.076H20c-5.794 0-12.5-6.282-12.5-12.076V20c0-5.882 6.618-12.452 12.5-12.456Z"/>
+        <g fill="#35cbf1" stroke-width="1.268" aria-label="TS" font-family="Neutraface Text" font-weight="600" style="text-align:end;white-space:pre;shape-inside:url(#b)" text-anchor="end" transform="matrix(4.06693 0 0 4.32079 -120.088 -191.564)">
+            <path d="M40.504 63.587h1.26v-7.044h2.424v-1.116H38.08v1.116h2.424zM47.704 63.695c1.536 0 2.652-.828 2.652-2.256 0-1.308-.744-1.956-2.136-2.568l-.528-.24c-.828-.36-1.176-.636-1.176-1.248 0-.552.408-.948 1.056-.948.636 0 .996.252 1.308.792l.996-.612c-.492-.876-1.224-1.284-2.304-1.284-1.356 0-2.292.864-2.292 2.076 0 1.26.72 1.86 1.908 2.388l.54.24c.888.396 1.368.708 1.368 1.416 0 .672-.588 1.116-1.416 1.116-.996 0-1.488-.504-1.872-1.14l-1.044.576c.456.924 1.392 1.692 2.94 1.692z" style="-inkscape-font-specification:&quot;Neutraface Text Semi-Bold&quot;"/>
+        </g>
+    </g>
+</svg>

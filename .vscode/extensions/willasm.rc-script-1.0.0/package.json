@@ -1,0 +1,112 @@
+{
+	"name": "rc-script",
+	"displayName": "RC Script Language",
+	"description": "RC Script Language Syntax Highlighting",
+	"publisher": "willasm",
+	"author": {
+		"name": "William McKeever"
+	},
+	"license": "MIT - SEE LICENSE IN LICENSE.md",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.71.0"
+	},
+	"icon": "images/icon.png",
+	"categories": [
+		"Programming Languages",
+		"Snippets"
+	],
+	"keywords": [
+		"rc",
+		"script",
+		"syntax",
+		"highlighting",
+		"editor"
+	],
+	"activationEvents": [
+		"onLanguage:rc-script"
+	],
+	"main": "./src/extension.js",
+	"bugs": {
+		"url": "https://github.com/willasm/rc-script/issues",
+		"email": "willmck63@gmail.com"
+	},
+	"homepage": "https://github.com/willasm/rc-script",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/willasm/rc-script.git"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "rc-script",
+				"aliases": [
+					"RC Script",
+					"rc-script",
+					"rc"
+				],
+				"extensions": [
+					"rc"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "rc-script",
+				"scopeName": "source.rc",
+				"path": "./syntaxes/rc-script.tmLanguage.json"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "rc-script.run.editor",
+					"when": "editorLangId == rc-script"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "rc-script.run.editor",
+				"title": "RC Script: Run External Script Editor",
+				"when": "editorTextFocus || editorLangId == rc-script || resourceLangId == rc-script"
+			},
+			{
+				"command": "rc-script.set.editor",
+				"title": "RC Script: Set External Script Editor Location",
+				"when": "editorTextFocus || editorLangId == rc-script || resourceLangId == rc-script"
+			}
+		],
+		"configuration": {
+			"title": "RC Script",
+			"type": "object",
+			"properties": {
+				"rc-script.fullPathToEditor": {
+					"type": "string",
+					"description": "Specifies the full path to the RC Editor executable.\nNote: If editor is located in your Path variable\nyou can just enter the name of the executable."
+				}
+			}
+		},
+		"snippets": [
+			{
+				"language": "rc-script",
+				"path": "./src/rc-snippets.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "6254831b-b986-41f1-b293-ca511ec66e96",
+		"publisherId": "cad3a94d-a724-432b-ba34-2b81860e0808",
+		"publisherDisplayName": "willasm",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206249565,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 362024
+	}
+}

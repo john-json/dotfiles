@@ -1,0 +1,8 @@
+# macOS
+.*DS_Store
+
+# Build
+*.vsix
+
+# Dependencies
+node_modules

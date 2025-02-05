@@ -1,0 +1,53 @@
+{
+	"name": "snazzy-operator-plus",
+	"displayName": "Snazzy Operator Plus",
+	"description": "Visual Studio Code theme based on hyper-snazzy and optimised for Operator Mono",
+	"version": "1.2.1",
+	"publisher": "bsides",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bsides/snazzy-operator-plus/issues"
+	},
+	"homepage": "https://github.com/bsides/snazzy-operator-plus",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bsides/snazzy-operator-plus"
+	},
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "images/icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Snazzy Operator",
+				"uiTheme": "vs-dark",
+				"path": "./themes/snazzy-operator-plus-color-theme.json"
+			}
+		]
+	},
+	"keywords": [
+		"theme",
+		"snazzy",
+		"operator",
+		"snazzy theme",
+		"snazzy operator plus"
+	],
+	"__metadata": {
+		"id": "69983032-54ca-4958-bdd6-bd834ccac499",
+		"publisherId": "caf6b228-b4a4-4b88-991a-1f2d90970f7c",
+		"publisherDisplayName": "bsides",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206250140,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 2178817
+	}
+}

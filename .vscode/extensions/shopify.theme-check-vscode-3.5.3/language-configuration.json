@@ -1,0 +1,155 @@
+{
+  "comments": {
+    "blockComment": [
+      "{% comment %}",
+      "{% endcomment %}"
+    ]
+  },
+  "brackets": [
+    [
+      "<",
+      ">"
+    ],
+    [
+      "{{-",
+      "-}}"
+    ],
+    [
+      "{{-",
+      "}}"
+    ],
+    [
+      "{{",
+      "-}}"
+    ],
+    [
+      "{{",
+      "}}"
+    ],
+    [
+      "{%-",
+      "-%}"
+    ],
+    [
+      "{%-",
+      "%}"
+    ],
+    [
+      "{%",
+      "-%}"
+    ],
+    [
+      "{%",
+      "%}"
+    ],
+    [
+      "[",
+      "]"
+    ],
+    [
+      "(",
+      ")"
+    ]
+  ],
+  "autoClosingPairs": [
+    [
+      "{",
+      "}"
+    ],
+    [
+      "{{",
+      " }}"
+    ],
+    [
+      "{%",
+      " %}"
+    ],
+    [
+      "[",
+      "]"
+    ],
+    [
+      "(",
+      ")"
+    ],
+    [
+      "\"",
+      "\""
+    ],
+    [
+      "'",
+      "'"
+    ],
+    [
+      "<",
+      ">"
+    ]
+  ],
+  "autoCloseBefore": "%-:.,=}])<>'\"` \n\t",
+  "surroundingPairs": [
+    [
+      "-",
+      "-"
+    ],
+    [
+      "<",
+      ">"
+    ],
+    [
+      "{",
+      "}"
+    ],
+    [
+      "[",
+      "]"
+    ],
+    [
+      "(",
+      ")"
+    ],
+    [
+      "'",
+      "'"
+    ],
+    [
+      "\"",
+      "\""
+    ],
+    [
+      "`",
+      "`"
+    ]
+  ],
+  "onEnterRules": [
+    {
+      "beforeText": "<(?!(?:area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr))([_:\\w][_:\\w-.\\d]*)([^/>]*(?!/)>)[^<]*$",
+      "afterText": "^<\\/([_:\\w][_:\\w-.\\d]*)\\s*>$",
+      "action": {
+        "indent": "indentOutdent"
+      }
+    },
+    {
+      "beforeText": "<(?!(?:area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr))(\\w[\\w\\d]*)([^/>]*(?!/)>)[^<]*$",
+      "action": {
+        "indent": "indent"
+      }
+    },
+    {
+      "beforeText": "\\{%-?\\s*(?!end)(?:form|paginate|capture|case|for|ifchanged|if|unless|tablerow|else|elsif|when)((?!%\\}).)*%\\}\\s*$",
+      "afterText": "^\\{%-?\\s*(?:endform|endpaginate|endcapture|endcase|endfor|endifchanged|endif|endunless|endtablerow)((?!%\\}).)*%\\}",
+      "action": {
+        "indent": "indentOutdent"
+      }
+    },
+    {
+      "beforeText": "\\{%-?\\s*(?!end)(?:form|paginate|capture|case|for|ifchanged|if|unless|tablerow|else|elsif|when)((?!%\\}).)*%\\}\\s*$",
+      "action": {
+        "indent": "indent"
+      }
+    }
+  ],
+  "indentationRules": {
+    "increaseIndentPattern": "(<(?!\\/|area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr|!--)[^>\\n]+>|{%-?\\s+(?:form|paginate|capture|case|for|ifchanged|if|unless|tablerow|else|elsif|when)[^}%]*?-?%}|<!--[^>\\n]*|<(?!\\/)[^>\\n]+|{%(?:(?!%}).)*|{{(?:(?!}}).)*|{(?:(?!}).)*|\\[(?:(?!\\]).)*|\\((?:(?!\\)).)*|^\\s*>)$",
+    "decreaseIndentPattern": "^\\s*(<\\/[^>]+>|{%-?\\s+(?:endform|endpaginate|endcapture|endcase|endfor|endifchanged|endif|endunless|endtablerow|else|elsif|when).*?-?%}|%}|}}|>|\\/>|-->|}|\\)|\\])"
+  }
+}

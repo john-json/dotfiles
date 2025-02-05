@@ -1,0 +1,83 @@
+{
+	"name": "vscode-titlebar-less-macos",
+	"displayName": "Titlebar-Less VSCode for macOS",
+	"description": "An extension for a titlebar-less VSCode on macOS",
+	"icon": "resources/logo.png",
+	"version": "1.10.5",
+	"license": "MIT",
+	"main": "./extension",
+	"publisher": "lehni",
+	"author": {
+		"name": "Jürg Lehni",
+		"email": "juerg@scratchdisk.com"
+	},
+	"bugs": {
+		"url": "https://github.com/lehni/vscode-titlebar-less-macos/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lehni/vscode-titlebar-less-macos"
+	},
+	"engines": {
+		"vscode": "^1.25.0"
+	},
+	"keywords": [
+		"vscode",
+		"vsc",
+		"extension",
+		"titlebar",
+		"macos"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:titlebarLess.enable",
+		"onCommand:titlebarLess.disable"
+	],
+	"contributes": {
+		"configuration": {
+			"title": "Titlebar-Less",
+			"properties": {
+				"titlebarLess.showTrafficLights": {
+					"type": "boolean",
+					"default": true,
+					"description": "Toggles the macOS window control buttons. (requires restart)"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "titlebarLess.enable",
+				"title": "Titlebar-Less: Enable"
+			},
+			{
+				"command": "titlebarLess.disable",
+				"title": "Titlebar-Less: Disable"
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/node": "^7.0.43",
+		"@types/mocha": "^2.2.42",
+		"eslint": "^4.11.0",
+		"vscode": "^1.1.6"
+	},
+	"__metadata": {
+		"id": "3cc2f84c-1041-4b5c-b12f-fcd000455cf9",
+		"publisherId": "933848c0-ee87-4d7b-8ed4-ac07b6ce6892",
+		"publisherDisplayName": "Jürg Lehni",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206247879,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 1700958
+	}
+}

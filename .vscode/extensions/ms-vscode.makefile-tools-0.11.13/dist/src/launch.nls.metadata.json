@@ -1,0 +1,27 @@
+{
+	"messages": [
+		"Created the following debug config:\n   type = {0}\n   cwd = {1} (= {2})\n   args = {3}\n   program = {4} (= {5})\n   MIMode = {6}\n   miDebuggerPath = {7}\n   stopAtEntry = {8}\n   symbolSearchPath = {9}",
+		"Building current target before launch: \"{0}\"",
+		"Building target \"{0}\" failed.",
+		"No",
+		"Yes",
+		"Build failed. Do you want to continue anyway?",
+		"Cannot {0} because there is no launch configuration set and the list of launch targets is empty. Double check the makefile configuration and the build target.",
+		"Cannot {0} because there is no launch configuration set. Choose one from the quick pick.",
+		"Cannot {0} until you select an active launch configuration.",
+		"Running command '{0}' in the terminal from location '{1}'"
+	],
+	"keys": [
+		"created.debug.config",
+		"building.current.target.before.launch",
+		"building.target.failed",
+		"no",
+		"yes",
+		"build.failed.continue.anyway",
+		"cannot.op.no.launch.config.targets",
+		"cannot.op.choose.launch.config",
+		"cannot.op.without.launch.config",
+		"running.command.in.terminal"
+	],
+	"filePath": "src\\launch"
+}

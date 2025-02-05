@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+    <g fill="none" stroke="#42a5f5" stroke-width="5">
+        <path d="M50 8.32a41.681 41.681 0 1 0 15.95 80.19A41.681 41.681 0 0 0 91.68 50C91.68 26.98 73.02 8.32 50 8.32Z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M45.005 73.206v-25c0-2.357 2.643-5 5-5s5 2.643 5 5v25c0 2.357-2.643 5-5 5s-5-2.643-5-5z" paint-order="fill markers stroke"/>
+        <circle cx="50.005" cy="28.297" r="5" stroke-linecap="round" stroke-linejoin="round" paint-order="fill markers stroke"/>
+    </g>
+</svg>

@@ -1,0 +1,102 @@
+{
+	"name": "file-icons",
+	"displayName": "file-icons",
+	"description": "File-specific icons in VSCode for improved visual grepping.",
+	"version": "1.1.0",
+	"publisher": "file-icons",
+	"license": "MIT",
+	"author": "Daniel Brooker <dan@nocturnalcode.com>",
+	"maintainers": [
+		{
+			"name": "John Gardner",
+			"email": "gardnerjohng@gmail.com",
+			"url": "https://github.com/Alhadis"
+		}
+	],
+	"engines": {
+		"node": ">=15",
+		"vscode": "^1.5.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/file-icons/vscode"
+	},
+	"bugs": "https://github.com/file-icons/vscode/issues",
+	"homepage": "https://github.com/file-icons/vscode",
+	"icon": "./thumbnail.png",
+	"galleryBanner": {
+		"color": "#15191B",
+		"theme": "dark"
+	},
+	"categories": [
+		"Themes",
+		"Other"
+	],
+	"keywords": [
+		"icons",
+		"filetypes",
+		"file-icons",
+		"icon-theme",
+		"theme"
+	],
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "file-icons",
+				"label": "File Icons",
+				"path": "./icons/file-icons-icon-theme.json"
+			},
+			{
+				"id": "file-icons-colourless",
+				"label": "File Icons (Colourless)",
+				"path": "./icons/file-icons-colourless-icon-theme.json"
+			}
+		]
+	},
+	"scripts": {
+		"import": "make update",
+		"lint": "make lint"
+	},
+	"eslintConfig": {
+		"extends": "@alhadis",
+		"overrides": [
+			{
+				"files": [
+					"scripts/*.mjs"
+				],
+				"rules": {
+					"no-irregular-whitespace": 0
+				}
+			}
+		],
+		"rules": {
+			"camelcase": 0
+		}
+	},
+	"eslintIgnore": [
+		"defs"
+	],
+	"devDependencies": {
+		"@alhadis/eslint-config": "^2.3.4",
+		"@babel/eslint-parser": "^7.15.0",
+		"cson": "^7.20.0",
+		"eslint": "^7.32.0",
+		"eslint-plugin-import": "^2.24.2",
+		"genex": "v1.1.0",
+		"less": "^2.7.3"
+	},
+	"__metadata": {
+		"id": "43335a8d-5929-408b-874a-65f08362642c",
+		"publisherId": "bdf69065-5f25-4de9-9ff1-270dd0b6c704",
+		"publisherDisplayName": "file-icons",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206248577,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 1608803
+	}
+}

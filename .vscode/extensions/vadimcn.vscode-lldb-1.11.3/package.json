@@ -1,0 +1,1465 @@
+{
+	"name": "vscode-lldb",
+	"displayName": "CodeLLDB",
+	"version": "1.11.3",
+	"publisher": "vadimcn",
+	"description": "A native debugger powered by LLDB.  Debug C++, Rust and other compiled languages.",
+	"license": "MIT",
+	"author": {
+		"name": "vadimcn"
+	},
+	"icon": "images/lldb.png",
+	"categories": [
+		"Debuggers"
+	],
+	"keywords": [
+		"C++",
+		"Rust",
+		"Reverse",
+		"Embedded",
+		"Debugger"
+	],
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vadimcn/codelldb.git"
+	},
+	"bugs": {
+		"url": "https://github.com/vadimcn/codelldb/issues"
+	},
+	"qna": "https://github.com/vadimcn/codelldb/discussions",
+	"engines": {
+		"vscode": "^1.61.0"
+	},
+	"dependencies": {
+		"string-argv": "^0.3.2",
+		"yaml": "^1.10.0",
+		"yauzl": "^3.1.3"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.60.0",
+		"@types/node": "^14.0.0",
+		"@types/mocha": "^10.0.0",
+		"@types/yauzl": "^2.10.3",
+		"@vscode/debugprotocol": "^1.53.0",
+		"@vscode/debugadapter-testsupport": "^1.51.0",
+		"typescript": "^4.7.0",
+		"mocha": "^10.8.1",
+		"source-map-support": "^0.5.12",
+		"mocha-suppress-logs": "^0.3.1",
+		"vsce": "^2.8.0",
+		"webpack": "^5.37.1",
+		"webpack-cli": "^4.7.0",
+		"ts-loader": "^8.0.0",
+		"json-pointer": "^0.6.2"
+	},
+	"scripts": {
+		"vsce": "vsce",
+		"mocha": "mocha",
+		"tsc": "tsc",
+		"webpack": "webpack"
+	},
+	"main": "extension.js",
+	"activationEvents": [
+		"onDebug",
+		"onUri",
+		"onStartupFinished",
+		"onCommand:lldb.attach",
+		"onCommand:lldb.commandPrompt"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"category": "LLDB",
+				"title": "Display Format...",
+				"command": "lldb.displayFormat"
+			},
+			{
+				"category": "LLDB",
+				"title": "Show Disassembly...",
+				"command": "lldb.showDisassembly"
+			},
+			{
+				"category": "LLDB",
+				"title": "Toggle Disassembly",
+				"command": "lldb.toggleDisassembly"
+			},
+			{
+				"category": "LLDB",
+				"title": "Toggle Pointee Summaries",
+				"command": "lldb.toggleDerefPointers"
+			},
+			{
+				"category": "LLDB",
+				"title": "Toggle Debug Console Mode",
+				"command": "lldb.toggleConsoleMode"
+			},
+			{
+				"category": "LLDB",
+				"title": "Run Diagnostics",
+				"command": "lldb.diagnose"
+			},
+			{
+				"category": "LLDB",
+				"title": "Generate Launch Configurations from Cargo.toml",
+				"command": "lldb.getCargoLaunchConfigs"
+			},
+			{
+				"category": "LLDB",
+				"title": "Display Options...",
+				"command": "lldb.changeDisplaySettings"
+			},
+			{
+				"category": "LLDB",
+				"title": "Copy Value",
+				"command": "lldb.modules.copyValue"
+			},
+			{
+				"category": "LLDB",
+				"title": "Use Alternate Backend...",
+				"command": "lldb.alternateBackend"
+			},
+			{
+				"category": "LLDB",
+				"title": "Attach to Process...",
+				"command": "lldb.attach"
+			},
+			{
+				"category": "LLDB",
+				"title": "Command Prompt",
+				"command": "lldb.commandPrompt"
+			},
+			{
+				"category": "LLDB",
+				"title": "Search Symbols...",
+				"command": "lldb.symbols",
+				"enablement": "debugType == 'lldb'"
+			},
+			{
+				"category": "LLDB",
+				"title": "View Memory...",
+				"command": "lldb.viewMemory",
+				"enablement": "debugType == 'lldb'"
+			},
+			{
+				"category": "LLDB",
+				"title": "Exclude Caller",
+				"command": "lldb.excludedCallers.add",
+				"enablement": "debugType == 'lldb' && focusedView == 'workbench.debug.callStackView'"
+			},
+			{
+				"category": "LLDB",
+				"title": "Remove Caller Exclusion",
+				"command": "lldb.excludedCallers.remove",
+				"icon": "$(close)"
+			},
+			{
+				"category": "LLDB",
+				"title": "Remove All Caller Exclusions",
+				"command": "lldb.excludedCallers.removeAll",
+				"icon": "$(clear-all)"
+			}
+		],
+		"languages": [
+			{
+				"id": "lldb.disassembly",
+				"aliases": [
+					"Disassembly"
+				],
+				"extensions": [
+					".disasm"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "lldb.disassembly",
+				"scopeName": "source.disassembly",
+				"path": "./syntaxes/disassembly.json"
+			}
+		],
+		"views": {
+			"debug": [
+				{
+					"id": "lldb.loadedModules",
+					"name": "Modules",
+					"when": "debugType == 'lldb'"
+				},
+				{
+					"id": "lldb.excludedCallers",
+					"name": "Excluded Callers",
+					"when": "debugType == 'lldb'"
+				}
+			]
+		},
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "lldb.modules.copyValue",
+					"when": "viewItem == lldb.moduleProperty"
+				}
+			],
+			"debug/callstack/context": [
+				{
+					"command": "lldb.excludedCallers.add",
+					"when": "debugType == 'lldb'"
+				}
+			],
+			"view/title": [
+				{
+					"command": "lldb.excludedCallers.removeAll",
+					"when": "view == 'lldb.excludedCallers'",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "lldb.modules.copyValue",
+					"when": "viewItem == lldb.moduleProperty"
+				},
+				{
+					"command": "lldb.excludedCallers.remove",
+					"when": "view == 'lldb.excludedCallers'",
+					"group": "inline"
+				}
+			]
+		},
+		"taskDefinitions": [
+			{
+				"type": "codelldb.cargo",
+				"properties": {
+					"args": {
+						"type": "array"
+					},
+					"env": {
+						"type": "object"
+					},
+					"cwd": {
+						"type": "string"
+					},
+					"filter": {
+						"type": "object"
+					}
+				},
+				"when": "false"
+			}
+		],
+		"configuration": [
+			{
+				"title": "General",
+				"properties": {
+					"lldb.consoleMode": {
+						"description": "Controls whether the debug console input is by default treated as debugger commands or as expressions to evaluate.",
+						"type": "string",
+						"enum": [
+							"commands",
+							"evaluate",
+							"split"
+						],
+						"default": "commands",
+						"enumDescriptions": [
+							"Treat debug console input as debugger commands.  In order to evaluate an expression, prefix it with '?' (question mark).",
+							"Treat debug console input as expressions.  In order to execute a debugger command, prefix it with '`' (backtick).",
+							"(experimental) Use the debug console for warningevaluation of expressions, open a separate terminal for input of LLDB commands."
+						],
+						"scope": "resource",
+						"order": 1
+					},
+					"lldb.evaluationTimeout": {
+						"description": "Timeout for expression evaluation, in seconds.",
+						"type": "number",
+						"default": 5,
+						"scope": "resource",
+						"order": 2
+					},
+					"lldb.displayFormat": {
+						"description": "Default format for displayed variable values.",
+						"type": "string",
+						"enum": [
+							"auto",
+							"hex",
+							"decimal",
+							"binary"
+						],
+						"default": "auto",
+						"scope": "resource",
+						"order": 3
+					},
+					"lldb.dereferencePointers": {
+						"description": "Whether to show summaries of the pointees instead of numeric values of the pointers themselves.",
+						"type": "boolean",
+						"default": true,
+						"scope": "resource",
+						"order": 4
+					},
+					"lldb.showDisassembly": {
+						"description": "When to show disassembly.",
+						"type": "string",
+						"enum": [
+							"auto",
+							"never",
+							"always"
+						],
+						"default": "auto",
+						"enumDescriptions": [
+							"Only when source is not available.",
+							"Never show.",
+							"Always show, even if source is available."
+						],
+						"scope": "resource",
+						"order": 5
+					},
+					"lldb.suppressMissingSourceFiles": {
+						"description": "Suppress VSCode's messages about missing source files (when debug info refers to files not available on the local machine).",
+						"type": "boolean",
+						"default": true,
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.dbgconfig": {
+						"description": "Common user-defined settings that can be inserted into launch configurations using ${dbgconfig:name} syntax.",
+						"type": "object",
+						"patternProperties": {
+							".*": {
+								"type": [
+									"string",
+									"number",
+									"array",
+									"boolean",
+									"null"
+								]
+							}
+						},
+						"default": {},
+						"scope": "resource",
+						"order": 100
+					},
+					"lldb.script": {
+						"description": "Settings for scripts running within the debugger context. These may be accessed via `debugger.get_config()`. The schema is free-form, except that the `lang` subtree is reserved for built-in language support helpers.",
+						"type": "object",
+						"default": {},
+						"scope": "resource",
+						"order": 100
+					}
+				}
+			},
+			{
+				"title": "Launch configuration defaults",
+				"properties": {
+					"lldb.launch.initCommands": {
+						"markdownDescription": "Commands executed *before* initCommands in individual launch configurations.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"scope": "resource",
+						"order": 1
+					},
+					"lldb.launch.preRunCommands": {
+						"markdownDescription": "Commands executed *before* preRunCommands in individual launch configurations.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"scope": "resource",
+						"order": 2
+					},
+					"lldb.launch.postRunCommands": {
+						"markdownDescription": "Commands executed *before* postRunCommands in individual launch configurations.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"scope": "resource",
+						"order": 3
+					},
+					"lldb.launch.preTerminateCommands": {
+						"markdownDescription": "Commands executed *after* preTerminateCommands in individual launch configurations.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"scope": "resource",
+						"order": 4
+					},
+					"lldb.launch.exitCommands": {
+						"markdownDescription": "Commands executed *after* exitCommands in individual launch configurations.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"scope": "resource",
+						"order": 4
+					},
+					"lldb.launch.env": {
+						"description": "Additional environment variables merged with 'env' individual launch configurations.",
+						"type": "object",
+						"patternProperties": {
+							".*": {
+								"type": "string"
+							}
+						},
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.launch.envFile": {
+						"order": 10,
+						"description": "File to read the environment variables from.",
+						"type": "string"
+					},
+					"lldb.launch.cwd": {
+						"description": "Default program working directory.",
+						"type": "string",
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.launch.terminal": {
+						"description": "Default terminal type.",
+						"type": "string",
+						"enum": [
+							"integrated",
+							"external",
+							"console"
+						],
+						"enumDescriptions": [
+							"Use integrated terminal in VSCode.",
+							"Use external terminal window.",
+							"Use VScode Debug Console for stdout and stderr. Stdin will be unavailable."
+						],
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.launch.stdio": {
+						"description": "Default destination for stdio streams: null = send to debugger console or a terminal, \"<path>\" = attach to a file/tty/fifo.",
+						"type": [
+							"null",
+							"string",
+							"array",
+							"object"
+						],
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.launch.expressions": {
+						"description": "The default evaluator type used for expressions.",
+						"type": "string",
+						"enum": [
+							"simple",
+							"python",
+							"native"
+						],
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.launch.sourceMap": {
+						"description": "Additional entries that will be merged with 'sourceMap's of individual launch configurations.",
+						"type": "object",
+						"patternProperties": {
+							".*": {
+								"type": "string"
+							}
+						},
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.launch.breakpointMode": {
+						"scope": "resource",
+						"order": 10,
+						"description": "Specifies how source breakpoints should be set.",
+						"type": "string",
+						"enum": [
+							"path",
+							"file"
+						],
+						"enumDescriptions": [
+							"Resolve locations using full source file path.",
+							"Resolve locations using file name only."
+						]
+					},
+					"lldb.launch.sourceLanguages": {
+						"description": "A list of source languages to enable language-specific features for.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"scope": "resource",
+						"order": 20
+					},
+					"lldb.launch.relativePathBase": {
+						"description": "Default base directory used for resolution of relative source paths.  Defaults to \"${workspaceFolder}\".",
+						"type": "string",
+						"scope": "resource",
+						"order": 100
+					},
+					"lldb.launch.debugServer": {
+						"description": "Debug server port.",
+						"type": [
+							"null",
+							"integer"
+						],
+						"defaultSnippets": [
+							{
+								"label": "Port 4711",
+								"body": 4711
+							}
+						],
+						"scope": "resource",
+						"order": 999
+					}
+				}
+			},
+			{
+				"title": "Advanced",
+				"properties": {
+					"lldb.verboseLogging": {
+						"description": "Turns on verbose logging.",
+						"type": "boolean",
+						"default": false,
+						"scope": "resource",
+						"order": 1
+					},
+					"lldb.rpcServer": {
+						"description": "Start an RPC server that will accept debug configuration requests.",
+						"type": [
+							"object",
+							"null"
+						],
+						"default": null,
+						"scope": "window",
+						"order": 2
+					},
+					"lldb.library": {
+						"markdownDescription": "Which LLDB library to use.\n\nThis can be either a file path (recommended) or a directory, in which case platform-specific heuristics will be used to locate the actual library file.",
+						"type": "string",
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.cargo": {
+						"markdownDescription": "Name of the command to invoke as Cargo.",
+						"type": "string",
+						"default": "cargo",
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.adapterEnv": {
+						"description": "Extra environment variables for the debug adapter.",
+						"type": "object",
+						"patternProperties": {
+							".*": {
+								"type": "string"
+							}
+						},
+						"default": {},
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.reproducer": {
+						"markdownDescription": "Enable capture of a [reproducer](https://lldb.llvm.org/design/reproducers.html).\nMay also contain a path of the directory to save the reproducer in.",
+						"type": [
+							"boolean",
+							"string"
+						],
+						"default": false,
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.terminalPromptClear": {
+						"description": "A sequence of strings sent to the terminal in order to clear its command prompt.",
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"default": null,
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.evaluateForHovers": {
+						"description": "Enable value preview when cursor is hovering over a variable.",
+						"type": "boolean",
+						"default": true,
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.commandCompletions": {
+						"description": "Enable command completions in debug console.",
+						"type": "boolean",
+						"default": true,
+						"scope": "resource",
+						"order": 10
+					},
+					"lldb.suppressUpdateNotifications": {
+						"description": "Don't show extension update notifications.",
+						"type": "boolean",
+						"scope": "application",
+						"order": 100
+					}
+				}
+			}
+		],
+		"breakpoints": [
+			{
+				"language": "ada"
+			},
+			{
+				"language": "arm"
+			},
+			{
+				"language": "arm64"
+			},
+			{
+				"language": "asm"
+			},
+			{
+				"language": "c"
+			},
+			{
+				"language": "cpp"
+			},
+			{
+				"language": "crystal"
+			},
+			{
+				"language": "d"
+			},
+			{
+				"language": "fortran"
+			},
+			{
+				"language": "fortran-modern"
+			},
+			{
+				"language": "haskell"
+			},
+			{
+				"language": "jai"
+			},
+			{
+				"language": "java"
+			},
+			{
+				"language": "julia"
+			},
+			{
+				"language": "kotlin"
+			},
+			{
+				"language": "lldb.disassembly"
+			},
+			{
+				"language": "nim"
+			},
+			{
+				"language": "objective-c"
+			},
+			{
+				"language": "objective-cpp"
+			},
+			{
+				"language": "objectpascal"
+			},
+			{
+				"language": "ocaml"
+			},
+			{
+				"language": "odin"
+			},
+			{
+				"language": "opencl"
+			},
+			{
+				"language": "pascal"
+			},
+			{
+				"language": "rust"
+			},
+			{
+				"language": "swift"
+			},
+			{
+				"language": "zig"
+			}
+		],
+		"debuggers": [
+			{
+				"type": "lldb",
+				"label": "LLDB",
+				"languages": [
+					"ada",
+					"arm",
+					"arm64",
+					"asm",
+					"c",
+					"cpp",
+					"crystal",
+					"fortran-modern",
+					"fortran",
+					"jai",
+					"nim",
+					"objective-c",
+					"objective-cpp",
+					"objectpascal",
+					"odin",
+					"pascal",
+					"rust"
+				],
+				"variables": {
+					"pickProcess": "lldb.pickProcess",
+					"pickMyProcess": "lldb.pickMyProcess"
+				},
+				"configurationAttributes": {
+					"launch": {
+						"properties": {
+							"program": {
+								"description": "Path to the program to debug.",
+								"type": "string"
+							},
+							"cargo": {
+								"description": "Cargo invocation parameters.",
+								"type": "object",
+								"properties": {
+									"args": {
+										"description": "Cargo command line arguments.",
+										"type": "array",
+										"default": []
+									},
+									"env": {
+										"description": "Additional environment variables passed to Cargo.",
+										"type": "object",
+										"patternProperties": {
+											".*": {
+												"type": "string"
+											}
+										},
+										"default": {}
+									},
+									"cwd": {
+										"description": "Cargo working directory.",
+										"type": "string"
+									},
+									"problemMatcher": {
+										"description": "Problem matcher(s) to apply to Cargo output.",
+										"type": [
+											"string",
+											"array"
+										]
+									},
+									"filter": {
+										"description": "Filter applied to compilation artifacts.",
+										"type": "object",
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"kind": {
+												"type": "string"
+											}
+										}
+									}
+								},
+								"required": [
+									"args"
+								],
+								"additionalProperties": false,
+								"defaultSnippets": [
+									{
+										"label": "Library unit tests",
+										"body": {
+											"args": [
+												"test",
+												"--no-run",
+												"--lib"
+											],
+											"filter": {
+												"kind": "lib"
+											}
+										}
+									},
+									{
+										"label": "Executable",
+										"body": {
+											"args": [
+												"build",
+												"--bin=${1:<name>}"
+											],
+											"filter": {
+												"kind": "bin"
+											}
+										}
+									}
+								]
+							},
+							"args": {
+								"description": "Program arguments.",
+								"type": [
+									"array",
+									"string"
+								]
+							},
+							"cwd": {
+								"description": "Program working directory.",
+								"type": "string"
+							},
+							"env": {
+								"description": "Additional environment variables.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": "string"
+									}
+								}
+							},
+							"envFile": {
+								"description": "File to read the environment variables from.",
+								"type": "string"
+							},
+							"stdio": {
+								"description": "Destination for stdio streams: null = send to debugger console or a terminal, \"<path>\" = attach to a file/tty/fifo.",
+								"type": [
+									"null",
+									"string",
+									"array",
+									"object"
+								],
+								"default": null
+							},
+							"terminal": {
+								"description": "Terminal type to use.",
+								"type": "string",
+								"enum": [
+									"integrated",
+									"external",
+									"console"
+								],
+								"enumDescriptions": [
+									"Use integrated terminal in VSCode.",
+									"Use external terminal window.",
+									"Use VScode Debug Console for stdout and stderr. Stdin will be unavailable."
+								],
+								"default": "integrated"
+							},
+							"console": {
+								"description": "Terminal type to use. (This setting is a compatibility alias of 'terminal'.)",
+								"type": "string",
+								"enum": [
+									"integratedTerminal",
+									"externalTerminal",
+									"internalConsole"
+								],
+								"enumDescriptions": [
+									"Use integrated terminal in VSCode.",
+									"Use external terminal window.",
+									"Use VScode Debug Console for stdout and stderr. Stdin will be unavailable."
+								]
+							},
+							"stopOnEntry": {
+								"description": "Automatically stop debuggee after launch.",
+								"type": "boolean",
+								"default": false
+							},
+							"initCommands": {
+								"description": "Initialization commands executed upon debugger startup.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"targetCreateCommands": {
+								"description": "Commands that create the debug target.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"preRunCommands": {
+								"description": "Commands executed just before the program is launched.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"processCreateCommands": {
+								"description": "Commands that create the debuggee process.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"postRunCommands": {
+								"description": "Commands executed just after the program has been launched.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"preTerminateCommands": {
+								"description": "Commands executed just before the debuggee is terminated or disconnected from.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"exitCommands": {
+								"description": "Commands executed at the end of debugging session.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"expressions": {
+								"description": "The default evaluator type used for expressions.",
+								"type": "string",
+								"enum": [
+									"simple",
+									"python",
+									"native"
+								]
+							},
+							"sourceMap": {
+								"description": "Source path remapping between the build machine and the local machine.  Each item is a pair of remote and local path prefixes.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": [
+											"string",
+											"null"
+										]
+									}
+								},
+								"default": {}
+							},
+							"relativePathBase": {
+								"description": "Base directory used for resolution of relative source paths.  Defaults to \"${workspaceFolder}\".",
+								"type": "string"
+							},
+							"sourceLanguages": {
+								"description": "A list of source languages to enable language-specific features for.",
+								"type": "array",
+								"default": []
+							},
+							"reverseDebugging": {
+								"description": "Enable reverse debugging (Requires reverse execution support in the debug server, see User's Manual for details).",
+								"type": "boolean",
+								"default": false
+							},
+							"breakpointMode": {
+								"description": "Specifies how source breakpoints should be set.",
+								"type": "string",
+								"enum": [
+									"path",
+									"file"
+								],
+								"enumDescriptions": [
+									"Resolve locations using full source file path.",
+									"Resolve locations using file name only."
+								]
+							}
+						},
+						"anyOf": [
+							{
+								"required": [
+									"program"
+								]
+							},
+							{
+								"required": [
+									"targetCreateCommands"
+								]
+							},
+							{
+								"required": [
+									"cargo"
+								]
+							}
+						]
+					},
+					"attach": {
+						"properties": {
+							"program": {
+								"description": "Path to the program to attach to.",
+								"type": "string"
+							},
+							"pid": {
+								"description": "Process id to attach to.",
+								"type": [
+									"integer",
+									"string"
+								],
+								"default": "${command:pickMyProcess}"
+							},
+							"stopOnEntry": {
+								"description": "Automatically stop debuggee after attach.",
+								"type": "boolean",
+								"default": false
+							},
+							"waitFor": {
+								"description": "Wait for the process to launch (MacOS only).",
+								"type": "boolean",
+								"default": false
+							},
+							"initCommands": {
+								"description": "Initialization commands executed upon debugger startup.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"targetCreateCommands": {
+								"description": "Commands that create the debug target.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"preRunCommands": {
+								"description": "Commands executed just before the program is launched.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"processCreateCommands": {
+								"description": "Commands that create the debuggee process.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"postRunCommands": {
+								"description": "Commands executed just after the program has been launched.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"exitCommands": {
+								"description": "Commands executed at the end of debugging session.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"expressions": {
+								"description": "The default evaluator type used for expressions.",
+								"type": "string",
+								"enum": [
+									"simple",
+									"python",
+									"native"
+								]
+							},
+							"sourceMap": {
+								"description": "Source path remapping between the build machine and the local machine.  Each item is a pair of remote and local path prefixes.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": [
+											"string",
+											"null"
+										]
+									}
+								},
+								"default": {}
+							},
+							"relativePathBase": {
+								"description": "Base directory used for resolution of relative source paths.  Defaults to \"${workspaceFolder}\".",
+								"type": "string"
+							},
+							"sourceLanguages": {
+								"description": "A list of source languages to enable language-specific features for.",
+								"type": "array",
+								"default": []
+							},
+							"reverseDebugging": {
+								"description": "Enable reverse debugging (Requires reverse execution support in the debug server, see User's Manual for details).",
+								"type": "boolean",
+								"default": false
+							},
+							"breakpointMode": {
+								"description": "Specifies how source breakpoints should be set.",
+								"type": "string",
+								"enum": [
+									"path",
+									"file"
+								],
+								"enumDescriptions": [
+									"Resolve locations using full source file path.",
+									"Resolve locations using file name only."
+								]
+							}
+						}
+					},
+					"custom": {
+						"deprecated": true,
+						"description": "`custom` is deprecated.  Use `launch` instead.",
+						"properties": {
+							"program": {
+								"description": "Path to the program to debug.",
+								"type": "string"
+							},
+							"cargo": {
+								"description": "Cargo invocation parameters.",
+								"type": "object",
+								"properties": {
+									"args": {
+										"description": "Cargo command line arguments.",
+										"type": "array",
+										"default": []
+									},
+									"env": {
+										"description": "Additional environment variables passed to Cargo.",
+										"type": "object",
+										"patternProperties": {
+											".*": {
+												"type": "string"
+											}
+										},
+										"default": {}
+									},
+									"cwd": {
+										"description": "Cargo working directory.",
+										"type": "string"
+									},
+									"problemMatcher": {
+										"description": "Problem matcher(s) to apply to Cargo output.",
+										"type": [
+											"string",
+											"array"
+										]
+									},
+									"filter": {
+										"description": "Filter applied to compilation artifacts.",
+										"type": "object",
+										"properties": {
+											"name": {
+												"type": "string"
+											},
+											"kind": {
+												"type": "string"
+											}
+										}
+									}
+								},
+								"required": [
+									"args"
+								],
+								"additionalProperties": false,
+								"defaultSnippets": [
+									{
+										"label": "Library unit tests",
+										"body": {
+											"args": [
+												"test",
+												"--no-run",
+												"--lib"
+											],
+											"filter": {
+												"kind": "lib"
+											}
+										}
+									},
+									{
+										"label": "Executable",
+										"body": {
+											"args": [
+												"build",
+												"--bin=${1:<name>}"
+											],
+											"filter": {
+												"kind": "bin"
+											}
+										}
+									}
+								]
+							},
+							"args": {
+								"description": "Program arguments.",
+								"type": [
+									"array",
+									"string"
+								]
+							},
+							"cwd": {
+								"description": "Program working directory.",
+								"type": "string"
+							},
+							"env": {
+								"description": "Additional environment variables.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": "string"
+									}
+								}
+							},
+							"envFile": {
+								"description": "File to read the environment variables from.",
+								"type": "string"
+							},
+							"stdio": {
+								"description": "Destination for stdio streams: null = send to debugger console or a terminal, \"<path>\" = attach to a file/tty/fifo.",
+								"type": [
+									"null",
+									"string",
+									"array",
+									"object"
+								],
+								"default": null
+							},
+							"terminal": {
+								"description": "Terminal type to use.",
+								"type": "string",
+								"enum": [
+									"integrated",
+									"external",
+									"console"
+								],
+								"enumDescriptions": [
+									"Use integrated terminal in VSCode.",
+									"Use external terminal window.",
+									"Use VScode Debug Console for stdout and stderr. Stdin will be unavailable."
+								],
+								"default": "integrated"
+							},
+							"console": {
+								"description": "Terminal type to use. (This setting is a compatibility alias of 'terminal'.)",
+								"type": "string",
+								"enum": [
+									"integratedTerminal",
+									"externalTerminal",
+									"internalConsole"
+								],
+								"enumDescriptions": [
+									"Use integrated terminal in VSCode.",
+									"Use external terminal window.",
+									"Use VScode Debug Console for stdout and stderr. Stdin will be unavailable."
+								]
+							},
+							"stopOnEntry": {
+								"description": "Automatically stop debuggee after launch.",
+								"type": "boolean",
+								"default": false
+							},
+							"initCommands": {
+								"description": "Initialization commands executed upon debugger startup.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"targetCreateCommands": {
+								"description": "Commands that create the debug target.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"preRunCommands": {
+								"description": "Commands executed just before the program is launched.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"processCreateCommands": {
+								"description": "Commands that create the debuggee process.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"postRunCommands": {
+								"description": "Commands executed just after the program has been launched.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"preTerminateCommands": {
+								"description": "Commands executed just before the debuggee is terminated or disconnected from.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"exitCommands": {
+								"description": "Commands executed at the end of debugging session.",
+								"type": "array",
+								"items": {
+									"type": "string"
+								},
+								"default": []
+							},
+							"expressions": {
+								"description": "The default evaluator type used for expressions.",
+								"type": "string",
+								"enum": [
+									"simple",
+									"python",
+									"native"
+								]
+							},
+							"sourceMap": {
+								"description": "Source path remapping between the build machine and the local machine.  Each item is a pair of remote and local path prefixes.",
+								"type": "object",
+								"patternProperties": {
+									".*": {
+										"type": [
+											"string",
+											"null"
+										]
+									}
+								},
+								"default": {}
+							},
+							"relativePathBase": {
+								"description": "Base directory used for resolution of relative source paths.  Defaults to \"${workspaceFolder}\".",
+								"type": "string"
+							},
+							"sourceLanguages": {
+								"description": "A list of source languages to enable language-specific features for.",
+								"type": "array",
+								"default": []
+							},
+							"reverseDebugging": {
+								"description": "Enable reverse debugging (Requires reverse execution support in the debug server, see User's Manual for details).",
+								"type": "boolean",
+								"default": false
+							},
+							"breakpointMode": {
+								"description": "Specifies how source breakpoints should be set.",
+								"type": "string",
+								"enum": [
+									"path",
+									"file"
+								],
+								"enumDescriptions": [
+									"Resolve locations using full source file path.",
+									"Resolve locations using file name only."
+								]
+							}
+						}
+					}
+				},
+				"configurationSnippets": [
+					{
+						"label": "CodeLLDB: Launch",
+						"description": "Launch a new instance of the specified program.",
+						"body": {
+							"type": "lldb",
+							"request": "launch",
+							"name": "${2:Launch}",
+							"program": "^\"\\${workspaceFolder}/${1:<program>}\"",
+							"args": [],
+							"cwd": "^\"\\${workspaceFolder}\""
+						}
+					},
+					{
+						"label": "CodeLLDB: Attach to PID",
+						"description": "Attach to a running process with the specified process id.",
+						"body": {
+							"type": "lldb",
+							"request": "attach",
+							"name": "${2:Attach}",
+							"pid": "^\"\\${command:pickMyProcess}\" // use \\${command:pickProcess} to pick other users' processes"
+						}
+					},
+					{
+						"label": "CodeLLDB: Attach by Name",
+						"description": "Attach to a running instance of the specified program.",
+						"body": {
+							"type": "lldb",
+							"request": "attach",
+							"name": "${2:Attach}",
+							"program": "^\"\\${workspaceFolder}/${1:<program>}\""
+						}
+					},
+					{
+						"label": "CodeLLDB: Custom",
+						"description": "Launch or attach using raw LLDB commands.",
+						"body": {
+							"type": "lldb",
+							"request": "launch",
+							"name": "${2:Custom launch}",
+							"targetCreateCommands": [
+								"^\"target create \\${workspaceFolder}/${1:<program>}\""
+							],
+							"processCreateCommands": [
+								"settings set target.run-args ${3:value1 value2 value3}",
+								"process launch"
+							]
+						}
+					},
+					{
+						"label": "CodeLLDB: Debug a Cargo Target",
+						"description": "Debug an executable target in a Cargo package.",
+						"body": {
+							"type": "lldb",
+							"request": "launch",
+							"name": "${2:Cargo launch}",
+							"cargo": {
+								"args": [
+									"build",
+									"${1:--lib}"
+								]
+							},
+							"args": []
+						}
+					},
+					{
+						"label": "CodeLLDB: Debug Cargo Tests",
+						"description": "Debug unit tests in a Cargo package.",
+						"body": {
+							"type": "lldb",
+							"request": "launch",
+							"name": "${2:Cargo test}",
+							"cargo": {
+								"args": [
+									"test",
+									"--no-run",
+									"${1:--lib}"
+								]
+							},
+							"args": []
+						}
+					}
+				]
+			}
+		]
+	},
+	"config": {
+		"platformPackages": {
+			"url": "https://github.com/vadimcn/codelldb/releases/download/v${version}/${platformPackage}",
+			"platforms": {
+				"linux-x64": "codelldb-linux-x64.vsix",
+				"linux-arm64": "codelldb-linux-arm64.vsix",
+				"linux-arm": "codelldb-linux-armhf.vsix",
+				"darwin-x64": "codelldb-darwin-x64.vsix",
+				"darwin-arm64": "codelldb-darwin-arm64.vsix",
+				"win32-x64": "codelldb-win32-x64.vsix",
+				"win32-ia32": "codelldb-win32-x64.vsix"
+			}
+		}
+	},
+	"__metadata": {
+		"size": 139237127
+	}
+}

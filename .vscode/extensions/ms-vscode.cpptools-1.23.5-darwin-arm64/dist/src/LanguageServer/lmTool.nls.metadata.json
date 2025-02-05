@@ -1,0 +1,11 @@
+{
+	"messages": [
+		"Error while retrieving the project context. Reason: {0}",
+		"Error while retrieving the #cpp context."
+	],
+	"keys": [
+		"copilot.projectcontext.error",
+		"copilot.cppcontext.error"
+	],
+	"filePath": "LanguageServer\\lmTool"
+}

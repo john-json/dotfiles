@@ -1,0 +1,96 @@
+{
+	"name": "firacode",
+	"displayName": "FiraCode font - Professional Font for Developers",
+	"description": "FiraCode font pack - Free monospaced font with programming ligatures vscode extension",
+	"version": "2.2.2",
+	"publisher": "SeyyedKhandon",
+	"author": "SeyyedMahdi Hassanpour",
+	"license": "MIT",
+	"galleryBanner": {
+		"color": "#47B784",
+		"theme": "dark"
+	},
+	"icon": "assets/firacode.jpg",
+	"activationEvents": [
+		"onStartupFinished",
+		"onCommand:firacode.activate"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "firacode.activate",
+				"title": "Activate FiraCode Font pack"
+			},
+			{
+				"command": "firacode.deactivate",
+				"title": "Deactivate FiraCode Font"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"repository": {
+		"url": "https://github.com/SeyyedKhandon/firacode-vscode-extension.git"
+	},
+	"homepage": "https://github.com/SeyyedKhandon/firacode-vscode-extension.git",
+	"bugs": {
+		"url": "https://github.com/SeyyedKhandon/firacode-vscode-extension.git/issues"
+	},
+	"keywords": [
+		"font",
+		"firacode font",
+		"Extension for FiraCode font pack",
+		"Professional fonts for programming"
+	],
+	"categories": [
+		"Extension Packs",
+		"Language Packs",
+		"Programming Languages",
+		"Formatters",
+		"Other"
+	],
+	"engines": {
+		"vscode": "^1.72.0"
+	},
+	"devDependencies": {
+		"@types/follow-redirects": "^1.13.0",
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.0",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.72.0",
+		"@typescript-eslint/eslint-plugin": "^5.38.1",
+		"@typescript-eslint/parser": "^5.38.1",
+		"@vscode/test-electron": "^2.1.5",
+		"eslint": "^8.24.0",
+		"follow-redirects": "^1.13.3",
+		"fs": "^0.0.1-security",
+		"glob": "^8.0.3",
+		"inly": "^4.0.8",
+		"mocha": "^10.0.0",
+		"path": "^0.12.7",
+		"typescript": "^4.8.4",
+		"vscode-test": "^1.5.0"
+	},
+	"dependencies": {},
+	"__metadata": {
+		"id": "f06a4de4-72f7-473f-9560-918fe2907b48",
+		"publisherId": "15356ce6-c119-4267-977f-e6a9f460b029",
+		"publisherDisplayName": "SeyyedKhandon",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206248653,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 2354999
+	}
+}

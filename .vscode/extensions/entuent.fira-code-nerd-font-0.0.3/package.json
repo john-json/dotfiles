@@ -1,0 +1,38 @@
+{
+	"name": "fira-code-nerd-font",
+	"displayName": "Fira Code Nerd Font / Icons",
+	"description": "Use Nerd Font icons and install Fira Code",
+	"publisher": "entuent",
+	"repository": "https://github.com/intellis-team/fira-code-nerd-icons",
+	"version": "0.0.3",
+	"icon": "./icon.jpg",
+	"engines": {
+		"vscode": "^1.80.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"iconThemes": [
+			{
+				"id": "fira-code-material-minimal",
+				"label": "Fira Code Material Minimal Icons",
+				"path": "./fira-code-material-minimal.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "e16a19b1-65f8-4260-9bef-0712f51ab3e2",
+		"publisherId": "db68b045-55d1-4a23-8b05-b769013f24b9",
+		"publisherDisplayName": "Entuent",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206248552,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 1218214
+	}
+}

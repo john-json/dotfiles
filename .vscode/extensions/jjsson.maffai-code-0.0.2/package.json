@@ -1,0 +1,45 @@
+{
+	"name": "maffai-code",
+	"displayName": "maffai-code",
+	"description": "Maffai Code Dark",
+	"publisher": "jjsson",
+	"author": {
+		"name": "john"
+	},
+	"icon": "icon.png",
+	"version": "0.0.2",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.91.1"
+	},
+	"categories": [
+		"Themes"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/john.json"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "maffai-code",
+				"uiTheme": "vs-dark",
+				"path": "./theme/package.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "ca16bdea-5c61-4e75-97a7-95b37fa57480",
+		"publisherId": "d8bbf491-6d56-4bfd-8017-f9ef289d527c",
+		"publisherDisplayName": "John Johansson",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206249908,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 337988
+	}
+}

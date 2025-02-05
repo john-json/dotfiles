@@ -1,0 +1,57 @@
+{
+	"name": "operatormonodarktheme",
+	"displayName": "Operator Mono Themes",
+	"description": "Dark and Light themes for Operator Mono font",
+	"icon": "icon.png",
+	"version": "2.1.0",
+	"publisher": "Valiantsin",
+	"engines": {
+		"vscode": "^1.96.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Operator Mono Dark Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark_plus.json"
+			},
+			{
+				"label": "Operator Mono Dark Modern Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/dark_modern.json"
+			},
+			{
+				"label": "Operator Mono Light Theme",
+				"uiTheme": "vs",
+				"path": "./themes/light_plus.json"
+			},
+			{
+				"label": "Operator Mono Light Modern Theme",
+				"uiTheme": "vs",
+				"path": "./themes/light_modern.json"
+			}
+		]
+	},
+	"homepage": "https://github.com/vharadkou/OperatorMonoThemes/blob/main/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vharadkou/OperatorMonoThemes"
+	},
+	"__metadata": {
+		"id": "9768b072-5383-47ca-bff6-d4945d0474c6",
+		"publisherId": "9ac2ad56-f667-4f73-8fa0-34e31e4addfd",
+		"publisherDisplayName": "Valiantsin",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"isPreReleaseVersion": false,
+		"hasPreReleaseVersion": false,
+		"installedTimestamp": 1738206249404,
+		"pinned": false,
+		"preRelease": false,
+		"source": "gallery",
+		"size": 1426028
+	}
+}

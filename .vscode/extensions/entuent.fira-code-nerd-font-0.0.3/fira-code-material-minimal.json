@@ -1,0 +1,53 @@
+{
+  "hidesExplorerArrows": true,
+  "fonts": [
+    {
+      "id": "fira-code-nerd",
+      "src": [
+        {
+          "path": "./fonts/fira-code-nerd-font-regular.woff",
+          "format": "woff"
+        }
+      ],
+      "weight": "normal",
+      "style": "normal",
+      "size": "100%"
+    }
+  ],
+  "iconDefinitions": {
+    "_file": {
+      "fontCharacter": "\\F0214",
+      "fontColor": "#b5b5b5"
+    },
+    "_file_light": {
+      "fontCharacter": "\\F0214",
+      "fontColor": "#333333"
+    },
+    "_folder": {
+      "fontCharacter": "\\F024B",
+      "fontColor": "#b5b5b5"
+    },
+    "_folder_light": {
+      "fontCharacter": "\\F024B",
+      "fontColor": "#333333"
+    },
+    "_folder_open": {
+      "fontCharacter": "\\F0770",
+      "fontColor": "#b5b5b5"
+    },
+    "_folder_open_light": {
+      "fontCharacter": "\\F0770",
+      "fontColor": "#333333"
+    }
+  },
+  
+  "file": "_file",
+  "folder": "_folder",
+  "folderExpanded": "_folder_open",
+  "light": {
+    "file": "_file_light",
+    "folder": "_folder_light",
+    "folderExpanded": "_folder_open_light"
+  }
+
+}
