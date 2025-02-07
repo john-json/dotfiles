@@ -351,7 +351,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window?.backgroundColor = .clear
         window?.isMovableByWindowBackground = false
         window?.level = .floating
-        window?.hasShadow = false
+        window?.hasShadow = true
 
         if let contentView = window?.contentView {
             contentView.wantsLayer = true
@@ -780,7 +780,7 @@ struct ContentView: View {
                             .fill(Color(Colors.cardBackground).opacity(0.5))
                             .blur(radius: 15)
                     )
-                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
 
                 mediaPlayerSection
                     .background(
@@ -788,7 +788,7 @@ struct ContentView: View {
                             .fill(Color(Colors.cardBackground).opacity(0.5))
                             .blur(radius: 15)
                     )
-                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                    .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
 
                 LazyVGrid(
                     columns: [
@@ -833,7 +833,7 @@ struct ContentView: View {
                         .fill(Color(Colors.cardBackground).opacity(0.5))
                         .blur(radius: 15)
                 )
-                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
             }
 
             mouseTrackingOverlay
@@ -1469,7 +1469,7 @@ struct MediaControlButton: View {
             Image(systemName: systemName)
                 .font(.system(size: 12, weight: .semibold))  // Reduced from 16 to 12
                 .foregroundColor(.white)
-                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+                .shadow(color: .black.opacity(0.2), radius: 2, x: 0, y: 1)
         }
         .buttonStyle(.plain)
         .onHover { inside in
@@ -1924,7 +1924,7 @@ struct CalendarPanelView: View {
                         .fill(Color(Colors.cardBackground).opacity(0.5))
                         .blur(radius: 10)
                 )
-                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
 
                 // Clock section with blur and shadow
                 Card(
@@ -1939,7 +1939,7 @@ struct CalendarPanelView: View {
                         .fill(Color(Colors.cardBackground).opacity(0.5))
                         .blur(radius: 10)
                 )
-                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
 
                 // Weather section with shadow
                 WeatherView(weatherController: weatherController)

@@ -53,7 +53,7 @@ for i = 1, max_items, 1 do
     menu_items[i] = menu
 end
 
-sbar.add(
+local menu_bracket = sbar.add(
     "bracket",
     { "/menu\\..*/" },
     {
@@ -96,4 +96,4 @@ space_menu_swap:subscribe("swap_menus_and_spaces", function(env)
     end
 end)
 
-return menu_watcher
+return menu_bracket

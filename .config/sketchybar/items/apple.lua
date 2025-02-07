@@ -7,7 +7,6 @@ local popup_width = 240
 
 
 local apple = sbar.add("item", {
-	display = 1,
 	position = "left",
 	bar = "left_bar",
 	background = {

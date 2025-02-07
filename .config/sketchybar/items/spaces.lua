@@ -38,9 +38,9 @@ local function getSpaceIcon(space, active)
 end
 
 local function smoothColorTransition(space, targetColor)
-	local duration = 12                                           -- Animation duration in seconds
+	local duration = 20                                           -- Animation duration in seconds
 	sbar.animate("sin", duration, function(progress)
-		local r1, g1, b1 = sbar.colorComponents(space.background.color) -- Current color
+		local r1, g1, b1 = sbar.colorComponents(space.icon.color) -- Current color
 		local r2, g2, b2 = sbar.colorComponents(targetColor)      -- Target color
 		local interpolatedColor = sbar.colorFromComponents(
 			r1 + (r2 - r1) * progress,
@@ -48,7 +48,7 @@ local function smoothColorTransition(space, targetColor)
 			b1 + (b2 - b1) * progress
 		)
 		space:set({
-			background = {
+			icon = {
 				color = interpolatedColor,
 
 			},
@@ -217,6 +217,16 @@ for i = 1, 10 do
 	end)
 end
 
+local space_bracket = {
+	sbar.add("bracket", space_bracket, {
 
+	background = {
 
-return spaces
+		width = "dynamic"
+
+	},
+})
+
+}
+
+return space_bracket

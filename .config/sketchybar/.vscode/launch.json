@@ -27,6 +27,24 @@
       "name": "Release dark-mode-notify (dark-mode-notify)",
       "program": "${workspaceFolder:sketchybar}/dark-mode-notify/.build/release/dark-mode-notify",
       "preLaunchTask": "swift: Build Release dark-mode-notify (dark-mode-notify)"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:sketchybar}/helpers/dark-mode-notify",
+      "name": "Debug dark-mode-notify (helpers/dark-mode-notify)",
+      "program": "${workspaceFolder:sketchybar}/helpers/dark-mode-notify/.build/debug/dark-mode-notify",
+      "preLaunchTask": "swift: Build Debug dark-mode-notify (helpers/dark-mode-notify)"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "${workspaceFolder:sketchybar}/helpers/dark-mode-notify",
+      "name": "Release dark-mode-notify (helpers/dark-mode-notify)",
+      "program": "${workspaceFolder:sketchybar}/helpers/dark-mode-notify/.build/release/dark-mode-notify",
+      "preLaunchTask": "swift: Build Release dark-mode-notify (helpers/dark-mode-notify)"
     }
   ]
 }
