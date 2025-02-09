@@ -1,6 +1,0 @@
-from networkx.utils.backends import _dispatchable
-
-@_dispatchable
-def immediate_dominators(G, start): ...
-@_dispatchable
-def dominance_frontiers(G, start): ...

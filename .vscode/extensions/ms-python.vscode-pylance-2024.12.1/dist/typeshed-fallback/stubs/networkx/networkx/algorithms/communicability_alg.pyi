@@ -1,6 +1,0 @@
-from networkx.utils.backends import _dispatchable
-
-@_dispatchable
-def communicability(G): ...
-@_dispatchable
-def communicability_exp(G): ...

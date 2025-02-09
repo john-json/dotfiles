@@ -1,3 +1,0 @@
-from django.db.models.base import Model
-
-def make_model_tuple(model: type[Model] | str) -> tuple[str, str]: ...

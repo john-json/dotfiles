@@ -1,9 +1,0 @@
-import numpy as np
-from scipy import signal
-
-def approximate_polygon(coords, tolerance: float): ...
-
-# B-Spline subdivision
-_SUBDIVISION_MASKS: dict = ...
-
-def subdivide_polygon(coords, degree=2, preserve_ends: bool = False): ...

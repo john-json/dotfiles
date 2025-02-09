@@ -1,9 +1,0 @@
-{
-	"messages": [
-		"Error while retrieving result. Reason: {0}"
-	],
-	"keys": [
-		"copilot.relatedfilesprovider.error"
-	],
-	"filePath": "LanguageServer\\copilotProviders"
-}

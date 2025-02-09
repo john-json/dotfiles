@@ -123,8 +123,8 @@ local function create_controls()
             background = {
                 padding_left = 5,
                 padding_right = 5,
-                color = colors.bar.bg,
-                height = 25,
+                color = colors.orange,
+                height =  35,
             },
             icon = {
                 align = "center",

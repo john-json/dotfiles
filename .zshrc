@@ -9,8 +9,8 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your Oh My Zsh installation.
 
 export ZSH="$HOME/.oh-my-zsh"
-
 export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
+export PATH=$PATH:/Users/john/.spicetify
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
@@ -20,13 +20,19 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
  zstyle ':omz:update' mode auto      # update automatically without asking
  zstyle ':omz:update' frequency 13
 
+#------------------------------------------------------------------
+# settings
+#------------------------------------------------------------------
+
  COMPLETION_WAITING_DOTS="true"
  CASE_SENSITIVE="false"
+
 #------------------------------------------------------------------
 # Plugins
 #------------------------------------------------------------------
 
 plugins=(git colorize fzf github macos )
+
 
 
 #------------------------------------------------------------------
@@ -43,7 +49,6 @@ plugins=(git colorize fzf github macos )
 
 
 # For a full list of active aliases, run `alias`.
-#
  alias zshconfig="code ~/.zshrc"
  alias ohmyzsh="code ~/.oh-my-zsh"
  alias sbrld="brew services reload sketchybar"
@@ -55,7 +60,7 @@ plugins=(git colorize fzf github macos )
  alias sps="spicetify config color_scheme"
  alias spa="spicetify apply"
  alias time="tty-clock"
- alias iam="macchina"
+ alias info="macchina"
  alias lt="tree -L 1"
  alias gcm="git commit -m"
  alias gadd="git add"
@@ -72,3 +77,5 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 eval "$(zoxide init zsh)"
 
 macchina
+
+
