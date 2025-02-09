@@ -13,9 +13,7 @@ sbar.default(
 				style = settings.font.style_map.Bold,
 				size = 16.0
 			},
-			shadow        = {
-				drawing = false
-			},
+
 		},
 		label         = {
 			padding_right = settings.paddings,
@@ -26,9 +24,7 @@ sbar.default(
 				size = 12.0
 			},
 			color         = colors.icon.grey,
-			shadow        = {
-				drawing = false
-			},
+
 		},
 		background    = {
 			padding_right = settings.paddings,
@@ -52,7 +48,7 @@ sbar.default(
 				color = colors.icon.grey,
 			},
 			background = {
-				border_width  = 1,
+				border_width  = 0,
 				border_color  = colors.popup.border,
 				corner_radius = 12,
 				color         = colors.popup.bg,

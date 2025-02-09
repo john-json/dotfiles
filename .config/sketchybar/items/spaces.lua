@@ -218,12 +218,10 @@ for i = 1, 10 do
 end
 
 local space_bracket = {
-	sbar.add("bracket", space_bracket, {
+	sbar.add("bracket", spaces.name, {
 
 	background = {
-
 		width = "dynamic"
-
 	},
 })
 

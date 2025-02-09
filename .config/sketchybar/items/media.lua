@@ -15,7 +15,6 @@ local CORNER_RADIUS = 25
 -- Helper function to create media items
 local function setup_media_items()
     local media_icon = sbar.add("item", {
-        display = 1,
         position = "center",
         background = {
             border_width = 0,
@@ -41,6 +40,7 @@ local function setup_media_items()
         drawing = true,
         updates = true,
         popup = {
+            display = 1,
             drawing = false, -- Initially hidden
             y_offset = 30,
             align = "center",
@@ -119,12 +119,17 @@ local function create_controls()
 
     for i, control in ipairs(control_items) do
         local control_item = sbar.add("item", {
+            display = 1,
+            align = "center",
             position = "center",
             background = {
-                padding_left = 5,
-                padding_right = 5,
-                color = colors.orange,
-                height =  35,
+                                align = "center",
+                position = "center",
+                color = colors.bar.bg,
+                padding_left = 2,
+                padding_right = 2,
+                height =  25,
+                corner_radius = 5,
             },
             icon = {
                 align = "center",
@@ -132,7 +137,7 @@ local function create_controls()
                 padding_left = 10,
                 color = colors.red,
                 string = control.icon,
-                font = { size = 16 },
+                font = { size = 12 },
             },
             click_script = control.action,
             drawing = false, -- Initially hidden
