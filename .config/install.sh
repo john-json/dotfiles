@@ -15,6 +15,9 @@ brew tap koekeishiya/formulae
 
 ## Formulae
 echo "Installing Brew Formulae..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
+export eval "$(zoxide init zsh)" >> ~/.zshrc
 ### Essentials
 brew install spotify
 brew install node
@@ -23,6 +26,8 @@ brew install git
 brew install yazi
 brew install tty-clock
 brew install mas
+brew install jq
+brew install tree
 
 ### Terminal
 brew install neovim
@@ -35,16 +40,17 @@ brew install lulu
 brew install btop
 brew install svim
 brew install lazygit
+brew install zoxide
 
 ## Casks
 echo "Installing Brew Casks..."
+brew install --cask readdle-spark
 brew install --cask logi-options+
 brew install --cask orion
 brew install --cask ghostty
 brew install --cask chatgpt
-brew install --cask visual-studio-code
 brew install --cask ubersicht
-brew install --cask pika
+brew install --cask notunes
 
 ### Fonts
 brew install --cask sf-symbols
@@ -53,6 +59,12 @@ brew install --cask font-sf-pro
 brew install --cask font-hack-nerd-font
 brew install --cask font-jetbrains-mono
 brew install --cask font-fira-code
+
+### Dev
+xcode-select --install
+brew install --cask visual-studio-code
+
+
 
 # Mac App Store Apps
 echo "Installing Mac App Store Apps..."
