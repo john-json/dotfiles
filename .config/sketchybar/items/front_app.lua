@@ -4,8 +4,8 @@ local icons = require("icons")
 local app_icons = require("helpers.app_icons")
 
 
-local force_quit = sbar.add("Force Quit", icons.circle_quit,
-	"osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down}'")
+local force_quit = sbar.add("Force Quit", icons.circle_quit,       
+'osascript -e tell "app "Terminal" to close front window"')
 
 
 local front_app = sbar.add("item", "front_app", {
@@ -64,6 +64,7 @@ front_app:subscribe("mouse.entered", function(env)
             },
 
             icon = {
+                click_script = force_quit,
                 drawing = true,
                 string = "􀀳",
                 padding_left = 5,
@@ -74,7 +75,6 @@ front_app:subscribe("mouse.entered", function(env)
 
                 },
             },
-            click_script = force_quit,
             updates = true,
         })
     end)
@@ -95,7 +95,6 @@ front_app:subscribe("mouse.exited", function(env)
                 padding_left = 5,
                 padding_right = 10,
                 color = colors.quicksilver,
-
                 font = {
                     style = settings.font.style_map["Bold"],
                 },
@@ -133,6 +132,7 @@ front_app:subscribe("mouse.clicked", function(env)
 
                 },
             },
+        
             updates = true,
         })
     end)
