@@ -1,0 +1,32 @@
+# Packages
+brew install lua
+brew install switchaudio-osx
+brew install nowplaying-cli
+
+brew tap FelixKratz/formulae
+brew install sketchybar
+
+# Fonts
+brew install --cask sf-symbols
+brew install --cask homebrew/cask-fonts/font-sf-mono
+brew install --cask homebrew/cask-fonts/font-sf-pro
+
+git clone https://github.com/bouk/dark-mode-notify.git
+cd ~/config/sketchybar/helpers/dark-mode-notify
+make
+
+
+# Update permissions
+chmod +x ~/.config/sketchybar/items/scripts/dark-mode-handler.sh
+
+cp ~/.config/sketchybar/items/plists/com.john.darkmodehandler.plist ~/Library/LaunchAgents/
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.john.darkmodehandler.plist
+
+
+plutil -lint ~/Library/LaunchAgents/com.john.darkmodehandler.plist
+
+
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.5/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
+
+# SbarLua
+(git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
