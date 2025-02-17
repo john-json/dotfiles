@@ -41,4 +41,79 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "l", function() moveWindowSmooth("right")
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "i", function() moveWindowSmooth("up") end)
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "k", function() moveWindowSmooth("down") end)
 
-hs.alert.show("Smooth Window Movement Loaded!")
+hs.alert.show("Window Manager Active")
+
+-- Center new windows automatically
+function centerWindow(win)
+    if not win then return end
+    local screenFrame = win:screen():frame()
+    local winFrame = win:frame()
+
+    winFrame.x = screenFrame.x + (screenFrame.w - winFrame.w) / 2
+    winFrame.y = screenFrame.y + (screenFrame.h - winFrame.h) / 2
+    win:setFrame(winFrame)
+end
+
+-- Detect new windows
+hs.window.filter.default:subscribe(hs.window.filter.windowCreated, function(win)
+    local windows = hs.window.allWindows()
+    if #windows == 1 then
+        centerWindow(win)
+    end
+end)
+
+function arrangeWindows()
+    local windows = hs.window.allWindows()
+    local screen = hs.screen.primaryScreen()
+    local screenFrame = screen:frame()
+
+    if #windows == 1 then
+        -- Single window centered
+        centerWindow(windows[1])
+
+    elseif #windows == 2 then
+        -- Two windows, 50/50 split
+        local win1 = windows[1]
+        local win2 = windows[2]
+
+        local halfScreen = screenFrame.w / 2
+        win1:setFrame({x = screenFrame.x, y = screenFrame.y, w = halfScreen, h = screenFrame.h})
+        win2:setFrame({x = screenFrame.x + halfScreen, y = screenFrame.y, w = halfScreen, h = screenFrame.h})
+
+    elseif #windows == 3 then
+        -- Three windows: left half, right top/bottom split
+        local win1 = windows[1]
+        local win2 = windows[2]
+        local win3 = windows[3]
+
+        local halfScreen = screenFrame.w / 2
+        local quarterScreen = screenFrame.h / 2
+
+        win1:setFrame({x = screenFrame.x, y = screenFrame.y, w = halfScreen, h = screenFrame.h})
+        win2:setFrame({x = screenFrame.x + halfScreen, y = screenFrame.y, w = halfScreen, h = quarterScreen})
+        win3:setFrame({x = screenFrame.x + halfScreen, y = screenFrame.y + quarterScreen, w = halfScreen, h = quarterScreen})
+
+    else
+        -- More than 3 windows, fallback: grid layout
+        local columns = 2
+        local rows = math.ceil(#windows / columns)
+        local winWidth = screenFrame.w / columns
+        local winHeight = screenFrame.h / rows
+
+        for i, win in ipairs(windows) do
+            local col = (i - 1) % columns
+            local row = math.floor((i - 1) / columns)
+            win:setFrame({
+                x = screenFrame.x + col * winWidth,
+                y = screenFrame.y + row * winHeight,
+                w = winWidth,
+                h = winHeight
+            })
+        end
+    end
+end
+
+-- Auto-rearrange when a new window is created
+hs.window.filter.default:subscribe(hs.window.filter.windowCreated, function()
+    hs.timer.doAfter(0.1, arrangeWindows)
+end)
