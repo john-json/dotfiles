@@ -1,4 +1,4 @@
-local icons = require("icons")
+ocal icons = require("icons")
 local colors = require("colors")
 local settings = require("settings")
 

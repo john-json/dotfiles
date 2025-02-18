@@ -34,7 +34,7 @@ local front_app = sbar.add("item", "front_app", {
 })
 
 front_app:subscribe("front_app_switched", function(env)
-    sbar.animate("elastic", 10, function()
+    sbar.animate("elastic", 14, function()
         front_app:set({
             label = {
                 y_offset = 0,
@@ -47,7 +47,7 @@ front_app:subscribe("front_app_switched", function(env)
             icon = {
                 drawing = false,
                 padding_right = 10,
-                string = ">"
+                string = icons.menu
             }
         })
     end)
@@ -59,13 +59,13 @@ front_app:subscribe("mouse.entered", function(env)
         front_app:set({
 
             label = {
-                drawing = false,
+                drawing = true,
+                string = "Menu",
             },
 
             icon = {
-                click_script = force_quit,
-                drawing = true,
-                string = "􀀳",
+                drawing = false,
+                string = "X",
                 padding_left = 5,
                 padding_right = 10,
                 color = colors.quicksilver,
@@ -83,7 +83,7 @@ end)
 
 front_app:subscribe("mouse.exited", function(env)
     local selected = env.SELECTED == "true"
-    sbar.animate("elastic", 10, function()
+    sbar.animate("elastic", 15, function()
         front_app:set({
             position = "left",
             background = {
@@ -96,6 +96,7 @@ front_app:subscribe("mouse.exited", function(env)
                 font = {
                     style = settings.font.style_map["Bold"],
                 },
+                string = "x",
             },
             icon = {
                 drawing = false,
@@ -111,16 +112,16 @@ end)
 
 
 front_app:subscribe("mouse.clicked", function(env)
-    sbar.trigger("force_quit")
-    sbar.animate("elastic", 10, function()
+    sbar.trigger("swap_menus_and_spaces")
+    sbar.animate("elastic", 15, function()
         front_app:set({
             label = {
                 drawing = false,
+        
             },
-
             icon = {
-                drawing = true,
-                string = "􀀳",
+               drawing = true,
+                string = "",
                 padding_left = 5,
                 padding_right = 10,
                 color = colors.white,

@@ -57,11 +57,13 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
 })
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
+      display = 1,
     position = "right",
     icon = { string = icons.wifi.connected },
 })
 
 local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", { wifi_up.name, wifi_down.name }, {
+    display = 1,
     background = { color = colors.bar.bg2, corner_radius = 10 },
     drawing = false, -- Hidden by default
 })

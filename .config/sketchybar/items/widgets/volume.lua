@@ -6,29 +6,6 @@ local popup_width = 180
 
 
 
-local volume_percent =
-    sbar.add(
-        "item",
-        "volume1",
-        {
-            display = 1,
-            position = "right",
-            icon = {
-                drawing = false
-            },
-            label = {
-                drawing = true,
-                align = "center",
-                string = "??",
-                color = colors.quicksilver,
-                font = {
-                    family = settings.font.text,
-                    color = colors.bg1
-                }
-            }
-        }
-    )
-
 local volume_icon =
     sbar.add(
         "item",
@@ -37,18 +14,20 @@ local volume_icon =
             display = 1,
             position = "right",
             icon = {
+                color = colors.quicksilver,
                 drawing = false,
-          
                 font = {
                     style = settings.font.style_map["SemiBold"],
                     family = settings.font.text,
                 }
             },
             label = {
+                color = colors.quicksilver,
                 font = {
                     style = settings.font.style_map["SemiBold"],
                     family = settings.font.text,
-                    color = colors.bg1
+             
+        
                 },
                 align = "center",
     
@@ -60,13 +39,14 @@ local volume_icon =
 
 local volume =
     sbar.add(
-
         "bracket",
         "volume.bracket",
-        { volume_icon.name, volume_percent.name },
-             
+        { volume_icon.name },    
         {
             display = 1,
+            label = {
+                color = colors.quicksilver,
+            },
             popup = {
                 align = "center"
             }
@@ -107,7 +87,7 @@ local volume_slider = sbar.add("slider", popup_width, {
 })
 
 
-volume_percent:subscribe(
+volume_icon:subscribe(
     "volume_change",
     function(env)
         local volume = tonumber(env.INFO)
@@ -131,11 +111,6 @@ volume_percent:subscribe(
             {
              
                 label = icon
-            }
-        )
-        volume_percent:set(
-            {
-                label = lead .. volume .. ""
             }
         )
         volume_slider:set(
@@ -209,7 +184,7 @@ local function volume_toggle_details(env)
                                     click_script = 'SwitchAudioSource -s "' ..
                                         device ..
                                         '" && sketchybar --set /volume.device\\.*/ label.color=' ..
-                                        colors.yellow .. " --set $NAME label.color=" .. colors.yellow
+                                        colors.red .. " --set $NAME label.color=" .. colors.red
                                 }
                             )
                             counter = counter + 1
@@ -230,8 +205,5 @@ end
 
 volume_icon:subscribe("mouse.clicked", volume_toggle_details)
 volume_icon:subscribe("mouse.scrolled", volume_scroll)
-volume_percent:subscribe("mouse.clicked", volume_toggle_details)
-volume_percent:subscribe("mouse.exited.global", volume_collapse_details)
-volume_percent:subscribe("mouse.scrolled", volume_scroll)
 
 return volume

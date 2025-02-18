@@ -3,9 +3,9 @@ local colors     = require("colors")
 local icons      = require("icons")
 local settings   = require("settings")
 
-local mission_control = require("items.mission_control")
-local spaces    = require("items.spaces")
-local search     = require("items.search")
+local mission_control = require("items.widgets.mission_control")
+local spaces    = require("items.widgets.spaces")
+local search     = require("items.widgets.search")
 
 
 

@@ -3,10 +3,10 @@ local icons = require("icons")
 local settings = require("settings")
 
 local popup_width = 240
--- Main Apple icon to trigger popup
+-- Main smenu icon to trigger popup
 
 
-local apple = sbar.add("item", {
+local smenu = sbar.add("item", {
 	position = "left",
 	bar = "left_bar",
 	background = {
@@ -29,9 +29,9 @@ local apple = sbar.add("item", {
 })
 
 -- Hover effect
-apple:subscribe("mouse.entered", function()
+smenu:subscribe("mouse.entered", function()
 	sbar.animate("elastic", 12, function()
-		apple:set({
+		smenu:set({
 			icon = {
 				size = 20,
 				color = colors.darkGrey,
@@ -40,12 +40,12 @@ apple:subscribe("mouse.entered", function()
 	end)
 end)
 
-apple:subscribe("mouse.exited", function()
+smenu:subscribe("mouse.exited", function()
 	sbar.animate("elastic", 12, function()
-		apple:set({
+		smenu:set({
 			icon = {
 				size = 18,
-				color = colors.white,
+				color = colors.grey,
 			},
 		})
 	end)
@@ -129,22 +129,22 @@ local function create_menu_item(position, label, icon_string, click_command)
 end
 
 -- Add each custom menu entry to the popup
-local about_mac = create_menu_item("popup." .. apple.name, "About", icons.apple,
+local about_mac = create_menu_item("popup." .. smenu.name, "About", icons.smenu,
 	"open -a 'About This Mac'")
-local system_settings = create_menu_item("popup." .. apple.name, "Settings", icons.circle_gear,
+local system_settings = create_menu_item("popup." .. smenu.name, "Settings", icons.circle_gear,
 	"open -a 'System Preferences'")
-local force_quit = create_menu_item("popup." .. apple.name, "Force Quit", icons.circle_quit,
+local force_quit = create_menu_item("popup." .. smenu.name, "Force Quit", icons.circle_quit,
 	"osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down}'")
-local sleep = create_menu_item("popup." .. apple.name, "Sleep", icons.circle_sleep, "pmset displaysleepnow")
-local restart = create_menu_item("popup." .. apple.name, "Restart", icons.circle_restart,
+local sleep = create_menu_item("popup." .. smenu.name, "Sleep", icons.circle_sleep, "pmset displaysleepnow")
+local restart = create_menu_item("popup." .. smenu.name, "Restart", icons.circle_restart,
 	"osascript -e 'tell app \"System Events\" to restart'")
-local shutdown = create_menu_item("popup." .. apple.name, "Power off", icons.circle_shutdown,
+local shutdown = create_menu_item("popup." .. smenu.name, "Power off", icons.circle_shutdown,
 	"osascript -e 'tell app \"System Events\" to shut down'")
 
 -- Toggles popup on click
-apple:subscribe("mouse.clicked", function(env)
+smenu:subscribe("mouse.clicked", function(env)
 	sbar.animate("elastic", 15, function()
-		apple:set({
+		smenu:set({
 			popup = {
 				y_offset = 5,
 				height = 0,
@@ -155,9 +155,9 @@ apple:subscribe("mouse.clicked", function(env)
 end)
 
 -- Hides popup on mouse exit
-apple:subscribe("mouse.exited.global", function(env)
+smenu:subscribe("mouse.exited.global", function(env)
 	sbar.animate("elastic", 15, function()
-		apple:set({
+		smenu:set({
 			popup = {
 				y_offset = -40,
 				height = 0,
@@ -168,4 +168,4 @@ apple:subscribe("mouse.exited.global", function(env)
 end)
 
 
-return apple
+return smenu

@@ -1,10 +1,9 @@
 local sbar         = require("sketchybar")
 local colors       = require("colors")
 local settings     = require("settings")
-local apple_icon   = require("items.apple")
-local menu_watcher = require("items.menus")
-local front_app    = require("items.front_app")
-
+local smenu        = require("items.widgets.smenu")
+local menu_watcher = require("items.widgets.menus")
+local front_app    = require("items.widgets.front_app")
 
 
 
@@ -17,7 +16,7 @@ local left_bar =
     sbar.add(
         "bracket",
         "left_bar.bracket",
-        { menu_watcher.name, front_app.name, apple_icon.name},
+        { menu_watcher.name, front_app.name, smenu.name},
         {
             shadow = true,
             width = "dynamic",
