@@ -10,21 +10,41 @@ brew install sketchybar
 brew install --cask sf-symbols
 brew install --cask homebrew/cask-fonts/font-sf-mono
 brew install --cask homebrew/cask-fonts/font-sf-pro
+brew install dark-mode
+ 
 
-git clone https://github.com/bouk/dark-mode-notify.git
-cd ~/config/sketchybar/helpers/dark-mode-notify
-make
-
+mkdir -p ~/Library/LaunchAgents
+cat <<EOF > ~/Library/LaunchAgents/com.user.darkmode.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.user.darkmode</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/opt/homebrew/bin/dark-mode-notify</string>
+            <string>~/.config/sketchybar/items/scripts/dark-mode-handler.sh</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>KeepAlive</key>
+        <true/>
+    </dict>
+</plist>
+EOF
 
 # Update permissions
 chmod +x ~/.config/sketchybar/items/scripts/dark-mode-handler.sh
 
-cp ~/.config/sketchybar/items/plists/com.john.darkmodehandler.plist ~/Library/LaunchAgents/
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.john.darkmodehandler.plist
+
+cp ~/.config/sketchybar/items/plists/com.user.darkmode.plist ~/Library/LaunchAgents/
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.darkmode.plist
 
 
-plutil -lint ~/Library/LaunchAgents/com.john.darkmodehandler.plist
+plutil -lint ~/Library/LaunchAgents/com.user.darkmode.plist
 
+log stream --predicate 'subsystem == "com.apple.UIKit"'
 
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.5/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 

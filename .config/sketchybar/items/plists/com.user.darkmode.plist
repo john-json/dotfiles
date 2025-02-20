@@ -3,19 +3,17 @@
 <plist version="1.0">
     <dict>
         <key>Label</key>
-        <string>com.user.appearancechange</string>
+        <string>com.user.darkmode.poller</string>
         <key>ProgramArguments</key>
         <array>
             <string>/bin/bash</string>
-            <string>~/.config/sketchybar/items/scripts/dark-mode-handler.sh</string>
+            <string>~/.config/sketchybar/items/scripts/dark-mode-poller.sh</string>
         </array>
         <key>StartInterval</key>
-        <integer>30</integer>
-        <key>WatchPaths</key>
-        <array>
-            <string>~/Library/Preferences/.GlobalPreferences.plist</string>
-        </array>
+        <integer>10</integer>
         <key>RunAtLoad</key>
+        <true/>
+        <key>KeepAlive</key>
         <true/>
     </dict>
 </plist>

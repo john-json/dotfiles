@@ -4,8 +4,8 @@ local icons = require("icons")
 local app_icons = require("helpers.app_icons")
 
 
-local force_quit = sbar.add("Force Quit", icons.circle_quit,       
-'osascript -e tell "app "Terminal" to close front window"')
+local force_quit = sbar.add("Force Quit", icons.circle_quit,
+    'osascript -e tell "app "Terminal" to close front window"')
 
 
 local front_app = sbar.add("item", "front_app", {
@@ -47,7 +47,7 @@ front_app:subscribe("front_app_switched", function(env)
             icon = {
                 drawing = false,
                 padding_right = 10,
-                string = icons.menu
+                string = "􀂁"
             }
         })
     end)
@@ -59,13 +59,13 @@ front_app:subscribe("mouse.entered", function(env)
         front_app:set({
 
             label = {
-                drawing = true,
-                string = "Menu",
+                drawing = false,
+
             },
 
             icon = {
-                drawing = false,
-                string = "X",
+                drawing = true,
+                string = "􀂁",
                 padding_left = 5,
                 padding_right = 10,
                 color = colors.quicksilver,
@@ -86,17 +86,13 @@ front_app:subscribe("mouse.exited", function(env)
     sbar.animate("elastic", 15, function()
         front_app:set({
             position = "left",
-            background = {
-                color = colors.transparent
-            },
             label = {
+                y_offset = 0,
                 drawing = true,
-                padding_left = 5,
-                padding_right = 10,
+                string = env.INFO,
                 font = {
                     style = settings.font.style_map["Bold"],
                 },
-                string = "x",
             },
             icon = {
                 drawing = false,
@@ -117,20 +113,25 @@ front_app:subscribe("mouse.clicked", function(env)
         front_app:set({
             label = {
                 drawing = false,
-        
+                string = env.INFO,
+                font = {
+                    style = settings.font.style_map["Bold"],
+
+                },
+
             },
             icon = {
-               drawing = true,
-                string = "",
+                drawing = true,
+                string = "􀄹",
                 padding_left = 5,
                 padding_right = 10,
-                color = colors.white,
+                color = colors.quicksilver,
                 font = {
                     style = settings.font.style_map["Bold"],
 
                 },
             },
-        
+
             updates = true,
         })
     end)

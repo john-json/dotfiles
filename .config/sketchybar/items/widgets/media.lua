@@ -122,7 +122,7 @@ local function create_controls()
                 align = "left",
                 position = "right",
                 color = colors.transparent,
-                height =  25,
+                height = 25,
                 corner_radius = 5,
             },
             icon = {
