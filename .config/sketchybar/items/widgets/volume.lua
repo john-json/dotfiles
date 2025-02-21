@@ -26,11 +26,11 @@ local volume_icon =
                 font = {
                     style = settings.font.style_map["SemiBold"],
                     family = settings.font.text,
-             
-        
+
+
                 },
                 align = "center",
-    
+
 
             }
             -- click_script = "osascript $CONFIG_DIR/items/scripts/openSoundMenu.scpt"
@@ -41,31 +41,32 @@ local volume =
     sbar.add(
         "bracket",
         "volume.bracket",
-        { volume_icon.name },    
+        { volume_icon.name },
         {
             display = 1,
             label = {
                 color = colors.quicksilver,
             },
             popup = {
+                y_offset = 20,
                 align = "center"
             }
         }
-     )
+    )
 
 local volume_slider = sbar.add("slider", popup_width, {
     position = "popup." .. volume.name,
     slider = {
         highlight_color = colors.red,
         background = {
-            height = 15,
+            height = 22,
             corner_radius = 15,
             color = colors.bar.bg2,
         },
         knob = {
             color = colors.quicksilver,
             string = "",
-            size = 15,
+            size = 22,
             drawing = true,
         },
 
@@ -109,7 +110,7 @@ volume_icon:subscribe(
 
         volume_icon:set(
             {
-             
+
                 label = icon
             }
         )
@@ -131,6 +132,7 @@ local function volume_collapse_details()
     volume:set(
         {
             popup = {
+                y_offset = 20,
                 drawing = false
             }
         }
@@ -147,13 +149,16 @@ local function volume_toggle_details(env)
 
     local should_draw = volume:query().popup.drawing == "off"
     if should_draw then
-        volume:set(
-            {
-                popup = {
-                    drawing = true
+        sbar.animate("elastic", 15, function()
+            volume:set(
+                {
+                    popup = {
+                        y_offset = 0,
+                        drawing = true
+                    }
                 }
-            }
-        )
+            )
+        end)
         sbar.exec(
             "SwitchAudioSource -t output -c",
             function(result)
@@ -179,11 +184,11 @@ local function volume_toggle_details(env)
                                     align = "left",
                                     label = {
                                         string = device,
-                                        color = colors.quicksilver
+                                        color = colors.white
                                     },
-                                    click_script = 'SwitchAudioSource -s "' ..
+                                    click_script = 'SwitchAudioSource -s' ..
                                         device ..
-                                        '" && sketchybar --set /volume.device\\.*/ label.color=' ..
+                                        ' && sketchybar --set /volume.device\\.*/ label.color=' ..
                                         colors.red .. " --set $NAME label.color=" .. colors.red
                                 }
                             )

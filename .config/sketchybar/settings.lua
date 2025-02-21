@@ -1,5 +1,5 @@
 return {
-    paddings = 3,
+    paddings = 5,
     group_paddings = 10,
 
     icons = "sf-symbols",   -- Options: "sf-symbols", "nerdfont"

@@ -40,8 +40,8 @@ local function setup_media_items()
         popup = {
             display = 1,
             drawing = false, -- Initially hidden
-            y_offset = 20,
-            align = "right",
+            y_offset = 10,
+            align = "center",
             horizontal = true,
             height = HEIGHT_BEFORE,
         },
@@ -50,12 +50,12 @@ local function setup_media_items()
     local media_cover = sbar.add("item", {
         position = "popup." .. media_icon.name,
         background = {
-            padding_left = 0,
+            padding_left = 10,
             padding_right = 5,
             image = {
                 margin = 20,
                 string = "media.artwork",
-                scale = 3,
+                scale = 2,
             },
             color = colors.transparent,
             height = HEIGHT,
@@ -151,7 +151,9 @@ local controls_visible = false
 local function toggle_controls()
     controls_visible = not controls_visible
     for i, control in ipairs(controls) do
-        control:set({ drawing = controls_visible })
+        sbar.animate("elastic", 15, function()
+            control:set({ drawing = controls_visible })
+        end)
     end
 end
 
@@ -162,13 +164,15 @@ local popup_visible = false
 local function toggle_popup(visible)
     if popup_visible ~= visible then
         popup_visible = visible
-        media_icon:set({
-            popup = {
-                drawing = visible,
-                height = visible and HEIGHT or 0,
-                y_offset = visible and 30 or 0,
-            },
-        })
+        sbar.animate("elastic", 15, function()
+            media_icon:set({
+                popup = {
+                    drawing = visible,
+                    height = visible and HEIGHT or 0,
+                    y_offset = visible and 30 or 0,
+                },
+            })
+        end)
     end
 end
 
@@ -193,8 +197,10 @@ media_icon:subscribe("media_change", function(env)
 end)
 
 -- Mouse clicked event for toggling controls
-media_icon:subscribe("mouse.clicked", function(env)
-    toggle_controls() -- Show/hide controls on click
+media_icon:subscribe("mouse.entered", function(env)
+    sbar.animate("elastic", 15, function()
+        toggle_controls() -- Show/hide controls on click
+    end)
 end)
 
 return media_icon

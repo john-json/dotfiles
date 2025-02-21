@@ -7,7 +7,7 @@ local settings = require("settings")
 sbar.exec(
     "killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en1 network_update 2.0")
 
-local popup_width = 250
+local popup_width = 160
 
 local wifi_up = sbar.add("item", "widgets.wifi1", {
     drawing = false,
@@ -69,8 +69,8 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
     wifi_up.name,
     wifi_down.name
 }, {
-    background = { color = colors.bar.bg2 },
-    popup = { align = "center", height = 30 }
+    background = { color = colors.bar.bg },
+    popup = { align = "center", y_offset = 20, height = 30, label = { font = { color = colors.white } } }
 })
 
 local ssid = sbar.add("item", {
@@ -86,10 +86,10 @@ local ssid = sbar.add("item", {
     label = {
         color = colors.red,
         font = {
-            size = 30,
+            size = 25,
             style = settings.font.style_map["Bold"],
         },
-        max_chars = 15,
+        max_chars = 12,
         string = "????????????",
     },
     background = {
@@ -102,7 +102,7 @@ local hostname = sbar.add("item", {
     position = "popup." .. wifi_bracket.name,
     icon = {
         align = "left",
-        string = "Hostname:",
+        string = "Host:",
         width = popup_width / 2,
     },
     label = {
@@ -131,7 +131,7 @@ local mask = sbar.add("item", {
     position = "popup." .. wifi_bracket.name,
     icon = {
         align = "left",
-        string = "Subnet mask:",
+        string = "Subnet:",
         width = popup_width / 2,
     },
     label = {
@@ -189,31 +189,35 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
 end)
 
 local function hide_details()
-    wifi_bracket:set({ popup = { drawing = false } })
+    wifi_bracket:set({ popup = { y_offset = 20, drawing = false } })
 end
 
 local function toggle_details()
-    local should_draw = wifi_bracket:query().popup.drawing == "off"
-    if should_draw then
-        wifi_bracket:set({ popup = { drawing = true } })
-        sbar.exec("networksetup -getcomputername", function(result)
-            hostname:set({ label = result })
-        end)
-        sbar.exec("ipconfig getifaddr en1", function(result)
-            ip:set({ label = result })
-        end)
-        sbar.exec("ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
-            ssid:set({ label = result })
-        end)
-        sbar.exec("networksetup -getinfo Wi-Fi | awk -F 'Subnet mask: ' '/^Subnet mask: / {print $2}'", function(result)
-            mask:set({ label = result })
-        end)
-        sbar.exec("networksetup -getinfo Wi-Fi | awk -F 'Router: ' '/^Router: / {print $2}'", function(result)
-            router:set({ label = result })
-        end)
-    else
-        hide_details()
-    end
+    sbar.animate("elastic", 15, function()
+        local should_draw = wifi_bracket:query().popup.drawing == "off"
+
+        if should_draw then
+            wifi_bracket:set({ popup = { y_offset = 0, drawing = true } })
+            sbar.exec("networksetup -getcomputername", function(result)
+                hostname:set({ label = result })
+            end)
+            sbar.exec("ipconfig getifaddr en1", function(result)
+                ip:set({ label = result })
+            end)
+            sbar.exec("ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
+                ssid:set({ label = result })
+            end)
+            sbar.exec("networksetup -getinfo Wi-Fi | awk -F 'Subnet mask: ' '/^Subnet mask: / {print $2}'",
+                function(result)
+                    mask:set({ label = result })
+                end)
+            sbar.exec("networksetup -getinfo Wi-Fi | awk -F 'Router: ' '/^Router: / {print $2}'", function(result)
+                router:set({ label = result })
+            end)
+        else
+            hide_details()
+        end
+    end)
 end
 
 wifi_up:subscribe("mouse.clicked", toggle_details)

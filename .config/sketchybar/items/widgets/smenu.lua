@@ -107,7 +107,6 @@ local function create_menu_item(position, label, icon_string, click_command)
 		sbar.animate("elastic", 15, function()
 			item:set({
 				icon = {
-					color = colors.popup.icons,
 					padding_left = 5,
 					padding_right = 20,
 					font = { size = 14 },

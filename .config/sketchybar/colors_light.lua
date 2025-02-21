@@ -20,15 +20,15 @@ return {
     transparent = 0x00000000,
     semi_transparent = 0x40ffffff,
     border_transparent = 0x33ffffff,
-    
+
     icon = {
         grey = 0xffcdcdcd,
         primary = 0xff989d9d,
         secondary = 0xff4b4b4b,
     },
     bar = {
-        bg = 0xffffffff,
-        bg2 = 0xfffefefe,
+        bg = 0xfffcfcfc,
+        bg2 = 0xffffffff,
         accent = 0xff000000,
         active = 0xff9eaeb3,
         selected = 0xff593c3c,
