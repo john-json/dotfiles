@@ -9,7 +9,6 @@ local force_quit = sbar.add("Force Quit", icons.circle_quit,
 
 
 local front_app = sbar.add("item", "front_app", {
-    bar = "left_bar",
     position = "left",
     background = {
         color = colors.transparent

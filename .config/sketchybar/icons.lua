@@ -71,6 +71,18 @@ local icons = {
         search = "􀊫",
         mission_control = "􀚅",
 
+        weather = {
+            sun = "􀆫",
+            cloudy = "􀇃",
+            cloud_sun = "􀇕",
+            rain = "􀇇",
+            snowflake = "􀇏",
+            bolt = "􀇓",
+            fog = "􀇋",
+            mist = "􀇋",
+            cloud_rain = "􀇅",
+        },
+
         switch = {
             on = "􀯻",
             off = "􀯶"

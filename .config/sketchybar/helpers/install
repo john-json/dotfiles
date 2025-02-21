@@ -20,12 +20,14 @@ cat <<EOF > ~/Library/LaunchAgents/com.user.darkmode.plist
 <plist version="1.0">
     <dict>
         <key>Label</key>
-        <string>com.user.darkmode</string>
+        <string>com.user.darkmode.poller</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/opt/homebrew/bin/dark-mode-notify</string>
-            <string>~/.config/sketchybar/items/scripts/dark-mode-handler.sh</string>
+            <string>/bin/bash</string>
+            <string>~/.config/sketchybar/items/scripts/dark-mode-poller.sh</string>
         </array>
+        <key>StartInterval</key>
+        <integer>10</integer>
         <key>RunAtLoad</key>
         <true/>
         <key>KeepAlive</key>
@@ -35,7 +37,7 @@ cat <<EOF > ~/Library/LaunchAgents/com.user.darkmode.plist
 EOF
 
 # Update permissions
-chmod +x ~/.config/sketchybar/items/scripts/dark-mode-handler.sh
+chmod +x ~/.config/sketchybar/items/scripts/dark-mode-poller.sh
 
 
 cp ~/.config/sketchybar/items/plists/com.user.darkmode.plist ~/Library/LaunchAgents/

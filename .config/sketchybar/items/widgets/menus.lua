@@ -40,11 +40,7 @@ for i = 1, max_items, 1 do
                 label = {
                     padding_left = settings.paddings,
                     padding_right = settings.paddings,
-                    color = i == 1 and colors.quicksilver or colors.grey,
-                    font = {
-                        size = 14,
-                        style = settings.font.style_map[i == 1 and "Bold" or "Regular"]
-                    }
+                    color = i == 1 and colors.icon.primary or colors.grey,
                 },
                 click_script = "$CONFIG_DIR/helpers/menus/bin/menus -s " .. i
             }

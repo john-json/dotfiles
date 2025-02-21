@@ -27,7 +27,7 @@ local function setup_media_items()
             drawing = false,
         },
         icon = {
-            padding_left = 5,
+            padding_left = 0,
             padding_right = 0,
             drawing = true,
             string = "􁘤",

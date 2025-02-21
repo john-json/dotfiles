@@ -5,15 +5,15 @@ local settings = require("settings")
 -- Function to get the appropriate weather icon
 local function get_weather_icon(condition)
     local icon_map = {
-        ["clear"] = icons.sun,
-        ["cloudy"] = icons.cloud,
-        ["partly cloudy"] = icons.cloud_sun,
-        ["rain"] = icons.rain,
-        ["snow"] = icons.snowflake,
-        ["thunderstorm"] = icons.bolt,
-        ["mist"] = icons.fog,
-        ["fog"] = icons.fog,
-        ["drizzle"] = icons.cloud_rain,
+        ["clear"] = icons.weather.sun,
+        ["cloudy"] = icons.weather.cloud,
+        ["partly cloudy"] = icons.weather.cloud_sun,
+        ["rain"] = icons.weather.rain,
+        ["snow"] = icons.weather.snowflake,
+        ["thunderstorm"] = icons.weather.bolt,
+        ["mist"] = icons.weather.fog,
+        ["fog"] = icons.weather.fog,
+        ["drizzle"] = icons.weather.cloud_rain,
     }
 
     for key, icon in pairs(icon_map) do
@@ -29,14 +29,14 @@ end
 local weather = sbar.add("item", "widgets.weather", {
     position = "right",
     display = 1,
-    icon = { string = icons.sun }, -- Default icon
+    icon = { string = icons.weather.sun }, -- Default icon
     label = { string = "Loading...", font = { family = settings.font.numbers, style = settings.font.style_map["Bold"] } },
     padding_right = settings.paddings + 6
 })
 
 -- Function to update weather widget
 local function update_weather()
-    sbar.exec("curl -s 'wttr.in/?format=%C+%t' ", function(output)
+    sbar.exec("curl -s 'wttr.in/Nuremberg?format=%C+%t' ", function(output)
         local condition, temperature = output:match("([^%s]+) (.+)")
 
         if condition and temperature then
