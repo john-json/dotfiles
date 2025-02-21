@@ -1,50 +1,107 @@
 local Utils = require("plugins.utils")
 local Animations = require("plugins.animations")
+local Floating = require("plugins.floating")
 
 local Layout = {}
-Layout.layouts = {"single", "split", "grid"}
-Layout.currentLayout = 1
+Layout.layouts = { "default", "tall", "floating" }
+Layout.currentLayout = {}
 
-function Layout.arrangeWindows()
-    local screenWindows = Utils.getWindowsByScreen()
-
-    for screenId, windows in pairs(screenWindows) do
-        local screen = hs.screen.find(screenId)
-        if not screen then goto continue end
-        local screenFrame = screen:frame()
-        local numWindows = #windows
-
-        -- Skip floating windows
-        local tilingWindows = {}
-        for _, win in ipairs(windows) do
-            if not Utils.isFloating(win) then
-                table.insert(tilingWindows, win)
-            end
-        end
-
-        numWindows = #tilingWindows
-
-        if Layout.layouts[Layout.currentLayout] == "single" or numWindows == 1 then
-            Utils.centerWindow(tilingWindows[1])
-
-        elseif Layout.layouts[Layout.currentLayout] == "split" or numWindows == 2 then
-            Utils.splitScreen(tilingWindows, screenFrame)
-
-        elseif Layout.layouts[Layout.currentLayout] == "grid" or numWindows >= 3 then
-            Utils.gridLayout(tilingWindows, screenFrame)
-        end
-
-        for _, win in ipairs(tilingWindows) do
-            Animations.fadeInWindow(win)
-        end
-
-        ::continue::
-    end
+function Layout.getActiveScreen()
+    local focusedWin = hs.window.focusedWindow()
+    return focusedWin and focusedWin:screen() or hs.screen.mainScreen()
 end
 
-function Layout.cycleLayout(direction)
-    Layout.currentLayout = ((Layout.currentLayout - 1 + direction) % #Layout.layouts) + 1
-    hs.alert.show("Layout: " .. Layout.layouts[Layout.currentLayout])
+function Layout.arrangeWindows()
+    local activeScreen = Layout.getActiveScreen()
+    local screenFrame = activeScreen:frame()
+    local screenId = activeScreen:id()
+
+    -- Get windows only on the active screen
+    local allWindows = hs.window.allWindows()
+    local windows = {}
+    for _, win in ipairs(allWindows) do
+        if win:screen():id() == screenId and not Floating.isFloating(win) then
+            table.insert(windows, win)
+        end
+    end
+
+    local numWindows = #windows
+    local targetFrames = {}
+
+    -- Ensure a layout is assigned to the screen
+    if not Layout.currentLayout[screenId] then
+        Layout.currentLayout[screenId] = "default"
+    end
+
+    local layoutType = Layout.currentLayout[screenId]
+
+    -- If no windows, don't rearrange
+    if numWindows == 0 then return end
+
+    if numWindows == 1 then
+        -- Open new window centered with max screen size (your provided values)
+        targetFrames = {
+            { x = screenFrame.x + 942, y = screenFrame.y + 225, w = 1515, h = 983 }
+        }
+    elseif numWindows == 2 then
+        -- Split 50/50
+        local left = { x = screenFrame.x, y = screenFrame.y, w = screenFrame.w / 2, h = screenFrame.h }
+        local right = {
+            x = screenFrame.x + screenFrame.w / 2,
+            y = screenFrame.y,
+            w = screenFrame.w / 2,
+            h = screenFrame
+                .h
+        }
+        targetFrames = { Utils.applyPadding(left, screenFrame), Utils.applyPadding(right, screenFrame) }
+    elseif numWindows == 3 then
+        -- Master on left, two stacked on right
+        local left = { x = screenFrame.x, y = screenFrame.y, w = screenFrame.w / 2, h = screenFrame.h }
+        local topRight = {
+            x = screenFrame.x + screenFrame.w / 2,
+            y = screenFrame.y,
+            w = screenFrame.w / 2,
+            h =
+                screenFrame.h / 2
+        }
+        local bottomRight = {
+            x = screenFrame.x + screenFrame.w / 2,
+            y = screenFrame.y + screenFrame.h / 2,
+            w =
+                screenFrame.w / 2,
+            h = screenFrame.h / 2
+        }
+        targetFrames = { Utils.applyPadding(left, screenFrame), Utils.applyPadding(topRight, screenFrame), Utils
+            .applyPadding(bottomRight, screenFrame) }
+    else
+        -- Tall layout (vertical split)
+        local colWidth = screenFrame.w / numWindows
+        for i, _ in ipairs(windows) do
+            local col = { x = screenFrame.x + (i - 1) * colWidth, y = screenFrame.y, w = colWidth, h = screenFrame.h }
+            table.insert(targetFrames, Utils.applyPadding(col, screenFrame))
+        end
+    end
+
+    -- Apply animations (like Hyperland)
+    Animations.animateLayoutTransition(windows, targetFrames, 0.12, 6)
+end
+
+function Layout.cycleLayout()
+    local screen = Layout.getActiveScreen()
+    local screenId = screen:id()
+
+    local layoutIndex = 1
+    for i, layout in ipairs(Layout.layouts) do
+        if Layout.currentLayout[screenId] == layout then
+            layoutIndex = i
+            break
+        end
+    end
+
+    layoutIndex = (layoutIndex % #Layout.layouts) + 1
+    Layout.currentLayout[screenId] = Layout.layouts[layoutIndex]
+
+    hs.alert.show("Layout: " .. Layout.currentLayout[screenId])
     Layout.arrangeWindows()
 end
 
