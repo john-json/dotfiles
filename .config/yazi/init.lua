@@ -14,7 +14,7 @@ function Linemode:size_and_mtime()
 end
 
 require("yaziline"):setup({
-	color = "#9f4a30",      -- main theme color
+	color = "#c49f84",      -- main theme color
 	separator_style = "curvy", -- "angly" | "curvy" | "liney" | "empty"
 	separator_open = "",
 	separator_close = "",

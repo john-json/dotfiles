@@ -14,6 +14,15 @@ export PATH=$PATH:/Users/john/.spicetify
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
+#------------------------------------------------------------------
+# colorls
+#------------------------------------------------------------------
+
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+#------------------------------------------------------------------
+# Theme
+#------------------------------------------------------------------
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -26,27 +35,18 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
  COMPLETION_WAITING_DOTS="true"
  CASE_SENSITIVE="false"
+ 
 
 #------------------------------------------------------------------
 # Plugins
 #------------------------------------------------------------------
 
-plugins=(git colorize fzf github macos )
+plugins=(git colorize fzf github macos zsh-vi-mode )
 
 
-
-#------------------------------------------------------------------
-# Remote session
-#------------------------------------------------------------------
-
-
-# Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='code -w'
- else
-   export EDITOR='nvim'
- fi
-
+#------------------------------------------------------
+# alias settings
+#-------------------------------------------------------
 
 # For a full list of active aliases, run `alias`.
  alias zshconfig="code ~/.zshrc"
@@ -62,10 +62,12 @@ plugins=(git colorize fzf github macos )
  alias time="tty-clock"
  alias info="macchina"
  alias lt="tree -L 1"
- alias gcm="git commit -m"
- alias gadd="git add"
- alias gits="git status"
+ alias gcm="cfg commit -m"
+ alias gadd="cfg add"
+ alias gits="cfg status"
+ alias push="cfg push"
  alias wtr="curl wttr.in/Nürnberg"
+ alias dl="clear"
 
 export PATH=$PATH:/Users/johnjson/.spicetify
 
