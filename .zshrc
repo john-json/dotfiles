@@ -65,7 +65,7 @@ plugins=(git colorize fzf github macos )
  alias gcm="git commit -m"
  alias gadd="git add"
  alias gits="git status"
- alias wetr="curl wttr.in/Nürnberg"
+ alias wtr="curl wttr.in/Nürnberg"
 
 export PATH=$PATH:/Users/johnjson/.spicetify
 
