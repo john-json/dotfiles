@@ -36,7 +36,7 @@ local function setup_media_items()
             drawing = true,
             string = icons.media.icon,
             font = {
-                size = 20,
+                size = 14,
             },
         },
         drawing = true,
@@ -71,7 +71,7 @@ local function setup_media_items()
     local media_artist = sbar.add("item", {
         position = "popup." .. media_icon.name,
         align = "left",
-        padding_right = 0,
+        padding_right = 5,
         padding_left = 0,
         label = {
             y_offset = 0,
@@ -129,7 +129,7 @@ local function create_controls()
             icon = {
                 color = colors.grey,
                 string = control.icon,
-                font = { size = 18 },
+                font = { size = 16 },
             },
             click_script = control.action,
             drawing = false, -- Initially hidden

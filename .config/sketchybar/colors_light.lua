@@ -6,7 +6,7 @@ return {
     purple = 0xff6a6378,
     monotone = 0xff98a8a9,
     orange = 0xffd09367,
-    quicksilver = 0xffadb4b4,
+    quicksilver = 0xffbcbcbc,
     darkblue = 0xff212c35,
     pink = 0xff725955,
     magenta = 0xff595066,
@@ -15,14 +15,16 @@ return {
     white = 0xffffffff,
     grey = 0xffbcbcbc,
     darkGrey = 0xff4b4b4b,
+    primary = 0xff444444,
+    secondary = 0xffdedede,
 
     transparent = 0x00000000,
     semi_transparent = 0x40ffffff,
     border_transparent = 0x33ffffff,
 
     icon = {
-        primary = 0xffbcbcbc,
-        secondary = 0xff4b4b4b,
+        primary = 0xffb2b2b2,
+        secondary = 0xfff9f9f9,
     },
     bar = {
         bg = 0xfffcfcfc,

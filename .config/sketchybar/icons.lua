@@ -53,15 +53,15 @@ local icons = {
         user = "􀓤",
 
         weather = {
-            sun = "􀷏",
-            cloudy = "􀌎",
-            cloud_sun = "􁛢",
-            rain = "􁛐",
-            snowflake = "􁛚",
-            bolt = "􁛞",
-            fog = "􁛖",
-            mist = "􁛖",
-            cloud_rain = "􁛒",
+            sun = "􀆬",
+            cloudy = "􀇣",
+            cloud_sun = "􀇕",
+            rain = "􁷍",
+            snowflake = "􀇏",
+            bolt = "􀇟",
+            fog = "􀇋",
+            mist = "􁃛",
+            cloud_rain = "􀇇",
         },
 
         switch = {
@@ -69,11 +69,11 @@ local icons = {
             off = "􀺊"
         },
         volume = {
-            _100 = "􀥒",
-            _66 = "􀥒",
-            _33 = "􀥒",
-            _10 = "􀻂",
-            _0 = "􀫡"
+            _100 = "􀾐",
+            _66 = "􀊩",
+            _33 = "􀊧",
+            _10 = "􀊥",
+            _0 = "􀊣"
         },
         battery = {
             _100 = "􀛨",
@@ -86,12 +86,12 @@ local icons = {
         wifi = {
             upload = "􀁯",
             download = "􀁱",
-            connected = "􀷉",
-            disconnected = "􂪽",
-            router = "􁓤"
+            connected = "􀙇",
+            disconnected = "􀙈",
+            router = "􁓣"
         },
         media = {
-            icon = "􀊖",
+            icon = "􀫀",
             back = "􀊉",
             forward = "􀊋",
             play_pause = "􀊇",

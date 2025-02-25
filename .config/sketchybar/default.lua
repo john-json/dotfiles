@@ -4,23 +4,22 @@ local colors = require("colors")
 sbar.default({
 	updates       = "when_shown",
 	icon          = {
-
-		color = colors.grey,
+		color = colors.icon.primary,
 		font  = {
 			family = settings.font.icons,
 			style = settings.font.style_map.Bold,
-			size = 20
+			size = 14
 		},
 
 	},
 	label         = {
 		padding_right = settings.paddings,
 		padding_left  = settings.paddings,
+		color         = colors.primary,
 		font          = {
-			color  = colors.icon.primary,
 			family = "fonarto",
 			style  = settings.font.style_map.Bold,
-			size   = 14.0
+			size   = 12.0
 		},
 
 
@@ -28,7 +27,7 @@ sbar.default({
 	background    = {
 		padding_right = settings.paddings,
 		padding_left  = settings.paddings,
-		height        = 35,
+		height        = 32,
 		corner_radius = 8,
 		image         = {
 			corner_radius = 10
@@ -39,16 +38,19 @@ sbar.default({
 	popup         = {
 		y_offset = 0,
 		icon = {
-			color = colors.icon.grey,
-			drawing = true,
-			padding_right = 5,
-			size = 14.0
+			color         = colors.icon.grey,
+			drawing       = true,
+			padding_right = settings.paddings,
+			padding_left  = settings.paddings,
+			size          = 14.0
 		},
 		label = {
 			font = {
-				family = settings.font.text,
-				style = settings.font.style_map.SemiBold,
-				size = 14.0
+				padding_right = settings.paddings,
+				padding_left  = settings.paddings,
+				family        = settings.font.text,
+				style         = settings.font.style_map.SemiBold,
+				size          = 14.0
 			},
 			color = colors.grey,
 		},

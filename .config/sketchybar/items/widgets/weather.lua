@@ -70,7 +70,7 @@ update_weather()
 -- Show temperature on mouse enter
 weather:subscribe("mouse.entered", function()
     if weather.temperature then
-        weather:set({ label = { string = weather.temperature, drawing = true } })
+        weather:set({ label = { string = weather.temperature, drawing = true, padding_left = 10 } })
     end
 end)
 

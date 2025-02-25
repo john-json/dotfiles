@@ -6,14 +6,20 @@
         <string>com.user.darkmode.poller</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/bin/bash</string>
-            <string>/Users/$(id -u)/.config/sketchybar/items/scripts/dark-mode-poller.sh</string>
+             <string>/bin/bash</string>
+             <string>/Users/$(id -u)/.config/sketchybar/items/scripts/dark-mode-poller.sh</string>
         </array>
         <key>StartInterval</key>
         <integer>10</integer>
         <key>RunAtLoad</key>
         <true/>
+           <key>WatchPaths</key>
+            <array>
+        <string>/private/var/root/.GlobalPreferences.plist</string>
+          </array>
         <key>KeepAlive</key>
         <true/>
+    <key>StandardErrorPath</key>
+	<string>/Users/$(id -u)/.config/sketchybar.err.log</string>
     </dict>
 </plist>

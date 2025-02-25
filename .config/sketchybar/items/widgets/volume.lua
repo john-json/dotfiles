@@ -11,10 +11,11 @@ local volume_icon =
         {
             display = 1,
             position = "right",
+            icon = { color = colors.green },
             label = {
                 color = colors.quicksilver,
                 font = {
-                    size = 20,
+                    size = 14,
                     style = settings.font.style_map["SemiBold"],
                     family = settings.font.text,
                 },
@@ -62,14 +63,16 @@ local volume =
 local volume_slider = sbar.add("slider", popup_width, {
     position = "popup." .. volume.name,
     slider = {
-        highlight_color = colors.icon.primary,
+        padding_left = 10,
+        padding_right = 10,
+        highlight_color = colors.secondary,
         background = {
             height = 20,
             corner_radius = 15,
-            color = colors.bar.bg2,
+            color = colors.grey,
         },
         knob = {
-            color = colors.icon.primary,
+            color = colors.orange,
             string = "",
             size = 22,
             drawing = true,
@@ -79,12 +82,12 @@ local volume_slider = sbar.add("slider", popup_width, {
         drawing = true,
         align = "center",
         string = "",
-        color = colors.quicksilver,
+        color = colors.primary,
         font = {
             size = 22,
             style = settings.font.style_map["SemiBold"],
             family = settings.font.text,
-            color = colors.orange
+            color = colors.primary
         }
     },
     background = { color = colors.bar.bg1, height = 10, y_offset = -30 },
@@ -154,7 +157,7 @@ local function volume_toggle_details(env)
                 for device in string.gmatch(available, "[^\r\n]+") do
                     color = colors.white
                     if current == device then
-                        color = colors.red
+                        color = colors.primary
                     end
                     sbar.add("item", "volume.device." .. counter, {
                         position = "popup." .. volume.name,
@@ -162,7 +165,7 @@ local function volume_toggle_details(env)
                         align = "left",
                         label = {
                             string = device,
-                            color = colors.icon.primary
+                            color = colors.red
                         },
                         click_script = 'SwitchAudioSource -s "' ..
                             device ..

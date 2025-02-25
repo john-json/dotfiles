@@ -4,10 +4,9 @@ local icons    = require("icons")
 local settings = require("settings")
 
 local cal      = require("items.widgets.cal")
-local media    = require("items.widgets.media")
+local volume   = require("items.widgets.volume")
 local wifi     = require("items.widgets.wifi")
 local media    = require("items.widgets.media")
-local volume   = require("items.widgets.volume")
 local weather  = require("items.widgets.weather")
 
 
@@ -25,11 +24,9 @@ local systray   =
                 padding_right = 10,
             },
             background = {
-                corner_radius = 25,
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
                 color = colors.transparent,
-                height = 20,
             },
         }
     )

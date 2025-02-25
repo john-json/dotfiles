@@ -7,7 +7,7 @@ local settings = require("settings")
 sbar.exec(
     "killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en1 network_update 2.0")
 
-local popup_width = 180
+local popup_width = 220
 
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
@@ -34,20 +34,27 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
 local ssid = sbar.add("item", {
     position = "popup." .. wifi_bracket.name,
     icon = {
+        y_offset = 20,
+        width = popup_width / 2,
+        align = "center",
+        padding_left = 30,
         font = {
             style = settings.font.style_map["Bold"]
         },
         string = "",
     },
     width = popup_width,
-    align = "left",
+    align = "center",
     label = {
+        y_offset = -15,
+        padding_left = -160,
+        align = "left",
         color = colors.red,
         font = {
             size = 30,
             style = settings.font.style_map["Bold"],
         },
-        max_chars = 15,
+        max_chars = 18,
         string = "????????????",
     },
     background = {
@@ -56,7 +63,7 @@ local ssid = sbar.add("item", {
         y_offset = -5,
         color = colors.bar.bg2,
         width = "dynamic",
-        height = 120,
+        height = 80,
     }
 })
 
@@ -173,6 +180,12 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
         wifi:set({
             icon = {
                 string = connected and icons.wifi.connected or icons.wifi.disconnected,
+                color = connected and colors.red or colors.quicksilver,
+            },
+        })
+        ssid:set({
+            icon = {
+                string = connected and icons.switch.on or icons.switch.off,
                 color = connected and colors.red or colors.quicksilver,
             },
         })

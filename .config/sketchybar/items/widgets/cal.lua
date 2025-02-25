@@ -32,9 +32,8 @@ local cal = sbar.add("item", {
     update_freq = 30,
     label = {
         padding_left = 10,
-
+        color = colors.grey,
         font = {
-            color = colors.red,
             style = settings.font.style_map["Bold"],
         },
     },
@@ -42,14 +41,16 @@ local cal = sbar.add("item", {
         align = "center",
         drawing = false,
         padding_left = 10,
+        color = colors.icon.primary,
         font = {
+
             style = settings.font.style_map["Bold"],
             size = 12,
         },
     },
     background = {
         color = colors.icon.secondary,
-        height = 35,
+        height = 25,
         corner_radius = 6,
         padding_left = 10,
         padding_right = settings.paddings,
@@ -124,7 +125,7 @@ local function populate_calendar_popup()
             padding_left = -60,
             y_offset = -20,
             string = todays_name,
-            color = colors.red, -- Highlight for today
+            color = colors.orange, -- Highlight for today
             align = "center",
             font = {
                 size = 30,
