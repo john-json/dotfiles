@@ -4,49 +4,6 @@ local settings = require("settings")
 
 local popup_width = 180
 
-local volume_percent =
-    sbar.add(
-        "item",
-        "volume1",
-        {
-            display = 1,
-            bar = "center_bar",
-            position = "right",
-            label = {
-                drawing = false,
-                align = "right",
-                string = "??",
-                color = colors.quicksilver,
-                font = {
-                    style = settings.font.style_map["SemiBold"],
-                    family = settings.font.text,
-                    color = colors.bg1
-                }
-            }
-        }
-    )
-
-
-volume_percent:subscribe("mouse.entered", function(env)
-    sbar.animate("elastic", 10, function()
-        volume_percent:set({
-            label = {
-                drawing = true,
-            },
-        })
-    end)
-end)
-
-volume_percent:subscribe("mouse.exited", function(env)
-    sbar.animate("elastic", 10, function()
-        volume_percent:set({
-            label = {
-                drawing = false,
-            },
-        })
-    end)
-end)
-
 local volume_icon =
     sbar.add(
         "item",
@@ -54,16 +11,10 @@ local volume_icon =
         {
             display = 1,
             position = "right",
-            icon = {
-                drawing = false,
-                font = {
-                    style = settings.font.style_map["SemiBold"],
-                    family = settings.font.text,
-                }
-            },
             label = {
                 color = colors.quicksilver,
                 font = {
+                    size = 20,
                     style = settings.font.style_map["SemiBold"],
                     family = settings.font.text,
                 },
@@ -72,15 +23,36 @@ local volume_icon =
         }
     )
 
+local volume_percent =
+    sbar.add(
+        "item",
+        "volume1",
+        {
+            display = 1,
+            position = "right",
+            label = {
+                drawing = false,
+                align = "right",
+                string = "??",
+                width = 0,
+                color = colors.quicksilver,
+                font = {
+                    style = settings.font.style_map["SemiBold"],
+                    family = settings.font.text,
+                }
+            }
+        }
+    )
+
 local volume =
     sbar.add(
         "bracket",
         "volume.bracket",
-        { volume_icon.name, volume_percent.name },
+        { volume_icon.name, },
         {
             display = 1,
             wdidth  = "dynamic",
-            label   = { drawing = "toggle" },
+            label   = { drawing = "toggle", },
             popup   = {
                 align = "center"
             }
@@ -90,14 +62,14 @@ local volume =
 local volume_slider = sbar.add("slider", popup_width, {
     position = "popup." .. volume.name,
     slider = {
-        highlight_color = colors.red,
+        highlight_color = colors.icon.primary,
         background = {
             height = 20,
             corner_radius = 15,
             color = colors.bar.bg2,
         },
         knob = {
-            color = colors.quicksilver,
+            color = colors.icon.primary,
             string = "",
             size = 22,
             drawing = true,
@@ -119,13 +91,13 @@ local volume_slider = sbar.add("slider", popup_width, {
     click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
 
-volume_percent:subscribe("mouse.entered", function(env)
-    sbar.animate("elastic", 15, function()
-        volume_percent:set({
-            label = { drawing = not volume_percent:query().label.drawing }
-        })
-    end)
-end)
+-- volume_percent:subscribe("mouse.entered", function(env)
+--     sbar.animate("elastic", 15, function()
+--         volume_percent:set({
+--             label = { drawing = not volume_percent:query().label.drawing }
+--         })
+--     end)
+-- end)
 
 volume_percent:subscribe(
     "volume_change",
@@ -190,7 +162,7 @@ local function volume_toggle_details(env)
                         align = "left",
                         label = {
                             string = device,
-                            color = colors.white
+                            color = colors.icon.primary
                         },
                         click_script = 'SwitchAudioSource -s "' ..
                             device ..

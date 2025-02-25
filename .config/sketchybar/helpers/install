@@ -11,10 +11,9 @@ brew install --cask sf-symbols
 brew install --cask homebrew/cask-fonts/font-sf-mono
 brew install --cask homebrew/cask-fonts/font-sf-pro
 brew install dark-mode
- 
 
 mkdir -p ~/Library/LaunchAgents
-cat <<EOF > ~/Library/LaunchAgents/com.user.darkmode.poller.plist
+cat <<EOF >~/Library/LaunchAgents/com.user.darkmode.poller.plist
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -23,8 +22,8 @@ cat <<EOF > ~/Library/LaunchAgents/com.user.darkmode.poller.plist
         <string>com.user.darkmode.poller</string>
         <key>ProgramArguments</key>
         <array>
-            <string>/bin/bash</string>
-            <string>~/.config/sketchybar/items/scripts/dark-mode-poller.sh</string>
+            <string>#!/bin/bash</string>
+            <string>/Users/$(id -u)/.config/sketchybar/items/scripts/dark-mode-poller.sh</string>
         </array>
         <key>StartInterval</key>
         <integer>10</integer>
@@ -39,12 +38,10 @@ EOF
 # Update permissions
 chmod +x ~/.config/sketchybar/items/scripts/dark-mode-poller.sh
 
-
-cp ~/.config/sketchybar/items/plists/com.user.darkmode.poller.plist ~/Library/LaunchAgents/
+cp /Users/$(id -u)/.config/sketchybar/items/plists/com.user.darkmode.poller.plist ~/Library/LaunchAgents/
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.darkmode.poller.plist
 
-
-plutil -lint ~/Library/LaunchAgents/com.user.darkmode.plist
+plutil -lint /Users/$(id -u)/Library/LaunchAgents/com.user.darkmode.poller.plist
 
 log stream --predicate 'subsystem == "com.apple.UIKit"'
 

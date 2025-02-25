@@ -20,11 +20,11 @@ fi
 
 # If the mode changed, trigger actions
 if [[ "$APPEARANCE" != "$LAST_MODE" ]]; then
-    echo "$APPEARANCE" > "$STATE_FILE"
+    echo "$APPEARANCE" >"$STATE_FILE"
 
     # Reload SketchyBar
     brew services reload sketchybar
 
     # Send macOS notification
-    osascript -e "display notification \"Switched to $APPEARANCE Mode. SketchyBar reloaded!\" with title \"Mode Changed\""
+    osascript -e "display notification \"Switched to $APPEARANCE Mode. SketchyBar reloaded!\" with title \"You Are Welcome\""
 fi

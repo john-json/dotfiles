@@ -3,7 +3,6 @@ return {
     green = 0xff98a8a9,
     red = 0xffc6755b,
     blue = 0xffa2aab9,
-    darkblue = 0xff6275a1,
     purple = 0xff6a6378,
     monotone = 0xff98a8a9,
     orange = 0xffd09367,
@@ -14,7 +13,7 @@ return {
 
     black = 0xff000000,
     white = 0xffffffff,
-    grey = 0xffcdcdcd,
+    grey = 0xffbcbcbc,
     darkGrey = 0xff4b4b4b,
 
     transparent = 0x00000000,
@@ -22,8 +21,7 @@ return {
     border_transparent = 0x33ffffff,
 
     icon = {
-        grey = 0xffcdcdcd,
-        primary = 0xff989d9d,
+        primary = 0xffbcbcbc,
         secondary = 0xff4b4b4b,
     },
     bar = {
@@ -45,6 +43,7 @@ return {
         secondary = 0xffffffff,
     },
     popup = {
+        text = 0xffffffff,
         bg = 0xB3ffffff,
         bg_alt = 0x99ba7666,
         border = 0xffffffff,

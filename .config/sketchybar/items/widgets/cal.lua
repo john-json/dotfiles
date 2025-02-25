@@ -31,20 +31,28 @@ local cal = sbar.add("item", {
     position = "right",
     update_freq = 30,
     label = {
+        padding_left = 10,
+
         font = {
+            color = colors.red,
             style = settings.font.style_map["Bold"],
         },
     },
     icon = {
         align = "center",
         drawing = false,
+        padding_left = 10,
         font = {
             style = settings.font.style_map["Bold"],
             size = 12,
         },
     },
     background = {
-        color = colors.transparent,
+        color = colors.icon.secondary,
+        height = 35,
+        corner_radius = 6,
+        padding_left = 10,
+        padding_right = settings.paddings,
     },
     popup = {
         position = "center",
@@ -52,15 +60,14 @@ local cal = sbar.add("item", {
         height = 60,
         width = "dynamic",
         drawing = false,
-        y_offset = -0,
+        y_offset = 0,
     },
 })
 
 sbar.add("bracket", { cal.name }, {
     background = {
         color = colors.transparent,
-        height = 30,
-        border_color = colors.grey,
+
     }
 })
 
@@ -82,7 +89,7 @@ cal:subscribe("mouse.clicked", function(env)
         cal:set({
             popup = {
                 drawing = "toggle",
-                y_offset = 15,
+                y_offset = 0,
             },
         })
     end)
@@ -99,7 +106,7 @@ local function populate_calendar_popup()
     -- Display Today (Highlighted)
     sbar.add("item", {
         position = "popup." .. cal.name,
-        height = 80,
+
         icon = {
             string = todays_date,
             padding_left = 20,
@@ -108,14 +115,14 @@ local function populate_calendar_popup()
             position = "center",
             align = "center",
             font = {
-                size = 60,
+                size = 50,
                 style = "Helvetica-Bold",
             },
         },
         label = {
             padding_right = 50,
             padding_left = -60,
-            y_offset = -30,
+            y_offset = -20,
             string = todays_name,
             color = colors.red, -- Highlight for today
             align = "center",
@@ -125,9 +132,12 @@ local function populate_calendar_popup()
             },
         },
         background = {
+            padding_left = 5,
+            padding_right = 5,
+            y_offset = -5,
             color = colors.bar.bg2,
             width = "dynamic",
-            height = 150,
+            height = 120,
 
         },
     })
@@ -157,7 +167,9 @@ end
 
 -- Repopulate popup at midnight
 cal:subscribe({ "routine", "system_woke" }, function(env)
-    populate_calendar_popup()
+    sbar.animate("elastic", 15, function()
+        populate_calendar_popup()
+    end)
 end)
 
 -- Populate the popup on initialization
@@ -167,8 +179,8 @@ populate_calendar_popup()
 
 
 cal:subscribe({ "forced", "routine", "system_woke" }, function(env)
-    sbar.animate("elastic", 20, function()
-        cal:set({ icon = os.date("%b, %d"), label = { string = os.date("%H:%M"), padding_right = 5, } })
+    sbar.animate("elastic", 15, function()
+        cal:set({ icon = os.date("%b, %d"), label = { string = os.date("%H:%M"), padding_right = 10, } })
     end)
 end)
 

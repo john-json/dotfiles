@@ -14,7 +14,7 @@ local front_app = sbar.add("item", "front_app", {
     },
     icon = {
         drawing = false,
-        color = colors.dimm_glow,
+        color = colors.quicksilver,
         font = { style = settings.font.style_map["Bold"] },
     },
     updates = true,
@@ -31,7 +31,7 @@ front_app:subscribe("front_app_switched", function(env)
             },
             icon = {
                 drawing = false,
-                string = "􀂁"
+                string = icons.switch.off
             }
         })
     end)
@@ -44,9 +44,9 @@ front_app:subscribe("mouse.entered", function(env)
                 label = { drawing = false },
                 icon = {
                     drawing = true,
-                    string = icons.swap,
+                    string = icons.switch.off,
                     padding_left = 5,
-                    padding_right = 5,
+                    padding_right = 10,
                     color = colors.quicksilver,
                     font = { style = settings.font.style_map["Bold"] },
                 },
@@ -66,7 +66,7 @@ front_app:subscribe("mouse.exited", function(env)
                 },
                 icon = {
                     drawing = false,
-                    string = icons.swap,
+                    string = icons.switch.off,
                 },
             })
         end)
@@ -83,9 +83,9 @@ front_app:subscribe("mouse.clicked", function(env)
                 label = { drawing = false },
                 icon = {
                     drawing = true,
-                    string = icons.swap,
+                    string = icons.switch.on,
                     padding_left = 5,
-                    padding_right = 5,
+                    padding_right = 10,
                     color = colors.quicksilver,
                     font = { style = settings.font.style_map["Bold"] },
                 },

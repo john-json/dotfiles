@@ -35,9 +35,9 @@ search:subscribe("mouse.entered", function(env)
 	sbar.animate("elastic", 12, function()
 		search:set({
 			icon = {
+				color = colors.green,
 				font = {
-					family = settings.font.numbers,
-					size = 16,
+					size = 18
 
 				},
 			},
@@ -50,9 +50,10 @@ search:subscribe("mouse.exited", function(env)
 		search:set({
 
 			icon = {
+				color = colors.icon.primary,
 				font = {
 					family = settings.font.numbers,
-					size = 14,
+					size = 16,
 
 				},
 			},

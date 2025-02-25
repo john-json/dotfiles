@@ -6,6 +6,8 @@ local whitelist = {
     ["Spotify"] = true
 }
 
+local popup_width = 180
+
 -- MiniPlayer constants
 local PADDING = 5
 local HEIGHT = 80
@@ -14,6 +16,7 @@ local HEIGHT_BEFORE = 0
 -- Helper function to create media items
 local function setup_media_items()
     local media_icon = sbar.add("item", {
+        display = 1,
         position = "right",
         background = {
             border_width = 0,
@@ -27,12 +30,13 @@ local function setup_media_items()
             drawing = false,
         },
         icon = {
-            padding_left = 0,
+            color = whitelist and colors.green or colors.blue,
+            padding_left = 10,
             padding_right = 5,
             drawing = true,
             string = icons.media.icon,
             font = {
-                size = 16,
+                size = 20,
             },
         },
         drawing = true,
@@ -40,8 +44,8 @@ local function setup_media_items()
         popup = {
             display = 1,
             drawing = false, -- Initially hidden
-            y_offset = 10,
-            align = "center",
+            y_offset = 0,
+            align = "right",
             horizontal = true,
             height = HEIGHT_BEFORE,
         },
@@ -101,8 +105,11 @@ local function setup_media_items()
     return media_icon, media_cover, media_artist, media_title
 end
 
+
+
 -- Setup MiniPlayer items
 local media_icon, media_cover, media_artist, media_title = setup_media_items()
+
 
 -- Add playback controls (hidden by default)
 local controls = {}
@@ -118,13 +125,11 @@ local function create_controls()
             display = 1,
             align = "right",
             position = "right",
-            width = 0,
+            padding_left = 10,
             icon = {
-                align = "right",
-                position = "right",
-                color = colors.quicksilver,
+                color = colors.grey,
                 string = control.icon,
-                font = { size = 14 },
+                font = { size = 18 },
             },
             click_script = control.action,
             drawing = false, -- Initially hidden
@@ -144,10 +149,11 @@ local function toggle_controls()
     controls_visible = not controls_visible
     for i, control in ipairs(controls) do
         sbar.animate("elastic", 15, function()
-            control:set({ drawing = controls_visible, width = 25, padding_right = 5, padding_left = 10, })
+            control:set({ drawing = controls_visible, position = "right", align = "right", width = 35, padding_right = 0, padding_left = 10, })
         end)
     end
 end
+
 
 -- Track visibility state of popup
 local popup_visible = false
@@ -161,7 +167,7 @@ local function toggle_popup(visible)
                 popup = {
                     drawing = visible,
                     height = visible and HEIGHT or 0,
-                    y_offset = visible and 30 or 0,
+                    y_offset = visible and 15 or 0,
                 },
             })
         end)
@@ -197,4 +203,19 @@ media_icon:subscribe("mouse.entered", function(env)
     end)
 end)
 
-return media_icon
+media_icon:subscribe("mouse.clicked", function(env)
+    toggle_popup() -- Show/hide controls on click
+end)
+
+local media =
+    sbar.add(
+        "bracket",
+        "media.bracket",
+        { media_icon.name },
+        {
+            display = 1,
+            wdidth  = "dynamic",
+        }
+    )
+
+return media

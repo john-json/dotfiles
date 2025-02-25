@@ -1,42 +1,79 @@
-local sbar       = require("sketchybar")
-local colors     = require("colors")
-local icons      = require("icons")
-local settings   = require("settings")
+local sbar     = require("sketchybar")
+local colors   = require("colors")
+local icons    = require("icons")
+local settings = require("settings")
 
-local cal        = require("items.widgets.cal")
-local wifi       = require("items.widgets.wifi")
-local volume     = require("items.widgets.volume")
-
-local media_icon = require("items.widgets.media")
-local weather    = require("items.widgets.weather")
-
-
+local cal      = require("items.widgets.cal")
+local media    = require("items.widgets.media")
+local wifi     = require("items.widgets.wifi")
+local media    = require("items.widgets.media")
+local volume   = require("items.widgets.volume")
+local weather  = require("items.widgets.weather")
 
 
 
-
+local systray   =
+    sbar.add(
+        "bracket",
+        "systray.bracket",
+        { wifi.name, volume.name, media.name, weather.name },
+        {
+            display = 1,
+            width = "dynamic",
+            icon = {
+                padding_left = 10,
+                padding_right = 10,
+            },
+            background = {
+                corner_radius = 25,
+                padding_left = settings.group_paddings,
+                padding_right = settings.group_paddings,
+                color = colors.transparent,
+                height = 20,
+            },
+        }
+    )
 
 -- Create the bracket and include the items
+local clock     =
+    sbar.add(
+        "bracket",
+        "clock.bracket",
+        { cal.name },
+        {
+            width = "dynamic",
+            background = {
+                padding_left = settings.group_paddings,
+                padding_right = settings.group_paddings,
+                color = colors.transparent,
+            },
+
+
+        }
+    )
+
 local right_bar =
     sbar.add(
         "bracket",
         "right_bar.bracket",
-        { cal.name, wifi.name, volume.name, media_icon.name, weather.name },
+        { clock.name, systray.name },
         {
+
             shadow = true,
             position = "right",
+            align = "right",
             width = "dynamic",
-            padding_left = settings.group_paddings,
-            padding_right = settings.group_paddings,
+            padding_left = 10,
+            padding_right = 10,
             background = {
+                padding_left = settings.group_paddings,
+                padding_right = settings.group_paddings,
                 color = colors.bar.bg2
             },
-            label = {
-                padding_left = settings.paddings,
-                padding_right = settings.paddings,
-            }
+
 
         }
     )
+
 
 return right_bar

@@ -7,7 +7,7 @@
         <key>ProgramArguments</key>
         <array>
             <string>/bin/bash</string>
-            <string>~/.config/sketchybar/items/scripts/dark-mode-poller.sh</string>
+            <string>/Users/$(id -u)/.config/sketchybar/items/scripts/dark-mode-poller.sh</string>
         </array>
         <key>StartInterval</key>
         <integer>10</integer>

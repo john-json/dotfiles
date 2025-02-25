@@ -38,9 +38,9 @@ for i = 1, max_items, 1 do
                     drawing = false
                 },
                 label = {
-                    padding_left = settings.paddings,
-                    padding_right = settings.paddings,
-                    color = i == 1 and colors.icon.primary or colors.grey,
+                    padding_left = settings.group_paddings,
+                    padding_right = settings.group_paddings,
+                    color = i == 1 and colors.orange or colors.grey,
                 },
                 click_script = "$CONFIG_DIR/helpers/menus/bin/menus -s " .. i
             }

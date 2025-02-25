@@ -27,9 +27,14 @@ end
 -- Add weather widget to SketchyBar
 local weather = sbar.add("item", "widgets.weather", {
     position = "right",
+    align = "center",
     display = 1,
-    icon = { string = icons.weather.sun }, -- Default icon
-    label = { string = "" },               -- Hide temperature by default
+    icon = {
+        color = colors.yellow,
+        string = icons.weather.sun,
+        padding_left = 5,
+    },                              -- Default icon
+    label = { drawing = "toggle" }, -- Hide temperature by default
     popup = {
         align = "center",
         horizontal = false,
@@ -47,8 +52,9 @@ local function update_weather()
         if condition and temperature then
             local weather_icon = get_weather_icon(condition)
             weather:set({
+                label = { drawing = false },
                 icon = { string = weather_icon },
-                label = "" -- Keep temperature hidden initially
+                -- Keep temperature hidden initially
             })
 
             -- Store temperature for later use
@@ -64,13 +70,13 @@ update_weather()
 -- Show temperature on mouse enter
 weather:subscribe("mouse.entered", function()
     if weather.temperature then
-        weather:set({ label = weather.temperature })
+        weather:set({ label = { string = weather.temperature, drawing = true } })
     end
 end)
 
 -- Hide temperature on mouse exit
 weather:subscribe("mouse.exited", function()
-    weather:set({ label = "" })
+    weather:set({ label = { drawing = false } })
 end)
 
 -- Clicking toggles a popup with a weekly forecast

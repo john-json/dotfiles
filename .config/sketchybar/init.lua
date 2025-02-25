@@ -1,6 +1,7 @@
 -- Require the sketchybar module
 sbar = require("sketchybar")
 
+
 -- Function to check if dark mode is enabled
 local function is_dark_mode()
     local handle = io.popen('defaults read -globalDomain AppleInterfaceStyle')
@@ -27,21 +28,23 @@ else
     colors = require("colors_light")
 end
 
-
 local icons = require("icons")
 local settings = require("settings")
 
+
 -- Example usage of the colors
-print("Bar background color: " .. colors.bar.bg)
+-- print("Bar background color: " .. colors.bar.bg)
 
 -- Set the bar name, if you are using another bar instance than sketchybar
 -- sbar.set_bar_name("bottom_bar")
 
 -- Bundle the entire initial configuration into a single message to sketchybar
 sbar.begin_config()
-require("bar")
 require("default")
-require("items")
+sbar.animate("elastic", 15, function()
+    require("items")
+    require("bar") -- Move the bar down
+end)
 sbar.end_config()
 
 -- Run the event loop of the sketchybar module (without this there will be no

@@ -1,7 +1,6 @@
 return {
-    paddings = 4,
+    paddings = 2,
     group_paddings = 10,
-    icon_paddings = 2,
 
     icons = "sf-symbols",   -- Options: "sf-symbols", "nerdfont"
     animated_icons = false, -- Set to true if you want to use animated icons

@@ -5,9 +5,9 @@ local app_icons = require("helpers.app_icons")
 
 local steps = 60
 local space_colors = {
-	colors.red,      -- Color for space 1
+	colors.yellow,   -- Color for space 1
 	colors.orange,   -- Color for space 2
-	colors.yellow,   -- Color for space 3
+	colors.red,      -- color for space 3
 	colors.blue,     -- Color for space 4
 	colors.magenta,  -- Color for space 5
 	colors.green,    -- Color for space 6
@@ -22,7 +22,7 @@ local function getSpaceColor(spaceNumber)
 end
 
 local sf_icons_active = {
-	"􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀",
+	"􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚",
 }
 local sf_icons_inactive = {
 	"􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀",
@@ -35,9 +35,8 @@ local function getSpaceIcon(space, active)
 	end
 end
 
-local function smoothColorTransition(space, targetColor)
-	local duration = 45                                     -- Animation duration in seconds
-	sbar.animate("elastic", duration, function(progress)
+local function smoothColorTransition(space, targetColor)    -- Animation duration in seconds
+	sbar.animate("elastic", 25, function(progress)
 		local r1, g1, b1 = sbar.colorComponents(space.icon.color) -- Current color
 		local r2, g2, b2 = sbar.colorComponents(targetColor) -- Target color
 		local interpolatedColor = sbar.colorFromComponents(
@@ -80,8 +79,8 @@ for i = 1, 10 do
 		position = "center",
 		space = i,
 		label = {
-			padding_left = 0,
-			padding_right = 0,
+			padding_left = 5,
+			padding_right = 5,
 			position = "center",
 			align = "center",
 			string = getSpaceIcon(i, true),
@@ -99,8 +98,6 @@ for i = 1, 10 do
 			},
 		},
 		background = {
-			padding_left = 10,
-			padding_right = 10,
 			y_offset = 12,
 			position = "center",
 			align = "center",
@@ -111,41 +108,35 @@ for i = 1, 10 do
 
 	spaces[i] = space
 
+
 	space:subscribe("front_app_switched", function(env)
 		local selected = env.SELECTED == "true"
 		local targetColor = selected and getSpaceColor(i) or getSpaceColor(i)
 		smoothColorTransition(space, targetColor)
-
-		space:set({
-			icon = {
-				drawing = false,
-				y_offset = -25,
-				position = "center",
-				align = "center",
-			},
-			label = {
-				padding_left = selected and 3 or 0,
-				padding_right = selected and 3 or 0,
-				position = "center",
-				align = "center",
-				string = selected and getSpaceIcon(i, true) or getSpaceIcon(i, false),
-				font = {
+		sbar.animate("elastic", 15, function()
+			space:set({
+				icon = {
+					drawing = false,
+					color = colors.transparent,
+					position = "center",
 					align = "center",
-					family = settings.font.numbers,
-					size = selected and 16 or 14,
-					style = settings.font.style_map[selected and "Heavy" or "Normal"],
 				},
-				color = selected and getSpaceColor(i) or colors.icon.primary,
-				drawing = true,
-			},
-			background = {
-				padding_left = selected and 5 or 2,
-				padding_right = selected and 5 or 5,
-				y_offset = selected and 0 or 12,
-				color = colors.transparent,
-				height = selected and 20 or 2,
-			},
-		})
+				label = {
+					padding_left = selected and 5 or 3,
+					padding_right = selected and 5 or 3,
+					position = "center",
+					align = "center",
+					string = selected and getSpaceIcon(i, true) or getSpaceIcon(i, false),
+					font = {
+						family = settings.font.numbers,
+						size = selected and 18 or 14,
+						style = settings.font.style_map[selected and "Heavy" or "Normal"],
+					},
+					color = selected and getSpaceColor(i) or colors.quicksilver,
+					drawing = true,
+				},
+			})
+		end)
 	end)
 
 

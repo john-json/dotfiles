@@ -14,7 +14,7 @@ local smenu = sbar.add("item", {
 		border_color = colors.bar.border
 	},
 	icon = {
-		string = "􀆈",
+		string = icons.start,
 		color = colors.grey,
 		padding_left = 5,
 		padding_right = 10,
@@ -30,7 +30,7 @@ local smenu = sbar.add("item", {
 
 -- Hover effect
 smenu:subscribe("mouse.entered", function()
-	sbar.animate("elastic", 12, function()
+	sbar.animate("elastic", 15, function()
 		smenu:set({
 			icon = {
 				size = 20,
@@ -41,7 +41,7 @@ smenu:subscribe("mouse.entered", function()
 end)
 
 smenu:subscribe("mouse.exited", function()
-	sbar.animate("elastic", 12, function()
+	sbar.animate("elastic", 15, function()
 		smenu:set({
 			icon = {
 				size = 18,
@@ -66,7 +66,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 		},
 		label = {
 			string = label,
-			color = colors.white,
+			color = colors.icon.primary,
 			padding_left = 10,
 			padding_right = 20,
 			align = "left",
@@ -90,7 +90,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 				icon = {
 					padding_left = 5,
 					padding_right = 15,
-					color = colors.darkGrey,
+					color = colors.quicksilver,
 					font = { size = 20 },
 				},
 				label = {
@@ -128,7 +128,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 end
 
 -- Add each custom menu entry to the popup
-local about_mac = create_menu_item("popup." .. smenu.name, "About", icons.smenu,
+local about_mac = create_menu_item("popup." .. smenu.name, "About", icons.user,
 	"open -a 'About This Mac'")
 local system_settings = create_menu_item("popup." .. smenu.name, "Settings", icons.circle_gear,
 	"open -a 'System Preferences'")

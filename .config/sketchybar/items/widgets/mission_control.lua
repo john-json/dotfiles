@@ -15,7 +15,6 @@ local mission_control =
 				,
 				padding_right = 10,
 				string = icons.mission_control,
-				size = 16,
 			},
 			label = {
 				drawing = false,
@@ -36,9 +35,10 @@ mission_control:subscribe("mouse.entered", function(env)
 	sbar.animate("elastic", 12, function()
 		mission_control:set({
 			icon = {
+				color = colors.orange,
 				font = {
 					family = settings.font.numbers,
-					size = 16,
+					size = 18,
 
 				},
 			},
@@ -51,9 +51,9 @@ mission_control:subscribe("mouse.exited", function(env)
 		mission_control:set({
 
 			icon = {
+				color = colors.icon.primary,
 				font = {
 					family = settings.font.numbers,
-					size = 14,
 
 				},
 			},
