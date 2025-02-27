@@ -15,8 +15,17 @@ sbar.bar({
     blur_radius = 30,
 })
 
--- Use a background shell command to delay the animation
+-- Animate with a smooth rubber band effect
+sbar.animate("elastic", 30, function()
+    local start_pos = -60
+    local overshoot = 12 -- Drop below before bouncing up
+    local final_pos = 5
 
-sbar.animate("tahn", 25, function()
-    sbar.bar({ y_offset = 5, alpha = 0, }) -- Move into final position
+    -- Move from start -> overshoot -> final position
+    sbar.bar({ y_offset = final_pos + overshoot })
+
+    -- Bounce back up to final position
+    sbar.animate("elastic", 20, function()
+        sbar.bar({ y_offset = final_pos, alpha = 1 })
+    end)
 end)
