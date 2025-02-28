@@ -3,6 +3,7 @@ local colors   = require("colors")
 local icons    = require("icons")
 local settings = require("settings")
 
+local search   = require("items.widgets.search")
 local cal      = require("items.widgets.cal")
 local volume   = require("items.widgets.volume")
 local wifi     = require("items.widgets.wifi")
@@ -15,7 +16,7 @@ local systray   =
     sbar.add(
         "bracket",
         "systray.bracket",
-        { wifi.name, volume.name, media.name, weather.name },
+        { search.name, wifi.name, volume.name, media.name, weather.name },
         {
             display = 1,
             width = "dynamic",

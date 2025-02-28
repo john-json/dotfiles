@@ -5,11 +5,11 @@ local sbar = require("sketchybar")
 -- Load the bar with widgets in the correct position first
 sbar.bar({
     alpha = 0,
-    y_offset = -60, -- Start off-screen
+    y_offset = -50, -- Start off-screen
     position = "top",
     height = 40,
     color = colors.transparent,
-    margin = 10,
+    margin = 0,
     corner_radius = 8,
     shadow = true,
     blur_radius = 30,

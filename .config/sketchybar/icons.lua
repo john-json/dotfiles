@@ -46,8 +46,8 @@ local icons = {
         circle_cal = "􀐫",
         circle_plus = "􀁍",
         circle_menu = "􀧲",
-        search = "􀒓",
-        mission_control = "􀤾",
+        search = "􀊫",
+        mission_control = "􁻻",
         smenu = "􀬑",
         swap = "􀺊",
         user = "􀓤",
@@ -65,8 +65,8 @@ local icons = {
         },
 
         switch = {
-            on = "􀺉",
-            off = "􀺊"
+            on = "󰔡",
+            off = "󰨙"
         },
         volume = {
             _100 = "􀾐",

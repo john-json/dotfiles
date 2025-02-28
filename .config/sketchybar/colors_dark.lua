@@ -7,11 +7,12 @@ return {
     purple = 0xff6a6378,
     monotone = 0xff98a8a9,
     orange = 0xffd09367,
-    quicksilver = 0xff717171,
+    quicksilver = 0xffb2b2b2,
     pink = 0xff725955,
     magenta = 0xff595066,
 
-    primary = 0xffbfbfbf,
+    primary = 0xffb2b2b2,
+    secondary = 0xff5b5b5b,
 
     black = 0xff000000,
     white = 0xffb4b4b4,
@@ -28,7 +29,7 @@ return {
     },
     bar = {
         bg = 0xff1f1f1f,
-        bg2 = 0xff1f1f1f,
+        bg2 = 0xff131313,
         accent = 0xff000000,
         active = 0xff9eaeb3,
         selected = 0xff593c3c,

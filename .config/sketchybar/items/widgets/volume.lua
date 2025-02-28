@@ -61,20 +61,24 @@ local volume =
     )
 
 local volume_slider = sbar.add("slider", popup_width, {
-    position = "popup." .. volume.name,
+    position = "right",
+    drawing = false,
+    width = 50,
     slider = {
-        padding_left = 10,
-        padding_right = 10,
-        highlight_color = colors.secondary,
+        y_offset = 20,
+        highlight_color = colors.orange,
         background = {
-            height = 20,
+            padding_left = 20,
+            padding_right = 20,
+            height = 10,
             corner_radius = 15,
-            color = colors.grey,
+            color = colors.bar.bg2,
+
         },
         knob = {
             color = colors.orange,
-            string = "",
-            size = 22,
+            string = "􀡈",
+            size = 12,
             drawing = true,
         },
     },
@@ -84,23 +88,29 @@ local volume_slider = sbar.add("slider", popup_width, {
         string = "",
         color = colors.primary,
         font = {
-            size = 22,
+            size = 12,
             style = settings.font.style_map["SemiBold"],
             family = settings.font.text,
             color = colors.primary
         }
     },
-    background = { color = colors.bar.bg1, height = 10, y_offset = -30 },
+    background = { color = colors.bar.bg2, height = 10, y_offset = -30 },
     click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
 
--- volume_percent:subscribe("mouse.entered", function(env)
---     sbar.animate("elastic", 15, function()
---         volume_percent:set({
---             label = { drawing = not volume_percent:query().label.drawing }
---         })
---     end)
--- end)
+local start_pos = -60
+local overshoot = 12 -- Drop below before bouncing up
+local final_pos = 5
+
+volume_icon:subscribe("mouse.entered", function(env)
+    sbar.delay(0.3, function()
+        sbar.animate("elastic", 25, function()
+            volume_slider:set({
+                drawing = "toggle",
+            })
+        end)
+    end)
+end)
 
 volume_percent:subscribe(
     "volume_change",
@@ -137,58 +147,14 @@ local function volume_collapse_details()
     sbar.remove("/volume.device\\.*/")
 end
 
-local current_audio_device = "None"
-local function volume_toggle_details(env)
-    if env.BUTTON == "center" then
-        sbar.exec("open /System/Library/PreferencePanes/Sound.prefpane")
-        return
-    end
-
-    local should_draw = volume:query().popup.drawing == "off"
-    if should_draw then
-        volume:set({ popup = { drawing = true } })
-        sbar.exec("SwitchAudioSource -t output -c", function(result)
-            current_audio_device = result:sub(1, -2)
-            sbar.exec("SwitchAudioSource -a -t output", function(available)
-                local current = current_audio_device
-                local color = colors.red
-                local counter = 0
-
-                for device in string.gmatch(available, "[^\r\n]+") do
-                    color = colors.white
-                    if current == device then
-                        color = colors.primary
-                    end
-                    sbar.add("item", "volume.device." .. counter, {
-                        position = "popup." .. volume.name,
-                        width = popup_width,
-                        align = "left",
-                        label = {
-                            string = device,
-                            color = colors.red
-                        },
-                        click_script = 'SwitchAudioSource -s "' ..
-                            device ..
-                            '" && sketchybar --set /volume.device\\.*/ label.color=' ..
-                            colors.yellow .. " --set $NAME label.color=" .. colors.yellow
-                    })
-                    counter = counter + 1
-                end
-            end)
-        end)
-    else
-        volume_collapse_details()
-    end
-end
 
 local function volume_scroll(env)
     local delta = env.SCROLL_DELTA
     sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) + ' .. delta .. ')"')
 end
 
-volume_icon:subscribe("mouse.clicked", volume_toggle_details)
+
 volume_icon:subscribe("mouse.scrolled", volume_scroll)
-volume_percent:subscribe("mouse.clicked", volume_toggle_details)
 volume_percent:subscribe("mouse.exited.global", volume_collapse_details)
 volume_percent:subscribe("mouse.scrolled", volume_scroll)
 

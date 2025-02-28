@@ -1,9 +1,9 @@
-local sbar     = require("sketchybar")
-local colors   = require("colors")
-local icons    = require("icons")
-local settings = require("settings")
+local sbar      = require("sketchybar")
+local colors    = require("colors")
+local icons     = require("icons")
+local settings  = require("settings")
 
-local mission  =
+local add_space =
 	sbar.add(
 		"item",
 		{
@@ -11,28 +11,21 @@ local mission  =
 			icon = {
 				align = "center",
 				position = "center",
-				padding_left = 10,
-				padding_right = 20,
-				string = icons.mission_control,
+				padding_left = 15,
+				padding_right = 10,
+				string = icons.plus,
 			},
 			label = {
 				drawing = false,
-			}
+			},
 
 		}
 	)
 
 
-mission:subscribe(
-	"mouse.clicked",
-	function(env)
-		sbar.exec("open -a 'Mission Control'")
-	end
-)
-
-mission:subscribe("mouse.entered", function(env)
+add_space:subscribe("mouse.entered", function(env)
 	sbar.animate("sin", 15, function()
-		mission:set({
+		add_space:set({
 			icon = {
 				color = colors.orange,
 				font = {
@@ -40,14 +33,15 @@ mission:subscribe("mouse.entered", function(env)
 					size = 18,
 
 				},
+				click_csript = 'osascript -e "$CONFIG_DIR/items/scripts/switchSpace/newSpace.scpt"'
 			},
 		})
 	end)
 end)
 
-mission:subscribe("mouse.exited", function(env)
+add_space:subscribe("mouse.exited", function(env)
 	sbar.animate("elastic", 12, function()
-		mission:set({
+		add_space:set({
 
 			icon = {
 				color = colors.icon.primary,
@@ -62,4 +56,4 @@ mission:subscribe("mouse.exited", function(env)
 end)
 
 
-return mission
+return add_space

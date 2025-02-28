@@ -8,7 +8,7 @@ local popup_width = 240
 
 local smenu = sbar.add("item", {
 	position = "left",
-	bar = "left_bar",
+	display = 1,
 	background = {
 		border_width = 0,
 		border_color = colors.bar.border

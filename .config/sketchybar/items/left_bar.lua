@@ -19,6 +19,8 @@ local left_bar = sbar.add(
         padding_left = 10,
         padding_right = 10,
         background = {
+            padding_left = 10,
+            padding_right = 10,
             color = colors.bar.bg2
         },
 

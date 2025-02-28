@@ -19,7 +19,6 @@ local function setup_media_items()
         display = 1,
         position = "right",
         background = {
-            border_width = 0,
             border_color = colors.bar.border,
             width = "dynamic",
         },
@@ -30,7 +29,7 @@ local function setup_media_items()
             drawing = false,
         },
         icon = {
-            color = whitelist and colors.green or colors.blue,
+            color = whitelist and colors.green or colors.primary,
             padding_left = 10,
             padding_right = 5,
             drawing = true,
@@ -149,7 +148,14 @@ local function toggle_controls()
     controls_visible = not controls_visible
     for i, control in ipairs(controls) do
         sbar.animate("elastic", 15, function()
-            control:set({ drawing = controls_visible, position = "right", align = "right", width = 35, padding_right = 0, padding_left = 10, })
+            control:set({
+                drawing = controls_visible,
+                position = "right",
+                align = "right",
+                width = 35,
+                padding_right = 0,
+                padding_left = 10,
+            })
         end)
     end
 end
@@ -196,15 +202,21 @@ media_icon:subscribe("media_change", function(env)
     end
 end)
 
--- Mouse clicked event for toggling controls
+-- Delay before toggling controls on mouse enter
 media_icon:subscribe("mouse.entered", function(env)
-    sbar.animate("elastic", 15, function()
-        toggle_controls() -- Show/hide controls on click
+    sbar.delay(0.3, function()   -- 0.3s delay before toggling
+        sbar.animate("elastic", 15, function()
+            toggle_controls()
+        end)
     end)
 end)
 
 media_icon:subscribe("mouse.clicked", function(env)
-    toggle_popup() -- Show/hide controls on click
+    sbar.delay(0.2, function() -- 0.2s delay before toggling
+        sbar.animate("elastic", 15, function()
+            toggle_popup(true)
+        end)
+    end)
 end)
 
 local media =

@@ -7,19 +7,20 @@ local settings = require("settings")
 sbar.exec(
     "killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en1 network_update 2.0")
 
-local popup_width = 220
+local popup_width = 200
 
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
+    display = 1,
     position = "right",
-    label = { drawing = false },
+    label = { drawing = true },
 })
 
 -- Background around the item
 local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
     wifi.name,
 }, {
-    display = 1,
+
     label = {
         font = {
             style = settings.font.style_map["Bold"],
@@ -33,29 +34,31 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
 
 local ssid = sbar.add("item", {
     position = "popup." .. wifi_bracket.name,
-    icon = {
-        y_offset = 20,
-        width = popup_width / 2,
-        align = "center",
-        padding_left = 30,
-        font = {
-            style = settings.font.style_map["Bold"]
-        },
-        string = "",
-    },
     width = popup_width,
-    align = "center",
     label = {
-        y_offset = -15,
-        padding_left = -160,
-        align = "left",
+        drawing = true,
+        align = "right",
+        width = popup_width / 2,
+        y_offset = 0,
+        padding_left = -55,
         color = colors.red,
         font = {
-            size = 30,
+            size = 22,
             style = settings.font.style_map["Bold"],
         },
-        max_chars = 18,
+        max_chars = 17,
         string = "????????????",
+    },
+    icon = {
+        drawing  = true,
+        align    = "left",
+        width    = popup_width / 2,
+        y_offset = 0,
+        font     = {
+            size = 40,
+            style = settings.font.style_map["Bold"]
+        },
+        string   = "",
     },
     background = {
         padding_left = 5,
@@ -63,7 +66,7 @@ local ssid = sbar.add("item", {
         y_offset = -5,
         color = colors.bar.bg2,
         width = "dynamic",
-        height = 80,
+        height = 60,
     }
 })
 
@@ -71,8 +74,13 @@ local hostname = sbar.add("item", {
     position = "popup." .. wifi_bracket.name,
     icon = {
         align = "left",
-        string = icons.user,
         width = popup_width / 2,
+        string = icons.user,
+
+        font = {
+            style = settings.font.style_map["Bold"],
+            size = 18,
+        },
 
     },
     label = {
@@ -80,6 +88,11 @@ local hostname = sbar.add("item", {
         string = "????????????",
         width = popup_width / 2,
         align = "right",
+        font = {
+            family = settings.font.numbers,
+            style = settings.font.style_map["Bold"],
+            size = 16,
+        },
     }
 })
 
@@ -89,11 +102,20 @@ local ip = sbar.add("item", {
         align = "left",
         string = icons.gear,
         width = popup_width / 2,
+        font = {
+            style = settings.font.style_map["Bold"],
+            size = 18,
+        },
     },
     label = {
         string = "???.???.???.???",
         width = popup_width / 2,
         align = "right",
+        font = {
+            family = settings.font.numbers,
+            style = settings.font.style_map["Bold"],
+            size = 16,
+        },
     }
 })
 
@@ -104,7 +126,7 @@ local wifi_up = sbar.add("item", "widgets.wifi1", {
     icon = {
         width = popup_width / 2,
         align = "left",
-        padding_right = 0,
+
         font = {
             style = settings.font.style_map["Bold"],
             size = 18,
@@ -112,6 +134,7 @@ local wifi_up = sbar.add("item", "widgets.wifi1", {
         string = icons.wifi.upload,
     },
     label = {
+        padding_left = 10,
         width = popup_width / 2,
         align = "right",
         font = {
@@ -152,9 +175,39 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
 
 sbar.add("item", { position = "right", width = settings.group_paddings })
 
+ssid:subscribe("mouse.entered", function(env)
+    sbar.delay(0.3, function() -- 0.3s delay before showing
+        ssid:set({
+            icon = { drawing = true, },
+            label = {
+                drawing = true
+            }
+        })
+    end)
+end)
+
+ssid:subscribe("mouse.exited", function(env)
+    sbar.delay(0.3, function() --
+        ssid:set({
+            icon = { drawing = true, },
+            label = {
+                drawing = true
+            }
+        })
+    end)
+end)
+
+
+ssid:subscribe("mouse.clicked", function(env)
+    sbar.delay(0.2, function()
+        local selected = env.SELECTED == "true"
+        ssid:set({ click_script = { sbar.exec("open -a '~/.config/sketchybar/items/scripts/toggleWifiState.scpt'") } })
+    end)
+end)
+
 wifi_up:subscribe("network_update", function(env)
     local up_color = (env.upload == "000 Bps") and colors.white or colors.red
-    local down_color = (env.download == "000 Bps") and colors.white or colors.blue
+    local down_color = (env.download == "000 Bps") and colors.white or colors.primary
     wifi_up:set({
         icon = { color = up_color },
         label = {
@@ -184,9 +237,11 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
             },
         })
         ssid:set({
+            label = { string = connected and "Switch Off:" or "Switch On:" },
             icon = {
+                size = 22,
                 string = connected and icons.switch.on or icons.switch.off,
-                color = connected and colors.red or colors.quicksilver,
+                color = connected and colors.green or colors.red,
             },
         })
     end)
@@ -237,6 +292,6 @@ end
 
 ssid:subscribe("mouse.clicked", wcenter)
 hostname:subscribe("mouse.clicked", copy_label_to_clipboard)
-ip:subscribe("mouse.clicked", copy_label_to_clipboard)
+ip:subscribe("mouse.clicked", wcenter)
 
 return wifi_bracket

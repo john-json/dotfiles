@@ -3,18 +3,17 @@ local icons = require("icons")
 local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
-local steps = 60
 local space_colors = {
-	colors.yellow,   -- Color for space 1
-	colors.orange,   -- Color for space 2
-	colors.red,      -- color for space 3
-	colors.blue,     -- Color for space 4
-	colors.magenta,  -- Color for space 5
-	colors.green,    -- Color for space 6
-	colors.pink,     -- Color for space 7
+	colors.red,        -- Color for space 1
+	colors.orange,     -- Color for space 2
+	colors.yellow,     -- Color for space 3
+	colors.blue,       -- Color for space 4
+	colors.magenta,    -- Color for space 5
+	colors.green,      -- Color for space 6
+	colors.blue,       -- Color for space 7
 	colors.quicksilver, -- Color for space 8
-	colors.purple,   -- Color for space 9
-	colors.monotone, -- Color for space 10
+	colors.dimm_monotone, -- Color for space 9
+	colors.dimm_red,   -- Color for space 10
 }
 
 local function getSpaceColor(spaceNumber)
@@ -22,7 +21,16 @@ local function getSpaceColor(spaceNumber)
 end
 
 local sf_icons_active = {
-	"􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚", "􀢚",
+	"􀀁",
+	"􀀁",
+	"􀀁",
+	"􀀁",
+	"􀀁",
+	"􀀁",
+	"􀀁",
+	"􀀁",
+	"􀀁",
+	"􀀁",
 }
 local sf_icons_inactive = {
 	"􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀",
@@ -35,24 +43,21 @@ local function getSpaceIcon(space, active)
 	end
 end
 
-local function smoothColorTransition(space, targetColor)    -- Animation duration in seconds
-	sbar.animate("elastic", 25, function(progress)
-		local r1, g1, b1 = sbar.colorComponents(space.icon.color) -- Current color
-		local r2, g2, b2 = sbar.colorComponents(targetColor) -- Target color
+local function smoothColorTransition(space, targetColor)
+	local duration = 5
+	sbar.animate("sin", duration, function(progress)
+		local r1, g1, b1 = sbar.colorComponents(space.background.color)
+		local r2, g2, b2 = sbar.colorComponents(targetColor)
 		local interpolatedColor = sbar.colorFromComponents(
 			r1 + (r2 - r1) * progress,
 			g1 + (g2 - g1) * progress,
 			b1 + (b2 - b1) * progress
 		)
 		space:set({
-			icon = {
-				color = interpolatedColor,
-			},
+			background = { color = interpolatedColor },
 		})
 	end)
 end
-
-
 
 local function log(message)
 	os.execute('echo "' .. message .. '" >> /tmp/sketchybar.log')
@@ -67,11 +72,9 @@ local function switchToSpace(spaceNumber)
 	log("Result: " .. tostring(result))
 end
 
-
-
-
 local spaces = {}
--- Create space items
+local space_items = {}
+local steps = 60
 
 for i = 1, 10 do
 	local space = sbar.add("space", "space." .. i, {
@@ -79,121 +82,90 @@ for i = 1, 10 do
 		position = "center",
 		space = i,
 		label = {
-			padding_left = 5,
-			padding_right = 5,
 			position = "center",
 			align = "center",
 			string = getSpaceIcon(i, true),
-			font = {
-				family = settings.font.numbers,
-				size = 14,
-			},
+			color = colors.quicksilver,
+			font = { family = settings.font.numbers, size = 5 },
 		},
 		icon = {
 			position = "center",
 			align = "center",
-			font = {
-				family = settings.font.numbers,
-				size = 5,
-			},
+			color = colors.quicksilver,
+			font = { family = settings.font.numbers, size = 5, },
 		},
 		background = {
+			drawing = false,
 			y_offset = 12,
 			position = "center",
 			align = "center",
-
 		},
 	})
 
-
+	table.insert(space_items, space.name)
 	spaces[i] = space
-
 
 	space:subscribe("front_app_switched", function(env)
 		local selected = env.SELECTED == "true"
 		local targetColor = selected and getSpaceColor(i) or getSpaceColor(i)
 		smoothColorTransition(space, targetColor)
-		sbar.animate("elastic", 15, function()
+		sbar.animate("elastic", 10, function()
 			space:set({
-				icon = {
-					drawing = false,
-					color = colors.transparent,
-					position = "center",
-					align = "center",
-				},
+				icon = { drawing = false, alpha = 0, position = "center", align = "center" },
 				label = {
-					padding_left = selected and 5 or 3,
-					padding_right = selected and 5 or 3,
-					position = "center",
-					align = "center",
+					padding_left = selected and 10 or 8,
+					padding_right = selected and 10 or 8,
 					string = selected and getSpaceIcon(i, true) or getSpaceIcon(i, false),
-					font = {
-						family = settings.font.numbers,
-						size = selected and 18 or 14,
-						style = settings.font.style_map[selected and "Heavy" or "Normal"],
-					},
-					color = selected and getSpaceColor(i) or colors.quicksilver,
+					font = { align = "center", family = settings.font.numbers, size = selected and 14 or 14, style = settings.font.style_map[selected and "Heavy" or "Normal"] },
+					color = selected and getSpaceColor(i) or colors.grey,
 					drawing = true,
 				},
 			})
 		end)
 	end)
 
-
-	-- Hover effects
 	space:subscribe("mouse.entered", function(env)
 		local selected = env.SELECTED == "true"
-		sbar.animate("sin", 20, function()
-			space:set({
-				icon = {
-					drawing = true,
-					position = "center",
-					align = "center",
-					y_offset = 0,
-					string = selected and "􀁍" or "􀁱",
-					color = getSpaceColor(i),
-					font = {
-						family = settings.font.numbers,
-						size = 16,
-					},
-				},
-				label = {
-					drawing = false,
-
-				},
-			})
+		sbar.delay(0.2, function()
+			sbar.animate("elastic", 15, function()
+				space:set({
+					icon = { drawing = true, alpha = 1, string = selected and "􀐉" or "􀂀", color = colors.quicksilver, font = { size = 18 } },
+					label = { drawing = false },
+				})
+			end)
 		end)
 	end)
 
 	space:subscribe("mouse.exited", function(env)
-		local selected = env.SELECTED == "true"
-		sbar.animate("sin", 20, function()
-			space:set({
-				icon = {
-					y_offset = -25,
-					drawing = false,
-				},
-				label = {
-					drawing = true,
-				},
-				background = {
-					drawing = true,
-				},
-			})
+		sbar.delay(0.2, function()
+			sbar.animate("elastic", 15, function()
+				space:set({
+					icon = { drawing = false, alpha = 0, font = { size = 0 } },
+					label = { drawing = true },
+				})
+			end)
 		end)
 	end)
 
 	space:subscribe("mouse.clicked", function(env)
-		local selected = env.SELECTED == "true"
-		log("Clicked space: " .. i)
-		switchToSpace(i)
-		space:set({
-			icon = {
-				click_script = selected and sbar.exec('osascript "$CONFIG_DIR/items/scripts/newSpace.scpt"'),
+		sbar.delay(0.2, function()
+			local selected = env.SELECTED == "true"
+			log("Clicked space: " .. i) {
+				click_script = { selected and sbar.exec("open -a 'Mission Control'") or switchToSpace(i) }
 			}
-		})
+		end)
 	end)
 end
 
+local spaces_bracket = sbar.add("bracket", "spaces.bracket", space_items, {
+	display = 1,
+	width = "dynamic",
+	label = { drawing = "toggle" },
+	popup = { align = "center" },
+	background = {
+		color = colors.bg,
+		height = 20,
+	}
+})
 
-return spaces
+return spaces_bracket

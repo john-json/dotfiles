@@ -2,9 +2,10 @@ local sbar = require("sketchybar")
 local colors = require("colors")
 local settings = require("settings")
 
-local mission_control = require("items.widgets.mission_control")
+
 local spaces = require("items.widgets.spaces")
-local search = require("items.widgets.search")
+local add_space = require("items.widgets.add_space")
+
 
 
 
@@ -12,7 +13,7 @@ local search = require("items.widgets.search")
 local center_bar = sbar.add(
     "bracket",
     "center_bar.bracket",
-    { search.name, spaces.name, mission_control.name },
+    { spaces.name, add_space.name },
     {
         shadow = true,
         position = "center",

@@ -1,0 +1,22 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.appearancechange</string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>~/scripts/dark-mode-notify/dark-mode-notify-stderr.log</string>
+    <key>StandardOutPath</key>
+    <string>~/scripts/dark-mode-notify/dark-mode-notify-stdout.log</string>
+    <key>ProgramArguments</key>
+    <array>
+       <string>~/.config/sketchybar/helpers/dark-mode-notify/</string>
+       <string>~/.config/sketchybar/helpers/dark-mode-notify/dark-mode-notify.sh</string>
+    </array>
+     <key>RunAtLoad</key>
+     </true>
+</dict>
+</plist>

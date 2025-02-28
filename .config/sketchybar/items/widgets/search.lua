@@ -7,18 +7,28 @@ local search   =
 	sbar.add(
 		"item",
 		{
-			position = "center",
+			position = "right",
 			icon = {
 				align = "center",
 				position = "center",
-				padding_left = 10,
-				padding_right = 5,
 				string = icons.search,
-				size = 16,
+				padding_left = 5,
+				padding_right = 5,
+				font = {
+					family = settings.font.numbers,
+					size = 10,
+
+				},
 			},
 			label = {
 				drawing = false,
 				padding_right = 10,
+			},
+			background = {
+				padding_right = 10,
+				color = colors.bar.bg,
+				corner_radius = 50,
+				height = 22,
 			}
 
 		}
@@ -53,7 +63,7 @@ search:subscribe("mouse.exited", function(env)
 				color = colors.icon.primary,
 				font = {
 					family = settings.font.numbers,
-					size = 16,
+					size = 10,
 
 				},
 			},

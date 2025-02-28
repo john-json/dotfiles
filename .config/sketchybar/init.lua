@@ -39,9 +39,11 @@ local settings = require("settings")
 -- sbar.set_bar_name("bottom_bar")
 
 -- Bundle the entire initial configuration into a single message to sketchybar
+
 sbar.begin_config()
+
 require("default")
-sbar.animate("elastic", 15, function()
+sbar.animate("tanh", 25, function()
     require("items")
     require("bar") -- Move the bar down
 end)
