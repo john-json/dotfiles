@@ -11,21 +11,19 @@ brew install --cask sf-symbols
 brew install --cask homebrew/cask-fonts/font-sf-mono
 brew install --cask homebrew/cask-fonts/font-sf-pro
 brew install --cask font-hack-nerd-font
-brew install dark-mode
 
-git clone https://github.com/bouk/dark-mode-notify.git
+git clone https://github.com/bouk/dark-mode-notify.git ~/.config/sketchybar/helpers/
 cd dark-mode-notify
-make
+sudo make install
 
 # Update permissions
-chmod +x ~/.config/sketchybar/items/scripts/dark-mode-notify.sh
+chmod +x ~/.config/sketchybar/items/scripts/dark-mode-handler.sh
 
 mkdir -p ~/Library/LaunchAgents
-cp /Users/$(id -u)/.config/sketchybar/items/plists/com.user.appearancechange.plist ~/Library/LaunchAgents/
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.appearancechange.plist
-plutil -lint /Users/$(id -u)/Library/LaunchAgents/com.user.appearancechange.plist
+cp /Users/$(id -u)/.config/sketchybar/items/plists/com.user.darkmode.plist ~/Library/LaunchAgents/
 
-plutil -lint /Users/$(id -u)/Library/LaunchAgents/com.user.appearancechange.plist
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.darkmode.plist
+plutil -lint /Users/$(id -u)/Library/LaunchAgents/com.user.darkmode.plist
 
 log stream --predicate 'subsystem == "com.apple.UIKit"'
 

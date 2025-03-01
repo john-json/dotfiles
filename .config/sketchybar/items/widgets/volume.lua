@@ -11,7 +11,8 @@ local volume_icon =
         {
             display = 1,
             position = "right",
-            icon = { color = colors.green },
+            icon = {
+                color = colors.green },
             label = {
                 color = colors.quicksilver,
                 font = {
@@ -24,66 +25,30 @@ local volume_icon =
         }
     )
 
-local volume_percent =
-    sbar.add(
-        "item",
-        "volume1",
-        {
-            display = 1,
-            position = "right",
-            label = {
-                drawing = false,
-                align = "right",
-                string = "??",
-                width = 0,
-                color = colors.quicksilver,
-                font = {
-                    style = settings.font.style_map["SemiBold"],
-                    family = settings.font.text,
-                }
-            }
-        }
-    )
 
-local volume =
-    sbar.add(
-        "bracket",
-        "volume.bracket",
-        { volume_icon.name, },
-        {
-            display = 1,
-            wdidth  = "dynamic",
-            label   = { drawing = "toggle", },
-            popup   = {
-                align = "center"
-            }
-        }
-    )
+
 
 local volume_slider = sbar.add("slider", popup_width, {
     position = "right",
     drawing = false,
-    width = 50,
+    width = 20,
     slider = {
-        y_offset = 20,
-        highlight_color = colors.orange,
+        width = 20,
         background = {
+            highlight_color = colors.orange,
             padding_left = 20,
             padding_right = 20,
             height = 10,
             corner_radius = 15,
-            color = colors.bar.bg2,
-
         },
         knob = {
             color = colors.orange,
             string = "􀡈",
-            size = 12,
-            drawing = true,
+            size = 10,
         },
     },
     label = {
-        drawing = true,
+        width = 30,
         align = "center",
         string = "",
         color = colors.primary,
@@ -94,25 +59,26 @@ local volume_slider = sbar.add("slider", popup_width, {
             color = colors.primary
         }
     },
-    background = { color = colors.bar.bg2, height = 10, y_offset = -30 },
+    background = { color = colors.black, width = 50, height = 10, y_offset = -30 },
     click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
 
-local start_pos = -60
-local overshoot = 12 -- Drop below before bouncing up
-local final_pos = 5
+local volume =
+    sbar.add(
+        "bracket",
+        "volume.bracket",
+        { volume_icon.name, volume_slider.name },
+        {
+            width   = "dynamic",
+            display = 1,
+            wdidth  = "dynamic",
+            label   = { drawing = "toggle", },
+        }
+    )
 
-volume_icon:subscribe("mouse.entered", function(env)
-    sbar.delay(0.3, function()
-        sbar.animate("elastic", 25, function()
-            volume_slider:set({
-                drawing = "toggle",
-            })
-        end)
-    end)
-end)
 
-volume_percent:subscribe(
+
+volume:subscribe(
     "volume_change",
     function(env)
         local volume = tonumber(env.INFO)
@@ -133,29 +99,42 @@ volume_percent:subscribe(
         end
 
         volume_icon:set({ label = icon })
-        volume_percent:set({ label = lead .. volume .. "" })
         volume_slider:set({ slider = { percentage = volume } })
     end
 )
-
-local function volume_collapse_details()
-    local drawing = volume:query().popup.drawing == "on"
-    if not drawing then
-        return
-    end
-    volume:set({ popup = { drawing = false } })
-    sbar.remove("/volume.device\\.*/")
-end
-
 
 local function volume_scroll(env)
     local delta = env.SCROLL_DELTA
     sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) + ' .. delta .. ')"')
 end
 
+sbar.animate("elastic", 10, function()
+    local overshoot = 12 -- Drop below before bouncing up
+    local final_pos = 5
+    sbar.bar({ y_offset = final_pos + overshoot })
+    volume_icon:subscribe("mouse.entered", function(env)
+        sbar.delay(0.3, function()
+            volume_slider:set({
+                drawing = true,
+            })
+        end)
+    end)
+end)
+
+sbar.animate("elastic", 10, function()
+    local overshoot = 12 -- Drop below before bouncing up
+    local final_pos = 5
+    sbar.bar({ y_offset = final_pos + overshoot })
+    volume_icon:subscribe("mouse.exited", function(env)
+        sbar.delay(0.3, function()
+            volume_slider:set({
+                drawing = false,
+            })
+        end)
+    end)
+end)
+
 
 volume_icon:subscribe("mouse.scrolled", volume_scroll)
-volume_percent:subscribe("mouse.exited.global", volume_collapse_details)
-volume_percent:subscribe("mouse.scrolled", volume_scroll)
 
 return volume

@@ -16,7 +16,7 @@ local systray   =
     sbar.add(
         "bracket",
         "systray.bracket",
-        { search.name, wifi.name, volume.name, media.name, weather.name },
+        { search.name, wifi.name, media.name, weather.name },
         {
             display = 1,
             width = "dynamic",
@@ -50,11 +50,28 @@ local clock     =
         }
     )
 
+local volume    =
+    sbar.add(
+        "bracket",
+        "clock.bracket",
+        { volume.name },
+        {
+            width = "dynamic",
+            background = {
+                padding_left = settings.group_paddings,
+                padding_right = settings.group_paddings,
+                color = colors.green,
+            },
+
+
+        }
+    )
+
 local right_bar =
     sbar.add(
         "bracket",
         "right_bar.bracket",
-        { clock.name, systray.name },
+        { clock.name, volume.name, systray.name },
         {
 
             shadow = true,

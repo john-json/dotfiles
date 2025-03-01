@@ -37,7 +37,7 @@ local ssid = sbar.add("item", {
     width = popup_width,
     label = {
         drawing = true,
-        align = "right",
+        align = "left",
         width = popup_width / 2,
         y_offset = 0,
         padding_left = -55,
@@ -51,7 +51,7 @@ local ssid = sbar.add("item", {
     },
     icon = {
         drawing  = true,
-        align    = "left",
+        align    = "right",
         width    = popup_width / 2,
         y_offset = 0,
         font     = {

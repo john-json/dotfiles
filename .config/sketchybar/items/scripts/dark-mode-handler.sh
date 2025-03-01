@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 APPEARANCE=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
 

@@ -16,7 +16,7 @@ sbar.bar({
 })
 
 -- Animate with a smooth rubber band effect
-sbar.animate("elastic", 30, function()
+sbar.animate("elastic", 20, function()
     local start_pos = -60
     local overshoot = 12 -- Drop below before bouncing up
     local final_pos = 5
