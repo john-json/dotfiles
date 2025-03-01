@@ -3,11 +3,11 @@ return {
     green = 0xff98a8a9,
     red = 0xffc6755b,
     blue = 0xffa2aab9,
+    darkblue = 0xff6275a1,
     purple = 0xff6a6378,
     monotone = 0xff98a8a9,
     orange = 0xffd09367,
-    quicksilver = 0xffbcbcbc,
-    darkblue = 0xff212c35,
+    quicksilver = 0xffb2b2b2,
     pink = 0xff725955,
     magenta = 0xff595066,
 
@@ -23,11 +23,11 @@ return {
     border_transparent = 0x33ffffff,
 
     icon = {
-        primary = 0xffb2b2b2,
+        primary = 0xffababab,
         secondary = 0xfff9f9f9,
     },
     bar = {
-        bg = 0xfffcfcfc,
+        bg = 0xffe6e6e6,
         bg2 = 0xffffffff,
         accent = 0xff000000,
         active = 0xff9eaeb3,
@@ -47,7 +47,7 @@ return {
     popup = {
         text = 0xffffffff,
         bg = 0xB3ffffff,
-        bg_alt = 0x99ba7666,
+        bg_alt = 0x99f2f2f2,
         border = 0xffffffff,
         hover = 0xff757575,
         icons = 0xffe3e3e3,

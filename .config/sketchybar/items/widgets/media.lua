@@ -41,6 +41,7 @@ local function setup_media_items()
         drawing = true,
         updates = true,
         popup = {
+            background = { color = colors.bar.bg2, height = 40, },
             display = 1,
             drawing = false, -- Initially hidden
             y_offset = 0,
@@ -204,7 +205,7 @@ end)
 
 -- Delay before toggling controls on mouse enter
 media_icon:subscribe("mouse.entered", function(env)
-    sbar.delay(0.3, function()   -- 0.3s delay before toggling
+    sbar.delay(0.3, function() -- 0.3s delay before toggling
         sbar.animate("elastic", 15, function()
             toggle_controls()
         end)

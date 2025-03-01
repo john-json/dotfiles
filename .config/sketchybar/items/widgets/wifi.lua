@@ -40,7 +40,7 @@ local ssid = sbar.add("item", {
         align = "left",
         width = popup_width / 2,
         y_offset = 0,
-        padding_left = -55,
+        padding_left = 5,
         color = colors.red,
         font = {
             size = 22,
@@ -50,7 +50,7 @@ local ssid = sbar.add("item", {
         string = "????????????",
     },
     icon = {
-        drawing  = true,
+        drawing  = false,
         align    = "right",
         width    = popup_width / 2,
         y_offset = 0,
@@ -58,7 +58,7 @@ local ssid = sbar.add("item", {
             size = 40,
             style = settings.font.style_map["Bold"]
         },
-        string   = "",
+        string   = " ",
     },
     background = {
         padding_left = 5,
@@ -180,7 +180,7 @@ ssid:subscribe("mouse.entered", function(env)
         ssid:set({
             icon = { drawing = true, },
             label = {
-                drawing = true
+                drawing = false
             }
         })
     end)
@@ -189,7 +189,7 @@ end)
 ssid:subscribe("mouse.exited", function(env)
     sbar.delay(0.3, function() --
         ssid:set({
-            icon = { drawing = true, },
+            icon = { drawing = false, },
             label = {
                 drawing = true
             }

@@ -16,7 +16,7 @@ local search   =
 				padding_right = 5,
 				font = {
 					family = settings.font.numbers,
-					size = 10,
+					size = 14,
 
 				},
 			},
@@ -26,11 +26,10 @@ local search   =
 			},
 			background = {
 				padding_right = 10,
-				color = colors.bar.bg,
+				color = colors.transparent,
 				corner_radius = 50,
 				height = 22,
 			}
-
 		}
 	)
 

@@ -21,7 +21,7 @@ sbar.default({
 		font          = {
 			family = "fonarto",
 			style  = settings.font.style_map.Bold,
-			size   = 12.0
+			size   = 14.0
 		},
 
 
@@ -30,7 +30,7 @@ sbar.default({
 		padding_right = settings.paddings,
 		padding_left  = settings.paddings,
 		height        = 36,
-		corner_radius = 6,
+		corner_radius = 8,
 		image         = {
 			corner_radius = 10
 		},
@@ -40,7 +40,7 @@ sbar.default({
 	popup         = {
 		y_offset = 0,
 		icon = {
-			color         = colors.icon.grey,
+			color         = colors.icon.primary,
 			drawing       = true,
 			padding_right = 10,
 			padding_left  = 10,
@@ -59,21 +59,21 @@ sbar.default({
 		background = {
 			padding_right = 10,
 			padding_left  = 10,
-			border_width  = 1,
+			border_width  = 0,
 			border_color  = colors.popup.border,
 			corner_radius = 6,
-			color         = colors.popup.bg,
+			color         = colors.popup.bg_alt,
 			shadow        = {
 				drawing = true
 			},
 			width         = 250,
 		},
-		blur_radius = 40
+		blur_radius = 60
 	},
 	padding_left  = settings.paddings,
 	padding_right = settings.paddings,
 	scroll_texts  = true,
-	blur_radius   = 40,
+	blur_radius   = 60,
 
 }
 )

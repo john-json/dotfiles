@@ -40,7 +40,7 @@ for i = 1, max_items, 1 do
                 label = {
                     padding_left = settings.group_paddings,
                     padding_right = settings.group_paddings,
-                    color = i == 1 and colors.orange or colors.grey,
+                    color = i == 1 and colors.orange or colors.primary,
                 },
                 click_script = "$CONFIG_DIR/helpers/menus/bin/menus -s " .. i
             }

@@ -10,12 +10,12 @@ local front_app = sbar.add("item", "front_app", {
         drawing = true,
         padding_left = 5,
         padding_right = 10,
-        color = colors.quicksilver,
+        color = colors.primary,
         font = { style = settings.font.style_map["Bold"] },
     },
     icon = {
         drawing = false,
-        color = colors.quicksilver,
+        color = colors.primary,
         font = { style = settings.font.style_map["Bold"] },
     },
     updates = true,
@@ -26,7 +26,7 @@ front_app:subscribe("front_app_switched", function(env)
     sbar.animate("elastic", 14, function()
         front_app:set({
             label = {
-                color = colors.quicksilver,
+                color = colors.primary,
                 drawing = true,
                 string = env.INFO,
                 font = { style = settings.font.style_map["Bold"] },
@@ -49,7 +49,7 @@ front_app:subscribe("mouse.entered", function(env)
                     string = icons.switch.off,
                     padding_left = 5,
                     padding_right = 10,
-                    color = colors.quicksilver,
+                    color = colors.primary,
                     font = { style = settings.font.style_map["Bold"] },
                 },
             })
@@ -62,7 +62,7 @@ front_app:subscribe("mouse.exited", function(env)
         sbar.animate("elastic", 15, function()
             front_app:set({
                 label = {
-                    color = colors.quicksilver,
+                    color = colors.primary,
                     drawing = true,
                     string = env.INFO,
                     font = { style = settings.font.style_map["Bold"] },
@@ -89,7 +89,7 @@ front_app:subscribe("mouse.clicked", function(env)
                     string = icons.switch.on,
                     padding_left = 5,
                     padding_right = 10,
-                    color = colors.quicksilver,
+                    color = colors.primary,
                     font = { style = settings.font.style_map["Bold"] },
                 },
             })

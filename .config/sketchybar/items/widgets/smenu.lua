@@ -15,7 +15,7 @@ local smenu = sbar.add("item", {
 	},
 	icon = {
 		string = icons.start,
-		color = colors.grey,
+		color = colors.primary,
 		padding_left = 5,
 		padding_right = 10,
 		size = 18,
@@ -44,8 +44,8 @@ smenu:subscribe("mouse.exited", function()
 	sbar.animate("elastic", 15, function()
 		smenu:set({
 			icon = {
-				size = 18,
-				color = colors.grey,
+				size = 14,
+				color = colors.primary,
 			},
 		})
 	end)
@@ -59,14 +59,13 @@ local function create_menu_item(position, label, icon_string, click_command)
 		position = position,
 		icon = {
 			string = icon_string,
-			font = { size = 16 },
 			padding_left = 5,
 			padding_right = 15,
-			color = colors.white,
+			color = colors.primary,
 		},
 		label = {
 			string = label,
-			color = colors.icon.primary,
+			color = colors.primary,
 			padding_left = 10,
 			padding_right = 20,
 			align = "left",
@@ -90,8 +89,8 @@ local function create_menu_item(position, label, icon_string, click_command)
 				icon = {
 					padding_left = 5,
 					padding_right = 15,
-					color = colors.quicksilver,
-					font = { size = 20 },
+					color = colors.orange,
+					font = { size = 16 },
 				},
 				label = {
 					color = colors.darkGrey,
@@ -110,13 +109,13 @@ local function create_menu_item(position, label, icon_string, click_command)
 					padding_left = 5,
 					padding_right = 20,
 					font = { size = 14 },
-					color = colors.white,
+					color = colors.primary,
 				},
 				label = {
 					padding_left = 10,
 					padding_right = 20,
 					string = label,
-					color = colors.white,
+					color = colors.primary,
 					align = "left",
 					font = { size = 12 }
 				},

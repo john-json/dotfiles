@@ -3,6 +3,7 @@ local icons = require("icons")
 local settings = require("settings")
 
 local popup_width = 180
+local slider_width = 20
 
 local volume_icon =
     sbar.add(
@@ -14,7 +15,7 @@ local volume_icon =
             icon = {
                 color = colors.green },
             label = {
-                color = colors.quicksilver,
+                color = colors.primary,
                 font = {
                     size = 14,
                     style = settings.font.style_map["SemiBold"],
@@ -26,21 +27,25 @@ local volume_icon =
     )
 
 local volume_slider = sbar.add("slider", popup_width, {
+    display = 1,
     position = "right",
+    width = "dynamic",
     drawing = false,
     slider = {
-        highlight_color = colors.primary,
+        highlight_color = colors.orange,
         background = {
+            width = 50,
             height = 6,
             corner_radius = 3,
-            color = colors.orange,
+            color = colors.primary,
         },
         knob = {
+            color = colors.orange,
+            size = 7,
             string = "􀀁",
-            drawing = true,
         },
     },
-    background = { width = 20, color = colors.transparent, height = 2, y_offset = -20 },
+    background = { color = colors.transparent, height = 2, y_offset = -20 },
     click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
 
@@ -53,7 +58,6 @@ local volume =
             width   = "dynamic",
             display = 1,
             wdidth  = "dynamic",
-            label   = { drawing = "toggle", },
         }
     )
 
@@ -80,7 +84,7 @@ volume:subscribe(
         end
 
         volume_icon:set({ label = icon })
-        volume_slider:set({ slider = { percentage = volume } })
+        volume_slider:set({ slider = { width = 50, percentage = volume } })
     end
 )
 
@@ -89,27 +93,29 @@ local function volume_scroll(env)
     sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) + ' .. delta .. ')"')
 end
 
-sbar.animate("sin", 25, function()
-    volume:subscribe("mouse.entered", function(env)
-        sbar.delay(0.3, function()
-            volume_slider:set({
-                drawing = true,
-            })
-        end)
+-- Show temperature on mouse enter with delay
+volume_icon:subscribe("mouse.entered", function(env)
+    local selected = env.SELECTED == "true"
+    sbar.delay(0.3, function() -- 0.3s delay before showing
+        volume_slider:set({ drawing = true })
     end)
 end)
 
-sbar.animate("sin", 25, function()
-    volume:subscribe("mouse.exited", function(env)
-        sbar.delay(0.3, function()
-            volume_slider:set({
-                drawing = false,
-            })
-        end)
+-- Show temperature on mouse enter with delay
+volume_slider:subscribe("mouse.exited", function(env)
+    local selected = env.SELECTED == "true"
+    sbar.delay(0.3, function() -- 0.3s delay before showing
+        volume_slider:set({ drawing = false })
     end)
 end)
 
---
+-- Show temperature on mouse enter with delay
+volume_slider:subscribe("mouse.clicked", function(env)
+    local selected = env.SELECTED == "true"
+    sbar.delay(0.3, function() -- 0.3s delay before showing
+        volume_slider:set({ drawing = "toggle" })
+    end)
+end)
 
 volume_icon:subscribe("mouse.scrolled", volume_scroll)
 

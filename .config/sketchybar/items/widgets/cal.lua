@@ -49,8 +49,8 @@ local cal = sbar.add("item", {
         },
     },
     background = {
-        color = colors.icon.secondary,
-        height = 25,
+        color = colors.bar.bg,
+        height = 30,
         corner_radius = 6,
         padding_left = 10,
         padding_right = settings.paddings,

@@ -12,18 +12,18 @@ brew install --cask homebrew/cask-fonts/font-sf-mono
 brew install --cask homebrew/cask-fonts/font-sf-pro
 brew install --cask font-hack-nerd-font
 
-git clone https://github.com/bouk/dark-mode-notify.git ~/.config/sketchybar/helpers/
-cd dark-mode-notify
+git clone https://github.com/john-json/colorswitch.git ~/.config/sketchybar/helpers/
+cd colorswitch
 sudo make install
 
 # Update permissions
 chmod +x ~/.config/sketchybar/items/scripts/dark-mode-handler.sh
 
 mkdir -p ~/Library/LaunchAgents
-cp /Users/$(id -u)/.config/sketchybar/items/plists/com.user.darkmode.plist ~/Library/LaunchAgents/
+cp /Users/$(id -u)/.config/sketchybar/items/plists/com.user.colorswitch.plist ~/Library/LaunchAgents/
 
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.darkmode.plist
-plutil -lint /Users/$(id -u)/Library/LaunchAgents/com.user.darkmode.plist
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.colorswitch.plist
+plutil -lint /Users/$(id -u)/Library/LaunchAgents/com.user.colorswitch.plist
 
 log stream --predicate 'subsystem == "com.apple.UIKit"'
 

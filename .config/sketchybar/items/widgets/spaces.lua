@@ -120,6 +120,7 @@ for i = 1, 10 do
 					color = selected and getSpaceColor(i) or colors.grey,
 					drawing = true,
 				},
+
 			})
 		end)
 	end)
@@ -130,7 +131,6 @@ for i = 1, 10 do
 			sbar.animate("elastic", 15, function()
 				space:set({
 					icon = { drawing = true, alpha = 1, string = selected and "􀐉" or "􀂀", color = colors.quicksilver, font = { size = 18 } },
-					label = { drawing = false },
 				})
 			end)
 		end)
@@ -157,15 +157,12 @@ for i = 1, 10 do
 	end)
 end
 
-local spaces_bracket = sbar.add("bracket", "spaces.bracket", space_items, {
+local spaces_bracket = sbar.add("bracket", "spaces.bracket", space_items, spaces, {
 	display = 1,
 	width = "dynamic",
 	label = { drawing = "toggle" },
 	popup = { align = "center" },
-	background = {
-		color = colors.bg,
-		height = 20,
-	}
+	i
 })
 
 return spaces_bracket

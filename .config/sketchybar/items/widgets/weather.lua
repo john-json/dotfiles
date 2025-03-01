@@ -27,7 +27,7 @@ end
 -- Add weather widget to SketchyBar
 local weather = sbar.add("item", "widgets.weather", {
     position = "right",
-    align = "center",
+    align = "right",
     display = 1,
     icon = {
         color = colors.yellow,
@@ -35,13 +35,6 @@ local weather = sbar.add("item", "widgets.weather", {
         padding_left = 10,
     },                                                  -- Default icon
     label = { drawing = "toggle", padding_right = 10 }, -- Hide temperature by default
-    popup = {
-        align = "center",
-        horizontal = false,
-        height = "dynamic",
-        width = 300,
-        drawing = false -- Initially hidden
-    }
 })
 
 -- Function to update weather widget
@@ -69,31 +62,22 @@ update_weather()
 
 -- Show temperature on mouse enter with delay
 weather:subscribe("mouse.entered", function()
-    sbar.delay(0.4, function() -- 0.3s delay before showing
-        if weather.temperature then
-            weather:set({ background = { color = colors.bar.bg }, label = { string = weather.temperature, drawing = "toggle", padding_left = 10 } })
-        end
+    sbar.animate("elastic", 15, function()
+        sbar.delay(0.4, function() -- 0.3s delay before showing
+            if weather.temperature then
+                weather:set({ label = { background = { height = 30, corner_radius = 4, color = colors.bar.bg }, string = weather.temperature, drawing = "toggle", padding_left = 10 } })
+            end
+        end)
     end)
 end)
 
 -- Hide temperature on mouse exit with delay
 weather:subscribe("mouse.exited", function()
-    sbar.delay(0.4, function() -- 0.3s delay before hiding
-        weather:set({ background = { color = colors.transparent }, label = { drawing = false } })
+    sbar.animate("elastic", 15, function()
+        sbar.delay(0.4, function() -- 0.3s delay before hiding
+            weather:set({ background = { color = colors.transparent }, label = { drawing = false } })
+        end)
     end)
 end)
-
--- -- Clicking toggles a popup with a weekly forecast
--- weather:subscribe("mouse.clicked", function()
---     sbar.exec("curl -s 'wttr.in/Nuremberg?format=4'", function(output)
---         weather:set({
---             position = "popup." .. weather.name,
---             popup = {
---                 label = { string = output, font = { family = settings.font.numbers } },
---                 drawing = "toggle"
---             }
---         })
---     end)
--- end)
 
 return weather
