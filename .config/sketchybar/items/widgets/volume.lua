@@ -25,41 +25,22 @@ local volume_icon =
         }
     )
 
-
-
-
 local volume_slider = sbar.add("slider", popup_width, {
     position = "right",
     drawing = false,
-    width = 20,
     slider = {
-        width = 20,
+        highlight_color = colors.primary,
         background = {
-            highlight_color = colors.orange,
-            padding_left = 20,
-            padding_right = 20,
-            height = 10,
-            corner_radius = 15,
+            height = 6,
+            corner_radius = 3,
+            color = colors.orange,
         },
         knob = {
-            color = colors.orange,
-            string = "􀡈",
-            size = 10,
+            string = "􀀁",
+            drawing = true,
         },
     },
-    label = {
-        width = 30,
-        align = "center",
-        string = "",
-        color = colors.primary,
-        font = {
-            size = 12,
-            style = settings.font.style_map["SemiBold"],
-            family = settings.font.text,
-            color = colors.primary
-        }
-    },
-    background = { color = colors.black, width = 50, height = 10, y_offset = -30 },
+    background = { width = 20, color = colors.transparent, height = 2, y_offset = -20 },
     click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
 
@@ -108,11 +89,8 @@ local function volume_scroll(env)
     sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) + ' .. delta .. ')"')
 end
 
-sbar.animate("elastic", 10, function()
-    local overshoot = 12 -- Drop below before bouncing up
-    local final_pos = 5
-    sbar.bar({ y_offset = final_pos + overshoot })
-    volume_icon:subscribe("mouse.entered", function(env)
+sbar.animate("sin", 25, function()
+    volume:subscribe("mouse.entered", function(env)
         sbar.delay(0.3, function()
             volume_slider:set({
                 drawing = true,
@@ -121,11 +99,8 @@ sbar.animate("elastic", 10, function()
     end)
 end)
 
-sbar.animate("elastic", 10, function()
-    local overshoot = 12 -- Drop below before bouncing up
-    local final_pos = 5
-    sbar.bar({ y_offset = final_pos + overshoot })
-    volume_icon:subscribe("mouse.exited", function(env)
+sbar.animate("sin", 25, function()
+    volume:subscribe("mouse.exited", function(env)
         sbar.delay(0.3, function()
             volume_slider:set({
                 drawing = false,
@@ -134,6 +109,7 @@ sbar.animate("elastic", 10, function()
     end)
 end)
 
+--
 
 volume_icon:subscribe("mouse.scrolled", volume_scroll)
 

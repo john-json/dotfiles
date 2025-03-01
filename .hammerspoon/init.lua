@@ -1,32 +1,38 @@
 local Layout = require("plugins.layout")
 local Floating = require("plugins.floating")
 local Utils = require("plugins.utils")
+local hhtwm = require("hhtwm")
 
--- Resize Window (Alt + Ctrl + +/-)
-hs.hotkey.bind({"alt", "ctrl"}, "=", function() Utils.resizeWindow(1.1) end) -- Increase
-hs.hotkey.bind({"alt", "ctrl"}, "-", function() Utils.resizeWindow(0.9) end) -- Decrease
 
--- Cycle Layouts (Alt + Ctrl + , / .)
-hs.hotkey.bind({"alt", "ctrl"}, ",", function() Layout.cycleLayout(-1) end) -- Previous
-hs.hotkey.bind({"alt", "ctrl"}, ".", function() Layout.cycleLayout(1) end)  -- Next
+-- Set margins to keep SketchyBar visible
+hhtwm.margin = { top = 40, bottom = 10, left = 10, right = 10 }
 
--- Move Focused Window (Alt + Ctrl + I/J/K/L)
-hs.hotkey.bind({"alt", "ctrl"}, "i", function() Utils.moveWindow("up") end)
-hs.hotkey.bind({"alt", "ctrl"}, "k", function() Utils.moveWindow("down") end)
-hs.hotkey.bind({"alt", "ctrl"}, "j", function() Utils.moveWindow("left") end)
-hs.hotkey.bind({"alt", "ctrl"}, "l", function() Utils.moveWindow("right") end)
-
--- Cycle Window Focus (Alt + Ctrl + N / M)
-hs.hotkey.bind({"alt", "ctrl"}, "n", function() Utils.cycleFocus(-1) end) -- Backward
-hs.hotkey.bind({"alt", "ctrl"}, "m", function() Utils.cycleFocus(1) end)  -- Forward
-
--- Maximize Centered Window (Alt + Ctrl + F)
-hs.hotkey.bind({"alt", "ctrl"}, "f", function() Utils.maximizeCenteredWindow() end)
-
--- Auto-Arrange Windows on New Window Creation
-hs.window.filter.default:subscribe(hs.window.filter.windowCreated, function()
-    hs.timer.doAfter(0.1, Layout.arrangeWindows)
+-- Default to main-center when a window opens on an empty desktop
+hs.window.filter.default:subscribe(hs.window.filter.windowCreated, function(win)
+    if #hs.window.allWindows() == 1 then
+        hhtwm.setLayout("main-center")
+    end
 end)
 
--- Show Startup Message
-hs.alert.show("Hammerspoon Window Manager Loaded!")
+-- Enable multi-monitor awareness
+hhtwm.screenMargin = 10
+
+-- Keybindings
+hs.hotkey.bind({ "alt", "ctrl" }, "I", hhtwm.moveFocusUp)
+hs.hotkey.bind({ "alt", "ctrl" }, "K", hhtwm.moveFocusDown)
+hs.hotkey.bind({ "alt", "ctrl" }, "J", hhtwm.moveFocusLeft)
+hs.hotkey.bind({ "alt", "ctrl" }, "L", hhtwm.moveFocusRight)
+
+hs.hotkey.bind({ "alt", "ctrl" }, "N", hhtwm.swapFocusPrev)
+hs.hotkey.bind({ "alt", "ctrl" }, "M", hhtwm.swapFocusNext)
+
+hs.hotkey.bind({ "alt", "ctrl" }, "-", function() hhtwm.resizeFocusedWindow(-0.1) end)
+hs.hotkey.bind({ "alt", "ctrl" }, "=", function() hhtwm.resizeFocusedWindow(0.1) end)
+
+hs.hotkey.bind({ "alt", "ctrl" }, "F", function()
+    local win = hs.window.focusedWindow()
+    if win then win:maximize() end
+end)
+
+-- Start tiling
+hhtwm.start()

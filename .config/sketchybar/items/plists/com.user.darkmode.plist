@@ -4,7 +4,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>ke.bou.dark-mode-notify</string>
+    <string>com.user.darkmode/string>
     <key>KeepAlive</key>
     <true/>
     <key>StandardErrorPath</key>
@@ -13,7 +13,7 @@
     <string>~/.config/sketchybar/helpers/dark-mode-notify/dark-mode-notify-stdout.log</string>
     <key>ProgramArguments</key>
     <array>
-       <string>~/.config/sketchybar/helpers/dark-mode-notify</string>
+       <string>/usr/bin/env/dark-mode-notify</string>
        <string>~/.config/sketchybar/helpers/dark-mode-notify/dark-mode-notify.sh</string>
     </array>
 </dict>
