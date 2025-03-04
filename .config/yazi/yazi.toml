@@ -1,5 +1,6 @@
 # ~/.config/yazi/yazi.toml
 [manager]
+layout = [1, 4, 3]
 linemode = "none"
 show_hidden = true
 
@@ -10,3 +11,39 @@ prepend_preloaders = [
 ]
 
 [opener]
+edit = [
+	{ run = '${EDITOR:=vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+]
+
+extract = [{ run = 'unar "$1"', desc = "Extract here", for = "unix" }]
+
+text = [{ run = '$EDITOR "$@"', block = true }]
+
+image = [
+	{ run = 'imv-dir  "$@"', block = true },
+	{ run = '''exiftool "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show EXIF" },
+]
+
+reveal = [
+	{ run = 'imv-dir  "$@"', block = true },
+	{ run = 'xdg-open "$(dirname "$0")"', desc = "Reveal", for = "linux" },
+	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
+]
+
+pdf = [{ run = 'zathura "$@"', block = true }]
+
+video = [
+	{ run = 'mpv "$@"', block = true },
+	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+]
+
+audio = [
+	{ run = 'mpv --no-video "$@"', block = true },
+	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read''', block = true, desc = "Show media info" },
+]
+
+
+fallback = [
+	{ run = 'xdg-open "$@"', desc = "Open" },
+	{ run = 'xdg-open -R "$@"', desc = "Reveal in Finder" },
+]
