@@ -48,7 +48,7 @@ return {
     },
     popup = {
         text = 0xffcccccc,
-        bg = 0x9924424,
+        bg = 0x991c1c1c,
         bg_alt = 0xff5d5d5d,
         icons = 0xffa0a0a0,
         border = 0xff414141,

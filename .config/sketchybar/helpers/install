@@ -12,12 +12,44 @@ brew install --cask homebrew/cask-fonts/font-sf-mono
 brew install --cask homebrew/cask-fonts/font-sf-pro
 brew install --cask font-hack-nerd-font
 
+#!/bin/bash
+
+echo "Installing SketchyBar launcher..."
+
+# Copy the script to /usr/local/bin
+sudo cp sketchybar-launch /usr/local/bin/sketchybar-launch
+sudo chmod +x /usr/local/bin/sketchybar-launch
+
+# Function to add alias if not already present
+add_alias() {
+    local shell_config=$1
+    local alias_cmd='alias sketchybar="sketchybar-launch"'
+
+    if ! grep -Fxq "$alias_cmd" "$shell_config"; then
+        echo "$alias_cmd" >>"$shell_config"
+        echo "Added alias to $shell_config"
+    else
+        echo "Alias already exists in $shell_config"
+    fi
+}
+
+# Add alias to both Zsh and Bash configs
+add_alias ~/.zshrc
+add_alias ~/.bashrc
+
+# Apply changes
+source ~/.zshrc 2>/dev/null || source ~/.bashrc
+
+echo "Installation complete! Now you can use:"
+echo "  sketchybar       # Default bar"
+echo "  sketchybar --full  # Full bar"
+
 git clone https://github.com/john-json/colorswitch.git ~/.config/sketchybar/helpers/
 cd colorswitch
 sudo make install
 
 # Update permissions
-chmod +x ~/.config/sketchybar/items/scripts/dark-mode-handler.sh
+chmod +x ~/.config/sketchybar/items/scripts/colorswitch.sh
 
 mkdir -p ~/Library/LaunchAgents
 cp /Users/$(id -u)/.config/sketchybar/items/plists/com.user.colorswitch.plist ~/Library/LaunchAgents/

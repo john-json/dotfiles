@@ -34,7 +34,7 @@ local volume_slider = sbar.add("slider", popup_width, {
     slider = {
         highlight_color = colors.orange,
         background = {
-            width = 50,
+            width = 70,
             height = 6,
             corner_radius = 3,
             color = colors.primary,
@@ -95,24 +95,24 @@ end
 
 -- Show temperature on mouse enter with delay
 volume_icon:subscribe("mouse.entered", function(env)
-    local selected = env.SELECTED == "true"
-    sbar.delay(0.3, function() -- 0.3s delay before showing
-        volume_slider:set({ drawing = true })
+    sbar.animate("elastic", 25, function()
+        sbar.delay(0.4, function() -- 0.3s delay before showing
+            volume_slider:set({ drawing = true, width = 55, })
+        end)
     end)
 end)
 
 -- Show temperature on mouse enter with delay
 volume_slider:subscribe("mouse.exited", function(env)
-    local selected = env.SELECTED == "true"
-    sbar.delay(0.3, function() -- 0.3s delay before showing
-        volume_slider:set({ drawing = false })
+    sbar.animate("elastic", 15, function()
+        sbar.delay(0.4, function() -- 0.3s delay before showin
+            volume_slider:set({ drawing = false })
+        end)
     end)
 end)
-
 -- Show temperature on mouse enter with delay
 volume_slider:subscribe("mouse.clicked", function(env)
-    local selected = env.SELECTED == "true"
-    sbar.delay(0.3, function() -- 0.3s delay before showing
+    sbar.animate("elastic", 15, function()
         volume_slider:set({ drawing = "toggle" })
     end)
 end)

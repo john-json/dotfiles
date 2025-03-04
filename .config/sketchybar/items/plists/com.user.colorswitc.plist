@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.colorswitch<string>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardErrorPath</key>
+    <string>~/.config/sketchybar/helpers/colorswitch/colorswitch-stderr.log</string>
+    <key>StandardOutPath</key>
+    <string>~/.config/sketchybar/helpers/colorswitch/colorswitch-stdout.log</string>
+    <key>ProgramArguments</key>
+    <array>
+       <string>/usr/bin/env/colorswitch</string>
+       <string>~/.config/sketchybar/helpers/colorswitch/colorswitch.sh</string>
+    </array>
+</dict>
+</plist>

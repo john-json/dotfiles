@@ -28,7 +28,7 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
         },
     },
     background = { color = colors.transparent },
-    popup = { align = "center", height = 30 }
+    popup = { align = "center", height = 40 }
 })
 
 
@@ -38,7 +38,6 @@ local ssid = sbar.add("item", {
     label = {
         drawing = true,
         align = "left",
-        width = popup_width / 2,
         y_offset = 0,
         padding_left = 5,
         color = colors.red,
@@ -50,20 +49,20 @@ local ssid = sbar.add("item", {
         string = "????????????",
     },
     icon = {
-        drawing  = false,
-        align    = "right",
-        width    = popup_width / 2,
-        y_offset = 0,
-        font     = {
+        drawing      = true,
+        align        = "right",
+        padding_left = 10,
+        y_offset     = 0,
+        font         = {
             size = 40,
             style = settings.font.style_map["Bold"]
         },
-        string   = " ",
+        string       = " ",
     },
     background = {
+        corner_radius = 8,
         padding_left = 5,
         padding_right = 5,
-        y_offset = -5,
         color = colors.bar.bg2,
         width = "dynamic",
         height = 60,
@@ -178,9 +177,9 @@ sbar.add("item", { position = "right", width = settings.group_paddings })
 ssid:subscribe("mouse.entered", function(env)
     sbar.delay(0.3, function() -- 0.3s delay before showing
         ssid:set({
-            icon = { drawing = true, },
-            label = {
-                drawing = false
+            icon = {
+                click_script = {
+                    sbar.exec("osascript -e '~/.config/sketchybar/items/scripts/toggleWifiState.scpt'") },
             }
         })
     end)
@@ -189,7 +188,7 @@ end)
 ssid:subscribe("mouse.exited", function(env)
     sbar.delay(0.3, function() --
         ssid:set({
-            icon = { drawing = false, },
+            icon = { drawing = true, },
             label = {
                 drawing = true
             }
@@ -198,11 +197,6 @@ ssid:subscribe("mouse.exited", function(env)
 end)
 
 
-ssid:subscribe("mouse.clicked", function(env)
-    sbar.delay(0.2, function()
-        ssid:set({ click_script = { sbar.exec("open -a '~/.config/sketchybar/items/scripts/toggleWifiState.scpt'") } })
-    end)
-end)
 
 wifi_up:subscribe("network_update", function(env)
     local up_color = (env.upload == "000 Bps") and colors.white or colors.red
@@ -238,7 +232,6 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
         ssid:set({
             label = { string = connected and "Switch Off:" or "Switch On:" },
             icon = {
-                click_csript = 'osascript -e "$CONFIG_DIR/items/scripts/toggleWifiState.scpt"',
                 size = 22,
                 string = connected and icons.switch.on or icons.switch.off,
                 color = connected and colors.green or colors.red,
@@ -248,34 +241,58 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
 end)
 local function hide_details()
     wifi_bracket:set({ popup = { drawing = false } })
-    wifi_down:set({ icon = { drawing = true }, label = { drawing = true } })
-    wifi_up:set({ icon = { drawing = true }, label = { drawing = true } })
 end
 
 local is_router_on = true
 
 local function toggle_details()
-    local should_draw = wifi_bracket:query().popup.drawing == "off"
-    if should_draw then
-        wifi_bracket:set({ popup = { drawing = true } })
-        sbar.exec("networksetup -getcomputername", function(result)
-            hostname:set({ label = result })
-        end)
-        sbar.exec("ipconfig getifaddr en1", function(result)
-            ip:set({ label = result })
-        end)
-        sbar.exec("ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
-            ssid:set({ label = result })
-        end)
-    else
-        hide_details()
-    end
+    sbar.animate("elastic", 15, function()
+        local should_draw = wifi_bracket:query().popup.drawing == "off"
+        if should_draw then
+            wifi_bracket:set({ popup = { drawing = true } })
+            sbar.exec("networksetup -getcomputername", function(result)
+                hostname:set({ label = result })
+            end)
+            sbar.exec("ipconfig getifaddr en1", function(result)
+                ip:set({ label = result })
+            end)
+            sbar.exec("ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
+                ssid:set({ label = result })
+            end)
+        else
+            hide_details()
+        end
+    end)
 end
 
-wifi_up:subscribe("mouse.clicked", toggle_details)
-wifi_down:subscribe("mouse.clicked", toggle_details)
-wifi:subscribe("mouse.clicked", toggle_details)
-wifi:subscribe("mouse.exited.global", hide_details)
+-- Toggles popup on click
+wifi:subscribe("mouse.clicked", function(env)
+    sbar.animate("elastic", 15, function()
+        wifi:set({
+            toggle_details(),
+            popup = {
+                y_offset = 0,
+                drawing = "toggle"
+            }
+        })
+    end)
+end)
+
+-- Hides popup on mouse exit
+wifi:subscribe("mouse.exited.global", function(env)
+    sbar.animate("elastic", 15, function()
+        wifi:set({
+            hide_details(),
+            popup = {
+                y_offset = -40,
+                height = 0,
+                drawing = false
+            }
+        })
+    end)
+end)
+
+
 
 local function wcenter()
     sbar.exec("open /System/Library/PreferencePanes/Network.prefpane")

@@ -113,10 +113,10 @@ for i = 1, 10 do
 			space:set({
 				icon = { drawing = false, alpha = 0, position = "center", align = "center" },
 				label = {
-					padding_left = selected and 5 or 8,
-					padding_right = selected and 5 or 3,
+					padding_left = selected and 5 or 5,
+					padding_right = selected and 5 or 5,
 					string = selected and getSpaceIcon(i, true) or getSpaceIcon(i, false),
-					font = { align = "center", family = settings.font.numbers, size = selected and 14 or 14, style = settings.font.style_map[selected and "Heavy" or "Normal"] },
+					font = { align = "center", family = settings.font.numbers, size = selected and 16 or 14, style = settings.font.style_map[selected and "Heavy" or "Normal"] },
 					color = selected and getSpaceColor(i) or colors.grey,
 					drawing = true,
 				},
@@ -127,10 +127,11 @@ for i = 1, 10 do
 
 	space:subscribe("mouse.entered", function(env)
 		local selected = env.SELECTED == "true"
-		sbar.delay(0.2, function()
+		sbar.delay(0.3, function()
 			sbar.animate("elastic", 15, function()
 				space:set({
-					icon = { drawing = true, alpha = 1, string = selected and "􀐉" or "􀂀", color = colors.quicksilver, font = { size = 18 } },
+					icon = { drawing = true, alpha = 1, string = selected and "􀐉" or "􀂀", color = colors.quicksilver, font = { size = 16 } },
+					label = { drawing = false, font = { size = 0 }, height = 2, }
 				})
 			end)
 		end)

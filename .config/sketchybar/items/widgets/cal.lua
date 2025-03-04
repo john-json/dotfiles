@@ -53,12 +53,13 @@ local cal = sbar.add("item", {
         height = 30,
         corner_radius = 6,
         padding_left = 10,
+
         padding_right = settings.paddings,
     },
     popup = {
         position = "center",
         align = "right",
-        height = 60,
+        height = 90,
         width = "dynamic",
         drawing = false,
         y_offset = 0,
@@ -75,12 +76,8 @@ sbar.add("bracket", { cal.name }, {
 -- Toggle popup visibility on click
 cal:subscribe("mouse.entered", function(env)
     sbar.delay(0.2, function()
-        sbar.animate("elastic", 10, function()
+        sbar.animate("elastic", 15, function()
             cal:set({
-                icon = {
-                    drawing = true,
-                },
-
                 label = {
 
                     color = colors.primary,
@@ -94,38 +91,7 @@ cal:subscribe("mouse.entered", function(env)
     end)
 end)
 
--- Toggle popup visibility on click
-cal:subscribe("mouse.exited", function(env)
-    sbar.delay(0.2, function()
-        sbar.animate("elastic", 10, function()
-            cal:set({
-                label = {
-                    color = colors.primary,
-                    font = {
-                        size = 12,
-                    }
-                },
-                icon = {
-                    drawing = false,
-                },
 
-            })
-        end)
-    end)
-end)
-
-
--- Toggle popup visibility on click
-cal:subscribe("mouse.clicked", function(env)
-    sbar.animate("elastic", 10, function()
-        cal:set({
-            popup = {
-                drawing = "toggle",
-                y_offset = 0,
-            },
-        })
-    end)
-end)
 
 -- Function to populate the carousel-style calendar
 local function populate_calendar_popup()
@@ -195,6 +161,30 @@ local function populate_calendar_popup()
         })
     end
 end
+
+-- Toggles popup on click
+cal:subscribe("mouse.clicked", function(env)
+    sbar.animate("elastic", 15, function()
+        cal:set({
+            popup = {
+                y_offset = 0,
+                drawing = "toggle"
+            }
+        })
+    end)
+end)
+
+-- Hides popup on mouse exit
+cal:subscribe("mouse.exited.global", function(env)
+    sbar.animate("elastic", 15, function()
+        cal:set({
+            popup = {
+                y_offset = -40,
+                drawing = false
+            }
+        })
+    end)
+end)
 
 
 -- Repopulate popup at midnight

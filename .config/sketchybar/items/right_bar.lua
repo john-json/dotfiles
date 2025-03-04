@@ -11,6 +11,9 @@ local media    = require("items.widgets.media")
 local weather  = require("items.widgets.weather")
 
 
+-- Check if we're using bar-full.lua
+local is_bar_full = os.getenv("BAR_CONFIG") == "bar-full"
+
 
 local systray   =
     sbar.add(
@@ -74,7 +77,7 @@ local right_bar =
         { clock.name, volume.name, systray.name },
         {
 
-            shadow = true,
+            shadow = not is_bar_full, -- Shadow is false for bar-full.lua
             position = "right",
             align = "right",
             width = "dynamic",

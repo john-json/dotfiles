@@ -6,6 +6,9 @@ local settings = require("settings")
 local spaces = require("items.widgets.spaces")
 local add_space = require("items.widgets.add_space")
 
+-- Check if we're using bar-full.lua
+local is_bar_full = os.getenv("BAR_CONFIG") == "bar-full"
+
 local spaces_bracket = sbar.add(
     "bracket",
     "spaces.bracket",
@@ -44,7 +47,7 @@ local center_bar = sbar.add(
     "center_bar.bracket",
     { add_space_bracket.name, spaces_bracket.name },
     {
-        shadow = true,
+        shadow = not is_bar_full, -- Shadow is false for bar-full.lua
         position = "center",
         width = "dynamic",
         background = {

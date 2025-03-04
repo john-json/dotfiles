@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Check if --full was passed and remove it from arguments
+if [[ "$1" == "--full" ]]; then
+    export BAR_CONFIG="bar-full"
+    shift # Remove "--full" from arguments
+else
+    export BAR_CONFIG="bar"
+fi
+
+# Stop any existing SketchyBar instance
+sketchybar --stop
+
+# Start SketchyBar without unknown options
+sketchybar --start
+
+echo "Started SketchyBar with $BAR_CONFIG"
