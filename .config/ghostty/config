@@ -1,0 +1,38 @@
+auto-update = download
+
+theme = light:ilstr01-light, dark:ilstr01-dark
+font-family = "Hack Nerd Font"
+
+background-blur-radius = 60
+
+background = 232323
+foreground = bcbcbc
+
+macos-titlebar-style = hidden
+macos-titlebar-proxy-icon = hidden
+macos-window-shadow = true
+
+window-padding-x = 20
+window-padding-y = 20
+window-decoration = false
+window-save-state = always
+
+
+background-opacity = 0.99
+background-blur-radius = 20
+
+quick-terminal-position = top
+quick-terminal-screen = mouse
+quick-terminal-animation-duration = 0.2
+
+shell-integration = zsh
+
+macos-window-shadow = true
+
+keybind = cmd+n=new_window
+keybind = global:cmd+shift+d=toggle_quick_terminal
+keybind = cmd+q=quit
+keybind = cmd+w=close_window
+keybind = cmd+r=clear_screen
+keybind = cmd+shift+r=reload_config
+
