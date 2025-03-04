@@ -200,7 +200,6 @@ end)
 
 ssid:subscribe("mouse.clicked", function(env)
     sbar.delay(0.2, function()
-        local selected = env.SELECTED == "true"
         ssid:set({ click_script = { sbar.exec("open -a '~/.config/sketchybar/items/scripts/toggleWifiState.scpt'") } })
     end)
 end)
@@ -239,6 +238,7 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
         ssid:set({
             label = { string = connected and "Switch Off:" or "Switch On:" },
             icon = {
+                click_csript = 'osascript -e "$CONFIG_DIR/items/scripts/toggleWifiState.scpt"',
                 size = 22,
                 string = connected and icons.switch.on or icons.switch.off,
                 color = connected and colors.green or colors.red,

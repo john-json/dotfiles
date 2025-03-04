@@ -15,26 +15,38 @@ local spaces_bracket = sbar.add(
         width = "dynamic",
         padding_left = 10,
         padding_right = 10,
+        label = { padding_left = 10, padding_right = 10 },
+        icon = { padding_left = 5, padding_right = 5 },
         background = {
-            padding_left = 10,
-            padding_right = 10,
-            color = colors.bar.bg,
+            color = colors.transparent,
         },
     }
 )
-
+local add_space_bracket = sbar.add(
+    "bracket",
+    "add_space.bracket",
+    { add_space.name },
+    {
+        position = "center",
+        width = "dynamic",
+        padding_left = 10,
+        padding_right = 10,
+        label = { padding_left = 10, padding_right = 10 },
+        background = {
+            color = colors.transparent,
+        },
+    }
+)
 
 -- Create the bracket and include the items
 local center_bar = sbar.add(
     "bracket",
     "center_bar.bracket",
-    { add_space.name, spaces_bracket.name },
+    { add_space_bracket.name, spaces_bracket.name },
     {
         shadow = true,
         position = "center",
         width = "dynamic",
-        padding_left = 10,
-        padding_right = 10,
         background = {
             padding_left = 10,
             padding_right = 10,

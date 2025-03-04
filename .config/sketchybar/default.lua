@@ -62,18 +62,19 @@ sbar.default({
 			border_width  = 0,
 			border_color  = colors.popup.border,
 			corner_radius = 6,
-			color         = colors.popup.bg_alt,
+			color         = colors.popup.bg,
 			shadow        = {
 				drawing = true
 			},
 			width         = 250,
 		},
-		blur_radius = 60
+		blur_radius = 60,
 	},
 	padding_left  = settings.paddings,
 	padding_right = settings.paddings,
 	scroll_texts  = true,
 	blur_radius   = 60,
+
 
 }
 )
