@@ -28,8 +28,8 @@ return {
         secondary = 0xff191919,
     },
     bar = {
-        bg = 0xff1f1f1f,
-        bg2 = 0xff131313,
+        bg = 0xff252525,
+        bg2 = 0xff1c1c1c,
         accent = 0xff000000,
         active = 0xff9eaeb3,
         selected = 0xff593c3c,

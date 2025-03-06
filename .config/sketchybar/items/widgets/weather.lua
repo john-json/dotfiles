@@ -65,7 +65,7 @@ weather:subscribe("mouse.entered", function()
     sbar.animate("elastic", 15, function()
         sbar.delay(0.4, function() -- 0.3s delay before showing
             if weather.temperature then
-                weather:set({ label = { background = { height = 30, corner_radius = 4, color = colors.bar.bg }, string = weather.temperature, drawing = "toggle", padding_left = 10 } })
+                weather:set({ label = { background = { height = 30, corner_radius = 4, }, string = weather.temperature, drawing = "toggle", padding_left = 10 } })
             end
         end)
     end)

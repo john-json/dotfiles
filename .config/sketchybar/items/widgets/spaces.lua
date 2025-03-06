@@ -21,19 +21,11 @@ local function getSpaceColor(spaceNumber)
 end
 
 local sf_icons_active = {
-	"􀀁",
-	"􀀁",
-	"􀀁",
-	"􀀁",
-	"􀀁",
-	"􀀁",
-	"􀀁",
-	"􀀁",
-	"􀀁",
-	"􀀁",
+
+	"􁽻", "􁽻", "􁽻", "􁽻", "􁽻", "􁽻", "􁽻", "􁽻", "􁽻", "􁽻",
 }
 local sf_icons_inactive = {
-	"􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀",
+	"􀂓", "􀂓", "􀂓", "􀂓", "􀂓", "􀂓", "􀂓", "􀂓", "􀂓", "􀂓",
 }
 local function getSpaceIcon(space, active)
 	if active then
@@ -114,9 +106,9 @@ for i = 1, 10 do
 				icon = { drawing = false, alpha = 0, position = "center", align = "center" },
 				label = {
 					padding_left = selected and 5 or 5,
-					padding_right = selected and 5 or 5,
+					padding_right = selected and 5 or 0,
 					string = selected and getSpaceIcon(i, true) or getSpaceIcon(i, false),
-					font = { align = "center", family = settings.font.numbers, size = selected and 16 or 14, style = settings.font.style_map[selected and "Heavy" or "Normal"] },
+					font = { align = "center", family = settings.font.numbers, size = selected and 18 or 10, style = settings.font.style_map[selected and "Heavy" or "Normal"] },
 					color = selected and getSpaceColor(i) or colors.grey,
 					drawing = true,
 				},

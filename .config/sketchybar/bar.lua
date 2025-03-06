@@ -19,7 +19,7 @@ sbar.bar({
 sbar.animate("elastic", 15, function()
     local start_pos = -60
     local overshoot = 12 -- Drop below before bouncing up
-    local final_pos = 5
+    local final_pos = 6
 
     -- Move from start -> overshoot -> final position
     sbar.bar({ y_offset = final_pos + overshoot })

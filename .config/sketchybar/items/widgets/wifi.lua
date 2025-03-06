@@ -174,12 +174,15 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
 
 sbar.add("item", { position = "right", width = settings.group_paddings })
 
+ssid:subscribe("mouse.clicked", function()
+    sbar.exec('osascript /Users/john/.config/sketchybar/items/scripts/toggleWifiState.scpt')
+end)
+
 ssid:subscribe("mouse.entered", function(env)
     sbar.delay(0.3, function() -- 0.3s delay before showing
         ssid:set({
             icon = {
-                click_script = {
-                    sbar.exec("osascript -e '~/.config/sketchybar/items/scripts/toggleWifiState.scpt'") },
+
             }
         })
     end)
@@ -226,7 +229,7 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
         wifi:set({
             icon = {
                 string = connected and icons.wifi.connected or icons.wifi.disconnected,
-                color = connected and colors.red or colors.quicksilver,
+                color = connected and colors.primary or colors.darkGrey,
             },
         })
         ssid:set({
@@ -298,6 +301,10 @@ local function wcenter()
     sbar.exec("open /System/Library/PreferencePanes/Network.prefpane")
 end
 
+local function toggleWifi()
+    sbar.exec('osascript /Users/john/.config/sketchybar/items/scripts/toggleWifiState.scpt')
+end
+
 local function copy_label_to_clipboard(env)
     local label = sbar.query(env.NAME).label.value
     sbar.exec("echo \"" .. label .. "\" | pbcopy")
@@ -307,7 +314,7 @@ local function copy_label_to_clipboard(env)
     end)
 end
 
-ssid:subscribe("mouse.clicked", wcenter)
+ssid:subscribe("mouse.clicked", toggleWifi)
 hostname:subscribe("mouse.clicked", copy_label_to_clipboard)
 ip:subscribe("mouse.clicked", wcenter)
 

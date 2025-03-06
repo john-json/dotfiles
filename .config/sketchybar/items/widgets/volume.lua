@@ -32,20 +32,20 @@ local volume_slider = sbar.add("slider", popup_width, {
     width = "dynamic",
     drawing = false,
     slider = {
-        highlight_color = colors.orange,
+        highlight_color = colors.white,
         background = {
             width = 70,
             height = 6,
             corner_radius = 3,
-            color = colors.primary,
+            color = colors.grey,
         },
         knob = {
-            color = colors.orange,
+            color = colors.white,
             size = 7,
             string = "􀀁",
         },
     },
-    background = { color = colors.transparent, height = 2, y_offset = -20 },
+    background = { color = colors.grey, height = 2, y_offset = -20 },
     click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
 
@@ -84,7 +84,7 @@ volume:subscribe(
         end
 
         volume_icon:set({ label = icon })
-        volume_slider:set({ slider = { width = 50, percentage = volume } })
+        volume_slider:set({ slider = { width = 60, percentage = volume } })
     end
 )
 
@@ -97,7 +97,7 @@ end
 volume_icon:subscribe("mouse.entered", function(env)
     sbar.animate("elastic", 25, function()
         sbar.delay(0.4, function() -- 0.3s delay before showing
-            volume_slider:set({ drawing = true, width = 55, })
+            volume_slider:set({ drawing = true, width = 70, })
         end)
     end)
 end)
@@ -113,7 +113,7 @@ end)
 -- Show temperature on mouse enter with delay
 volume_slider:subscribe("mouse.clicked", function(env)
     sbar.animate("elastic", 15, function()
-        volume_slider:set({ drawing = "toggle" })
+        volume_slider:set({ width = 70, drawing = "toggle" })
     end)
 end)
 

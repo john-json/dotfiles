@@ -96,7 +96,7 @@ front_app:subscribe("mouse.clicked", function(env)
         else
             front_app:set({
                 label = {
-                    drawing = true,
+                    drawing = false,
                     string = env.INFO,
                     font = { style = settings.font.style_map["Bold"] },
                 },

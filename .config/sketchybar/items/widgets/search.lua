@@ -13,6 +13,7 @@ local search   =
 				position = "center",
 				string = icons.search,
 				padding_left = 5,
+				padding_right = 5,
 				font = {
 					family = settings.font.numbers,
 					size = 14,

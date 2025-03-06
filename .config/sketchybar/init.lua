@@ -40,7 +40,7 @@ sbar.begin_config()
 require("default")
 sbar.animate("tanh", 25, function()
     require("items")
-    require(bar_config) -- Load bar.lua or bar-full.lua dynamically
+    require("bar") -- Load bar.lua or bar-full.lua dynamically
 end)
 sbar.end_config()
 
