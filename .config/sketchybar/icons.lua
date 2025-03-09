@@ -61,14 +61,14 @@ local icons = {
             off = "󰨙"
         },
         volume = {
-            _100 = "􀾐",
-            _66 = "􀊩",
+            _100 = "􀊩",
+            _66 = "􀊧",
             _33 = "􀊧",
             _10 = "􀊥",
             _0 = "􀊣"
         },
         battery = {
-            _100 = "􀛨",
+            _100 = "",
             _75 = "􀺸",
             _50 = "􀺶",
             _25 = "􀻂",
@@ -78,12 +78,12 @@ local icons = {
         wifi = {
             upload = "􀁯",
             download = "􀁱",
-            connected = "􀙇",
-            disconnected = "􀙈",
+            connected = "󰖩",
+            disconnected = "󰖪",
             router = "􁓣"
         },
         media = {
-            icon = "􀫀",
+            icon = "󰝚",
             back = "􀊉",
             forward = "􀊋",
             play_pause = "􀊇",

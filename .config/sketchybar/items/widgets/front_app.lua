@@ -8,12 +8,15 @@ local front_app = sbar.add("item", "front_app", {
     background = { color = colors.transparent },
     label = {
         drawing = true,
-        padding_left = 5,
-        padding_right = 10,
+        padding_left = 10,
+        padding_right = 5,
         color = colors.primary,
+        size = 16,
         font = { style = settings.font.style_map["Bold"] },
     },
     icon = {
+        padding_left = 5,
+        padding_right = 5,
         drawing = false,
         color = colors.primary,
         font = { style = settings.font.style_map["Bold"] },
@@ -26,14 +29,15 @@ front_app:subscribe("front_app_switched", function(env)
     sbar.animate("elastic", 14, function()
         front_app:set({
             label = {
+
+                drawing = false,
+                string = icons.switch.off
+            },
+            icon = {
                 color = colors.primary,
                 drawing = true,
                 string = env.INFO,
                 font = { style = settings.font.style_map["Bold"] },
-            },
-            icon = {
-                drawing = false,
-                string = icons.switch.off
             }
         })
     end)
@@ -43,14 +47,16 @@ front_app:subscribe("mouse.entered", function(env)
     if not front_app.hidden then
         sbar.animate("elastic", 15, function()
             front_app:set({
-                label = { drawing = false },
-                icon = {
+                label = {
                     drawing = true,
                     string = icons.switch.off,
                     padding_left = 5,
                     padding_right = 10,
                     color = colors.primary,
                     font = { style = settings.font.style_map["Bold"] },
+                },
+                icon = {
+                    drawing = true,
                 },
             })
         end)
@@ -62,14 +68,15 @@ front_app:subscribe("mouse.exited", function(env)
         sbar.animate("elastic", 15, function()
             front_app:set({
                 label = {
+                    drawing = false,
+                    string = icons.switch.off,
+
+                },
+                icon = {
                     color = colors.primary,
                     drawing = true,
                     string = env.INFO,
                     font = { style = settings.font.style_map["Bold"] },
-                },
-                icon = {
-                    drawing = false,
-                    string = icons.switch.off,
                 },
             })
         end)
@@ -83,24 +90,30 @@ front_app:subscribe("mouse.clicked", function(env)
     sbar.animate("elastic", 15, function()
         if front_app.hidden then
             front_app:set({
-                label = { drawing = false },
-                icon = {
+                label = {
                     drawing = true,
                     string = icons.switch.on,
                     padding_left = 5,
                     padding_right = 10,
                     color = colors.primary,
                     font = { style = settings.font.style_map["Bold"] },
+
+                },
+                icon = {
+                    drawing = false
                 },
             })
         else
             front_app:set({
                 label = {
+                    drawing = true
+
+                },
+                icon = {
                     drawing = false,
                     string = env.INFO,
                     font = { style = settings.font.style_map["Bold"] },
                 },
-                icon = { drawing = false },
             })
         end
     end)

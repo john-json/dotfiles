@@ -60,12 +60,13 @@ local ssid = sbar.add("item", {
         string       = " ",
     },
     background = {
-        corner_radius = 8,
+        y_offset = -5,
+        corner_radius = 6,
         padding_left = 5,
         padding_right = 5,
         color = colors.bar.bg2,
         width = "dynamic",
-        height = 60,
+        height = 70,
     }
 })
 
@@ -243,7 +244,15 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
     end)
 end)
 local function hide_details()
-    wifi_bracket:set({ popup = { drawing = false } })
+    sbar.animate("elastic", 15, function()
+        wifi_bracket:set({
+            popup = {
+                y_offset = -40,
+                height = 0,
+                drawing = false
+            }
+        })
+    end)
 end
 
 local is_router_on = true

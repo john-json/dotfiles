@@ -29,19 +29,16 @@ local function setup_media_items()
             drawing = false,
         },
         icon = {
-            color = whitelist and colors.green or colors.primary,
+            color = colors.primary,
             padding_left = 10,
             padding_right = 5,
             drawing = true,
             string = icons.media.icon,
-            font = {
-                size = 14,
-            },
         },
         drawing = true,
         updates = true,
         popup = {
-            background = { color = colors.bar.bg2, height = 40, },
+
             display = 1,
             drawing = false, -- Initially hidden
             y_offset = 0,
@@ -127,9 +124,8 @@ local function create_controls()
             position = "right",
             padding_left = 10,
             icon = {
-                color = colors.grey,
                 string = control.icon,
-                font = { size = 16 },
+                font = { size = 14 },
             },
             click_script = control.action,
             drawing = false, -- Initially hidden

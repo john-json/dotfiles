@@ -7,7 +7,7 @@ return {
     purple = 0xff6a6378,
     monotone = 0xff98a8a9,
     orange = 0xffd09367,
-    quicksilver = 0xffb2b2b2,
+    quicksilver = 0xffdddddd,
     pink = 0xff725955,
     magenta = 0xff595066,
 

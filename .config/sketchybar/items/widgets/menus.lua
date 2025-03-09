@@ -53,8 +53,9 @@ local menu_bracket = sbar.add(
     "bracket",
     { "/menu\\..*/" },
     {
+        alpha = 0,
         background = {
-            alpha = 1,
+
             color = colors.bar.bg2,
         }
     }
@@ -80,16 +81,19 @@ end
 menu_watcher:subscribe("front_app_switched", update_menus)
 
 space_menu_swap:subscribe("swap_menus_and_spaces", function(env)
-    local drawing = menu_items[1]:query().geometry.drawing == "on"
-    if drawing then
-        menu_watcher:set({ updates = false })
-        sbar.set("/menu\\..*/", { drawing = false })
-        sbar.set("front_app", { drawing = true })
-    else
-        menu_watcher:set({ updates = true })
-        sbar.set("front_app", { drawing = true })
-        update_menus()
-    end
+    sbar.animate("elastic", 15, function()
+        sbar.delay(0.3, function()
+            local drawing = menu_items[1]:query().geometry.drawing == "on"
+            if drawing then
+                menu_watcher:set({ updates = false, label = { size = 0, } })
+                sbar.set("/menu\\..*/", { alpha = 1, drawing = false })
+                sbar.set("front_app", { drawing = true })
+            else
+                menu_watcher:set({ updates = true })
+                sbar.set("front_app", { drawing = true })
+                update_menus()
+            end
+        end)
+    end)
 end)
-
 return menu_bracket

@@ -13,12 +13,11 @@ local volume_icon =
             display = 1,
             position = "right",
             icon = {
-                color = colors.green },
+                color = colors.primary },
             label = {
                 color = colors.primary,
                 font = {
                     size = 14,
-                    style = settings.font.style_map["SemiBold"],
                     family = settings.font.text,
                 },
                 align = "center",
@@ -40,12 +39,13 @@ local volume_slider = sbar.add("slider", popup_width, {
             color = colors.grey,
         },
         knob = {
+
             color = colors.white,
-            size = 7,
+            size = 6,
             string = "􀀁",
         },
     },
-    background = { color = colors.grey, height = 2, y_offset = -20 },
+    background = { color = colors.primary, height = 8, width = "dynamic" },
     click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
 
@@ -57,7 +57,6 @@ local volume =
         {
             width   = "dynamic",
             display = 1,
-            wdidth  = "dynamic",
         }
     )
 
@@ -84,7 +83,7 @@ volume:subscribe(
         end
 
         volume_icon:set({ label = icon })
-        volume_slider:set({ slider = { width = 60, percentage = volume } })
+        volume_slider:set({ slider = { width = 50, percentage = volume } })
     end
 )
 

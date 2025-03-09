@@ -1,4 +1,6 @@
-# Packages
+#--------------------------------------------------
+#.                # Packages
+#--------------------------------------------------
 brew install lua
 brew install switchaudio-osx
 brew install nowplaying-cli
@@ -6,30 +8,80 @@ brew install nowplaying-cli
 brew tap FelixKratz/formulae
 brew install sketchybar
 
-# Fonts
+#--------------------------------------------------
+#.                # Fonts
+#--------------------------------------------------
+
 brew install --cask sf-symbols
 brew install --cask homebrew/cask-fonts/font-sf-mono
 brew install --cask homebrew/cask-fonts/font-sf-pro
 brew install --cask font-hack-nerd-font
 
-#!/bin/bash
+#--------------------------------------------------
+#.                #!/bin/bash
+#--------------------------------------------------
+mkdir -p ~/.config/sketchybar/bak # Ensure backup directory exists
 
-echo "Installing SketchyBar launcher..."
+#--------------------------------------------------
+#.                #sbar config reload fix
+#--------------------------------------------------
 
-git clone https://github.com/john-json/colorswitch.git ~/.config/sketchybar/helpers/
-cd colorswitch
-sudo make install
+cat <<'EOF' >>~/.zshrc
 
-# Update permissions
-chmod +x ~/.config/sketchybar/items/scripts/colorswitch.sh
+# sbar-full: Switch to full layout and back up bar.lua
+sbar-full() {
+    local config_dir="$HOME/.config/sketchybar"
+    local bak_dir="$config_dir/bak"
+    local bar_file="$config_dir/bar.lua"
+    local full_file="$config_dir/bar_full.lua"
 
-mkdir -p ~/Library/LaunchAgents
-cp /Users/$(id -u)/.config/sketchybar/items/plists/com.user.colorswitch.plist ~/Library/LaunchAgents/
+    mkdir -p "$bak_dir"  # Ensure backup directory exists
 
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.colorswitch.plist
-plutil -lint /Users/$(id -u)/Library/LaunchAgents/com.user.colorswitch.plist
+    if [[ -f "$bar_file" ]]; then
+        mv "$bar_file" "$bak_dir/bar.lua.bak"
+    fi
+
+    if [[ -f "$full_file" ]]; then
+        mv "$full_file" "$bar_file"
+        echo "Switched to full layout."
+    else
+        echo "Error: $full_file not found!"
+        return 1
+    fi
+}
+
+# sbar-tiled: Switch to tiled layout and back up bar.lua
+sbar-tiled() {
+    local config_dir="$HOME/.config/sketchybar"
+    local bak_dir="$config_dir/bak"
+    local bar_file="$config_dir/bar.lua"
+    local tiled_file="$config_dir/bar_tiled.lua"
+
+    mkdir -p "$bak_dir"  # Ensure backup directory exists
+
+    if [[ -f "$bar_file" ]]; then
+        mv "$bar_file" "$bak_dir/bar.lua.bak"
+    fi
+
+    if [[ -f "$tiled_file" ]]; then
+        mv "$tiled_file" "$bar_file"
+        echo "Switched to tiled layout."
+    else
+        echo "Error: $tiled_file not found!"
+        return 1
+    fi
+}
+
+EOF
+
+# Reload zshrc to apply changes
+source ~/.zshrc
 
 log stream --predicate 'subsystem == "com.apple.UIKit"'
+
+#--------------------------------------------------
+#.                App font & Reload
+#--------------------------------------------------
 
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.5/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 

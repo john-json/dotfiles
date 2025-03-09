@@ -30,11 +30,11 @@ local weather = sbar.add("item", "widgets.weather", {
     align = "right",
     display = 1,
     icon = {
-        color = colors.yellow,
+        color = colors.primary,
         string = icons.weather.sun,
         padding_left = 10,
-    },                                                  -- Default icon
-    label = { drawing = "toggle", padding_right = 10 }, -- Hide temperature by default
+    },                                                                    -- Default icon
+    label = { drawing = "toggle", padding_right = 5, padding_left = 5, }, -- Hide temperature by default
 })
 
 -- Function to update weather widget
@@ -45,7 +45,7 @@ local function update_weather()
         if condition and temperature then
             local weather_icon = get_weather_icon(condition)
             weather:set({
-                label = { drawing = false },
+                label = { drawing = false, size = 1, },
                 icon = { string = weather_icon },
                 -- Keep temperature hidden initially
             })
@@ -65,7 +65,7 @@ weather:subscribe("mouse.entered", function()
     sbar.animate("elastic", 15, function()
         sbar.delay(0.4, function() -- 0.3s delay before showing
             if weather.temperature then
-                weather:set({ label = { background = { height = 30, corner_radius = 4, }, string = weather.temperature, drawing = "toggle", padding_left = 10 } })
+                weather:set({ label = { size = 16, background = { height = 30, corner_radius = 4, }, string = weather.temperature, drawing = "toggle", padding_left = 5 } })
             end
         end)
     end)

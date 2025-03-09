@@ -12,7 +12,7 @@ return {
     magenta = 0xff595066,
 
     primary = 0xffb2b2b2,
-    secondary = 0xff5b5b5b,
+    secondary = 0xff232323,
 
     black = 0xff000000,
     white = 0xffb4b4b4,
