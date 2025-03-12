@@ -6,9 +6,9 @@ return {
     animated_icons = false, -- Set to true if you want to use animated icons
 
     font = {
-        text = "Skia",        -- Used for text
-        numbers = "Skia",     -- Used for numbers
-        icons = "sf-symbols", -- Used for icons (or NerdFont)
+        text = "Operator Mono Nerd Font",    -- Used for text
+        numbers = "Operator Mono Nerd Font", -- Used for numbers
+        icons = "sf-symbols",                -- Used for icons (or NerdFont)
         style_map = {
             ["Regular"] = "Regular",
             ["Semibold"] = "Medium",

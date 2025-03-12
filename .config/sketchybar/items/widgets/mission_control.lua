@@ -12,8 +12,13 @@ local mission  =
 				align = "center",
 				position = "center",
 				padding_left = 10,
-				padding_right = 20,
+				padding_right = 10,
 				string = icons.mission_control,
+				font = {
+					size = 12,
+					family = settings.font.numbers,
+
+				},
 			},
 			label = {
 				drawing = false,
@@ -34,7 +39,7 @@ mission:subscribe("mouse.entered", function(env)
 	sbar.animate("sin", 15, function()
 		mission:set({
 			icon = {
-				color = colors.orange,
+				color = colors.white,
 				font = {
 					family = settings.font.numbers,
 					size = 18,
@@ -52,7 +57,7 @@ mission:subscribe("mouse.exited", function(env)
 			icon = {
 				color = colors.icon.primary,
 				font = {
-					size = 14,
+					size = 12,
 					family = settings.font.numbers,
 
 				},

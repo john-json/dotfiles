@@ -82,12 +82,16 @@ for i = 1, 10 do
 			font = { family = settings.font.numbers, size = 5 },
 		},
 		icon = {
+			padding_left = 5,
+			padding_right = 5,
 			drawing = false,
 			position = "center",
 			align = "center",
 			font = { family = settings.font.numbers, size = 5, },
 		},
 		background = {
+			padding_left = 5,
+			padding_right = 5,
 			drawing = false,
 			y_offset = 12,
 			position = "center",
@@ -102,21 +106,21 @@ for i = 1, 10 do
 		local selected = env.SELECTED == "true"
 		local targetColor = selected and getSpaceColor(i) or getSpaceColor(i)
 		smoothColorTransition(space, targetColor)
-		sbar.animate("sin", 15, function()
+		sbar.animate("sin", 10, function()
 			space:set({
 				background = {
-					padding_left = selected and 10 or 5,
-					padding_right = selected and 10 or 5,
+					padding_left = selected and 8 or 6,
+					padding_right = selected and 8 or 6,
 					drawing = false,
 					y_offset = 0,
 					position = "center",
 					align = "center",
-					color = selected and getSpaceColor(i) or colors.grey,
-					height = selected and 8 or 8,
+					color = selected and getSpaceColor(i) or colors.primary,
+					height = selected and 10 or 10,
 				},
 				icon = {
-					padding_left = selected and 10 or 0,
-					padding_right = selected and 10 or 0,
+					padding_left = selected and 8 or 8,
+					padding_right = selected and 8 or 8,
 					drawing = false,
 					alpha = 0,
 					position = "center",
@@ -126,7 +130,11 @@ for i = 1, 10 do
 					padding_left = selected and 15 or 5,
 					padding_right = selected and 15 or 5,
 					string = "",
-					font = { align = "center", family = settings.font.numbers, size = selected and 14 or 12, style = settings.font.style_map[selected and "Heavy" or "Normal"] },
+					font = {
+						align = "center",
+						family = settings.font.numbers,
+						size = selected and 16 or 15,
+					},
 					color = selected and getSpaceColor(i) or colors.transparent,
 					drawing = true,
 				},
@@ -140,8 +148,30 @@ for i = 1, 10 do
 		sbar.delay(0.3, function()
 			sbar.animate("elastic", 15, function()
 				space:set({
-					icon = { drawing = selected and false or true, alpha = 1, string = selected and "􀐉" or "􀂀", color = colors.quicksilver, font = { size = 16 } },
-					label = { drawing = false, font = { size = 0 }, height = 2, }
+					icon = {
+						padding_left = selected and 12 or 6,
+						padding_right = selected and 12 or 6,
+						drawing = selected and false or true,
+						alpha = 1,
+						color = colors.quicksilver,
+						font = { size = selected and 10 or 18 }
+					},
+					label = {
+						padding_left = selected and 16 or 8,
+						padding_right = selected and 16 or 8,
+						drawing = selected and true or false,
+						font = { size = 0 },
+						height = 2,
+					},
+					background = {
+						padding_left = selected and 8 or 6,
+						padding_right = selected and 8 or 6,
+						drawing = false,
+						position = "center",
+						align = "center",
+						color = selected and getSpaceColor(i) or colors.primary,
+						height = selected and 12 or 12,
+					},
 				})
 			end)
 		end)
@@ -149,21 +179,38 @@ for i = 1, 10 do
 
 	space:subscribe("mouse.exited", function(env)
 		sbar.delay(0.2, function()
-			sbar.animate("elastic", 15, function()
+			local selected = env.SELECTED == "true"
+			sbar.animate("elastic", 10, function()
 				space:set({
-					icon = { drawing = false, alpha = 0, font = { size = 0 } },
-					label = { drawing = true },
+					background = {
+						height = selected and 10 or 10,
+						padding_left = selected and 8 or 6,
+						padding_right = selected and 8 or 6,
+					},
+					icon = {
+						padding_left = selected and 8 or 8,
+						padding_right = selected and 8 or 8,
+						drawing = false,
+						alpha = 0,
+					},
+					label = {
+						padding_left = selected and 15 or 5,
+						padding_right = selected and 15 or 5,
+						drawing = true
+					},
 				})
 			end)
 		end)
 	end)
 
 	space:subscribe("mouse.clicked", function(env)
-		sbar.delay(0.2, function()
-			local selected = env.SELECTED == "true"
-			log("Clicked space: " .. i) {
-				click_script = { selected and sbar.exec("open -a 'Mission Control'") or switchToSpace(i) }
-			}
+		sbar.delay(0.1, function()
+			sbar.animate("elastic", 10, function()
+				local selected = env.SELECTED == "true"
+				log("Clicked space: " .. i) {
+					click_script = { selected and sbar.exec("open -a 'Mission Control'") or switchToSpace(i) }
+				}
+			end)
 		end)
 	end)
 end

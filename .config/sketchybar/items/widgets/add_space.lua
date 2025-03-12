@@ -27,7 +27,7 @@ add_space:subscribe("mouse.entered", function(env)
 	sbar.animate("sin", 15, function()
 		add_space:set({
 			icon = {
-				color = colors.orange,
+				color = colors.white,
 				font = {
 					family = settings.font.numbers,
 					size = 18,

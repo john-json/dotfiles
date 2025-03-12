@@ -31,21 +31,21 @@ local volume_slider = sbar.add("slider", popup_width, {
     width = "dynamic",
     drawing = false,
     slider = {
-        highlight_color = colors.white,
+        corner_radius = 5,
+        highlight_color = colors.grey,
         background = {
             width = 70,
             height = 6,
-            corner_radius = 3,
+            corner_radius = 5,
             color = colors.grey,
         },
         knob = {
-
             color = colors.white,
             size = 6,
             string = "􀀁",
         },
     },
-    background = { color = colors.primary, height = 8, width = "dynamic" },
+    background = { color = colors.transparent, height = 8, width = "dynamic" },
     click_script = 'osascript -e "set volume output volume $PERCENTAGE"'
 })
 

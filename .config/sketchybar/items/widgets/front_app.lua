@@ -7,17 +7,17 @@ local front_app = sbar.add("item", "front_app", {
     position = "left",
     background = { color = colors.transparent },
     label = {
-        drawing = true,
-        padding_left = 10,
-        padding_right = 5,
+        drawing = false,
+        padding_left = 5,
+        padding_right = 10,
         color = colors.primary,
         size = 16,
         font = { style = settings.font.style_map["Bold"] },
     },
     icon = {
         padding_left = 5,
-        padding_right = 5,
-        drawing = false,
+        padding_right = 10,
+        drawing = true,
         color = colors.primary,
         font = { style = settings.font.style_map["Bold"] },
     },
@@ -49,7 +49,7 @@ front_app:subscribe("mouse.entered", function(env)
             front_app:set({
                 label = {
                     drawing = true,
-                    string = icons.switch.off,
+                    string = icons.switch.on,
                     padding_left = 5,
                     padding_right = 10,
                     color = colors.primary,
@@ -69,7 +69,7 @@ front_app:subscribe("mouse.exited", function(env)
             front_app:set({
                 label = {
                     drawing = false,
-                    string = icons.switch.off,
+                    string = icons.switch.on,
 
                 },
                 icon = {
@@ -86,13 +86,12 @@ end)
 front_app:subscribe("mouse.clicked", function(env)
     sbar.trigger("swap_menus_and_spaces")
     front_app.hidden = not front_app.hidden -- Toggle state
-
     sbar.animate("elastic", 15, function()
         if front_app.hidden then
             front_app:set({
                 label = {
                     drawing = true,
-                    string = icons.switch.on,
+                    string = icons.switch.off,
                     padding_left = 5,
                     padding_right = 10,
                     color = colors.primary,
@@ -111,7 +110,6 @@ front_app:subscribe("mouse.clicked", function(env)
                 },
                 icon = {
                     drawing = false,
-                    string = env.INFO,
                     font = { style = settings.font.style_map["Bold"] },
                 },
             })

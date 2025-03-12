@@ -1,15 +1,8 @@
-<p align="center">
-<a href="https://felixkratz.github.io/SketchyBar/setup">Install</a>
-<span> • </span>
-<a href="https://felixkratz.github.io/SketchyBar/config/bar">Documentation</a> 
-<span> • </span> 
-<a href="https://github.com/FelixKratz/SketchyBar/discussions/47?sort=top">Setups</a>
-<span> • </span> 
-<a href="https://github.com/FelixKratz/SketchyBar/discussions/12?sort=top">Plugins</a>
-</p>
+<p align="left">
 
 run chmod +x install.sh && ./install.sh
 
+</p>
 ## Features
 
 - Full configurability at any time

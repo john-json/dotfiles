@@ -50,10 +50,9 @@ local cal = sbar.add("item", {
     },
     background = {
         color = colors.bar.bg,
-        height = 30,
-        corner_radius = 6,
+        height = 24,
+        corner_radius = 25,
         padding_left = 10,
-
         padding_right = settings.paddings,
     },
     popup = {
