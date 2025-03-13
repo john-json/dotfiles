@@ -10,8 +10,15 @@ export PATH=$PATH:/Users/john/.spicetify
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 #------------------------------------------------------------------
-# colorls
+# python
 #------------------------------------------------------------------
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+fi
 
 #------------------------------------------------------------------
 # ruby
@@ -56,6 +63,12 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git colorize fzf github macos zsh-vi-mode)
 
 #------------------------------------------------------------------
+# sbar config switch
+#------------------------------------------------------------------
+
+alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh"
+
+#------------------------------------------------------------------
 # yazi
 #------------------------------------------------------------------
 
@@ -75,6 +88,7 @@ function y() {
 # For a full list of active aliases, run `alias`.
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
+alias bsrs="brew services reload sketchybar"
 alias sbrld="brew services reload sketchybar"
 alias fm="yazi"
 alias vi="nvim"
@@ -100,7 +114,6 @@ alias stats="colorls --gs"
 alias ls="colorls -1 -A"
 alias dir="colorls -d"
 alias cfg='/usr/bin/git --git-dir=/Users/john/.cfg/ --work-tree=/Users/john'
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
