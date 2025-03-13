@@ -23,58 +23,31 @@ brew install --cask font-hack-nerd-font
 mkdir -p ~/.config/sketchybar/bak # Ensure backup directory exists
 
 #--------------------------------------------------
-#.                #sbar config reload fix
+#.                #sbar config & color reload fix
 #--------------------------------------------------
 
-cat <<'EOF' >>~/.zshrc
+#--------------- option chnange --------------------
 
-# sbar-full: Switch to full layout and back up bar.lua
-sbar-full() {
-    local config_dir="$HOME/.config/sketchybar"
-    local bak_dir="$config_dir/bak"
-    local bar_file="$config_dir/bar.lua"
-    local full_file="$config_dir/bar_full.lua"
+chmod +x ~/.config/sketchybar/set-bar-mode.sh
 
-    mkdir -p "$bak_dir"  # Ensure backup directory exists
+echo -n 'export alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh"' >> ~/.zshrc
 
-    if [[ -f "$bar_file" ]]; then
-        mv "$bar_file" "$bak_dir/bar.lua.bak"
-    fi
+#--------------- color chnange --------------------
 
-    if [[ -f "$full_file" ]]; then
-        mv "$full_file" "$bar_file"
-        echo "Switched to full layout."
-    else
-        echo "Error: $full_file not found!"
-        return 1
-    fi
-}
+git clone https://github.com/bouk/dark-mode-notify.git ~/.config/sketchybar/helpers/
 
-# sbar-tiled: Switch to tiled layout and back up bar.lua
-sbar-tiled() {
-    local config_dir="$HOME/.config/sketchybar"
-    local bak_dir="$config_dir/bak"
-    local bar_file="$config_dir/bar.lua"
-    local tiled_file="$config_dir/bar_tiled.lua"
+chmod +x ~/.config/sketchybar/items/scripts/dark-mode.sh
 
-    mkdir -p "$bak_dir"  # Ensure backup directory exists
 
-    if [[ -f "$bar_file" ]]; then
-        mv "$bar_file" "$bak_dir/bar.lua.bak"
-    fi
+cd ~/.config/sketchybar/helpers/dark-mode-notify
 
-    if [[ -f "$tiled_file" ]]; then
-        mv "$tiled_file" "$bar_file"
-        echo "Switched to tiled layout."
-    else
-        echo "Error: $tiled_file not found!"
-        return 1
-    fi
-}
+echo "Musst be installed as sudo to work properly"
 
-EOF
+sudo make install
 
-# Reload zshrc to apply changes
+launchctl load -w ~/Library/LaunchAgents/ke.bou.dark-mode-notify.plist`
+
+ # Reload zshrc to apply changes
 source ~/.zshrc
 
 log stream --predicate 'subsystem == "com.apple.UIKit"'
