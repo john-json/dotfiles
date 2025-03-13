@@ -5,9 +5,6 @@ font-family = "Hack Nerd Font"
 
 background-blur-radius = 60
 
-background = 232323
-foreground = bcbcbc
-
 macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
 macos-window-shadow = true
@@ -21,7 +18,7 @@ window-save-state = always
 background-opacity = 0.99
 background-blur-radius = 20
 
-quick-terminal-position = top
+quick-terminal-position = bottom
 quick-terminal-screen = mouse
 quick-terminal-animation-duration = 0.2
 
