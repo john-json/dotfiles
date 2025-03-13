@@ -1,26 +1,21 @@
 <p align="left">
 
-run chmod +x install.sh && ./install.sh
+run chmod +x ~/.config/helpers/install && ~/.config/helpers/install
 
 </p>
+
 ## Features
 
-- Full configurability at any time
-- Dynamic animation system
-- Powerful scripting and _event_ system
-- Optimized to be fast and \*efficient
-- Interactive mouse suppor
-- Support for displaying macOS menu bar apps
-- Can draw arbitrary graphs
-- On-demand popup menus
+- Light and Dark mode, depending on system appearance (needs to be relaoded with "brew services reload sketchybar").
+- 2 Different bar options, full or tiled with the commands "sketchybar --full" or "sketchybar --tiled"
+- Calendar events daily updates.
+- Wifi info and on/off switch in popup.
+- macOS system desktop switcher, add new and mission control from the bar.
+- menubar menus show/hide on click
+- media info popup for 6 seconds after media change
 
 ## Documentation
-
-For the full documentation of all commands and properties please refer to the [website](https://felixkratz.github.io/SketchyBar/config/bar).
-
-If questions remain, feel free to consult the [Q&A](https://github.com/FelixKratz/SketchyBar/discussions/categories/q-a) section.
 
 ## Credits
 
 This project was forked from _[spacebar](https://github.com/cmacrae/spacebar)_ and completely reimagined and rewritten. <br>
-The original idea is based on the status bar that was included in _[yabai](https://github.com/koekeishiya/yabai)_ before getting removed.

@@ -105,11 +105,11 @@ front_app:subscribe("mouse.clicked", function(env)
         else
             front_app:set({
                 label = {
-                    drawing = true
+                    drawing = false
 
                 },
                 icon = {
-                    drawing = false,
+                    drawing = true,
                     font = { style = settings.font.style_map["Bold"] },
                 },
             })

@@ -50,7 +50,7 @@ local cal = sbar.add("item", {
     },
     background = {
         color = colors.bar.bg,
-        height = 24,
+        height = 28,
         corner_radius = 25,
         padding_left = 10,
         padding_right = settings.paddings,
@@ -164,24 +164,28 @@ end
 -- Toggles popup on click
 cal:subscribe("mouse.clicked", function(env)
     sbar.animate("elastic", 15, function()
-        cal:set({
-            popup = {
-                y_offset = 0,
-                drawing = "toggle"
-            }
-        })
+        sbar.delay(0.4, function()
+            cal:set({
+                popup = {
+                    y_offset = 0,
+                    drawing = "toggle"
+                }
+            })
+        end)
     end)
 end)
 
 -- Hides popup on mouse exit
 cal:subscribe("mouse.exited.global", function(env)
-    sbar.animate("elastic", 15, function()
-        cal:set({
-            popup = {
-                y_offset = -40,
-                drawing = false
-            }
-        })
+    sbar.delay(0.4, function()
+        sbar.animate("elastic", 15, function()
+            cal:set({
+                popup = {
+                    y_offset = -40,
+                    drawing = false
+                }
+            })
+        end)
     end)
 end)
 

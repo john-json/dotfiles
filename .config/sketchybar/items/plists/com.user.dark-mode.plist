@@ -4,17 +4,17 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.user.colorswitch<string>
+    <string>com.user.dark-mode-notify</string>
     <key>KeepAlive</key>
     <true/>
     <key>StandardErrorPath</key>
-    <string>~/.config/sketchybar/helpers/colorswitch/colorswitch-stderr.log</string>
+    <string>~/.config/sketchybar/dark-mode-notify-stderr.log</string>
     <key>StandardOutPath</key>
-    <string>~/.config/sketchybar/helpers/colorswitch/colorswitch-stdout.log</string>
+    <string>~/.config/sketchybar/dark-mode-notify-stdout.log</string>
     <key>ProgramArguments</key>
     <array>
-       <string>/usr/bin/env/colorswitch</string>
-       <string>~/.config/sketchybar/helpers/colorswitch/colorswitch.sh</string>
+       <string>/usr/local/bin/dark-mode-notify</string>
+       <string>~/.config/sketchybar/items/scripts/dark-mode.sh</string>
     </array>
 </dict>
 </plist>

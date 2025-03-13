@@ -56,7 +56,7 @@ local menu_bracket = sbar.add(
         alpha = 0,
         background = {
 
-            color = colors.bar.bg2,
+            color = colors.bar.bg,
         }
     }
 )

@@ -7,7 +7,7 @@ local settings = require("settings")
 sbar.exec(
     "killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en1 network_update 2.0")
 
-local popup_width = 200
+local popup_width = 180
 
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
@@ -28,7 +28,7 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
         },
     },
     background = { color = colors.transparent },
-    popup = { align = "center", height = 120, y_offset = 0, }
+    popup = { align = "center", height = 50, y_offset = 20, }
 })
 
 
@@ -36,19 +36,20 @@ local ssid = sbar.add("item", {
     position = "popup." .. wifi_bracket.name,
     width = popup_width,
     label = {
+        width = popup_width / 2,
         drawing = true,
         align = "left",
-        y_offset = 0,
         padding_left = 5,
         color = colors.red,
         font = {
-            size = 22,
+            size = 18,
             style = settings.font.style_map["Bold"],
         },
         max_chars = 17,
         string = "????????????",
     },
     icon = {
+        width        = popup_width / 2,
         drawing      = true,
         align        = "right",
         padding_left = 10,
@@ -66,7 +67,7 @@ local ssid = sbar.add("item", {
         padding_right = 5,
         color = colors.bar.bg2,
         width = "dynamic",
-        height = 70,
+        height = 60,
     }
 })
 
@@ -180,10 +181,10 @@ ssid:subscribe("mouse.clicked", function()
 end)
 
 ssid:subscribe("mouse.entered", function(env)
-    sbar.delay(0.3, function() -- 0.3s delay before showing
+    sbar.delay(0.2, function() -- 0.3s delay before showing
         ssid:set({
             icon = {
-
+                icon = { drawing = true, },
             }
         })
     end)
@@ -247,8 +248,7 @@ local function hide_details()
     sbar.animate("elastic", 15, function()
         wifi_bracket:set({
             popup = {
-                y_offset = -40,
-                height = 0,
+                y_offset = 0,
                 drawing = false
             }
         })
@@ -259,48 +259,52 @@ local is_router_on = true
 
 local function toggle_details()
     sbar.animate("elastic", 15, function()
-        local should_draw = wifi_bracket:query().popup.drawing == "off"
-        if should_draw then
-            wifi_bracket:set({ popup = { drawing = true } })
-            sbar.exec("networksetup -getcomputername", function(result)
-                hostname:set({ label = result })
-            end)
-            sbar.exec("ipconfig getifaddr en1", function(result)
-                ip:set({ label = result })
-            end)
-            sbar.exec("ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
-                ssid:set({ label = result })
-            end)
-        else
-            hide_details()
-        end
+        sbar.delay(0.2, function()
+            local should_draw = wifi_bracket:query().popup.drawing == "off"
+            if should_draw then
+                wifi_bracket:set({ popup = { drawing = true } })
+                sbar.exec("networksetup -getcomputername", function(result)
+                    hostname:set({ label = result })
+                end)
+                sbar.exec("ipconfig getifaddr en1", function(result)
+                    ip:set({ label = result })
+                end)
+                sbar.exec("ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
+                    ssid:set({ label = result })
+                end)
+            else
+                hide_details()
+            end
+        end)
     end)
 end
 
 -- Toggles popup on click
 wifi:subscribe("mouse.clicked", function(env)
-    sbar.animate("elastic", 15, function()
-        wifi:set({
-            toggle_details(),
-            popup = {
-                y_offset = 0,
-                drawing = "toggle"
-            }
-        })
+    sbar.delay(0.2, function()
+        sbar.animate("elastic", 15, function()
+            wifi:set({
+                toggle_details(),
+                popup = {
+                    y_offset = 0,
+                    drawing = "toggle"
+                }
+            })
+        end)
     end)
 end)
 
 -- Hides popup on mouse exit
 wifi:subscribe("mouse.exited.global", function(env)
     sbar.animate("elastic", 15, function()
-        wifi:set({
-            hide_details(),
-            popup = {
-                y_offset = -40,
-                height = 0,
-                drawing = false
-            }
-        })
+        sbar.delay(0.4, function()
+            wifi:set({
+                hide_details(),
+                popup = {
+                    drawing = false
+                }
+            })
+        end)
     end)
 end)
 

@@ -81,7 +81,9 @@ local right_bar =
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
-                color = colors.bar.bg2
+                color = colors.bar.bg,
+                corner_radius = 25,
+                height = 28
             },
 
 

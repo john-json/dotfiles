@@ -4,8 +4,6 @@ local sbar = require("sketchybar")
 
 -- Load the bar with widgets in the correct position first
 
-local is_bar_full = os.getenv("BAR_CONFIG") == "bar-full"
-
 sbar.bar({
     alpha = 0,
     y_offset = -50, -- Start off-screen
@@ -19,19 +17,16 @@ sbar.bar({
 })
 
 -- Animate with a smooth rubber band effect
-sbar.animate("elastic", 15, function()
-    local start_pos = -60
-    local overshoot = 12 -- Drop below before bouncing up
-    local final_pos = 6
+sbar.animate("sin", 15, function()
+    local start_pos = -50
+    local overshoot = 15 -- Drop below before bouncing up
+    local final_pos = 4
 
     -- Move from start -> overshoot -> final position
     sbar.bar({ y_offset = final_pos + overshoot })
 
     -- Bounce back up to final position
-    sbar.animate("elastic", 15, function()
+    sbar.animate("sin", 15, function()
         sbar.bar({ y_offset = final_pos, alpha = 1 })
     end)
 end)
-
-
-return is_bar_full
