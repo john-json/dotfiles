@@ -2,7 +2,7 @@ local colors = require("colors")
 local icons = require("icons")
 local settings = require("settings")
 
-local popup_width = 240
+local popup_width = 200
 -- Main smenu icon to trigger popup
 
 
@@ -18,7 +18,7 @@ local smenu = sbar.add("item", {
 		color = colors.primary,
 		padding_left = 5,
 		padding_right = 10,
-		size = 18,
+		size = 14,
 	},
 	popup = {
 		align = "left",
@@ -33,8 +33,8 @@ smenu:subscribe("mouse.entered", function()
 	sbar.animate("elastic", 15, function()
 		smenu:set({
 			icon = {
-				size = 20,
-				color = colors.darkGrey,
+				font = { size = 16, style = "Bold" },
+				color = colors.white,
 			},
 		})
 	end)
@@ -44,7 +44,7 @@ smenu:subscribe("mouse.exited", function()
 	sbar.animate("elastic", 15, function()
 		smenu:set({
 			icon = {
-				size = 14,
+				font = { size = 14, style = "Bold" },
 				color = colors.primary,
 			},
 		})
@@ -143,6 +143,10 @@ local shutdown = create_menu_item("popup." .. smenu.name, "Power off", icons.cir
 smenu:subscribe("mouse.clicked", function(env)
 	sbar.animate("elastic", 15, function()
 		smenu:set({
+			icon = {
+				color = colors.white,
+				size = 18,
+			},
 			popup = {
 				y_offset = 0,
 				height = 0,
@@ -157,7 +161,7 @@ smenu:subscribe("mouse.exited.global", function(env)
 	sbar.animate("elastic", 15, function()
 		smenu:set({
 			popup = {
-				y_offset = -40,
+				y_offset = -10,
 				height = 0,
 				drawing = false
 			}

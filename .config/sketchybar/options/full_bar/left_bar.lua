@@ -16,9 +16,7 @@ local left_bar = sbar.add(
         shadow = false, -- Shadow is false for bar-full.lua
         width = "dynamic",
         position = "left",
-        background = {
-            color = colors.bar.bg2
-        },
+
     }
 )
 

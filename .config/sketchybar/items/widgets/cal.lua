@@ -50,7 +50,7 @@ local cal = sbar.add("item", {
     },
     background = {
         color = colors.bar.bg,
-        height = 28,
+        height = 24,
         corner_radius = 25,
         padding_left = 10,
         padding_right = settings.paddings,
@@ -74,15 +74,34 @@ sbar.add("bracket", { cal.name }, {
 
 -- Toggle popup visibility on click
 cal:subscribe("mouse.entered", function(env)
-    sbar.delay(0.4, function()
+    sbar.delay(0.3, function()
         sbar.animate("elastic", 15, function()
             cal:set({
                 icon = { aplha = 1.0, drawing = "toggle", size = 16, padding_left = 15, },
                 label = {
-                    color = colors.primary,
+                    color = colors.white,
                     font = {
                         style = settings.font.style_map["Bold"],
                         size = 16,
+                    },
+                },
+            })
+        end)
+    end)
+end)
+
+-- Toggle popup visibility on click
+cal:subscribe("mouse.exited", function(env)
+    sbar.delay(0.3, function()
+        sbar.animate("elastic", 15, function()
+            cal:set({
+                icon = { size = 14, },
+
+                label = {
+                    color = colors.primary,
+                    font = {
+                        style = settings.font.style_map["Bold"],
+                        size = 14,
                     },
                 },
             })

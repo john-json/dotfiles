@@ -10,7 +10,7 @@ local popup_width = 180
 
 -- MiniPlayer constants
 local PADDING = 5
-local HEIGHT = 80
+local HEIGHT = 60
 local HEIGHT_BEFORE = 0
 
 -- Helper function to create media items
@@ -56,7 +56,7 @@ local function setup_media_items()
             image = {
                 margin = 20,
                 string = "media.artwork",
-                scale = 2,
+                scale = 1.8,
             },
             color = colors.transparent,
             height = HEIGHT,
@@ -144,15 +144,17 @@ local controls_visible = false
 local function toggle_controls()
     controls_visible = not controls_visible
     for i, control in ipairs(controls) do
-        sbar.animate("elastic", 15, function()
-            control:set({
-                drawing = controls_visible,
-                position = "right",
-                align = "right",
-                width = 35,
-                padding_right = 0,
-                padding_left = 10,
-            })
+        sbar.delay(0.3, function()
+            sbar.animate("sin", 35, function()
+                control:set({
+                    drawing = controls_visible,
+                    position = "right",
+                    align = "right",
+                    width = 35,
+                    padding_right = 0,
+                    padding_left = 10,
+                })
+            end)
         end)
     end
 end
@@ -165,7 +167,7 @@ local popup_visible = false
 local function toggle_popup(visible)
     if popup_visible ~= visible then
         popup_visible = visible
-        sbar.animate("elastic", 15, function()
+        sbar.animate("elastic", 50, function()
             media_icon:set({
                 popup = {
                     drawing = visible,
@@ -201,8 +203,8 @@ end)
 
 -- Delay before toggling controls on mouse enter
 media_icon:subscribe("mouse.entered", function(env)
-    sbar.delay(0.3, function() -- 0.3s delay before toggling
-        sbar.animate("elastic", 15, function()
+    sbar.animate("elastic", 15, function()
+        sbar.delay(0.3, function() -- 0.3s delay before toggling
             toggle_controls()
         end)
     end)

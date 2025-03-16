@@ -28,43 +28,42 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
         },
     },
     background = { color = colors.transparent },
-    popup = { align = "center", height = 50, y_offset = 20, }
+    popup = { align = "center", height = 50, y_offset = -40, }
 })
 
 
 local ssid = sbar.add("item", {
     position = "popup." .. wifi_bracket.name,
     width = popup_width,
-    label = {
-        width = popup_width / 2,
-        align = "left",
-        padding_left = 5,
-        padding_right = 5,
-        font = {
-            size = 18,
-            style = settings.font.style_map["Bold"],
-        },
-        max_chars = 12,
-        string = "????????????",
-    },
     icon = {
-        width         = popup_width / 2,
-        drawing       = true,
-        align         = "left",
-        padding_left  = 5,
-        padding_right = 5,
-        y_offset      = 0,
-        font          = {
+        width        = popup_width / 2,
+        align        = "left",
+        padding_left = 10,
+        y_offset     = 0,
+        font         = {
             size = 36,
             style = settings.font.style_map["Bold"]
         },
-        string        = " ",
+        string       = " ",
     },
+    label = {
+        width = popup_width / 2,
+        align = "center",
+        padding_left = 5,
+        padding_right = 5,
+        font = {
+            size = 16,
+            style = settings.font.style_map["Bold"],
+        },
+        max_chars = 15,
+        string = "????????????",
+    },
+
     background = {
         y_offset = -5,
         corner_radius = 6,
         padding_left = 5,
-        padding_right = 10,
+        padding_right = 5,
         color = colors.bar.bg2,
         width = "dynamic",
         height = 60,
@@ -77,10 +76,9 @@ local hostname = sbar.add("item", {
         align = "left",
         width = popup_width / 2,
         string = icons.user,
-
         font = {
             style = settings.font.style_map["Bold"],
-            size = 18,
+            size = 16,
         },
 
     },
@@ -92,7 +90,7 @@ local hostname = sbar.add("item", {
         font = {
             family = settings.font.numbers,
             style = settings.font.style_map["Bold"],
-            size = 16,
+            size = 14,
         },
     }
 })
@@ -105,7 +103,7 @@ local ip = sbar.add("item", {
         width = popup_width / 2,
         font = {
             style = settings.font.style_map["Bold"],
-            size = 18,
+            size = 16,
         },
     },
     label = {
@@ -115,7 +113,7 @@ local ip = sbar.add("item", {
         font = {
             family = settings.font.numbers,
             style = settings.font.style_map["Bold"],
-            size = 16,
+            size = 18,
         },
     }
 })
@@ -248,7 +246,7 @@ local function hide_details()
     sbar.animate("elastic", 15, function()
         wifi_bracket:set({
             popup = {
-                y_offset = 0,
+                y_offset = -40,
                 drawing = false
             }
         })
@@ -259,10 +257,10 @@ local is_router_on = true
 
 local function toggle_details()
     sbar.animate("elastic", 15, function()
-        sbar.delay(0.2, function()
+        sbar.delay(0.3, function()
             local should_draw = wifi_bracket:query().popup.drawing == "off"
             if should_draw then
-                wifi_bracket:set({ popup = { drawing = true } })
+                wifi_bracket:set({ popup = { drawing = true, y_offset = 0, } })
                 sbar.exec("networksetup -getcomputername", function(result)
                     hostname:set({ label = result })
                 end)

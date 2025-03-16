@@ -90,7 +90,7 @@ front_app:subscribe("mouse.clicked", function(env)
         if front_app.hidden then
             front_app:set({
                 label = {
-                    drawing = true,
+                    drawing = not front_app.hidden or true,
                     string = icons.switch.off,
                     padding_left = 5,
                     padding_right = 10,

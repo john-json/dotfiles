@@ -149,11 +149,11 @@ for i = 1, 10 do
 			sbar.animate("elastic", 15, function()
 				space:set({
 					icon = {
-						padding_left = selected and 12 or 6,
-						padding_right = selected and 12 or 6,
+						padding_left = selected and 12 or 8,
+						padding_right = selected and 12 or 8,
 						drawing = selected and false or true,
 						alpha = 1,
-						color = colors.quicksilver,
+						color = colors.primary,
 						font = { size = selected and 10 or 18 }
 					},
 					label = {
@@ -164,8 +164,8 @@ for i = 1, 10 do
 						height = 2,
 					},
 					background = {
-						padding_left = selected and 8 or 6,
-						padding_right = selected and 8 or 6,
+						padding_left = selected and 8 or 8,
+						padding_right = selected and 8 or 8,
 						drawing = false,
 						position = "center",
 						align = "center",
@@ -183,6 +183,7 @@ for i = 1, 10 do
 			sbar.animate("elastic", 10, function()
 				space:set({
 					background = {
+						color = selected and getSpaceColor(i) or colors.primary,
 						height = selected and 10 or 10,
 						padding_left = selected and 8 or 6,
 						padding_right = selected and 8 or 6,
@@ -220,7 +221,6 @@ local spaces_bracket = sbar.add("bracket", "spaces.bracket", space_items, spaces
 	width = "dynamic",
 	label = { drawing = "toggle" },
 	popup = { align = "center" },
-	i
 })
 
 return spaces_bracket

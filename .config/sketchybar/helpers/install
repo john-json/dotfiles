@@ -26,28 +26,21 @@ mkdir -p ~/.config/sketchybar/bak # Ensure backup directory exists
 #.                #sbar config & color reload fix
 #--------------------------------------------------
 
-#--------------- option chnange --------------------
-
 chmod +x ~/.config/sketchybar/set-bar-mode.sh
-
-echo -n 'export alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh"' >> ~/.zshrc
-
-#--------------- color chnange --------------------
-
-git clone https://github.com/bouk/dark-mode-notify.git ~/.config/sketchybar/helpers/
-
 chmod +x ~/.config/sketchybar/items/scripts/dark-mode.sh
 
+echo -n 'export alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh"' >>~/.zshrc
+
+git clone https://github.com/bouk/dark-mode-notify.git ~/.config/sketchybar/helpers/
 
 cd ~/.config/sketchybar/helpers/dark-mode-notify
 
 echo "Musst be installed as sudo to work properly"
-
 sudo make install
 
-launchctl load -w ~/Library/LaunchAgents/ke.bou.dark-mode-notify.plist`
+launchctl load -w ~/Library/LaunchAgents/ke.bou.dark-mode-notify.plist
 
- # Reload zshrc to apply changes
+# Reload zshrc to apply changes
 source ~/.zshrc
 
 log stream --predicate 'subsystem == "com.apple.UIKit"'

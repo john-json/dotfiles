@@ -26,9 +26,9 @@ local search   =
 			},
 			background = {
 				padding_right = 5,
-				color = colors.transparent,
+				color = colors.bar.bg,
 				corner_radius = 50,
-				height = 22,
+				height = 24,
 			}
 		}
 	)
@@ -44,9 +44,9 @@ search:subscribe("mouse.entered", function(env)
 	sbar.animate("elastic", 12, function()
 		search:set({
 			icon = {
-				color = colors.green,
+				color = colors.white,
 				font = {
-					size = 18
+					size = 16
 
 				},
 			},
@@ -62,7 +62,7 @@ search:subscribe("mouse.exited", function(env)
 				color = colors.icon.primary,
 				font = {
 					family = settings.font.numbers,
-					size = 10,
+					size = 14,
 
 				},
 			},

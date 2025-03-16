@@ -30,9 +30,9 @@ sbar.default({
 		padding_right = settings.paddings,
 		padding_left  = settings.paddings,
 		height        = 34,
-		corner_radius = 8,
+		corner_radius = 6,
 		image         = {
-			corner_radius = 10
+			corner_radius = 8
 		},
 
 	},
@@ -66,7 +66,7 @@ sbar.default({
 			shadow        = {
 				drawing = true
 			},
-			width         = 250,
+			width         = "dynamic",
 		},
 		blur_radius = 60,
 	},
