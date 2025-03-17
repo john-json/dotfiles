@@ -31,7 +31,7 @@ local function setup_media_items()
         icon = {
             color = colors.primary,
             padding_left = 10,
-            padding_right = 5,
+            padding_right = 10,
             drawing = true,
             string = icons.media.icon,
         },
@@ -204,7 +204,7 @@ end)
 -- Delay before toggling controls on mouse enter
 media_icon:subscribe("mouse.entered", function(env)
     sbar.animate("elastic", 15, function()
-        sbar.delay(0.3, function() -- 0.3s delay before toggling
+        sbar.delay(0.4, function() -- 0.3s delay before toggling
             toggle_controls()
         end)
     end)

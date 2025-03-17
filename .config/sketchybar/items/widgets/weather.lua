@@ -33,7 +33,7 @@ local weather = sbar.add("item", "widgets.weather", {
         color = colors.primary,
         string = icons.weather.sun,
         padding_left = 10,
-        padding_right = 5,
+        padding_right = 10,
     },                                                                    -- Default icon
     label = { drawing = "toggle", padding_right = 5, padding_left = 5, }, -- Hide temperature by default
 })
@@ -64,7 +64,7 @@ update_weather()
 -- Show temperature on mouse enter with delay
 weather:subscribe("mouse.entered", function()
     sbar.animate("elastic", 15, function()
-        sbar.delay(0.3, function() -- 0.3s delay before showing
+        sbar.delay(0.4, function() -- 0.3s delay before showing
             if weather.temperature then
                 weather:set({
                     icon = {
