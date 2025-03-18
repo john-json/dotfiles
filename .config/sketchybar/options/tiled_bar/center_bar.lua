@@ -64,7 +64,8 @@ local center_bar = sbar.add(
         background = {
             padding_left = 10,
             padding_right = 10,
-            color = colors.bar.bg2
+            color = colors.bar.bg2,
+            corner_radius = 50,
         },
     }
 )

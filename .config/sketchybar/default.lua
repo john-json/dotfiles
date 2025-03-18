@@ -29,7 +29,7 @@ sbar.default({
 	background    = {
 		padding_right = settings.paddings,
 		padding_left  = settings.paddings,
-		height        = 34,
+		height        = 28,
 		corner_radius = 6,
 		image         = {
 			corner_radius = 8

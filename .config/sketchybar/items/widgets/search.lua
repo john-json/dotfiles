@@ -12,8 +12,8 @@ local search   =
 				align = "center",
 				position = "center",
 				string = icons.search,
-				padding_left = 5,
-				padding_right = 5,
+				padding_left = 2,
+				padding_right = 2,
 				font = {
 					family = settings.font.numbers,
 					size = 14,
@@ -28,7 +28,7 @@ local search   =
 				padding_right = 5,
 				color = colors.bar.bg,
 				corner_radius = 50,
-				height = 24,
+				height = 20,
 			}
 		}
 	)
