@@ -115,7 +115,7 @@ for i = 1, 10 do
 					y_offset = 0,
 					position = "center",
 					align = "center",
-					color = selected and getSpaceColor(i) or colors.primary,
+					color = selected and getSpaceColor(i) or colors.secondary,
 					height = selected and 10 or 10,
 				},
 				icon = {
@@ -127,8 +127,8 @@ for i = 1, 10 do
 					align = "center"
 				},
 				label = {
-					padding_left = selected and 15 or 5,
-					padding_right = selected and 15 or 5,
+					padding_left = selected and 18 or 5,
+					padding_right = selected and 18 or 5,
 					string = "",
 					font = {
 						align = "center",
@@ -153,12 +153,12 @@ for i = 1, 10 do
 						padding_right = selected and 12 or 8,
 						drawing = selected and false or true,
 						alpha = 1,
-						color = colors.primary,
+						color = colors.secondary,
 						font = { size = selected and 10 or 18 }
 					},
 					label = {
-						padding_left = selected and 16 or 8,
-						padding_right = selected and 16 or 8,
+						padding_left = selected and 16 or 10,
+						padding_right = selected and 16 or 10,
 						drawing = selected and true or false,
 						font = { size = 0 },
 						height = 2,
@@ -169,8 +169,8 @@ for i = 1, 10 do
 						drawing = false,
 						position = "center",
 						align = "center",
-						color = selected and getSpaceColor(i) or colors.primary,
-						height = selected and 12 or 12,
+						color = selected and getSpaceColor(i) or colors.secondary,
+						height = selected and 10 or 10,
 					},
 				})
 			end)
@@ -183,7 +183,7 @@ for i = 1, 10 do
 			sbar.animate("elastic", 10, function()
 				space:set({
 					background = {
-						color = selected and getSpaceColor(i) or colors.primary,
+						color = selected and getSpaceColor(i) or colors.secondary,
 						height = selected and 10 or 10,
 						padding_left = selected and 8 or 6,
 						padding_right = selected and 8 or 6,

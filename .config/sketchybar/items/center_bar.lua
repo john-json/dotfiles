@@ -2,9 +2,10 @@ local sbar = require("sketchybar")
 local colors = require("colors")
 local settings = require("settings")
 
-local mission = require("items.widgets.mission_control")
+
 local spaces = require("items.widgets.spaces")
 local add_space = require("items.widgets.add_space")
+local mission = require("items.widgets.mission_control")
 
 -- Check if we're using bar-full.lua
 local is_bar_full = os.getenv("BAR_CONFIG") == "bar-full"
@@ -64,7 +65,7 @@ local center_bar = sbar.add(
         background = {
             padding_left = 10,
             padding_right = 10,
-            color = colors.bar.bg2
+            color = colors.bar.bg2,
         },
     }
 )

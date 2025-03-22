@@ -51,7 +51,7 @@ local function setup_media_items()
     local media_cover = sbar.add("item", {
         position = "popup." .. media_icon.name,
         background = {
-            padding_left = 10,
+            padding_left = 0,
             padding_right = 5,
             image = {
                 margin = 20,
