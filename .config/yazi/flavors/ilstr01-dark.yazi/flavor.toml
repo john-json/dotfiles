@@ -4,11 +4,11 @@
 # sumiInk3      "#1c1c1c" bg
 # sumiInk4      "#2a2a37"
 # sumiInk6      "#54546d"
-# fujiWhite     "#a3a3a3" fg
-# fujiGray      "#3e3f46"
-# peachRed      "#e5b296"
-# crystalBlue   "#b4cfdf"
-# waveRed       "#9c403e"
+# fujiWhite     "#a9a9a9" fg
+# fujiGray      "#3f3f3f"
+# peachRed      "#c78158"
+# crystalBlue   "#71958e"
+# waveRed       "#bb614b"
 # carpYellow    "#e2d495"
 # springGreen   "#59795a"
 # oniViolet     "#ebc6d6"
@@ -17,7 +17,7 @@
 # waveAqua2     "#7f9f99"
 
 [manager]
-marker_copied = { fg = "#98bb6c", bg = "#98bb6c" }
+marker_copied = { fg = "#1c1c1c", bg = "#e3aa8d" }
 marker_cut = { fg = "#e46876", bg = "#e46876" }
 marker_marked = { fg = "#957fb8", bg = "#957fb8" }
 marker_selected = { fg = "#ffa066", bg = "#ffa066" }
@@ -37,12 +37,12 @@ count_copied = { fg = "#1f1f28", bg = "#98bb6c" }
 count_cut = { fg = "#1f1f28", bg = "#e46876" }
 count_selected = { fg = "#1f1f28", bg = "#e6c384" }
 
-border_symbol = "│"
+border_symbol = " "
 border_style = { fg = "#dcd7ba" }
 
 
 [mode]
-normal_main = { fg = "#1f1f28", bg = "#7e9cd8" }
+normal_main = { fg = "#a9a9a9", bg = "#1c1c1c" }
 normal_alt = { fg = "#7e9cd8", bg = "#2a2a37" }
 select_main = { fg = "#1f1f28", bg = "#957fb8" }
 select_alt = { fg = "#957fb8", bg = "#2a2a37" }
@@ -116,7 +116,7 @@ rules = [
     { mime = "application/{,g}zip", fg = "#e46876" },
     { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#e46876" },
     { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#6a9589" },
-    { name = "*", is = "orphan", fg = "#e46876" },
+    { name = "*", is = "orphan", fg = "#4b4b4b" },
     { name = "*", is = "exec", fg = "#957fb8" },
-    { name = "*/", fg = "#7e9cd8" },
+    { name = "*/", fg = "#a9a9a9" },
 ]
