@@ -1,70 +1,65 @@
 local Layouts = {}
 
--- Store the available layouts
-Layouts.availableLayouts = {
-    "monocle",   -- Single maximized window
-    "vertical",  -- Split windows vertically
-    "horizontal" -- Split windows horizontally
-}
+function Layouts.get(index)
+    if index == 1 then
+        return function(windows, screen, margin)
+            -- Floating Mode: Do nothing
+        end
+    elseif index == 2 then
+        return function(windows, screen, margin)
+            -- Dynamic Layout
+            local screenFrame = screen:frame()
+            local leftWin = windows[1]
+            local rightWins = { table.unpack(windows, 2) }
 
--- Default to the first layout
-Layouts.currentIndex = 1
+            leftWin:setFrame({
+                x = screenFrame.x + margin.left,
+                y = screenFrame.y + margin.top,
+                w = (screenFrame.w * 0.5) - margin.right,
+                h = screenFrame.h - (margin.top + margin.bottom),
+            })
 
-function Layouts.current()
-    local layoutName = Layouts.availableLayouts[Layouts.currentIndex]
+            local yOffset = margin.top
+            local heightPerWin = (screenFrame.h - margin.top - margin.bottom) / #rightWins
 
-    if layoutName == "monocle" then
-        return function(windows, margin)
-            if #windows == 0 then return end
-            local screenFrame = windows[1]:screen():frame()
-
-            for _, win in ipairs(windows) do
+            for _, win in ipairs(rightWins) do
                 win:setFrame({
-                    x = screenFrame.x + margin.left,
-                    y = screenFrame.y + margin.top,
-                    w = screenFrame.w - (margin.left + margin.right),
-                    h = screenFrame.h - (margin.top + margin.bottom),
+                    x = screenFrame.x + (screenFrame.w * 0.5) + margin.left,
+                    y = screenFrame.y + yOffset,
+                    w = (screenFrame.w * 0.5) - margin.right,
+                    h = heightPerWin,
                 })
+                yOffset = yOffset + heightPerWin
             end
         end
-    elseif layoutName == "vertical" then
-        return function(windows, margin)
-            local screenFrame = windows[1]:screen():frame()
-            local winCount = #windows
-            local winHeight = screenFrame.h / winCount
+    elseif index == 3 then
+        return function(windows, screen, margin)
+            -- Tall Layout
+            local screenFrame = screen:frame()
+            local mainWin = windows[1]
+            local sideWins = { table.unpack(windows, 2) }
 
-            for i, win in ipairs(windows) do
-                win:setFrame({
-                    x = screenFrame.x + margin.left,
-                    y = screenFrame.y + (winHeight * (i - 1)) + margin.top,
-                    w = screenFrame.w - (margin.left + margin.right),
-                    h = winHeight - (margin.top + margin.bottom),
-                })
-            end
-        end
-    elseif layoutName == "horizontal" then
-        return function(windows, margin)
-            local screenFrame = windows[1]:screen():frame()
-            local winCount = #windows
-            local winWidth = screenFrame.w / winCount
+            mainWin:setFrame({
+                x = screenFrame.x + (screenFrame.w * 0.3) + margin.left,
+                y = screenFrame.y + margin.top,
+                w = (screenFrame.w * 0.4) - margin.right,
+                h = screenFrame.h - (margin.top + margin.bottom),
+            })
 
-            for i, win in ipairs(windows) do
+            local widthPerWin = (screenFrame.w * 0.3) / #sideWins
+            local xOffset = margin.left
+
+            for _, win in ipairs(sideWins) do
                 win:setFrame({
-                    x = screenFrame.x + (winWidth * (i - 1)) + margin.left,
+                    x = screenFrame.x + xOffset,
                     y = screenFrame.y + margin.top,
-                    w = winWidth - (margin.left + margin.right),
+                    w = widthPerWin,
                     h = screenFrame.h - (margin.top + margin.bottom),
                 })
+                xOffset = xOffset + widthPerWin
             end
         end
     end
-
-    return nil
-end
-
-function Layouts.next()
-    Layouts.currentIndex = (Layouts.currentIndex % #Layouts.availableLayouts) + 1
-    return Layouts.current()
 end
 
 return Layouts
