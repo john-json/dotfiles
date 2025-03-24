@@ -18,9 +18,9 @@ window-save-state = always
 background-opacity = 0.99
 background-blur-radius = 20
 
-quick-terminal-position = bottom
+quick-terminal-position = top
 quick-terminal-screen = mouse
-quick-terminal-animation-duration = 0.2
+quick-terminal-animation-duration = 0.3
 
 shell-integration = zsh
 
