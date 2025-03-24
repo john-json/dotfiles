@@ -7,11 +7,11 @@ local space_colors = {
 	colors.red,        -- Color for space 1
 	colors.orange,     -- Color for space 2
 	colors.yellow,     -- Color for space 3
-	colors.blue,       -- Color for space 4
 	colors.magenta,    -- Color for space 5
+	colors.blue,       -- Color for space 4
 	colors.green,      -- Color for space 6
-	colors.blue,       -- Color for space 7
 	colors.quicksilver, -- Color for space 8
+	colors.blue,       -- Color for space 7
 	colors.dimm_monotone, -- Color for space 9
 	colors.dimm_red,   -- Color for space 10
 }
@@ -22,10 +22,10 @@ end
 
 local sf_icons_active = {
 
-	"􀝷", "􀝷", "􀝷", "􀝷", "􀝷", "􀝷", "􀝷", "􀝷", "􀝷", "􀝷",
+	"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 }
 local sf_icons_inactive = {
-	"􀀁", "􀀁", "􀀁", "􀀁", "􀀁", "􀀁", "􀀁", "􀀁", "􀀁", "􀀁",
+	"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
 }
 local function getSpaceIcon(space, active)
 	if active then
@@ -36,7 +36,7 @@ local function getSpaceIcon(space, active)
 end
 
 local function smoothColorTransition(space, targetColor)
-	local duration = 5
+	local duration = 15
 	sbar.animate("sin", duration, function(progress)
 		local r1, g1, b1 = sbar.colorComponents(space.background.color)
 		local r2, g2, b2 = sbar.colorComponents(targetColor)
@@ -104,39 +104,24 @@ for i = 1, 10 do
 
 	space:subscribe("front_app_switched", function(env)
 		local selected = env.SELECTED == "true"
-		local targetColor = selected and getSpaceColor(i) or getSpaceColor(i)
+		local targetColor = selected and getSpaceColor(i) or colors.secondary
 		smoothColorTransition(space, targetColor)
-		sbar.animate("sin", 10, function()
+		sbar.animate("elastic", 10, function()
 			space:set({
 				background = {
-					padding_left = selected and 8 or 6,
-					padding_right = selected and 8 or 6,
-					drawing = false,
-					y_offset = 0,
+					padding_left = selected and 7 or 7,
+					padding_right = selected and 7 or 7,
+					drawing = true,
+					y_offset = selected and 0 or 0,
 					position = "center",
 					align = "center",
 					color = selected and getSpaceColor(i) or colors.secondary,
-					height = selected and 10 or 10,
-				},
-				icon = {
-					padding_left = selected and 8 or 8,
-					padding_right = selected and 8 or 8,
-					drawing = false,
-					alpha = 0,
-					position = "center",
-					align = "center"
+					height = selected and 8 or 8,
 				},
 				label = {
-					padding_left = selected and 18 or 5,
-					padding_right = selected and 18 or 5,
-					string = "",
-					font = {
-						align = "center",
-						family = settings.font.numbers,
-						size = selected and 16 or 15,
-					},
-					color = selected and getSpaceColor(i) or colors.transparent,
-					drawing = true,
+					padding_left = selected and 10 or 4,
+					padding_right = selected and 10 or 4,
+					drawing = selected and false or true,
 				},
 
 			})
@@ -145,32 +130,21 @@ for i = 1, 10 do
 
 	space:subscribe("mouse.entered", function(env)
 		local selected = env.SELECTED == "true"
-		sbar.delay(0.3, function()
-			sbar.animate("elastic", 15, function()
+		sbar.delay(0.2, function()
+			sbar.animate("elastic", 10, function()
 				space:set({
-					icon = {
-						padding_left = selected and 12 or 8,
-						padding_right = selected and 12 or 8,
-						drawing = selected and false or true,
-						alpha = 1,
-						color = colors.secondary,
-						font = { size = selected and 10 or 18 }
-					},
 					label = {
-						padding_left = selected and 16 or 10,
-						padding_right = selected and 16 or 10,
-						drawing = selected and true or false,
-						font = { size = 0 },
-						height = 2,
+						padding_left = selected and 12 or 4,
+						padding_right = selected and 12 or 4,
+						font = { family = settings.font.numbers, size = 12 },
+						drawing = selected and false or true,
+						string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
 					},
 					background = {
-						padding_left = selected and 8 or 8,
-						padding_right = selected and 8 or 8,
-						drawing = false,
-						position = "center",
-						align = "center",
-						color = selected and getSpaceColor(i) or colors.secondary,
-						height = selected and 10 or 10,
+						padding_left = selected and 10 or 8,
+						padding_right = selected and 10 or 8,
+						drawing = true,
+						color = getSpaceColor(i),
 					},
 				})
 			end)
@@ -183,21 +157,19 @@ for i = 1, 10 do
 			sbar.animate("elastic", 10, function()
 				space:set({
 					background = {
+						padding_left = selected and 7 or 7,
+						padding_right = selected and 7 or 7,
+						drawing = true,
+						y_offset = selected and 0 or 0,
+						position = "center",
+						align = "center",
 						color = selected and getSpaceColor(i) or colors.secondary,
-						height = selected and 10 or 10,
-						padding_left = selected and 8 or 6,
-						padding_right = selected and 8 or 6,
-					},
-					icon = {
-						padding_left = selected and 8 or 8,
-						padding_right = selected and 8 or 8,
-						drawing = false,
-						alpha = 0,
+						height = selected and 8 or 8,
 					},
 					label = {
-						padding_left = selected and 15 or 5,
-						padding_right = selected and 15 or 5,
-						drawing = true
+						padding_left = selected and 10 or 4,
+						padding_right = selected and 10 or 4,
+						drawing = selected and false or true,
 					},
 				})
 			end)
@@ -206,7 +178,7 @@ for i = 1, 10 do
 
 	space:subscribe("mouse.clicked", function(env)
 		sbar.delay(0.1, function()
-			sbar.animate("elastic", 10, function()
+			sbar.animate("elastic", 20, function()
 				local selected = env.SELECTED == "true"
 				log("Clicked space: " .. i) {
 					click_script = { selected and sbar.exec("open -a 'Mission Control'") or switchToSpace(i) }

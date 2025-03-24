@@ -26,21 +26,23 @@ local front_app = sbar.add("item", "front_app", {
 })
 
 front_app:subscribe("front_app_switched", function(env)
-    sbar.animate("elastic", 14, function()
-        front_app:set({
-            label = {
+    if not front_app.hidden then
+        sbar.animate("elastic", 14, function()
+            front_app:set({
+                label = {
 
-                drawing = false,
-                string = icons.switch.off
-            },
-            icon = {
-                color = colors.primary,
-                drawing = true,
-                string = env.INFO,
-                font = { style = settings.font.style_map["Bold"] },
-            }
-        })
-    end)
+                    drawing = false,
+                    string = icons.switch.off
+                },
+                icon = {
+                    color = colors.primary,
+                    drawing = true,
+                    string = env.INFO,
+                    font = { style = settings.font.style_map["Bold"] },
+                }
+            })
+        end)
+    end
 end)
 
 front_app:subscribe("mouse.entered", function(env)
@@ -50,13 +52,13 @@ front_app:subscribe("mouse.entered", function(env)
                 label = {
                     drawing = true,
                     string = icons.switch.on,
-                    padding_left = 5,
+                    padding_left = 0,
                     padding_right = 10,
                     color = colors.primary,
                     font = { style = settings.font.style_map["Bold"] },
                 },
                 icon = {
-                    drawing = true,
+                    drawing = false,
                 },
             })
         end)

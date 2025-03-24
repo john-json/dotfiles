@@ -2,13 +2,11 @@ local sbar = require("sketchybar")
 local colors = require("colors")
 local settings = require("settings")
 
-
+local mission = require("items.widgets.mission_control")
 local spaces = require("items.widgets.spaces")
 local add_space = require("items.widgets.add_space")
-local mission = require("items.widgets.mission_control")
 
--- Check if we're using bar-full.lua
-local is_bar_full = os.getenv("BAR_CONFIG") == "bar-full"
+
 
 local mission_control_bracket = sbar.add(
     "bracket",
@@ -59,13 +57,15 @@ local center_bar = sbar.add(
     "center_bar.bracket",
     { add_space_bracket.name, spaces_bracket.name, mission_control_bracket.name },
     {
-        shadow = not is_bar_full, -- Shadow is false for bar-full.lua
+        shadow = false, -- Shadow is false for bar-full.lua
         position = "center",
         width = "dynamic",
         background = {
             padding_left = 10,
             padding_right = 10,
-            color = colors.bar.bg2,
+            corner_radius = 6,
+            height = 28,
+            color = colors.bar.bg
         },
     }
 )

@@ -9,7 +9,6 @@ local whitelist = {
 local popup_width = 180
 
 -- MiniPlayer constants
-local PADDING = 5
 local HEIGHT = 60
 local HEIGHT_BEFORE = 0
 
@@ -38,7 +37,6 @@ local function setup_media_items()
         drawing = true,
         updates = true,
         popup = {
-
             display = 1,
             drawing = false, -- Initially hidden
             y_offset = 0,
@@ -145,7 +143,7 @@ local function toggle_controls()
     controls_visible = not controls_visible
     for i, control in ipairs(controls) do
         sbar.delay(0.3, function()
-            sbar.animate("sin", 35, function()
+            sbar.animate("elastic", 35, function()
                 control:set({
                     drawing = controls_visible,
                     position = "right",
@@ -167,15 +165,13 @@ local popup_visible = false
 local function toggle_popup(visible)
     if popup_visible ~= visible then
         popup_visible = visible
-        sbar.animate("elastic", 50, function()
-            media_icon:set({
-                popup = {
-                    drawing = visible,
-                    height = visible and HEIGHT or 0,
-                    y_offset = visible and 15 or 0,
-                },
-            })
-        end)
+        media_icon:set({
+            popup = {
+                drawing = visible,
+                height = visible and HEIGHT or 0,
+                y_offset = visible and 15 or 0,
+            },
+        })
     end
 end
 
@@ -191,28 +187,26 @@ media_icon:subscribe("media_change", function(env)
 
         -- Show popup when media starts or changes, auto-hide after 5 seconds
         if is_playing then
-            sbar.animate("elastic", 15, function()
-                toggle_popup(true)
-                sbar.delay(10, function() toggle_popup(false) end)
-            end)
-        else
-            toggle_popup(false)
+            toggle_popup(true)
+            sbar.delay(5, function() toggle_popup(false) end)
         end
+    else
+        toggle_popup(false)
     end
 end)
 
 -- Delay before toggling controls on mouse enter
 media_icon:subscribe("mouse.entered", function(env)
-    sbar.animate("elastic", 15, function()
-        sbar.delay(0.4, function() -- 0.3s delay before toggling
+    sbar.animate("elastic", 25, function()
+        sbar.delay(0.3, function() -- 0.3s delay before toggling
             toggle_controls()
         end)
     end)
 end)
 
 media_icon:subscribe("mouse.clicked", function(env)
-    sbar.delay(0.2, function() -- 0.2s delay before toggling
-        sbar.animate("elastic", 15, function()
+    sbar.delay(0.3, function() -- 0.2s delay before toggling
+        sbar.animate("elastic", 25, function()
             toggle_popup(true)
         end)
     end)

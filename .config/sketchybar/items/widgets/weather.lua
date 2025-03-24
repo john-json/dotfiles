@@ -9,6 +9,7 @@ local function get_weather_icon(condition)
         ["cloudy"] = icons.weather.cloud,
         ["partly cloudy"] = icons.weather.cloud_sun,
         ["rain"] = icons.weather.rain,
+        ["rain shower"] = icons.weather.rain,
         ["snow"] = icons.weather.snowflake,
         ["thunderstorm"] = icons.weather.bolt,
         ["mist"] = icons.weather.fog,
@@ -24,14 +25,16 @@ local function get_weather_icon(condition)
     return icons.question -- Default if no match
 end
 
+
 -- Add weather widget to SketchyBar
 local weather = sbar.add("item", "widgets.weather", {
+
     position = "right",
     align = "right",
     display = 1,
     icon = {
         color = colors.primary,
-        string = icons.weather.sun,
+        string = icons.weather.cloud_sun,
         padding_left = 10,
         padding_right = 10,
     },                                                                    -- Default icon
@@ -42,7 +45,6 @@ local weather = sbar.add("item", "widgets.weather", {
 local function update_weather()
     sbar.exec("curl -s 'wttr.in/Nuremberg?format=%C+%t' ", function(output)
         local condition, temperature = output:match("([^%s]+) (.+)")
-
         if condition and temperature then
             local weather_icon = get_weather_icon(condition)
             weather:set({
