@@ -1,0 +1,60 @@
+# seezalt
+
+spacing = 5
+padding = 5
+hide_ascii = false
+prefer_small_ascii = true
+separator = "->"
+key_color = "#b3b3b3"
+separator_color = "#838e6d"
+
+
+[palette]
+type = "Dark"
+visible = true
+glyph = "􁹨  "
+
+[bar]
+glyph = ""
+symbol_open = '['
+symbol_close = ']'
+hide_delimiters = false
+visible = false
+
+[box]
+title = "System info"
+border = "none"
+visible = false
+
+
+[box.inner_margin]
+x = 2
+y = 0
+
+# [custom_ascii]
+# color = "#3e4a59"
+# path = "~/.config/macchina/themes/terminal_logo_small.txt"
+
+[randomize]
+key_color = false
+separator_color = false
+
+[keys]
+host = "Host"
+kernel = "Kernel"
+battery = "Battery"
+os = "OS"
+de = "DE"
+wm = "WM"
+distro = "Distro"
+terminal = "Term"
+shell = "Shell"
+packages = "Packages"
+uptime = "Up"
+memory = "Mem"
+machine = "Machine"
+local_ip = "Local IP"
+backlight = "Brightness"
+resolution = "Resolution"
+cpu_load = "CPU Load"
+cpu = "CPU"
