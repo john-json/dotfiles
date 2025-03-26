@@ -108,7 +108,7 @@ for i = 1, 10 do
 					align = "center",
 					color = getSpaceColor(i),
 					height = selected and 12 or 12,
-					corner_radius = 4,
+					corner_radius = 2,
 				},
 				label = {
 					padding_left = selected and 10 or 2,
@@ -138,7 +138,7 @@ for i = 1, 10 do
 						align = "center",
 						color = getSpaceColor(i),
 						height = selected and 12 or 12,
-						corner_radius = 4,
+						corner_radius = 2,
 					},
 				})
 			end)
@@ -156,7 +156,7 @@ for i = 1, 10 do
 						align = "center",
 						color = getSpaceColor(i),
 						height = selected and 12 or 12,
-						corner_radius = 4,
+						corner_radius = 2,
 					},
 					label = {
 						padding_left = selected and 10 or 2,

@@ -11,7 +11,7 @@ sbar.bar({
     padding_right = 5,
     padding_left = 5,
     color = colors.bar.bg_transparent,
-    margin = 80,
+    margin = 40,
     corner_radius = 8,
     shadow = true,
     blur_radius = 60,
@@ -21,7 +21,7 @@ sbar.bar({
 sbar.animate("sin", 15, function()
     local start_pos = -70
     local overshoot = 15 -- Drop below before bouncing up
-    local final_pos = 8
+    local final_pos = 5
 
     -- Move from start -> overshoot -> final position
     sbar.bar({ y_offset = final_pos + overshoot })

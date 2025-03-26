@@ -43,7 +43,7 @@ local clock     =
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
-                color = colors.bar.bg2,
+                color = colors.bar.bg,
             },
 
 
@@ -81,7 +81,7 @@ local right_bar =
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
-                color = colors.bar.bg,
+                color = colors.bar.bg2,
                 corner_radius = 6,
                 height = 28
             },

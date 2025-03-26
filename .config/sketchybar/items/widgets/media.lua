@@ -7,10 +7,8 @@ local whitelist = {
 }
 
 local popup_width = 180
-
--- MiniPlayer constants
 local HEIGHT = 60
-local HEIGHT_BEFORE = 0
+local HEIGHT_BEFORE = 60 -- Ensure it's not zero
 
 -- Helper function to create media items
 local function setup_media_items()
@@ -100,72 +98,15 @@ local function setup_media_items()
     return media_icon, media_cover, media_artist, media_title
 end
 
-
-
--- Setup MiniPlayer items
 local media_icon, media_cover, media_artist, media_title = setup_media_items()
 
-
--- Add playback controls (hidden by default)
-local controls = {}
-local function create_controls()
-    local control_items = {
-        { icon = icons.media.forward,    action = "nowplaying-cli next" },
-        { icon = icons.media.play_pause, action = "nowplaying-cli togglePlayPause" },
-        { icon = icons.media.back,       action = "nowplaying-cli previous" },
-    }
-
-    for i, control in ipairs(control_items) do
-        local control_item = sbar.add("item", {
-            display = 1,
-            align = "right",
-            position = "right",
-            padding_left = 10,
-            icon = {
-                string = control.icon,
-                font = { size = 14 },
-            },
-            click_script = control.action,
-            drawing = false, -- Initially hidden
-        })
-        table.insert(controls, control_item)
-    end
-end
-
--- Create controls
-create_controls()
-
--- Track visibility state of controls
-local controls_visible = false
-
--- Function to toggle playback controls
-local function toggle_controls()
-    controls_visible = not controls_visible
-    for i, control in ipairs(controls) do
-        sbar.delay(0.3, function()
-            sbar.animate("elastic", 35, function()
-                control:set({
-                    drawing = controls_visible,
-                    position = "right",
-                    align = "right",
-                    width = 35,
-                    padding_right = 0,
-                    padding_left = 10,
-                })
-            end)
-        end)
-    end
-end
-
-
--- Track visibility state of popup
-local popup_visible = false
-
 -- Function to toggle popup visibility
+local popup_visible = false
 local function toggle_popup(visible)
     if popup_visible ~= visible then
         popup_visible = visible
         media_icon:set({
+            drawing = true, -- Ensure the icon itself is visible
             popup = {
                 drawing = visible,
                 height = visible and HEIGHT or 0,
@@ -177,50 +118,44 @@ end
 
 -- Media change event for the popup (Shows on song change or playback start)
 media_icon:subscribe("media_change", function(env)
+    print("Media change event received for:", env.INFO.app)
     if whitelist[env.INFO.app] then
         local is_playing = (env.INFO.state == "playing")
+        print("Media is playing:", is_playing)
 
-        -- Update media details
         media_cover:set({ drawing = is_playing })
         media_artist:set({ drawing = is_playing, label = env.INFO.artist })
         media_title:set({ drawing = is_playing, label = env.INFO.title })
 
-        -- Show popup when media starts or changes, auto-hide after 5 seconds
         if is_playing then
             toggle_popup(true)
-            sbar.delay(5, function() toggle_popup(false) end)
+            sbar.delay(5, function() toggle_popup(false) end) -- Auto-hide after 5 seconds
         end
     else
         toggle_popup(false)
     end
 end)
 
--- Delay before toggling controls on mouse enter
+-- Mouse interaction events
 media_icon:subscribe("mouse.entered", function(env)
     sbar.animate("elastic", 25, function()
-        sbar.delay(0.3, function() -- 0.3s delay before toggling
-            toggle_controls()
+        sbar.delay(0.3, function()
+            toggle_popup(true)
         end)
     end)
 end)
 
 media_icon:subscribe("mouse.clicked", function(env)
-    sbar.delay(0.3, function() -- 0.2s delay before toggling
+    sbar.delay(0.3, function()
         sbar.animate("elastic", 25, function()
             toggle_popup(true)
         end)
     end)
 end)
 
-local media =
-    sbar.add(
-        "bracket",
-        "media.bracket",
-        { media_icon.name },
-        {
-            display = 1,
-            wdidth  = "dynamic",
-        }
-    )
+local media = sbar.add("bracket", "media.bracket", { media_icon.name }, {
+    display = 1,
+    width   = "dynamic",
+})
 
 return media

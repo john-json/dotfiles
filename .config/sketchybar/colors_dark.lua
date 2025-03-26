@@ -30,7 +30,7 @@ return {
     bar = {
         bg = 0xff232323,
         bg2 = 0xff1c1c1c,
-        bg_transparent = 0x99242424,
+        bg_transparent = 0x99000000,
         accent = 0xff000000,
         active = 0xff9eaeb3,
         selected = 0xff593c3c,
