@@ -22,10 +22,10 @@ end
 
 local sf_icons_active = {
 
-	"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+	"",
 }
 local sf_icons_inactive = {
-	"1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+	"",
 }
 local function getSpaceIcon(space, active)
 	if active then
@@ -74,26 +74,20 @@ for i = 1, 10 do
 		position = "center",
 		space = i,
 		label = {
-			padding_left = 5,
-			padding_right = 5,
 			position = "center",
 			align = "center",
-			string = getSpaceIcon(i, false),
-			font = { family = settings.font.numbers, size = 5 },
+			string = getSpaceIcon(i, true),
+			font = { family = settings.font.numbers, size = 12 },
+			color = colors.primary
 		},
 		icon = {
-			padding_left = 5,
-			padding_right = 5,
 			drawing = false,
-			position = "center",
-			align = "center",
 			font = { family = settings.font.numbers, size = 5, },
 		},
 		background = {
-			padding_left = 5,
+			padding_left = 10,
 			padding_right = 5,
-			drawing = false,
-			y_offset = 12,
+			drawing = true,
 			position = "center",
 			align = "center",
 		},
@@ -104,24 +98,23 @@ for i = 1, 10 do
 
 	space:subscribe("front_app_switched", function(env)
 		local selected = env.SELECTED == "true"
-		local targetColor = selected and getSpaceColor(i) or colors.secondary
+		local targetColor = selected and getSpaceColor(i) or colors.primary
 		smoothColorTransition(space, targetColor)
 		sbar.animate("elastic", 10, function()
 			space:set({
 				background = {
-					padding_left = selected and 7 or 7,
-					padding_right = selected and 7 or 7,
 					drawing = true,
-					y_offset = selected and 0 or 0,
 					position = "center",
 					align = "center",
-					color = selected and getSpaceColor(i) or colors.secondary,
-					height = selected and 8 or 8,
+					color = getSpaceColor(i),
+					height = selected and 12 or 12,
+					corner_radius = 4,
 				},
 				label = {
-					padding_left = selected and 10 or 4,
-					padding_right = selected and 10 or 4,
-					drawing = selected and false or true,
+					padding_left = selected and 10 or 2,
+					padding_right = selected and 10 or 2,
+					string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
+					color = selected and getSpaceColor(i) or colors.primary,
 				},
 
 			})
@@ -134,17 +127,18 @@ for i = 1, 10 do
 			sbar.animate("elastic", 10, function()
 				space:set({
 					label = {
-						padding_left = selected and 12 or 4,
-						padding_right = selected and 12 or 4,
-						font = { family = settings.font.numbers, size = 12 },
-						drawing = selected and false or true,
+						padding_left = selected and 12 or 10,
+						padding_right = selected and 12 or 10,
 						string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
+						color = selected and getSpaceColor(i) or colors.primary,
 					},
 					background = {
-						padding_left = selected and 10 or 8,
-						padding_right = selected and 10 or 8,
 						drawing = true,
+						position = "center",
+						align = "center",
 						color = getSpaceColor(i),
+						height = selected and 12 or 12,
+						corner_radius = 4,
 					},
 				})
 			end)
@@ -157,19 +151,18 @@ for i = 1, 10 do
 			sbar.animate("elastic", 10, function()
 				space:set({
 					background = {
-						padding_left = selected and 7 or 7,
-						padding_right = selected and 7 or 7,
 						drawing = true,
-						y_offset = selected and 0 or 0,
 						position = "center",
 						align = "center",
-						color = selected and getSpaceColor(i) or colors.secondary,
-						height = selected and 8 or 8,
+						color = getSpaceColor(i),
+						height = selected and 12 or 12,
+						corner_radius = 4,
 					},
 					label = {
-						padding_left = selected and 10 or 4,
-						padding_right = selected and 10 or 4,
-						drawing = selected and false or true,
+						padding_left = selected and 10 or 2,
+						padding_right = selected and 10 or 2,
+						string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
+						color = selected and getSpaceColor(i) or colors.primary,
 					},
 				})
 			end)

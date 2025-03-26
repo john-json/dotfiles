@@ -35,7 +35,8 @@ for i = 1, max_items, 1 do
                     drawing = false
                 },
                 background = {
-                    drawing = false
+                    drawing = false,
+
                 },
                 label = {
                     padding_left = settings.group_paddings,
@@ -49,12 +50,16 @@ for i = 1, max_items, 1 do
     menu_items[i] = menu
 end
 
+
+
 local menu_bracket = sbar.add(
     "bracket",
     { "/menu\\..*/" },
     {
-        alpha = 0,
+        alpha = 1,
         background = {
+            border_width = 1,
+            border_color = colors.bar.border,
             corner_radius = 6,
             height = 28,
             color = colors.bar.bg,

@@ -30,11 +30,12 @@ return {
     bar = {
         bg = 0xff232323,
         bg2 = 0xff1c1c1c,
+        bg_transparent = 0x99242424,
         accent = 0xff000000,
         active = 0xff9eaeb3,
         selected = 0xff593c3c,
         transparent = 0xe51e1e1e,
-        border = 0xff2d2d2d,
+        border = 0xff393939,
         secondary = 0xff414141,
         white_transparent = 0x0dffffff,
         inactive = 0xff2d2e2f,

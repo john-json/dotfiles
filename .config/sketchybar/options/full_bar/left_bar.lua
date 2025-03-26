@@ -1,5 +1,6 @@
 local sbar = require("sketchybar")
 local colors = require("colors")
+local settings = require("settings")
 
 local smenu = require("items.widgets.smenu")
 local menu_watcher = require("items.widgets.menus")
@@ -16,6 +17,13 @@ local left_bar = sbar.add(
         shadow = false, -- Shadow is false for bar-full.lua
         width = "dynamic",
         position = "left",
+        background = {
+            padding_left = settings.group_paddings,
+            padding_right = settings.group_paddings,
+            color = colors.bar.bg,
+            corner_radius = 6,
+            height = 28
+        },
 
     }
 )

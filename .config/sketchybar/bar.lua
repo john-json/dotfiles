@@ -10,11 +10,11 @@ sbar.bar({
     height = 34,
     padding_right = 5,
     padding_left = 5,
-    color = colors.bar.bg2,
+    color = colors.bar.bg_transparent,
     margin = 80,
-    corner_radius = 6,
+    corner_radius = 8,
     shadow = true,
-    blur_radius = 30,
+    blur_radius = 60,
 })
 
 -- Animate with a smooth rubber band effect
