@@ -6,6 +6,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/bin:$PATH" >>~/.zshrc
 export PATH=$PATH:/Users/john/.spicetify
+export TODO_DB_PATH=$HOME/todos.json
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
