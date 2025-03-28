@@ -106,7 +106,7 @@ alias gadd="cfg add"
 alias gits="cfg status"
 alias push="cfg push"
 alias wtr="curl wttr.in/Nürnberg"
-alias dl="clear"
+alias cl="clear"
 alias lc="colorls -lA --sd"
 alias matrix="~/.config/matrix_terminal.sh"
 alias lt="colorls --tree=1"
@@ -115,6 +115,9 @@ alias stats="colorls --gs"
 alias ls="colorls -1 -A"
 alias dir="colorls -d"
 alias cfg='/usr/bin/git --git-dir=/Users/john/.cfg/ --work-tree=/Users/john'
+alias addn="td add "
+alias modn="td modify "
+alias deln="td clean "
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
