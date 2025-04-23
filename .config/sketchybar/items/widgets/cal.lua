@@ -32,6 +32,7 @@ local cal = sbar.add("item", {
     update_freq = 30,
     label = {
         padding_left = 10,
+        padding_right = 04,
         color = colors.primary,
         font = {
             style = settings.font.style_map["Bold"],
@@ -39,8 +40,9 @@ local cal = sbar.add("item", {
     },
     icon = {
         align = "center",
-        drawing = false,
-        padding_left = -5,
+        drawing = true,
+        padding_left = 10,
+        padding_right = 0,
         color = colors.icon.primary,
         aplha = 0.0,
         font = {
@@ -49,8 +51,8 @@ local cal = sbar.add("item", {
         },
     },
     background = {
-        color = colors.bar.bg,
-        height = 24,
+        color = colors.secondary,
+        height = 28,
         corner_radius = 6,
         padding_left = 10,
         padding_right = settings.paddings,
@@ -77,7 +79,6 @@ cal:subscribe("mouse.entered", function(env)
     sbar.delay(0.3, function()
         sbar.animate("elastic", 15, function()
             cal:set({
-                icon = { aplha = 1.0, drawing = "toggle", size = 16, padding_left = 15, },
                 label = {
                     color = colors.white,
                     font = {

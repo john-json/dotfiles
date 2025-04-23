@@ -37,8 +37,8 @@ local weather = sbar.add("item", "widgets.weather", {
         string = icons.weather.cloud_sun,
         padding_left = 10,
         padding_right = 10,
-    },                                                                    -- Default icon
-    label = { drawing = "toggle", padding_right = 5, padding_left = 5, }, -- Hide temperature by default
+    },                                                                     -- Default icon
+    label = { drawing = "toggle", padding_right = 10, padding_left = 5, }, -- Hide temperature by default
 })
 
 -- Function to update weather widget

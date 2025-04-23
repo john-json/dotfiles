@@ -3,7 +3,6 @@ local colors   = require("colors")
 local icons    = require("icons")
 local settings = require("settings")
 
-local search   = require("items.widgets.search")
 local cal      = require("items.widgets.cal")
 local volume   = require("items.widgets.volume")
 local wifi     = require("items.widgets.wifi")
@@ -16,7 +15,7 @@ local systray   =
     sbar.add(
         "bracket",
         "systray.bracket",
-        { search.name, wifi.name, media.name, weather.name },
+        { wifi.name, media.name, weather.name },
         {
             display = 1,
             width = "dynamic",
@@ -81,7 +80,7 @@ local right_bar =
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
-                color = colors.bar.bg2,
+                color = colors.bar.bg,
                 corner_radius = 6,
                 height = 28
             },

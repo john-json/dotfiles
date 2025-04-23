@@ -4,16 +4,12 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local space_colors = {
-	colors.red,        -- Color for space 1
-	colors.orange,     -- Color for space 2
-	colors.yellow,     -- Color for space 3
-	colors.magenta,    -- Color for space 5
-	colors.blue,       -- Color for space 4
-	colors.green,      -- Color for space 6
-	colors.quicksilver, -- Color for space 8
-	colors.blue,       -- Color for space 7
-	colors.dimm_monotone, -- Color for space 9
-	colors.dimm_red,   -- Color for space 10
+	colors.secondary, -- Color for space 1
+	colors.secondary, -- Color for space 2
+	colors.secondary, -- Color for space 3
+	colors.secondary, -- Color for space 5
+	colors.secondary, -- Color for space 4
+
 }
 
 local function getSpaceColor(spaceNumber)
@@ -74,14 +70,15 @@ for i = 1, 10 do
 		position = "center",
 		space = i,
 		label = {
+			drawing = false,
 			position = "center",
 			align = "center",
-			string = getSpaceIcon(i, true),
+			string = colors.primary,
 			font = { family = settings.font.numbers, size = 12 },
 			color = colors.primary
 		},
 		icon = {
-			drawing = false,
+			drawing = true,
 			font = { family = settings.font.numbers, size = 5, },
 		},
 		background = {
@@ -100,19 +97,26 @@ for i = 1, 10 do
 		local selected = env.SELECTED == "true"
 		local targetColor = selected and getSpaceColor(i) or colors.primary
 		smoothColorTransition(space, targetColor)
-		sbar.animate("elastic", 10, function()
+		sbar.animate("elastic", 15, function()
 			space:set({
 				background = {
 					drawing = true,
 					position = "center",
 					align = "center",
-					color = getSpaceColor(i),
-					height = selected and 12 or 12,
-					corner_radius = 2,
+					color = selected and colors.primary or colors.secondary,
+					height = selected and 8 or 7,
+					corner_radius = 25,
+				},
+				icon = {
+					padding_left = selected and 10 or 3,
+					padding_right = selected and 10 or 3,
+					drawing = true,
+					font = { family = settings.font.numbers, size = 5, },
 				},
 				label = {
-					padding_left = selected and 10 or 2,
-					padding_right = selected and 10 or 2,
+					drawing = false,
+					padding_left = selected and 10 or 3,
+					padding_right = selected and 10 or 3,
 					string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
 					color = selected and getSpaceColor(i) or colors.primary,
 				},
@@ -124,21 +128,28 @@ for i = 1, 10 do
 	space:subscribe("mouse.entered", function(env)
 		local selected = env.SELECTED == "true"
 		sbar.delay(0.2, function()
-			sbar.animate("elastic", 10, function()
+			sbar.animate("elastic", 15, function()
 				space:set({
 					label = {
+						drawing = true,
 						padding_left = selected and 12 or 10,
 						padding_right = selected and 12 or 10,
 						string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
 						color = selected and getSpaceColor(i) or colors.primary,
 					},
+					icon = {
+						padding_left = selected and 12 or 10,
+						padding_right = selected and 12 or 10,
+						drawing = true,
+						font = { family = settings.font.numbers, size = 5, },
+					},
 					background = {
 						drawing = true,
 						position = "center",
 						align = "center",
-						color = getSpaceColor(i),
+						color = selected and colors.primary or colors.secondary,
 						height = selected and 12 or 12,
-						corner_radius = 2,
+						corner_radius = 25,
 					},
 				})
 			end)
@@ -148,19 +159,26 @@ for i = 1, 10 do
 	space:subscribe("mouse.exited", function(env)
 		sbar.delay(0.2, function()
 			local selected = env.SELECTED == "true"
-			sbar.animate("elastic", 10, function()
+			sbar.animate("elastic", 15, function()
 				space:set({
 					background = {
 						drawing = true,
 						position = "center",
 						align = "center",
-						color = getSpaceColor(i),
-						height = selected and 12 or 12,
-						corner_radius = 2,
+						color = selected and colors.primary or colors.secondary,
+						height = selected and 8 or 7,
+						corner_radius = 25,
+					},
+					icon = {
+						padding_left = selected and 10 or 3,
+						padding_right = selected and 10 or 3,
+						drawing = true,
+						font = { family = settings.font.numbers, size = 5, },
 					},
 					label = {
-						padding_left = selected and 10 or 2,
-						padding_right = selected and 10 or 2,
+						drawing = false,
+						padding_left = selected and 10 or 3,
+						padding_right = selected and 10 or 3,
 						string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
 						color = selected and getSpaceColor(i) or colors.primary,
 					},

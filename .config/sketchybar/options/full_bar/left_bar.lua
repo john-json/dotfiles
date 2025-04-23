@@ -18,9 +18,10 @@ local left_bar = sbar.add(
         width = "dynamic",
         position = "left",
         background = {
+            border_width = 0,
             padding_left = settings.group_paddings,
             padding_right = settings.group_paddings,
-            color = colors.bar.bg,
+            color = colors.transparent,
             corner_radius = 6,
             height = 28
         },

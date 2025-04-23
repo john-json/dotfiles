@@ -12,7 +12,7 @@ return {
     magenta = 0xff595066,
 
     primary = 0xffb2b2b2,
-    secondary = 0xff232323,
+    secondary = 0xff1c1c1c,
 
     black = 0xff000000,
     white = 0xffb4b4b4,
@@ -28,7 +28,7 @@ return {
         secondary = 0xff191919,
     },
     bar = {
-        bg = 0xff232323,
+        bg = 0xff242424,
         bg2 = 0xff1c1c1c,
         bg_transparent = 0x99000000,
         accent = 0xff000000,

@@ -3,7 +3,6 @@ local colors   = require("colors")
 local icons    = require("icons")
 local settings = require("settings")
 
-local search   = require("items.widgets.search")
 local cal      = require("items.widgets.cal")
 local volume   = require("items.widgets.volume")
 local wifi     = require("items.widgets.wifi")
@@ -11,15 +10,12 @@ local media    = require("items.widgets.media")
 local weather  = require("items.widgets.weather")
 
 
--- Check if we're using bar-full.lua
-local is_bar_full = os.getenv("BAR_CONFIG") == "bar-full"
-
 
 local systray   =
     sbar.add(
         "bracket",
         "systray.bracket",
-        { search.name, wifi.name, media.name, weather.name },
+        { wifi.name, media.name, weather.name },
         {
             display = 1,
             width = "dynamic",
@@ -46,7 +42,7 @@ local clock     =
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
-                color = colors.transparent,
+                color = colors.bar.bg,
             },
 
 
@@ -77,16 +73,16 @@ local right_bar =
         { clock.name, volume.name, systray.name },
         {
 
-            shadow = not is_bar_full, -- Shadow is false for bar-full.lua
+            shadow = false, -- Shadow is false for bar-full.lua
             position = "right",
             align = "right",
             width = "dynamic",
-            padding_left = 10,
-            padding_right = 10,
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
-                color = colors.bar.bg2
+                color = colors.bar.bg,
+                corner_radius = 6,
+                height = 28
             },
 
 
