@@ -20,7 +20,7 @@ return {
     dark = 0xff242424,
 
     primary = 0xff5e5e5e,
-    secondary = 0xffd5d5d5,
+    secondary = 0xffb9b9b9,
 
     transparent = 0x00000000,
     semi_transparent = 0x40ffffff,
@@ -31,8 +31,8 @@ return {
         secondary = 0xfff9f9f9,
     },
     bar = {
-        bg = 0xffe6e6e6,
-        bg2 = 0xb3ffffff,
+        bg = 0xffd5d5d5,
+        bg2 = 0xffffffff,
         bg_transparent = 0x99ffffffe,
         accent = 0xff000000,
         active = 0xff9eaeb3,

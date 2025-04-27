@@ -7,7 +7,7 @@ local settings = require("settings")
 sbar.exec(
     "killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en1 network_update 2.0")
 
-local popup_width = 180
+local popup_width = 220
 
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {

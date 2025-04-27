@@ -32,6 +32,10 @@ local weather = sbar.add("item", "widgets.weather", {
     position = "right",
     align = "right",
     display = 1,
+    background = {
+        border_width = 0,
+        border_color = colors.bar.border
+    },
     icon = {
         color = colors.primary,
         string = icons.weather.cloud_sun,

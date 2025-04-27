@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Get the current layout of focused space
+layout=$(yabai -m query --spaces --space | jq -r '.type')
+
+case "$layout" in
+bsp)
+    icon=" BSP"
+    ;;
+stack)
+    icon=" Stack"
+    ;;
+float)
+    icon="󰘔 Float"
+    ;;
+*)
+    icon="?"
+    ;;
+esac
+
+# Update the sketchybar item
+sketchybar --set layout_indicator label="$icon"

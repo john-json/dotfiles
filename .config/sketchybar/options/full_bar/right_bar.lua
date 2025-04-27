@@ -42,7 +42,7 @@ local clock     =
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
-                color = colors.bar.bg,
+                color = colors.transparent,
             },
 
 

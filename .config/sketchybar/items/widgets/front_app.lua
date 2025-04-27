@@ -9,7 +9,7 @@ local front_app = sbar.add("item", "front_app", {
         drawing = false,
         padding_left = 10,
         padding_right = 10,
-        color = colors.primary,
+        color = colors.dark,
         size = 16,
         font = { style = settings.font.style_map["Bold"] },
     },

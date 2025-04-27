@@ -39,9 +39,9 @@ for i = 1, max_items, 1 do
 
                 },
                 label = {
-                    padding_left = settings.group_paddings,
-                    padding_right = settings.group_paddings,
-                    color = i == 1 and colors.white or colors.primary,
+                    padding_left = settings.paddings,
+                    padding_right = settings.paddings,
+                    color = i == 1 and colors.primary or colors.secondary,
                 },
                 click_script = "$CONFIG_DIR/helpers/menus/bin/menus -s " .. i
             }
@@ -72,7 +72,7 @@ local menu_bracket = sbar.add(
 local function update_menus(env)
     sbar.exec("$CONFIG_DIR/helpers/menus/bin/menus -l", function(menus)
         sbar.set('/menu\\..*/', { drawing = false })
-        id = 1
+        local id = 1
         for menu in string.gmatch(menus, '[^\r\n]+') do
             if id < max_items then
                 menu_items[id]:set({ label = menu, drawing = true })
