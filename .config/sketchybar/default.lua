@@ -31,8 +31,8 @@ sbar.default({
 		padding_left  = settings.paddings,
 		border_width  = 1,
 		border_color  = colors.bar.border,
-		height        = 24,
-		corner_radius = 8,
+		height        = settings.height,
+		corner_radius = settings.corner_radius,
 		image         = {
 			corner_radius = 8
 		},

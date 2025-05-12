@@ -15,7 +15,9 @@ local HEIGHT_BEFORE = 0
 local function setup_media_items()
     local media_icon = sbar.add("item", {
         position = "right",
+        display = 1,
         background = {
+            padding_left = PADDING,
             border_width = 0,
             border_color = colors.bar.border,
             width = "dynamic",
@@ -27,7 +29,7 @@ local function setup_media_items()
             drawing = false,
         },
         icon = {
-            padding_left = 5,
+            padding_left = 10,
             padding_right = 5,
             drawing = true,
             string = icons.media.icon,
@@ -58,7 +60,7 @@ local function setup_media_items()
                 string = "media.artwork",
                 scale = 2,
             },
-            color = colors.transparent,
+
             height = HEIGHT,
         },
         drawing = true,
@@ -122,12 +124,18 @@ local function create_controls()
             align = "right",
             position = "right",
             width = 0,
+            background = {
+                padding_left = 10,
+                padding_right = 10,
+                color = colors.white,
+                height = 22,
+            },
             icon = {
-                align = "right",
+                align = "center",
                 position = "right",
-                color = colors.primary,
+                color = colors.bar.bg,
                 string = control.icon,
-                font = { size = 14 },
+                font = { size = 12 },
             },
             click_script = control.action,
             drawing = false, -- Initially hidden

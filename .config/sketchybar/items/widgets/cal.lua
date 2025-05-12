@@ -33,7 +33,7 @@ local cal = sbar.add("item", {
     label = {
         padding_left = 10,
         padding_right = 04,
-        color = colors.primary,
+        color = colors.bar.bg,
         font = {
             style = settings.font.style_map["Bold"],
         },
@@ -51,8 +51,7 @@ local cal = sbar.add("item", {
         },
     },
     background = {
-        color = colors.bar.bg2,
-        height = 28,
+        color = colors.white,
         corner_radius = 6,
         padding_left = 10,
         padding_right = settings.paddings,
@@ -70,6 +69,7 @@ local cal = sbar.add("item", {
 sbar.add("bracket", { cal.name }, {
     background = {
         color = colors.transparent,
+        border_width = 0,
 
     }
 })
@@ -80,9 +80,9 @@ cal:subscribe("mouse.entered", function(env)
         sbar.animate("elastic", 15, function()
             cal:set({
                 label = {
-                    color = colors.white,
+                    color = colors.bar.bg,
                     font = {
-                        style = settings.font.style_map["Bold"],
+                        style = settings.font.style_map["Heavy"],
                         size = 16,
                     },
                 },
@@ -99,7 +99,7 @@ cal:subscribe("mouse.exited", function(env)
                 icon = { size = 14, },
 
                 label = {
-                    color = colors.primary,
+                    color = colors.bar.bg,
                     font = {
                         style = settings.font.style_map["Bold"],
                         size = 14,
@@ -132,7 +132,7 @@ local function populate_calendar_popup()
             position = "center",
             align = "center",
             font = {
-                size = 50,
+                size = 40,
                 style = "Helvetica-Bold",
             },
         },
@@ -144,7 +144,7 @@ local function populate_calendar_popup()
             color = colors.orange, -- Highlight for today
             align = "center",
             font = {
-                size = 30,
+                size = 20,
                 style = "Helvetica-Bold",
             },
         },
@@ -154,7 +154,7 @@ local function populate_calendar_popup()
             y_offset = -5,
             color = colors.bar.bg2,
             width = "dynamic",
-            height = 120,
+            height = 8,
 
         },
     })

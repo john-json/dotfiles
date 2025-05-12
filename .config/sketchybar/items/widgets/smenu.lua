@@ -16,7 +16,7 @@ local smenu = sbar.add("item", {
 		string = icons.apple,
 		color = colors.primary,
 		padding_left = 5,
-		padding_right = 10,
+		padding_right = 0,
 		size = 14,
 	},
 	popup = {

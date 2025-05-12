@@ -15,7 +15,8 @@ return {
     secondary = 0xff5e5e5e,
 
     black = 0xff000000,
-    white = 0xffb4b4b4,
+    white = 0xffffffff,
+    lightgray = 0xffb4b4b4,
     grey = 0xff5a5959,
 
     transparent = 0x00000000,

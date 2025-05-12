@@ -4,11 +4,7 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local space_colors = {
-	colors.secondary, -- Color for space 1
-	colors.secondary, -- Color for space 2
-	colors.secondary, -- Color for space 3
-	colors.secondary, -- Color for space 5
-	colors.secondary, -- Color for space 4
+	colors.icon.primary, -- Color for space 1
 
 }
 
@@ -18,10 +14,10 @@ end
 
 local sf_icons_active = {
 
-	"",
+	"􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀", "􀀀",
 }
 local sf_icons_inactive = {
-	"",
+	"􀍷", "􀍷", "􀍷", "􀍷", "􀍷", "􀍷", "􀍷", "􀍷", "􀍷", "􀍷",
 }
 local function getSpaceIcon(space, active)
 	if active then
@@ -70,23 +66,23 @@ for i = 1, 10 do
 		position = "center",
 		space = i,
 		label = {
-			drawing = false,
+			drawing = true,
 			position = "center",
 			align = "center",
-			string = colors.primary,
-			font = { family = settings.font.numbers, size = 12 },
-			color = colors.primary
+			font = { family = settings.font.numbers, size = 10 },
 		},
 		icon = {
-			drawing = true,
+			padding_left = 10,
+			padding_right = 10,
+			drawing = false,
 			font = { family = settings.font.numbers, size = 5, },
 		},
 		background = {
-			padding_left = 10,
-			padding_right = 5,
-			drawing = true,
+			drawing = false,
+			color = colors.transparent,
 			position = "center",
 			align = "center",
+			border_width = 0,
 		},
 	})
 
@@ -95,30 +91,29 @@ for i = 1, 10 do
 
 	space:subscribe("front_app_switched", function(env)
 		local selected = env.SELECTED == "true"
-		local targetColor = selected and getSpaceColor(i) or colors.primary
+		local targetColor = selected and colors.white or colors.icon.primary
 		smoothColorTransition(space, targetColor)
-		sbar.animate("elastic", 15, function()
+		sbar.animate("elastic", 10, function()
 			space:set({
 				background = {
-					drawing = true,
+					drawing = false,
 					position = "center",
 					align = "center",
-					color = selected and colors.primary or colors.secondary,
-					height = selected and 8 or 7,
-					corner_radius = 25,
+					color = colors.transparent,
 				},
 				icon = {
-					padding_left = selected and 10 or 3,
-					padding_right = selected and 10 or 3,
-					drawing = true,
-					font = { family = settings.font.numbers, size = 5, },
+					padding_left = selected and 10 or 10,
+					padding_right = selected and 10 or 10,
+					drawing = false,
+					font = { family = settings.font.numbers, size = 12, },
 				},
 				label = {
-					drawing = false,
-					padding_left = selected and 10 or 3,
-					padding_right = selected and 10 or 3,
+					drawing = true,
+					padding_left = selected and 5 or 5,
+					padding_right = selected and 5 or 5,
+					font = { family = settings.font.numbers, size = selected and 14 or 10, },
 					string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
-					color = selected and getSpaceColor(i) or colors.primary,
+					color = selected and colors.white or colors.icon.primary,
 				},
 
 			})
@@ -128,28 +123,25 @@ for i = 1, 10 do
 	space:subscribe("mouse.entered", function(env)
 		local selected = env.SELECTED == "true"
 		sbar.delay(0.2, function()
-			sbar.animate("elastic", 15, function()
+			sbar.animate("elastic", 10, function()
 				space:set({
 					label = {
-						drawing = true,
-						padding_left = selected and 12 or 10,
-						padding_right = selected and 12 or 10,
+						font = { family = settings.font.numbers, size = 16, },
+						drawing = false,
 						string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
-						color = selected and getSpaceColor(i) or colors.primary,
+						color = selected and colors.white or colors.icon.primary,
 					},
 					icon = {
-						padding_left = selected and 12 or 10,
-						padding_right = selected and 12 or 10,
 						drawing = true,
-						font = { family = settings.font.numbers, size = 5, },
+						string = selected and "􂁁" or "􀁹",
+						font = { family = settings.font.numbers, size = 16, },
+						color = colors.white,
 					},
 					background = {
-						drawing = true,
+						drawing = false,
 						position = "center",
 						align = "center",
-						color = selected and colors.primary or colors.secondary,
-						height = selected and 12 or 12,
-						corner_radius = 25,
+						color = colors.transparent,
 					},
 				})
 			end)
@@ -162,25 +154,23 @@ for i = 1, 10 do
 			sbar.animate("elastic", 15, function()
 				space:set({
 					background = {
-						drawing = true,
+						drawing = false,
 						position = "center",
 						align = "center",
-						color = selected and colors.primary or colors.secondary,
-						height = selected and 8 or 7,
-						corner_radius = 25,
+						color = colors.transparent,
+
 					},
 					icon = {
-						padding_left = selected and 10 or 3,
-						padding_right = selected and 10 or 3,
-						drawing = true,
+						padding_left = selected and 10 or 10,
+						padding_right = selected and 10 or 10,
+						drawing = false,
 						font = { family = settings.font.numbers, size = 5, },
 					},
 					label = {
-						drawing = false,
-						padding_left = selected and 10 or 3,
-						padding_right = selected and 10 or 3,
+						font = { family = settings.font.numbers, size = selected and 14 or 10, },
+						drawing = true,
 						string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
-						color = selected and getSpaceColor(i) or colors.primary,
+						color = selected and colors.white or colors.icon.primary,
 					},
 				})
 			end)
@@ -204,6 +194,12 @@ local spaces_bracket = sbar.add("bracket", "spaces.bracket", space_items, spaces
 	width = "dynamic",
 	label = { drawing = "toggle" },
 	popup = { align = "center" },
+	background = {
+		drawing = true,
+		position = "center",
+		align = "center",
+		color = colors.bar.bg2,
+	},
 })
 
 return spaces_bracket

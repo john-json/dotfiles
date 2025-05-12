@@ -60,9 +60,7 @@ local menu_bracket = sbar.add(
         background = {
             border_width = 1,
             border_color = colors.bar.border,
-            corner_radius = 6,
-            height = 28,
-            color = colors.bar.bg,
+            color = colors.bar.bg2,
         }
     }
 )

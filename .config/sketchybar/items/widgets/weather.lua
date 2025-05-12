@@ -7,6 +7,7 @@ local function get_weather_icon(condition)
     local icon_map = {
         ["clear"] = icons.weather.sun,
         ["cloudy"] = icons.weather.cloud,
+        ["clouds"] = icons.weather.cloud,
         ["partly cloudy"] = icons.weather.cloud_sun,
         ["rain"] = icons.weather.rain,
         ["rain shower"] = icons.weather.rain,
@@ -26,23 +27,26 @@ local function get_weather_icon(condition)
 end
 
 
+
 -- Add weather widget to SketchyBar
 local weather = sbar.add("item", "widgets.weather", {
 
     position = "right",
-    align = "right",
+    align = "center",
     display = 1,
+    padding_left = 10,
+    padding_right = 10,
     background = {
         border_width = 0,
-        border_color = colors.bar.border
+        color = colors.transparent,
     },
     icon = {
         color = colors.primary,
         string = icons.weather.cloud_sun,
-        padding_left = 10,
-        padding_right = 10,
-    },                                                                     -- Default icon
-    label = { drawing = "toggle", padding_right = 10, padding_left = 5, }, -- Hide temperature by default
+        padding_left = 5,
+        padding_right = 5,
+    },                                                  -- Default icon
+    label = { padding_right = 10, padding_left = 10, }, -- Hide temperature by default
 })
 
 -- Function to update weather widget
@@ -52,7 +56,7 @@ local function update_weather()
         if condition and temperature then
             local weather_icon = get_weather_icon(condition)
             weather:set({
-                label = { drawing = false, size = 1, },
+                label = { size = 14, },
                 icon = { string = weather_icon },
                 -- Keep temperature hidden initially
             })
@@ -67,6 +71,8 @@ end
 
 update_weather()
 
+
+
 -- Show temperature on mouse enter with delay
 weather:subscribe("mouse.entered", function()
     sbar.animate("elastic", 15, function()
@@ -76,7 +82,7 @@ weather:subscribe("mouse.entered", function()
                     icon = {
                         color = colors.yellow,
                     },
-                    label = { size = 16, background = { height = 30, corner_radius = 4, }, string = weather.temperature, drawing = "toggle", padding_left = 5 }
+                    label = { color = colors.white, size = 16, string = weather.temperature, padding_left = 5 }
                 })
             end
         end)
@@ -91,8 +97,8 @@ weather:subscribe("mouse.exited", function()
                 icon = {
                     color = colors.primary,
                 },
-                background = { color = colors.transparent },
-                label = { drawing = false, size = 0, }
+                background = { color = colors.bar.bg2 },
+                label = { drawing = true, size = 14, color = colors.white }
             })
         end)
     end)
