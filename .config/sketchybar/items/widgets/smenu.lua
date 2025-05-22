@@ -75,8 +75,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 			padding_right = 20,
 			border_width = 0,
 			border_color = colors.bar.border,
-			color = colors.transparent,
-			height = 40, -- Reduced height for compactness
+			color = colors.transparent, -- Reduced height for compactness
 			width = popup_width
 
 		},

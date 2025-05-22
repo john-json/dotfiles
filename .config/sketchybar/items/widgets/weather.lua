@@ -6,83 +6,79 @@ local settings = require("settings")
 local function get_weather_icon(condition)
     local icon_map = {
         ["clear"] = icons.weather.sun,
-        ["cloudy"] = icons.weather.cloud,
-        ["clouds"] = icons.weather.cloud,
+        ["overcast"] = icons.weather.cloud,
         ["partly cloudy"] = icons.weather.cloud_sun,
+        ["light rain"] = icons.weather.rain,
         ["rain"] = icons.weather.rain,
         ["rain shower"] = icons.weather.rain,
         ["snow"] = icons.weather.snowflake,
         ["thunderstorm"] = icons.weather.bolt,
         ["mist"] = icons.weather.fog,
         ["fog"] = icons.weather.fog,
-        ["drizzle"] = icons.weather.cloud_rain,
+        ["patchy light drizzle"] = icons.weather.cloud_rain,
     }
 
+    local condition_lower = condition:lower()
     for key, icon in pairs(icon_map) do
-        if string.find(condition:lower(), key) then
+        if condition_lower:find(key) then
             return icon
         end
     end
     return icons.question -- Default if no match
 end
 
-
-
 -- Add weather widget to SketchyBar
 local weather = sbar.add("item", "widgets.weather", {
-
     position = "right",
-    align = "center",
+    align = "right",
     display = 1,
-    padding_left = 10,
-    padding_right = 10,
-    background = {
-        border_width = 0,
-        color = colors.transparent,
-    },
     icon = {
-        color = colors.primary,
-        string = icons.weather.cloud_sun,
-        padding_left = 5,
-        padding_right = 5,
-    },                                                  -- Default icon
-    label = { padding_right = 10, padding_left = 10, }, -- Hide temperature by default
+        string = "",
+        padding_left = 10,
+        padding_right = 10,
+    },
+    label = { padding_right = 5, padding_left = 5 },
+    background = {
+        color = colors.transparent,
+        border_width = 0,
+    },
 })
 
 -- Function to update weather widget
 local function update_weather()
-    sbar.exec("curl -s 'wttr.in/Nuremberg?format=%C+%t' ", function(output)
-        local condition, temperature = output:match("([^%s]+) (.+)")
+    sbar.exec("curl -s 'wttr.in/Nuremberg?format=%C+%t'", function(output)
+        local condition, temperature = output:match("^(.-)%s+([%+%-]?%d+°[CF]?)$")
         if condition and temperature then
             local weather_icon = get_weather_icon(condition)
-            weather:set({
-                label = { size = 14, },
-                icon = { string = weather_icon },
-                -- Keep temperature hidden initially
-            })
-
-            -- Store temperature for later use
             weather.temperature = temperature
+            weather:set({
+                icon = { string = weather_icon },
+                label = { string = temperature, size = 12 },
+            })
         else
-            weather:set({ label = "N/A", icon = { string = icons.question } })
+            weather:set({
+                label = { string = "N/A" },
+                icon = { string = icons.question, color = colors.primary },
+            })
         end
     end)
 end
 
 update_weather()
 
-
-
 -- Show temperature on mouse enter with delay
 weather:subscribe("mouse.entered", function()
     sbar.animate("elastic", 15, function()
-        sbar.delay(0.4, function() -- 0.3s delay before showing
+        sbar.delay(0.4, function()
             if weather.temperature then
                 weather:set({
-                    icon = {
-                        color = colors.yellow,
+                    icon = { color = colors.yellow },
+                    label = {
+                        string = weather.temperature,
+                        size = 14,
+                        padding_left = 5,
+                        background = { corner_radius = 4 },
                     },
-                    label = { color = colors.white, size = 16, string = weather.temperature, padding_left = 5 }
                 })
             end
         end)
@@ -92,13 +88,13 @@ end)
 -- Hide temperature on mouse exit with delay
 weather:subscribe("mouse.exited", function()
     sbar.animate("elastic", 15, function()
-        sbar.delay(0.3, function() -- 0.3s delay before hiding
+        sbar.delay(0.3, function()
             weather:set({
-                icon = {
-                    color = colors.primary,
+                icon = { color = colors.primary },
+                label = {
+                    string = weather.temperature,
                 },
-                background = { color = colors.bar.bg2 },
-                label = { drawing = true, size = 14, color = colors.white }
+                background = { color = colors.transparent },
             })
         end)
     end)

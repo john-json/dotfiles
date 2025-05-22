@@ -30,7 +30,7 @@ local function setup_media_items()
         },
         icon = {
             padding_left = 10,
-            padding_right = 5,
+            padding_right = 15,
             drawing = true,
             string = icons.media.icon,
             color = colors.primary,
@@ -127,13 +127,14 @@ local function create_controls()
             background = {
                 padding_left = 10,
                 padding_right = 10,
-                color = colors.white,
+                color = colors.transparent,
                 height = 22,
+                border_width = 0,
             },
             icon = {
                 align = "center",
                 position = "right",
-                color = colors.bar.bg,
+                color = colors.primary,
                 string = control.icon,
                 font = { size = 12 },
             },

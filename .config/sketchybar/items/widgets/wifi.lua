@@ -7,7 +7,7 @@ local settings = require("settings")
 sbar.exec(
     "killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en1 network_update 2.0")
 
-local popup_width = 220
+local popup_width = 180
 
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
@@ -28,7 +28,7 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
         },
     },
     background = { color = colors.transparent },
-    popup = { align = "center", height = 50, y_offset = -40, }
+    popup = { align = "center", height = 60, y_offset = -40, drawing = false },
 })
 
 
@@ -256,37 +256,34 @@ end
 local is_router_on = true
 
 local function toggle_details()
-    sbar.animate("elastic", 15, function()
-        sbar.delay(0.3, function()
-            local should_draw = wifi_bracket:query().popup.drawing == "off"
-            if should_draw then
-                wifi_bracket:set({ popup = { drawing = true, y_offset = 0, } })
-                sbar.exec("networksetup -getcomputername", function(result)
-                    hostname:set({ label = result })
-                end)
-                sbar.exec("ipconfig getifaddr en1", function(result)
-                    ip:set({ label = result })
-                end)
-                sbar.exec("ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
-                    ssid:set({ label = result })
-                end)
-            else
-                hide_details()
-            end
-        end)
+    sbar.delay(0.1, function()
+        local should_draw = wifi_bracket:query().popup.drawing == "off"
+        if should_draw then
+            sbar.animate("elastic", 15, function()
+                wifi_bracket:set({ popup = { drawing = true, y_offset = 0, padding_right = -150, padding_left = 0, } })
+            end)
+            sbar.exec("networksetup -getcomputername", function(result)
+                hostname:set({ label = result })
+            end)
+            sbar.exec("ipconfig getifaddr en1", function(result)
+                ip:set({ label = result })
+            end)
+            sbar.exec("ipconfig getsummary en1 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
+                ssid:set({ label = result })
+            end)
+        else
+            hide_details()
+        end
     end)
 end
 
+
 -- Toggles popup on click
 wifi:subscribe("mouse.clicked", function(env)
-    sbar.delay(0.2, function()
-        sbar.animate("elastic", 15, function()
+    sbar.delay(0.1, function()
+        sbar.animate("elastic", 25, function()
             wifi:set({
                 toggle_details(),
-                popup = {
-                    y_offset = 0,
-                    drawing = "toggle"
-                }
             })
         end)
     end)

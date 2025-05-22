@@ -7,7 +7,7 @@ local add_space =
 	sbar.add(
 		"item",
 		{
-			position = "center",
+			position = "left",
 			icon = {
 				align = "center",
 				position = "center",

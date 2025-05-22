@@ -18,6 +18,7 @@ return {
     white = 0xffffffff,
     lightgray = 0xffb4b4b4,
     grey = 0xff5a5959,
+    darkgray = 0xff3e3e3e,
 
     transparent = 0x00000000,
     semi_transparent = 0x40ffffff,
@@ -43,10 +44,6 @@ return {
         icons = 0xff61817f,
         foreground = 0xff857261,
         foreground_hover = 0xff828282,
-    },
-    media = {
-        primary = 0xcc212121,
-        secondary = 0xffffffff,
     },
     popup = {
         text = 0xffcccccc,

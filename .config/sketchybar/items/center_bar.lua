@@ -3,52 +3,23 @@ local colors = require("colors")
 local settings = require("settings")
 
 
-local spaces = require("items.widgets.spaces")
-local add_space = require("items.widgets.add_space")
+local cal = require("items.widgets.cal")
 
--- Check if we're using bar-full.lua
-local is_bar_full = os.getenv("BAR_CONFIG") == "bar-full"
-
-
-
-local spaces_bracket = sbar.add(
-    "bracket",
-    "spaces.bracket",
-    { spaces.name },
-    {
-        position = "center",
-        width = "dynamic",
-        padding_left = 10,
-        padding_right = 10,
-        icon = { padding_left = 5, padding_right = 5 },
-    }
-)
-local add_space_bracket = sbar.add(
-    "bracket",
-    "add_space.bracket",
-    { add_space.name },
-    {
-        position = "center",
-        width = "dynamic",
-        padding_left = 10,
-        padding_right = 10,
-    }
-)
 
 -- Create the bracket and include the items
 local center_bar = sbar.add(
     "bracket",
     "center_bar.bracket",
-    { add_space_bracket.name, spaces_bracket.name },
+    { cal.name },
     {
-        shadow = not is_bar_full, -- Shadow is false for bar-full.lua
+        shadow = true, -- Shadow is false for bar-full.lua
         position = "center",
         width = "dynamic",
         background = {
-            padding_left = settings.group_paddings,
-            padding_right = settings.group_paddings,
-            color = colors.bar.bg,
-
+            padding_left = 10,
+            padding_right = 10,
+            corner_radius = 8,
+            color = colors.bar.bg2
         },
     }
 )
