@@ -19,7 +19,6 @@ local systray =
         {
             display = 1,
             width = "dynamic",
-
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
@@ -37,7 +36,7 @@ local right_bar =
         { systray.name },
         {
 
-            shadow = true, -- Shadow is false for bar-full.lua
+            shadow = false, -- Shadow is false for bar-full.lua
             position = "right",
             align = "right",
             width = "dynamic",
@@ -45,7 +44,7 @@ local right_bar =
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
                 color = colors.bar.bg,
-                corner_radius = 8,
+                corner_radius = 6,
             },
 
 

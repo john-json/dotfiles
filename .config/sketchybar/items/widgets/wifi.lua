@@ -28,7 +28,7 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
         },
     },
     background = { color = colors.transparent },
-    popup = { align = "center", height = 60, y_offset = -40, drawing = false },
+    popup = { align = "right", height = 60, y_offset = -0, drawing = false },
 })
 
 
@@ -36,19 +36,18 @@ local ssid = sbar.add("item", {
     position = "popup." .. wifi_bracket.name,
     width = popup_width,
     icon = {
-        width        = popup_width / 2,
-        align        = "left",
-        padding_left = 10,
-        y_offset     = 0,
-        font         = {
+        width    = popup_width / 2,
+        align    = "left",
+        y_offset = 0,
+        font     = {
             size = 36,
             style = settings.font.style_map["Bold"]
         },
-        string       = " ",
+        string   = " ",
     },
     label = {
         width = popup_width / 2,
-        align = "center",
+        align = "left",
         padding_left = 5,
         padding_right = 5,
         font = {
@@ -60,13 +59,13 @@ local ssid = sbar.add("item", {
     },
 
     background = {
-        y_offset = -5,
-        corner_radius = 6,
+        y_offset = -0,
+        corner_radius = 20,
         padding_left = 5,
         padding_right = 5,
-        color = colors.bar.bg2,
+        color = colors.black,
         width = "dynamic",
-        height = 60,
+        height = 50,
     }
 })
 

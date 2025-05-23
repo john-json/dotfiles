@@ -9,43 +9,16 @@ local front_app = require("items.widgets.front_app")
 
 
 
-local spaces_bracket = sbar.add(
-    "bracket",
-    "spaces.bracket",
-    { spaces.name },
-    {
-        position = "center",
-        width = "dynamic",
-        padding_left = 10,
-        padding_right = 10,
-        background = {
-            color = colors.bar.bg2
-        },
-    }
-)
-
-local front_app = sbar.add(
-    "bracket",
-    "front_app.bracket",
-    { front_app.name },
-    {
-        position = "center",
-        width = "dynamic",
-        padding_left = 10,
-        padding_right = 10,
-        background = {
-            color = colors.bar.bg2
-        },
-    }
-)
 
 local start = sbar.add(
     "bracket",
-    "start.bracket",
-    { smenu.name },
+    "left_bar.bracket",
+    { smenu.name, spaces.name, front_app.name },
     {
         position = "left",
+
         background = {
+            color = colors.bar.bg,
             padding_left = settings.group_paddings,
             padding_right = settings.group_paddings,
         },
@@ -57,17 +30,16 @@ local start = sbar.add(
 local left_bar = sbar.add(
     "bracket",
     "left_bar.bracket",
-    { menu_watcher.name, front_app.name, spaces_bracket.name, start.name },
+    { menu_watcher.name, start.name },
     {
         shadow = false, -- Shadow is false for bar-full.lua
         width = "dynamic",
         position = "left",
         background = {
-            color = colors.bar.bg2,
             padding_left = settings.group_paddings,
             padding_right = settings.group_paddings,
             corner_radius = 6,
-
+            color = colors.bar.bg
         },
 
     }

@@ -7,7 +7,7 @@ sbar.bar({
     alpha = 0,
     y_offset = -50, -- Start off-screen
     position = "top",
-    height = 28,
+    height = 32,
     padding_right = 0,
     padding_left = 0,
     color = colors.transparent,

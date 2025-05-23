@@ -12,14 +12,14 @@ local center_bar = sbar.add(
     "center_bar.bracket",
     { cal.name },
     {
-        shadow = true, -- Shadow is false for bar-full.lua
+        shadow = false, -- Shadow is false for bar-full.lua
         position = "center",
         width = "dynamic",
         background = {
             padding_left = 10,
             padding_right = 10,
-            corner_radius = 8,
-            color = colors.bar.bg2
+            corner_radius = 6,
+            color = colors.bar.bg
         },
     }
 )

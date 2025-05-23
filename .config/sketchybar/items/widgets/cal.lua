@@ -58,7 +58,7 @@ local cal = sbar.add("item", {
     popup = {
         position = "center",
         align = "right",
-        height = 90,
+        height = 110,
         width = "dynamic",
         drawing = false,
         y_offset = 0,
@@ -125,8 +125,8 @@ local function populate_calendar_popup()
 
         icon = {
             string = todays_date,
-            padding_left = 5,
-            y_offset = 10,
+            padding_left = 20,
+            y_offset = 15,
             color = colors.quicksilver, -- Highlight for today
             position = "center",
             align = "center",
@@ -140,20 +140,21 @@ local function populate_calendar_popup()
             padding_left = -60,
             y_offset = -20,
             string = todays_name,
-            color = colors.orange, -- Highlight for today
+            color = colors.red, -- Highlight for today
             align = "center",
             font = {
-                size = 30,
+                size = 35,
                 style = "Helvetica-Bold",
             },
         },
         background = {
             padding_left = 5,
             padding_right = 5,
-            y_offset = -5,
-            color = colors.lightgrey,
+            y_offset = 0,
+            corner_radius = 20,
+            color = colors.black,
             width = "dynamic",
-            height = 80,
+            height = 100,
         },
     })
 

@@ -18,7 +18,7 @@ local start = sbar.add(
         position = "left",
 
         background = {
-            color = colors.bar.bg2,
+            color = colors.bar.bg,
             padding_left = settings.group_paddings,
             padding_right = settings.group_paddings,
         },
@@ -32,14 +32,14 @@ local left_bar = sbar.add(
     "left_bar.bracket",
     { menu_watcher.name, start.name },
     {
-        shadow = true, -- Shadow is false for bar-full.lua
+        shadow = false, -- Shadow is false for bar-full.lua
         width = "dynamic",
         position = "left",
         background = {
             padding_left = settings.group_paddings,
             padding_right = settings.group_paddings,
-            corner_radius = 8,
-            color = colors.bar.bg2
+            corner_radius = 6,
+            color = colors.bar.bg
         },
 
     }

@@ -3,12 +3,11 @@ local colors   = require("colors")
 local icons    = require("icons")
 local settings = require("settings")
 
+local cal      = require("items.widgets.cal")
 local volume   = require("items.widgets.volume")
 local wifi     = require("items.widgets.wifi")
 local media    = require("items.widgets.media")
-local apps     = require("items.widgets.apps")
 local weather  = require("items.widgets.weather")
-
 
 
 
@@ -16,14 +15,10 @@ local systray =
     sbar.add(
         "bracket",
         "systray.bracket",
-        { apps.name, wifi.name, media.name, weather.name },
+        { volume.name, wifi.name, media.name, weather.name },
         {
             display = 1,
             width = "dynamic",
-            icon = {
-                padding_left = 10,
-                padding_right = 10,
-            },
             background = {
                 padding_left = settings.group_paddings,
                 padding_right = settings.group_paddings,
@@ -38,7 +33,7 @@ local right_bar =
     sbar.add(
         "bracket",
         "right_bar.bracket",
-        { volume.name, systray.name },
+        { systray.name },
         {
 
             shadow = false, -- Shadow is false for bar-full.lua
@@ -50,7 +45,6 @@ local right_bar =
                 padding_right = settings.group_paddings,
                 color = colors.bar.bg,
                 corner_radius = 6,
-                height = 28
             },
 
 
