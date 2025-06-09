@@ -7,6 +7,8 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/bin:$PATH" >>~/.zshrc
 export PATH=$PATH:/Users/john/.spicetify
 export TODO_DB_PATH=$HOME/todos.json
+export EDITOR=nvim
+export VISUAL=nvim
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
@@ -89,7 +91,6 @@ function y() {
 # For a full list of active aliases, run `alias`.
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
-alias bsrs="brew services reload sketchybar"
 alias sbrld="brew services reload sketchybar"
 alias fm="yazi"
 alias vi="nvim"
@@ -108,7 +109,7 @@ alias push="cfg push"
 alias wtr="curl wttr.in/Nürnberg"
 alias cl="clear"
 alias lc="colorls -lA --sd"
-alias matrix="~/.config/matrix_terminal.sh"
+alias matrix="cmatrix"
 alias lt="colorls --tree=1"
 alias lt2="colorls --tree=2"
 alias stats="colorls --gs"
@@ -118,6 +119,8 @@ alias cfg='/usr/bin/git --git-dir=/Users/john/.cfg/ --work-tree=/Users/john'
 alias addn="td add "
 alias modn="td modify "
 alias deln="td clean "
+alias togn="td toggle "
+alias spotify="spotify_player"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -125,3 +128,22 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 eval "$(zoxide init zsh)"
 eval "$(rbenv init -)"
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
+export PATH="/opt/homebrew/sbin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export LDFLAGS="-L/opt/homebrew/lib"
+export CPPFLAGS="-I/opt/homebrew/include"
+
+set rtp+=/opt/homebrew/opt/fzf
+eval "$(alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh")"
+eval "$(alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh")"
+eval "$(alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh")"
+eval "$(alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh")"
+eval "$(alias sketchybar="$HOME/.config/sketchybar/set-bar-mode.sh")"
