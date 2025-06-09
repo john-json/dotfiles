@@ -30,8 +30,6 @@ for i = 1, max_items, 1 do
             "item",
             "menu." .. i,
             {
-                padding_left = settings.paddings,
-                padding_right = settings.paddings,
                 drawing = false,
                 icon = {
                     drawing = false
@@ -41,9 +39,9 @@ for i = 1, max_items, 1 do
 
                 },
                 label = {
-                    padding_left = 7,
-                    padding_right = 6,
-                    color = i == 1 and colors.white or colors.primary,
+                    padding_left = settings.group_paddings,
+                    padding_right = settings.group_paddings,
+                    color = i == 1 and colors.orange or colors.primary,
                 },
                 click_script = "$CONFIG_DIR/helpers/menus/bin/menus -s " .. i
             }
@@ -58,22 +56,23 @@ local menu_bracket = sbar.add(
     "bracket",
     { "/menu\\..*/" },
     {
+        alpha = 1,
         background = {
-            color = colors.bar.bg2,
+            border_width = 1,
+            border_color = colors.bar.border,
+            corner_radius = 6,
+            height = 28,
+            color = colors.bar.bg,
         }
     }
 )
 
-local menu_padding = sbar.add("item", "menu.padding", {
-    drawing = false,
-    width = 5
-})
 
 
 local function update_menus(env)
     sbar.exec("$CONFIG_DIR/helpers/menus/bin/menus -l", function(menus)
         sbar.set('/menu\\..*/', { drawing = false })
-        local id = 1
+        id = 1
         for menu in string.gmatch(menus, '[^\r\n]+') do
             if id < max_items then
                 menu_items[id]:set({ label = menu, drawing = true })
@@ -92,17 +91,15 @@ space_menu_swap:subscribe("swap_menus_and_spaces", function(env)
         sbar.delay(0.3, function()
             local drawing = menu_items[1]:query().geometry.drawing == "on"
             if drawing then
-                menu_watcher:set({ updates = false, })
-                sbar.set("/menu\\..*/", { drawing = false })
-                sbar.set("/space\\..*/", { drawing = true })
+                menu_watcher:set({ updates = false, label = { size = 0, } })
+                sbar.set("/menu\\..*/", { alpha = 1, drawing = false })
                 sbar.set("front_app", { drawing = true })
             else
                 menu_watcher:set({ updates = true })
-                sbar.set("/space\\..*/", { drawing = false })
                 sbar.set("front_app", { drawing = true })
                 update_menus()
             end
         end)
     end)
 end)
-return menu_watcher
+return menu_bracket

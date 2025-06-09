@@ -4,17 +4,16 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local space_colors = {
-	colors.lightgray, -- Color for space 1
-	colors.lightgray, -- Color for space 2
-	colors.lightgray, -- Color for space 3
-	colors.lightgray,
-	colors.lightgray,
-	colors.lightgray,
-	colors.lightgray,
-	colors.lightgray,
-	colors.lightgray,
-	colors.lightgray,
-	colors.lightgray,
+	colors.red,        -- Color for space 1
+	colors.orange,     -- Color for space 2
+	colors.yellow,     -- Color for space 3
+	colors.magenta,    -- Color for space 5
+	colors.blue,       -- Color for space 4
+	colors.green,      -- Color for space 6
+	colors.quicksilver, -- Color for space 8
+	colors.blue,       -- Color for space 7
+	colors.dimm_monotone, -- Color for space 9
+	colors.dimm_red,   -- Color for space 10
 }
 
 local function getSpaceColor(spaceNumber)
@@ -67,10 +66,12 @@ end
 
 local spaces = {}
 local space_items = {}
+local steps = 60
 
 for i = 1, 10 do
 	local space = sbar.add("space", "space." .. i, {
-		position = "left",
+		bar = "center_bar",
+		position = "center",
 		space = i,
 		label = {
 			position = "center",
@@ -106,12 +107,12 @@ for i = 1, 10 do
 					position = "center",
 					align = "center",
 					color = getSpaceColor(i),
-					height = selected and 10 or 10,
-					corner_radius = 4,
+					height = selected and 12 or 12,
+					corner_radius = 2,
 				},
 				label = {
-					padding_left = selected and 10 or 3,
-					padding_right = selected and 10 or 3,
+					padding_left = selected and 10 or 2,
+					padding_right = selected and 10 or 2,
 					string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
 					color = selected and getSpaceColor(i) or colors.primary,
 				},
@@ -137,7 +138,7 @@ for i = 1, 10 do
 						align = "center",
 						color = getSpaceColor(i),
 						height = selected and 12 or 12,
-						corner_radius = 4,
+						corner_radius = 2,
 					},
 				})
 			end)
@@ -154,12 +155,12 @@ for i = 1, 10 do
 						position = "center",
 						align = "center",
 						color = getSpaceColor(i),
-						height = selected and 10 or 10,
-						corner_radius = 4,
+						height = selected and 12 or 12,
+						corner_radius = 2,
 					},
 					label = {
-						padding_left = selected and 10 or 3,
-						padding_right = selected and 10 or 3,
+						padding_left = selected and 10 or 2,
+						padding_right = selected and 10 or 2,
 						string = selected and getSpaceIcon(i, false) or getSpaceIcon(i, true),
 						color = selected and getSpaceColor(i) or colors.primary,
 					},

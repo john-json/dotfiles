@@ -17,10 +17,8 @@ return {
     grey = 0xffbcbcbc,
     darkGrey = 0xff4b4b4b,
 
-    dark = 0xff242424,
-
-    primary = 0xff5e5e5e,
-    secondary = 0xffb9b9b9,
+    primary = 0xffa6a6a6,
+    secondary = 0xffdedede,
 
     transparent = 0x00000000,
     semi_transparent = 0x40ffffff,
@@ -31,9 +29,8 @@ return {
         secondary = 0xfff9f9f9,
     },
     bar = {
-        bg = 0xffd5d5d5,
+        bg = 0xffe6e6e6,
         bg2 = 0xffffffff,
-        bg_transparent = 0x99ffffffe,
         accent = 0xff000000,
         active = 0xff9eaeb3,
         selected = 0xff593c3c,

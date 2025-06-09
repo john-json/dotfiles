@@ -28,22 +28,20 @@ end
 
 -- Main calendar popup
 local cal = sbar.add("item", {
-    position = "center",
+    position = "right",
     update_freq = 30,
     label = {
         padding_left = 10,
-        padding_right = 10,
-        color = colors.white,
+        color = colors.primary,
         font = {
             style = settings.font.style_map["Bold"],
         },
     },
     icon = {
         align = "center",
-        drawing = true,
-        padding_left = 0,
-        padding_right = 0,
-        color = colors.lightgray,
+        drawing = false,
+        padding_left = -5,
+        color = colors.icon.primary,
         aplha = 0.0,
         font = {
             style = settings.font.style_map["Bold"],
@@ -51,14 +49,16 @@ local cal = sbar.add("item", {
         },
     },
     background = {
-        height = 32,
+        color = colors.bar.bg,
+        height = 24,
+        corner_radius = 6,
         padding_left = 10,
         padding_right = settings.paddings,
     },
     popup = {
         position = "center",
         align = "right",
-        height = 110,
+        height = 90,
         width = "dynamic",
         drawing = false,
         y_offset = 0,
@@ -68,7 +68,6 @@ local cal = sbar.add("item", {
 sbar.add("bracket", { cal.name }, {
     background = {
         color = colors.transparent,
-        border_width = 0,
 
     }
 })
@@ -78,10 +77,11 @@ cal:subscribe("mouse.entered", function(env)
     sbar.delay(0.3, function()
         sbar.animate("elastic", 15, function()
             cal:set({
+                icon = { aplha = 1.0, drawing = "toggle", size = 16, padding_left = 15, },
                 label = {
                     color = colors.white,
                     font = {
-                        style = settings.font.style_map["Heavy"],
+                        style = settings.font.style_map["Bold"],
                         size = 16,
                     },
                 },
@@ -98,7 +98,7 @@ cal:subscribe("mouse.exited", function(env)
                 icon = { size = 14, },
 
                 label = {
-                    color = colors.lightgray,
+                    color = colors.primary,
                     font = {
                         style = settings.font.style_map["Bold"],
                         size = 14,
@@ -138,23 +138,23 @@ local function populate_calendar_popup()
         label = {
             padding_right = 50,
             padding_left = -60,
-            y_offset = -20,
+            y_offset = -25,
             string = todays_name,
-            color = colors.red, -- Highlight for today
+            color = colors.orange, -- Highlight for today
             align = "center",
             font = {
-                size = 35,
+                size = 30,
                 style = "Helvetica-Bold",
             },
         },
         background = {
             padding_left = 5,
             padding_right = 5,
-            y_offset = 0,
-            corner_radius = 20,
-            color = colors.black,
+            y_offset = -5,
+            color = colors.bar.bg2,
             width = "dynamic",
-            height = 100,
+            height = 120,
+
         },
     })
 
@@ -224,7 +224,7 @@ populate_calendar_popup()
 
 cal:subscribe({ "forced", "routine", "system_woke" }, function(env)
     sbar.animate("elastic", 15, function()
-        cal:set({ icon = os.date("%a, %d   􀐫"), label = { string = os.date("%H:%M"), padding_right = 10, } })
+        cal:set({ icon = os.date("%a, %d"), label = { string = os.date("%H:%M"), padding_right = 10, } })
     end)
 end)
 

@@ -12,13 +12,11 @@ return {
     magenta = 0xff595066,
 
     primary = 0xffb2b2b2,
-    secondary = 0xff5e5e5e,
+    secondary = 0xff232323,
 
     black = 0xff000000,
-    white = 0xffffffff,
-    lightgray = 0xffb4b4b4,
+    white = 0xffb4b4b4,
     grey = 0xff5a5959,
-    darkgray = 0xff3e3e3e,
 
     transparent = 0x00000000,
     semi_transparent = 0x40ffffff,
@@ -30,7 +28,7 @@ return {
         secondary = 0xff191919,
     },
     bar = {
-        bg = 0xff242424,
+        bg = 0xff232323,
         bg2 = 0xff1c1c1c,
         bg_transparent = 0x99000000,
         accent = 0xff000000,
@@ -44,6 +42,10 @@ return {
         icons = 0xff61817f,
         foreground = 0xff857261,
         foreground_hover = 0xff828282,
+    },
+    media = {
+        primary = 0xcc212121,
+        secondary = 0xffffffff,
     },
     popup = {
         text = 0xffcccccc,

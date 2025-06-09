@@ -5,20 +5,20 @@ local app_icons = require("helpers.app_icons")
 
 local front_app = sbar.add("item", "front_app", {
     position = "left",
-    background = { color = colors.red, corner_radius = 4, height = 18, border_width = 0, padding_left = 10, padding_right = 5 },
+    background = { color = colors.transparent },
     label = {
         drawing = false,
-        padding_left = 10,
+        padding_left = 5,
         padding_right = 10,
-        color = colors.bar.bg2,
+        color = colors.primary,
         size = 16,
         font = { style = settings.font.style_map["Bold"] },
     },
     icon = {
-        padding_left = 10,
+        padding_left = 5,
         padding_right = 10,
         drawing = true,
-        color = colors.bar.bg2,
+        color = colors.primary,
         font = { style = settings.font.style_map["Bold"] },
     },
     updates = true,
@@ -32,11 +32,10 @@ front_app:subscribe("front_app_switched", function(env)
                 label = {
 
                     drawing = false,
-                    string = icons.switch.off,
-                    padding_left = 5,
+                    string = icons.switch.off
                 },
                 icon = {
-                    color = colors.bar.bg2,
+                    color = colors.primary,
                     drawing = true,
                     string = env.INFO,
                     font = { style = settings.font.style_map["Bold"] },
@@ -53,9 +52,9 @@ front_app:subscribe("mouse.entered", function(env)
                 label = {
                     drawing = true,
                     string = icons.switch.on,
-                    padding_left = 5,
+                    padding_left = 0,
                     padding_right = 10,
-                    color = colors.bar.bg2,
+                    color = colors.primary,
                     font = { style = settings.font.style_map["Bold"] },
                 },
                 icon = {
@@ -76,7 +75,7 @@ front_app:subscribe("mouse.exited", function(env)
 
                 },
                 icon = {
-                    color = colors.bar.bg2,
+                    color = colors.primary,
                     drawing = true,
                     string = env.INFO,
                     font = { style = settings.font.style_map["Bold"] },
@@ -97,7 +96,7 @@ front_app:subscribe("mouse.clicked", function(env)
                     string = icons.switch.off,
                     padding_left = 5,
                     padding_right = 10,
-                    color = colors.bar.bg2,
+                    color = colors.primary,
                     font = { style = settings.font.style_map["Bold"] },
 
                 },

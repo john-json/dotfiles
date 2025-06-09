@@ -1,5 +1,6 @@
 [flavor]
 dark = "ilstr01-dark"
+light = "ilstr01-light"
 
 [icon]
 prepend_conds = [

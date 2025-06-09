@@ -6,60 +6,57 @@ local settings = require("settings")
 local function get_weather_icon(condition)
     local icon_map = {
         ["clear"] = icons.weather.sun,
-        ["overcast"] = icons.weather.cloud,
+        ["cloudy"] = icons.weather.cloud,
         ["partly cloudy"] = icons.weather.cloud_sun,
-        ["light rain"] = icons.weather.rain,
         ["rain"] = icons.weather.rain,
         ["rain shower"] = icons.weather.rain,
         ["snow"] = icons.weather.snowflake,
         ["thunderstorm"] = icons.weather.bolt,
         ["mist"] = icons.weather.fog,
         ["fog"] = icons.weather.fog,
-        ["patchy light drizzle"] = icons.weather.cloud_rain,
+        ["drizzle"] = icons.weather.cloud_rain,
     }
 
-    local condition_lower = condition:lower()
     for key, icon in pairs(icon_map) do
-        if condition_lower:find(key) then
+        if string.find(condition:lower(), key) then
             return icon
         end
     end
     return icons.question -- Default if no match
 end
 
+
 -- Add weather widget to SketchyBar
 local weather = sbar.add("item", "widgets.weather", {
+
     position = "right",
     align = "right",
     display = 1,
     icon = {
-        string = "",
+        color = colors.primary,
+        string = icons.weather.cloud_sun,
         padding_left = 10,
         padding_right = 10,
-    },
-    label = { padding_right = 5, padding_left = 5 },
-    background = {
-        color = colors.transparent,
-        border_width = 0,
-    },
+    },                                                                    -- Default icon
+    label = { drawing = "toggle", padding_right = 5, padding_left = 5, }, -- Hide temperature by default
 })
 
 -- Function to update weather widget
 local function update_weather()
-    sbar.exec("curl -s 'wttr.in/Nuremberg?format=%C+%t'", function(output)
-        local condition, temperature = output:match("^(.-)%s+([%+%-]?%d+°[CF]?)$")
+    sbar.exec("curl -s 'wttr.in/Nuremberg?format=%C+%t' ", function(output)
+        local condition, temperature = output:match("([^%s]+) (.+)")
         if condition and temperature then
             local weather_icon = get_weather_icon(condition)
-            weather.temperature = temperature
             weather:set({
+                label = { drawing = false, size = 1, },
                 icon = { string = weather_icon },
-                label = { string = temperature, size = 12 },
+                -- Keep temperature hidden initially
             })
+
+            -- Store temperature for later use
+            weather.temperature = temperature
         else
-            weather:set({
-                label = { string = "N/A" },
-                icon = { string = icons.question, color = colors.primary },
-            })
+            weather:set({ label = "N/A", icon = { string = icons.question } })
         end
     end)
 end
@@ -69,16 +66,13 @@ update_weather()
 -- Show temperature on mouse enter with delay
 weather:subscribe("mouse.entered", function()
     sbar.animate("elastic", 15, function()
-        sbar.delay(0.4, function()
+        sbar.delay(0.4, function() -- 0.3s delay before showing
             if weather.temperature then
                 weather:set({
-                    icon = { color = colors.yellow },
-                    label = {
-                        string = weather.temperature,
-                        size = 14,
-                        padding_left = 5,
-                        background = { corner_radius = 4 },
+                    icon = {
+                        color = colors.yellow,
                     },
+                    label = { size = 16, background = { height = 30, corner_radius = 4, }, string = weather.temperature, drawing = "toggle", padding_left = 5 }
                 })
             end
         end)
@@ -88,13 +82,13 @@ end)
 -- Hide temperature on mouse exit with delay
 weather:subscribe("mouse.exited", function()
     sbar.animate("elastic", 15, function()
-        sbar.delay(0.3, function()
+        sbar.delay(0.3, function() -- 0.3s delay before hiding
             weather:set({
-                icon = { color = colors.primary },
-                label = {
-                    string = weather.temperature,
+                icon = {
+                    color = colors.primary,
                 },
                 background = { color = colors.transparent },
+                label = { drawing = false, size = 0, }
             })
         end)
     end)

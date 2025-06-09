@@ -9,8 +9,10 @@ if [[ "$1" == "--full" ]]; then
     MODE="full_bar"
 elif [[ "$1" == "--tiled" ]]; then
     MODE="tiled_bar"
+elif [[ "$1" == "--center" ]]; then
+    MODE="center_bar"
 else
-    echo "Usage: sketchybar --full OR sketchybar --tiled"
+    echo "Usage: sketchybar --full OR sketchybar --tiled OR sketchybar --center"
     exit 1
 fi
 

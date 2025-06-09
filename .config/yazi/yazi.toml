@@ -1,6 +1,6 @@
 # ~/.config/yazi/yazi.toml
 [manager]
-layout = [1, 4, 3]
+layout = [2, 3, 3]
 linemode = "none"
 show_hidden = true
 
@@ -12,7 +12,7 @@ prepend_preloaders = [
 
 [opener]
 edit = [
-	{ run = '${EDITOR:=vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+	{ run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true, for = "unix" },
 ]
 
 extract = [{ run = 'unar "$1"', desc = "Extract here", for = "unix" }]

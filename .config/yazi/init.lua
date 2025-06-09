@@ -1,5 +1,5 @@
 require("yaziline"):setup({
-	color = "#b7b7b7",      -- main theme color
+	color = "#d8a865",      -- main theme color
 	separator_style = "curvy", -- "angly" | "curvy" | "liney" | "empty"
 	separator_open = "",
 	separator_close = "",

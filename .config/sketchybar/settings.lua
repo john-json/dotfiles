@@ -1,12 +1,10 @@
 return {
     paddings = 3,
-    group_paddings = 5,
+    group_paddings = 10,
+    height = 28,            -- Height of the bar
 
     icons = "sf-symbols",   -- Options: "sf-symbols", "nerdfont"
     animated_icons = false, -- Set to true if you want to use animated icons
-
-    height = 32,
-    corner_radius = 6,
 
     font = {
         text = "Operator Mono Nerd Font",    -- Used for text

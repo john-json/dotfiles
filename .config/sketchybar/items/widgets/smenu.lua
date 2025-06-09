@@ -8,15 +8,16 @@ local popup_width = 200
 
 local smenu = sbar.add("item", {
 	position = "left",
+	display = 1,
 	background = {
 		border_width = 0,
 		border_color = colors.bar.border
 	},
 	icon = {
-		string = icons.apple,
+		string = icons.start,
 		color = colors.primary,
 		padding_left = 5,
-		padding_right = 0,
+		padding_right = 10,
 		size = 14,
 	},
 	popup = {
@@ -73,9 +74,8 @@ local function create_menu_item(position, label, icon_string, click_command)
 		background = {
 			padding_left = 10,
 			padding_right = 20,
-			border_width = 0,
-			border_color = colors.bar.border,
-			color = colors.transparent, -- Reduced height for compactness
+			color = colors.transparent,
+			height = 40, -- Reduced height for compactness
 			width = popup_width
 
 		},
@@ -89,7 +89,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 				icon = {
 					padding_left = 5,
 					padding_right = 15,
-					color = colors.white,
+					color = colors.orange,
 					font = { size = 16 },
 				},
 				label = {

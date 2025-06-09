@@ -46,6 +46,7 @@ local icons = {
             cloudy = "􀇣",
             cloud_sun = "􀇕",
             rain = "􁷍",
+            rain = "􁷍",
             snowflake = "􀇏",
             bolt = "􀇟",
             fog = "􀇋",
