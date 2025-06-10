@@ -65,6 +65,7 @@ brew install tree
 brew install ultralist
 brew install td
 brew install install spotify_player
+brew install ghostty
 
 ### Terminal
 brew install neovim
