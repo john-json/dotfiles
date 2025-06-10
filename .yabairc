@@ -1,0 +1,56 @@
+#!/usr/bin/env sh
+
+# General
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse off
+yabai -m config window_placement second_child
+yabai -m config window_topmost on
+yabai -m config window_shadow on
+
+# Padding
+yabai -m config top_padding 30
+yabai -m config bottom_padding 20
+yabai -m config left_padding 20
+yabai -m config right_padding 20
+yabai -m config window_gap 20
+
+# Layout
+yabai -m config layout bsp
+
+# Animation
+yabai -m config window_animation_duration 0.25
+yabai -m config window_opacity_duration 0.25
+yabai -m config window_opacity off
+yabai -m config active_window_border_color 0xff7755aa
+yabai -m config active_window_border_width 1
+yabai -m config insert_feedback_color 0xff5c7e81
+
+# Smooth move/resize
+yabai -m config auto_balance on
+yabai -m config split_ratio 0.5
+
+# External Bar (like sketchybar)
+yabai -m config external_bar all:20:0
+
+# Floating rules (optional)
+# yabai -m rule --add app="System Preferences" manage=off
+# yabai -m rule --add app="Finder" manage=off
+
+# Signals: Bounce effect when one window alone on a space
+yabai -m signal --add event=window_created action='
+  win=$(yabai -m query --windows --window | jq -r ".id")
+  role=$(yabai -m query --windows --window | jq -r ".role")
+  title=$(yabai -m query --windows --window | jq -r ".title")
+  space_id=$(yabai -m query --windows --window | jq -r ".space")
+  count=$(yabai -m query --windows --space "$space_id" | jq "length")
+
+  if [[ "$role" == "AXWindow" && "$title" != *"Dialog"* && "$count" -eq 1 ]]; then
+    yabai -m window $win --toggle float
+    yabai -m window $win --grid 4:4:1:1:2:2
+    yabai -m window $win --resize left:-50:0
+    sleep 0.04
+    yabai -m window $win --resize right:50:0
+  fi
+'
+# hides menubar fully
+yabai -m config menubar_opacity 0.0

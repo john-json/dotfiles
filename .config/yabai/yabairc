@@ -5,7 +5,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m signal --add event=window_created action="~/.config/yabai/scripts/float_and_center_if_alone.sh"
 
 yabai -m config external_bar all:40:0 \
-    menubar_opacity 0.0 \
+    menubar_opacity 1 \
     mouse_follows_focus off \
     focus_follows_mouse off \
     window_zoom_persist off \
