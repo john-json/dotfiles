@@ -28,12 +28,14 @@ curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.
 # SbarLua
 (git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
 
-echo "Cloning Config"
+echo "Cloning Config
 git clone https://github.com/john-json/dotfiles.git /tmp/dotfiles
 mv $HOME/.config/sketchybar $HOME/.config/sketchybar_backup
 mv /tmp/dotfiles/.config/sketchybar $HOME/.config/sketchybar
 rm -rf /tmp/dotfiles
 brew services restart sketchybar
+
+
 
 ## Formulae
 echo "Installing Brew Formulae..."
@@ -46,6 +48,10 @@ export eval "$(zoxide init zsh)" >>~/.zshrc
 echo "Installing spotify terminal player"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 brew install spotify_player
+
+# Rust
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #colorls + gem
 sudo brew install ruby
