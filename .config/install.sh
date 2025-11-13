@@ -14,6 +14,7 @@ echo "Installing Dependencies"
 brew install lua
 brew install switchaudio-osx
 brew install nowplaying-cli
+brew install spotify_player
 
 brew tap FelixKratz/formulae
 brew install sketchybar
@@ -26,9 +27,9 @@ brew install --cask font-sf-pro
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v2.0.28/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
 # SbarLua
-(git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/)
+git clone https://github.com/FelixKratz/SbarLua.git /tmp/SbarLua && cd /tmp/SbarLua/ && make install && rm -rf /tmp/SbarLua/
 
-echo "Cloning Config
+echo "Cloning Config"
 git clone https://github.com/john-json/dotfiles.git /tmp/dotfiles
 mv $HOME/.config/sketchybar $HOME/.config/sketchybar_backup
 mv /tmp/dotfiles/.config/sketchybar $HOME/.config/sketchybar
@@ -47,14 +48,15 @@ export eval "$(zoxide init zsh)" >>~/.zshrc
 #curls
 echo "Installing spotify terminal player"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-brew install spotify_player
+curl -fsSL https://deno.land/install.sh | sh
+
 
 # Rust
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #colorls + gem
-sudo brew install ruby
+brew install ruby
 mkdir -p ~/.config/colorls
 gem install colorls
 
