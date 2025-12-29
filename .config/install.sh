@@ -97,6 +97,7 @@ brew install --cask ghostty
 brew install --cask chatgpt
 brew install --cask ubersicht
 brew install --cask notunes
+brew install --cask jordanbaird-ice
 
 ### Fonts
 brew install --cask sf-symbols
