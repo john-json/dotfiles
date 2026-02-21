@@ -144,6 +144,7 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write -g NSWindowShouldDragOnGesture YES
+defaults write com.apple.WindowManager AnimationSpeed -float 25
 
 # Copying and checking out configuration files
 echo "Planting Configuration Files..."
