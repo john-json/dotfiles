@@ -61,6 +61,7 @@ mkdir -p ~/.config/colorls
 gem install colorls
 
 ### Essentials
+brew install normen/tap/whatscli
 brew install spotify
 brew install node
 brew install sketchybar
@@ -117,6 +118,7 @@ mas install 1251572132 #fresco
 
 # macOS Settings
 echo "Changing macOS defaults..."
+defaults write -g NSWindowShouldDragOnGesture -bool true
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.spaces spans-displays -bool false
